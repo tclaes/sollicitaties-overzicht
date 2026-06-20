@@ -25,7 +25,6 @@
     "pdf-parse": "^1.1.1",
     "tsx": "^4.19.0",
     "typescript": "^5.8.0",
-    "vinxi": "^0.5.3",
     "vite-tsconfig-paths": "^6.1.1"
   }
 }

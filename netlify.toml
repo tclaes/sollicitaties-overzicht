@@ -1,9 +1,22 @@
 [build]
   command = "npm run build"
-  publish = ".output/public"
+  publish = "dist/client"
+  functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "22"
+
+[[redirects]]
+  from = "/_server/*"
+  to = "/.netlify/functions/ssr/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/ssr"
+  status = 200
+  force = false
+  conditions = {Role = []}
 
 [[headers]]
   for = "/*"
@@ -11,3 +24,8 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
