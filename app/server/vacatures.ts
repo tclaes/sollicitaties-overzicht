@@ -2,10 +2,11 @@ import { createServerFn } from "@tanstack/react-start";
 import { readFileSync, readdirSync, existsSync } from "fs";
 import { join } from "path";
 import { z } from "zod";
-import { DagOverzichtSchema, VacatureSchema, StatusSchema } from "~/lib/schemas";
-import type { Vacature, DagOverzicht } from "~/lib/schemas";
+import { DagOverzichtSchema, VacatureSchema, StatusSchema, SollicitatieSchema } from "~/lib/schemas";
+import type { Vacature, DagOverzicht, Sollicitatie } from "~/lib/schemas";
 
 const DATA_DIR = join(process.cwd(), "data", "vacatures");
+const SOLLICITATIES_PAD = join(process.cwd(), "data", "sollicitaties.json");
 
 function leesOverzicht(datum: string): DagOverzicht | null {
   const pad = join(DATA_DIR, `${datum}.json`);
@@ -68,6 +69,14 @@ export const getVacature = createServerFn({ method: "GET" })
     }
     return null;
   });
+
+export const getSollicitaties = createServerFn({ method: "GET" }).handler(
+  async (): Promise<Sollicitatie[]> => {
+    if (!existsSync(SOLLICITATIES_PAD)) return [];
+    const raw = JSON.parse(readFileSync(SOLLICITATIES_PAD, "utf-8"));
+    return z.array(SollicitatieSchema).parse(raw);
+  }
+);
 
 export const updateVacatureStatus = createServerFn({ method: "POST" })
   .validator(
