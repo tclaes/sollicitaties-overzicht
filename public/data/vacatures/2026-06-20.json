@@ -5,363 +5,363 @@
       "id": "recommand-junior-software-engineer",
       "titel": "Junior Software Engineer",
       "bedrijf": "Recommand",
-      "locatie": "Limburg, België",
+      "locatie": "Hasselt, België",
       "regio": "limburg",
-      "url": "",
-      "beschrijving": "Junior Software Engineer positie bij Recommand. Herbevestigd actief op 20-06-2026.",
+      "url": "https://recommand.eu/en/jobs/junior-software-engineer",
+      "beschrijving": "Junior front-end/full-stack rol bij softwarebedrijf Recommand in Hasselt.",
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["frontend", "software engineering"],
+      "tags": ["JavaScript", "TypeScript", "modern web-stack"],
       "match": {
         "score": "laag",
-        "toelichting": "Junior-niveau past niet bij 10+ jaar ervaring. Risico op onderwaardering."
+        "toelichting": "Junior-niveau past niet bij Tom's 10+ jaar senior ervaring."
       }
     },
     {
       "id": "recommand-senior-software-engineer",
       "titel": "Senior Software Engineer",
       "bedrijf": "Recommand",
-      "locatie": "Limburg, België",
+      "locatie": "Hasselt, België",
       "regio": "limburg",
-      "url": "",
-      "beschrijving": "Senior Software Engineer positie bij Recommand. Herbevestigd actief op 20-06-2026.",
+      "url": "https://recommand.eu/en/jobs/senior-software-engineer",
+      "beschrijving": "Senior front-end/full-stack rol bij Recommand in Hasselt.",
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["frontend", "software engineering"],
+      "tags": ["JavaScript", "TypeScript", "modern web-stack"],
       "match": {
         "score": "goed",
-        "toelichting": "Senior-niveau past. Stack onbekend maar brede SE-rol geeft ruimte. Limburg."
+        "toelichting": "Senior niveau, Hasselt/Limburg, vertrouwde JS/TS stack maar Angular/React niet expliciet vermeld."
       }
     },
     {
       "id": "phpro-allround-web-developer",
       "titel": "Allround Web Developer",
       "bedrijf": "PHPro",
-      "locatie": "Limburg, België",
+      "locatie": "Hasselt / Kontich / Aalst, België",
       "regio": "limburg",
-      "url": "",
-      "beschrijving": "Allround Web Developer bij PHPro. Herbevestigd actief op 20-06-2026.",
+      "url": "https://www.phpro.be/nl/jobs/web-developer",
+      "beschrijving": "Allround webontwikkelaar bij PHPro, met Hasselt als één van de vestigingen.",
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["PHP", "web development", "full-stack"],
+      "tags": ["PHP", "Symfony", "Magento", "HTML", "CSS", "JavaScript"],
       "match": {
-        "score": "goed",
-        "toelichting": "PHP is niet de kern, maar 'allround' laat ruimte voor frontend. Hasselt."
+        "score": "matig",
+        "toelichting": "PHP/Symfony/Magento als kernstack is buiten Tom's expertise, FE is bijrol."
       }
     },
     {
       "id": "elision-frontend-developer",
       "titel": "Frontend Developer",
       "bedrijf": "Elision",
-      "locatie": "Limburg, België",
+      "locatie": "Hasselt (hybride), België",
       "regio": "limburg",
-      "url": "",
-      "beschrijving": "Frontend Developer bij Elision. Herbevestigd actief op 20-06-2026.",
+      "url": "https://www.elision.eu/nl/career/frontend-developer",
+      "beschrijving": "Frontend Developer-rol bij Elision, hybride werken vanuit Hasselt.",
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["frontend", "JavaScript"],
+      "tags": ["JavaScript", "frontend frameworks"],
       "match": {
-        "score": "sterk",
-        "toelichting": "Core frontend rol in Limburg. Past exact bij profiel."
+        "score": "goed",
+        "toelichting": "Core frontend rol in Hasselt/Limburg, hybride, maar stack niet gespecificeerd."
       }
     },
     {
       "id": "inline-blue-angular-developer-architect",
       "titel": "Angular Developer/Architect",
       "bedrijf": "Inline Blue",
-      "locatie": "Limburg, België",
+      "locatie": "Hasselt, België",
       "regio": "limburg",
-      "url": "",
-      "beschrijving": "Angular Developer of Architect bij Inline Blue. Herbevestigd actief op 20-06-2026.",
+      "url": "https://inlineblue.com/jobs/22",
+      "beschrijving": "Angular Developer/Architect-rol — sterke match met Tom's Angular-profiel.",
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["Angular", "frontend", "architect", "TypeScript"],
+      "tags": ["Angular", "TypeScript"],
       "match": {
         "score": "sterk",
-        "toelichting": "Angular is expertisedomein. Architect-rol past bij 10+ jaar senioriteit. Hasselt."
+        "toelichting": "Angular is Tom's kernexpertise, architect-rol past bij senioriteit, Hasselt/Limburg."
       }
     },
     {
       "id": "buzzworks-ervaren-web-ontwikkelaar",
       "titel": "Ervaren Web Ontwikkelaar",
       "bedrijf": "Buzzworks",
-      "locatie": "Limburg, België",
+      "locatie": "Hasselt-regio, België",
       "regio": "limburg",
-      "url": "",
-      "beschrijving": "Ervaren Web Ontwikkelaar bij Buzzworks. Herbevestigd actief op 20-06-2026.",
+      "url": "https://www.buzzworks.be/nl-BE/careers/senior-web-developer",
+      "beschrijving": "Ervaren web ontwikkelaar-rol bij Buzzworks (voorheen AppFoundry).",
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["web development", "JavaScript", "frontend"],
+      "tags": ["Web development", "JavaScript"],
       "match": {
         "score": "goed",
-        "toelichting": "'Ervaren' past qua niveau. JS/web-gericht, Limburg."
-      }
-    },
-    {
-      "id": "buzzworks-ai-engineer",
-      "titel": "AI Engineer",
-      "bedrijf": "Buzzworks",
-      "locatie": "Limburg, België",
-      "regio": "limburg",
-      "url": "",
-      "beschrijving": "AI Engineer bij Buzzworks. Herbevestigd actief op 20-06-2026.",
-      "bron": "andere",
-      "gevondenOp": "2026-06-20T12:00:00.000Z",
-      "status": "nieuw",
-      "tags": ["AI", "machine learning", "engineering"],
-      "match": {
-        "score": "laag",
-        "toelichting": "ML/AI engineering vereist een heel ander profiel. Niet relevant."
+        "toelichting": "'Ervaren' niveau past, Hasselt-regio/Limburg, JS/web-gericht stack."
       }
     },
     {
       "id": "fenego-full-stack-developer",
       "titel": "Full-stack Developer",
       "bedrijf": "Fenego",
-      "locatie": "Limburg, België",
+      "locatie": "Hasselt, België",
       "regio": "limburg",
-      "url": "",
-      "beschrijving": "Full-stack Developer bij Fenego. Herbevestigd actief op 20-06-2026.",
+      "url": "https://www.fenego.be/nl/jobs/full-stack-developer/",
+      "beschrijving": "Full-stack ontwikkelaar voor Intershop e-commerce platformen bij Fenego.",
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["full-stack", "JavaScript", "frontend"],
+      "tags": ["JavaScript", "HTML5", "CSS3", "SASS", "Intershop e-commerce"],
       "match": {
         "score": "goed",
-        "toelichting": "Full-stack met frontend-insteek, Hasselt. JS-based stack."
+        "toelichting": "FE-gericht fullstack, JS stack, Hasselt/Limburg, e-commerce specialisatie."
       }
     },
     {
       "id": "outpost24-full-stack-developer",
       "titel": "Full Stack Developer",
       "bedrijf": "Outpost24",
-      "locatie": "Limburg, België",
-      "regio": "limburg",
-      "url": "",
-      "beschrijving": "Full Stack Developer bij Outpost24, een cybersecurity bedrijf. Herbevestigd actief op 20-06-2026.",
+      "locatie": "Leuven, België",
+      "regio": "vlaanderen",
+      "url": "https://careers.outpost24.com/jobs/7206297-full-stack-developer",
+      "beschrijving": "Full Stack Developer met Angular-frontend en Python-backend bij cybersecuritybedrijf Outpost24.",
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["full-stack", "security", "JavaScript"],
+      "tags": ["Angular", "Python", "TypeScript"],
       "match": {
-        "score": "goed",
-        "toelichting": "Cybersecurity context interessant. Leuven is verder maar haalbaar."
+        "score": "matig",
+        "toelichting": "Angular past maar Python-backend is niet Tom's expertise, Leuven is verder van Beringen."
       }
     },
     {
       "id": "twipe-frontend-engineer",
       "titel": "Frontend Engineer",
       "bedrijf": "Twipe",
-      "locatie": "Limburg, België",
-      "regio": "limburg",
-      "url": "",
-      "beschrijving": "Frontend Engineer bij Twipe, een media-technologiebedrijf. Herbevestigd actief op 20-06-2026.",
+      "locatie": "Leuven (hybride), België",
+      "regio": "vlaanderen",
+      "url": "https://careers.twipemobile.com/o/frontend-engineer",
+      "beschrijving": "Frontend Engineer bij medialeverancier Twipe, hybride werken vanuit Leuven (4+ jaar ervaring vereist).",
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["frontend", "JavaScript", "React"],
-      "match": {
-        "score": "sterk",
-        "toelichting": "React-expertise + FE-rol, media-tech domein. Leuven, iets verder maar sterk profiel."
-      }
-    },
-    {
-      "id": "with-eleven-frontend-angular-react",
-      "titel": "Frontend/Angular/React Developer",
-      "bedrijf": "With Eleven",
-      "locatie": "Limburg, België",
-      "regio": "limburg",
-      "url": "",
-      "beschrijving": "Frontend Developer met focus op Angular en React bij With Eleven. Herbevestigd actief op 20-06-2026.",
-      "bron": "andere",
-      "gevondenOp": "2026-06-20T12:00:00.000Z",
-      "status": "nieuw",
-      "tags": ["Angular", "React", "frontend", "TypeScript"],
-      "match": {
-        "score": "sterk",
-        "toelichting": "Angular expert + React ervaring = ideale stack voor deze rol."
-      }
-    },
-    {
-      "id": "kaspar-solutions-senior-full-stack-developer",
-      "titel": "Senior Full Stack Developer/Teamlead",
-      "bedrijf": "Kaspar Solutions",
-      "locatie": "Limburg, België",
-      "regio": "limburg",
-      "url": "",
-      "beschrijving": "Senior Full Stack Developer met teamlead verantwoordelijkheden bij Kaspar Solutions. Herbevestigd actief op 20-06-2026.",
-      "bron": "andere",
-      "gevondenOp": "2026-06-20T12:00:00.000Z",
-      "status": "nieuw",
-      "tags": ["full-stack", "teamlead", "senior", "JavaScript"],
+      "tags": ["React", "React Native", "TypeScript"],
       "match": {
         "score": "goed",
-        "toelichting": "Teamlead-component interessant voor senioriteit, maar vereist ook sterke backend."
+        "toelichting": "Core FE rol met React/TypeScript, hybride, maar Leuven is wat verder van Beringen."
       }
     },
     {
-      "id": "octiva-react-native-developer",
-      "titel": "React Native Developer",
-      "bedrijf": "Octiva",
-      "locatie": "Limburg, België",
-      "regio": "limburg",
-      "url": "",
-      "beschrijving": "React Native Developer bij Octiva. Herbevestigd actief op 20-06-2026.",
+      "id": "with-eleven-frontend-angular-react-developer",
+      "titel": "Front-end / Angular / React Developer",
+      "bedrijf": "With Eleven",
+      "locatie": "Diverse (consultancy), België",
+      "regio": "andere",
+      "url": "https://witheleven.com/careers",
+      "beschrijving": "IT-consultancy With Eleven met afzonderlijke categorieën voor Front-end-, Angular- en React-developers.",
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["React Native", "mobile", "JavaScript", "React"],
+      "tags": ["Angular", "React", "Node.js", "front-end"],
+      "match": {
+        "score": "sterk",
+        "toelichting": "Angular én React = Tom's kernexpertise, core FE-consultancy rol met brede projectmix."
+      }
+    },
+    {
+      "id": "kaspar-solutions-senior-full-stack-developer-teamlead",
+      "titel": "Senior Full Stack Developer / Teamlead",
+      "bedrijf": "Kaspar Solutions",
+      "locatie": "Heist-op-den-Berg (hybride), België",
+      "regio": "antwerpen",
+      "url": "https://kasparsolutions.be/vacature/senior-full-stack-developer-teamlead/",
+      "beschrijving": ".NET-expert met Angular-kennis vereist als Senior Full Stack Developer/Teamlead.",
+      "bron": "andere",
+      "gevondenOp": "2026-06-20T12:00:00.000Z",
+      "status": "nieuw",
+      "tags": [".NET", "Angular", "Docker", "Azure", "Kubernetes"],
       "match": {
         "score": "matig",
-        "toelichting": "Mobile-focus (React Native) is niet primaire expertise. React kent Tom wel."
+        "toelichting": ".NET als primaire vereiste ontbreekt bij Tom, Angular is bijrol in deze fullstack positie."
       }
     },
     {
-      "id": "editx-madison-fullstack-js-developer",
-      "titel": "Fullstack JavaScript Developer",
-      "bedrijf": "Editx/Madison",
-      "locatie": "Olen, Antwerpen, België",
-      "regio": "antwerpen",
-      "url": "",
-      "beschrijving": "Fullstack JavaScript Developer bij Editx/Madison in Olen. Herbevestigd actief op 20-06-2026.",
+      "id": "octiva-mobile-developer-react-native",
+      "titel": "Senior/Medior Mobile Developer (React Native)",
+      "bedrijf": "Octiva",
+      "locatie": "Leuven (hybride), België",
+      "regio": "vlaanderen",
+      "url": "https://octiva.tech/jobs/",
+      "beschrijving": "Mobile developer-rol bij greenhouse-tech bedrijf Octiva.",
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["JavaScript", "full-stack", "Node.js", "frontend"],
+      "tags": ["React Native", "TypeScript"],
       "match": {
-        "score": "goed",
-        "toelichting": "Node.js/JS fullstack, vertrouwde stack. Olen (Antwerpen) iets verder."
+        "score": "matig",
+        "toelichting": "React Native mobiel is niet Tom's primaire focus, Leuven is verder van Beringen."
       }
     },
     {
-      "id": "moon-rc-full-stack-developer",
-      "titel": "Full Stack Developer",
-      "bedrijf": "MOoN R&C",
-      "locatie": "Heist-op-den-Berg, Antwerpen, België",
+      "id": "editx-fullstack-javascript-developer",
+      "titel": "Fullstack Javascript Developer",
+      "bedrijf": "Editx / Madison Recruitment",
+      "locatie": "Olen (deels thuiswerk), België",
       "regio": "antwerpen",
-      "url": "",
-      "beschrijving": "Full Stack Developer bij MOoN R&C in Heist-op-den-Berg. Herbevestigd actief op 20-06-2026.",
-      "bron": "andere",
-      "gevondenOp": "2026-06-20T12:00:00.000Z",
-      "status": "nieuw",
-      "tags": ["full-stack", "JavaScript", "frontend"],
-      "match": {
-        "score": "goed",
-        "toelichting": "Medior/Senior level, JS-based. Heist-op-den-Berg iets verder van Beringen."
-      }
-    },
-    {
-      "id": "pauwels-consulting-full-stack-net-react",
-      "titel": "Full Stack .NET Developer – Microservices & React",
-      "bedrijf": "Pauwels Consulting",
-      "locatie": "Dessel, Antwerpen, België",
-      "regio": "antwerpen",
-      "url": "https://www.vdab.be/vindeenjob/vacatures/73913369/full-stack-net-developer-microservices-react",
-      "beschrijving": "Full Stack .NET Developer met 3+ jaar backend (.NET, microservices) en 3+ jaar frontend (React, Redux, Zustand). Startdatum 01-08-2026, initiële opdracht 5 maanden. Open voor vaste werknemers en freelancers.",
+      "url": "https://www.vdab.be/vindeenjob/vacatures/73914668/fullstack-javascript-developer",
+      "beschrijving": "Fullstack JS-rol bij technologieonderneming in de Kempen via recruiter Editx/Madison. Bedrijfswagen + tankkaart, mobiliteitsbudget mogelijk.",
       "bron": "vdab",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": [".NET", "React", "Redux", "Zustand", "microservices", "full-stack"],
-      "match": {
-        "score": "matig",
-        "toelichting": "React-kant past, maar 3+ jaar .NET backend is harde vereiste die ontbreekt."
-      }
-    },
-    {
-      "id": "team-blue-senior-frontend-react",
-      "titel": "Senior Frontend React Developer",
-      "bedrijf": "team.blue",
-      "locatie": "Gent / Remote, België",
-      "regio": "andere",
-      "url": "",
-      "beschrijving": "Senior Frontend React Developer bij team.blue met mogelijkheid tot remote werken. Herbevestigd actief op 20-06-2026.",
-      "bron": "andere",
-      "gevondenOp": "2026-06-20T12:00:00.000Z",
-      "status": "nieuw",
-      "tags": ["React", "frontend", "TypeScript", "remote"],
-      "match": {
-        "score": "sterk",
-        "toelichting": "React, senior, volledig remote = uitstekende match. Locatie irrelevant."
-      }
-    },
-    {
-      "id": "lga-it-developer-leuven-1",
-      "titel": "Developer (rol 1)",
-      "bedrijf": "LGA IT",
-      "locatie": "Leuven, Vlaams-Brabant, België",
-      "regio": "vlaanderen",
-      "url": "",
-      "beschrijving": "Eerste developer positie bij LGA IT in Leuven. Herbevestigd actief op 20-06-2026.",
-      "bron": "andere",
-      "gevondenOp": "2026-06-20T12:00:00.000Z",
-      "status": "nieuw",
-      "tags": ["development", "frontend", "JavaScript"],
-      "match": {
-        "score": "matig",
-        "toelichting": "Node/React maar zwaar cloud/infra-component. Leuven is verder."
-      }
-    },
-    {
-      "id": "lga-it-developer-leuven-2",
-      "titel": "Developer (rol 2)",
-      "bedrijf": "LGA IT",
-      "locatie": "Leuven, Vlaams-Brabant, België",
-      "regio": "vlaanderen",
-      "url": "",
-      "beschrijving": "Tweede developer positie bij LGA IT in Leuven. Herbevestigd actief op 20-06-2026.",
-      "bron": "andere",
-      "gevondenOp": "2026-06-20T12:00:00.000Z",
-      "status": "nieuw",
-      "tags": ["development", "frontend", "JavaScript"],
-      "match": {
-        "score": "matig",
-        "toelichting": "Generieke fullstack rol, onduidelijke stack. Leuven is verder."
-      }
-    },
-    {
-      "id": "quasydoc-developer-hasselt",
-      "titel": "Developer",
-      "bedrijf": "Quasydoc",
-      "locatie": "Hasselt, Limburg, België",
-      "regio": "limburg",
-      "url": "",
-      "beschrijving": "Developer positie bij Quasydoc in Hasselt. Herbevestigd actief op 20-06-2026.",
-      "bron": "andere",
-      "gevondenOp": "2026-06-20T12:00:00.000Z",
-      "status": "nieuw",
-      "tags": ["development", "frontend", "web development"],
-      "match": {
-        "score": "matig",
-        "toelichting": "PHP-zwaartepunt is niet de kern. Hasselt is dichtbij."
-      }
-    },
-    {
-      "id": "prezly-full-stack-engineer-remote",
-      "titel": "Full-Stack Engineer",
-      "bedrijf": "Prezly",
-      "locatie": "Remote",
-      "regio": "remote",
-      "url": "",
-      "beschrijving": "Full-Stack Engineer bij Prezly, volledig remote. Herbevestigd actief op 20-06-2026.",
-      "bron": "andere",
-      "gevondenOp": "2026-06-20T12:00:00.000Z",
-      "status": "nieuw",
-      "tags": ["full-stack", "remote", "JavaScript", "TypeScript"],
+      "tags": ["React", "Node.js", "JavaScript"],
       "match": {
         "score": "goed",
-        "toelichting": "React-kant sterk, PHP mindere match, maar volledig remote is aantrekkelijk."
+        "toelichting": "React/Node.js vertrouwde stack, deels thuiswerk, maar Olen (Kempen) is wat verder."
+      }
+    },
+    {
+      "id": "moon-rc-full-stack-developer-medior-senior",
+      "titel": "Full Stack Developer (Medior/Senior)",
+      "bedrijf": "MOoN R&C",
+      "locatie": "Heist-op-den-Berg (hybride), België",
+      "regio": "antwerpen",
+      "url": "https://www.vdab.be/vindeenjob/vacatures/71894679/full-stack-developer-medior-senior",
+      "beschrijving": "Full stack rol met Angular-frontend en .NET 6/SQL-backend, minimaal 5 jaar ervaring.",
+      "bron": "vdab",
+      "gevondenOp": "2026-06-20T12:00:00.000Z",
+      "status": "nieuw",
+      "tags": [".NET 6", "Angular", "SQL", "Entity Framework", "Docker", "Git"],
+      "match": {
+        "score": "matig",
+        "toelichting": "Angular-frontend is sterk maar .NET 6/SQL backend domineert en is niet Tom's expertise."
+      }
+    },
+    {
+      "id": "pauwels-consulting-full-stack-net-developer-microservices-react",
+      "titel": "Full Stack .NET Developer – Microservices & React",
+      "bedrijf": "Pauwels Consulting",
+      "locatie": "Dessel, België",
+      "regio": "antwerpen",
+      "url": "https://www.vdab.be/vindeenjob/vacatures/73913369/full-stack-net-developer-microservices-react",
+      "beschrijving": "3+ jaar backend (.NET, microservices) én 3+ jaar frontend (React, Redux, Zustand) vereist. Startdatum 01-08-2026, initiële opdracht 5 maanden. Open voor vaste werknemers en freelancers.",
+      "bron": "vdab",
+      "gevondenOp": "2026-06-20T12:00:00.000Z",
+      "status": "nieuw",
+      "tags": [".NET", "microservices", "React", "Redux", "Zustand"],
+      "match": {
+        "score": "matig",
+        "toelichting": "React-kant past goed maar 3+ jaar .NET backend is harde vereiste die ontbreekt bij Tom."
+      }
+    },
+    {
+      "id": "buzzworks-ai-engineer",
+      "titel": "AI Engineer",
+      "bedrijf": "Buzzworks",
+      "locatie": "Hasselt-regio, België",
+      "regio": "limburg",
+      "url": "https://www.buzzworks.be/nl-BE/careers",
+      "beschrijving": "AI-rol bij Buzzworks, niet kern-frontend.",
+      "bron": "andere",
+      "gevondenOp": "2026-06-20T12:00:00.000Z",
+      "status": "nieuw",
+      "tags": ["AI"],
+      "match": {
+        "score": "laag",
+        "toelichting": "ML/AI engineering vereist een heel ander profiel dan Tom's frontend expertise."
+      }
+    },
+    {
+      "id": "team-blue-senior-front-end-developer-react",
+      "titel": "Senior Front-End Developer (React)",
+      "bedrijf": "team.blue",
+      "locatie": "Gent / Remote, België",
+      "regio": "remote",
+      "url": "https://be.indeed.com/viewjob?jk=a154484578dfad02",
+      "beschrijving": "Senior front-end rol met React bij team.blue.",
+      "bron": "indeed",
+      "gevondenOp": "2026-06-20T12:00:00.000Z",
+      "status": "nieuw",
+      "tags": ["React", "TypeScript"],
+      "match": {
+        "score": "sterk",
+        "toelichting": "Senior core FE rol met React, remote-first optie compenseert Gent-locatie volledig."
+      }
+    },
+    {
+      "id": "lga-it-fullstack-developer",
+      "titel": "Fullstack Developer",
+      "bedrijf": "LGA IT",
+      "locatie": "Leuven, België",
+      "regio": "vlaanderen",
+      "url": "https://www.vdab.be/vindeenjob/vacatures/73607269",
+      "beschrijving": "Fullstack rol met React/Node, maar zwaartepunt op cloud/infra.",
+      "bron": "vdab",
+      "gevondenOp": "2026-06-20T12:00:00.000Z",
+      "status": "nieuw",
+      "tags": ["Node.js", "React", "AWS", "Kubernetes", "Terraform"],
+      "match": {
+        "score": "matig",
+        "toelichting": "React/Node is vertrouwd maar zwaar cloud/infra-zwaartepunt (AWS, Kubernetes) buiten Tom's expertise."
+      }
+    },
+    {
+      "id": "lga-it-fullstack-software-developer",
+      "titel": "Fullstack Software Developer",
+      "bedrijf": "LGA IT",
+      "locatie": "Leuven, België",
+      "regio": "vlaanderen",
+      "url": "https://www.vdab.be/vindeenjob/vacatures/73597458",
+      "beschrijving": "Fullstack softwarerol, generieke/AI-omschrijving.",
+      "bron": "vdab",
+      "gevondenOp": "2026-06-20T12:00:00.000Z",
+      "status": "nieuw",
+      "tags": ["JavaScript", "TypeScript"],
+      "match": {
+        "score": "matig",
+        "toelichting": "Generieke vacatureomschrijving met weinig specifieke FE-details, Leuven is verder."
+      }
+    },
+    {
+      "id": "quasydoc-developer",
+      "titel": "Developer",
+      "bedrijf": "Quasydoc",
+      "locatie": "Hasselt, België",
+      "regio": "limburg",
+      "url": "https://www.vdab.be/vindeenjob/vacatures/73957169",
+      "beschrijving": "Developer-rol met PHP-zwaartepunt, front-end is bijrol.",
+      "bron": "vdab",
+      "gevondenOp": "2026-06-20T12:00:00.000Z",
+      "status": "nieuw",
+      "tags": ["PHP", "HTML", "CSS", "JavaScript"],
+      "match": {
+        "score": "matig",
+        "toelichting": "PHP is het zwaartepunt, Hasselt is ideaal qua locatie maar FE is slechts een bijrol."
+      }
+    },
+    {
+      "id": "prezly-full-stack-engineer-react-php",
+      "titel": "Full Stack Engineer (React + PHP)",
+      "bedrijf": "Prezly",
+      "locatie": "Volledig remote (Europa), België",
+      "regio": "remote",
+      "url": "https://careers.prezly.com",
+      "beschrijving": "Full stack rol met React- en PHP-stack, volledig remote.",
+      "bron": "andere",
+      "gevondenOp": "2026-06-20T12:00:00.000Z",
+      "status": "nieuw",
+      "tags": ["React", "PHP", "TypeScript"],
+      "match": {
+        "score": "matig",
+        "toelichting": "React-kant past goed, volledig remote is aantrekkelijk, maar PHP-backend is niet Tom's expertise."
       }
     }
   ],
   "metadata": {
-    "bronBestand": "vacatures_frontend_limburg_20_06_2026.pdf",
+    "bronBestand": "vacatures_actief_overzicht_20_06_2026.json",
     "aantalGevonden": 21,
-    "verwerktOp": "2026-06-20T19:30:00.000Z"
+    "verwerktOp": "2026-06-20T12:00:00.000Z"
   }
 }
