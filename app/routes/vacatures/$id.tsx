@@ -1,5 +1,6 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { getVacature } from "~/lib/vacatures";
+import { setStatus } from "~/lib/statusStore";
 import { StatusBadge } from "~/components/vacatures/StatusBadge";
 import { BronBadge } from "~/components/vacatures/BronBadge";
 import { formatDatum } from "~/lib/date";
@@ -9,6 +10,10 @@ export const Route = createFileRoute("/vacatures/$id")({
   loader: async ({ params }) => {
     const vacature = await getVacature(params.id);
     if (!vacature) throw notFound();
+    if (vacature.status === "nieuw") {
+      setStatus(params.id, "bekeken");
+      return { vacature: { ...vacature, status: "bekeken" as const } };
+    }
     return { vacature };
   },
   component: VacatureDetailPage,

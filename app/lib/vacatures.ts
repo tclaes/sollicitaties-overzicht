@@ -1,6 +1,13 @@
 import { z } from "zod";
 import { DagOverzichtSchema, SollicitatieSchema } from "./schemas";
 import type { Vacature, DagOverzicht, Sollicitatie } from "./schemas";
+import { getAlleStatussen } from "./statusStore";
+
+function applyStatussen(vacatures: Vacature[]): Vacature[] {
+  const overrides = getAlleStatussen();
+  if (Object.keys(overrides).length === 0) return vacatures;
+  return vacatures.map((v) => (overrides[v.id] ? { ...v, status: overrides[v.id] } : v));
+}
 
 export async function getAlleDatums(): Promise<string[]> {
   const res = await fetch("/data/index.json");
@@ -11,7 +18,8 @@ export async function getAlleDatums(): Promise<string[]> {
 export async function getVacaturesVoorDatum(datum: string): Promise<DagOverzicht | null> {
   const res = await fetch(`/data/vacatures/${datum}.json`);
   if (!res.ok) return null;
-  return DagOverzichtSchema.parse(await res.json());
+  const overzicht = DagOverzichtSchema.parse(await res.json());
+  return { ...overzicht, vacatures: applyStatussen(overzicht.vacatures) };
 }
 
 export async function getVacaturesVandaag(): Promise<DagOverzicht | null> {
@@ -41,3 +49,4 @@ export async function getVacature(id: string): Promise<Vacature | null> {
   }
   return null;
 }
+
