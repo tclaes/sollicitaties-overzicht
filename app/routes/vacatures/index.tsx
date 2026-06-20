@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
-import { getAlleVacatures, getVacaturesVoorDatum } from "~/server/vacatures";
+import { getAlleVacatures, getVacaturesVoorDatum } from "~/lib/vacatures";
 import { VacatureTabel } from "~/components/vacatures/VacatureTabel";
 import { StatsTeller } from "~/components/vacatures/StatsTeller";
 import { FilterPills } from "~/components/vacatures/FilterPills";
@@ -17,12 +17,11 @@ const searchSchema = z.object({
 export const Route = createFileRoute("/vacatures/")({
   validateSearch: searchSchema,
   loader: async ({ location }) => {
-    const search = searchSchema.parse(
-      Object.fromEntries(new URLSearchParams(location.search))
-    );
-    if (search.datum) {
-      const overzicht = await getVacaturesVoorDatum({ data: { datum: search.datum } });
-      return { vacatures: overzicht?.vacatures ?? [], datum: search.datum };
+    const params = Object.fromEntries(new URLSearchParams(location.search));
+    const datum = searchSchema.parse(params).datum;
+    if (datum) {
+      const overzicht = await getVacaturesVoorDatum(datum);
+      return { vacatures: overzicht?.vacatures ?? [], datum };
     }
     const vacatures = await getAlleVacatures();
     return { vacatures, datum: null };

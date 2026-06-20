@@ -1,5 +1,5 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import { getVacature } from "~/server/vacatures";
+import { getVacature } from "~/lib/vacatures";
 import { StatusBadge } from "~/components/vacatures/StatusBadge";
 import { BronBadge } from "~/components/vacatures/BronBadge";
 import { formatDatum } from "~/lib/date";
@@ -7,7 +7,7 @@ import styles from "./$id.module.css";
 
 export const Route = createFileRoute("/vacatures/$id")({
   loader: async ({ params }) => {
-    const vacature = await getVacature({ data: { id: params.id } });
+    const vacature = await getVacature(params.id);
     if (!vacature) throw notFound();
     return { vacature };
   },
@@ -65,16 +65,18 @@ function VacatureDetailPage() {
           <p>{vacature.beschrijving}</p>
         </section>
 
-        <footer className={styles.footer}>
-          <a
-            href={vacature.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.cta}
-          >
-            Bekijk vacature →
-          </a>
-        </footer>
+        {vacature.url && (
+          <footer className={styles.footer}>
+            <a
+              href={vacature.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.cta}
+            >
+              Bekijk vacature →
+            </a>
+          </footer>
+        )}
       </article>
     </main>
   );

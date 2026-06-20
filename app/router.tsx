@@ -9,14 +9,8 @@ export function createRouter() {
   });
 }
 
-// Registreer het router type globaal zodat TanStack Router types klopt
 declare module "@tanstack/react-router" {
   interface Register {
     router: ReturnType<typeof createRouter>;
   }
-}
-
-// Vereist door TanStack Start virtual module #tanstack-router-entry
-export function getRouter() {
-  return createRouter();
 }

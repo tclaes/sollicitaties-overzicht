@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
-import { getVacaturesVandaag, getSollicitaties } from "~/server/vacatures";
+import { getVacaturesVandaag, getSollicitaties } from "~/lib/vacatures";
 import { VacatureTabel } from "~/components/vacatures/VacatureTabel";
 import { StatsTeller } from "~/components/vacatures/StatsTeller";
 import { FilterPills } from "~/components/vacatures/FilterPills";
