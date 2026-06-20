@@ -12,26 +12,22 @@ const STATUS_LABELS: Record<Sollicitatie["status"], string> = {
 
 interface Props {
   sollicitaties: Sollicitatie[];
+  toonHeader?: boolean;
 }
 
-export function SollicitatiesPanel({ sollicitaties }: Props) {
+export function SollicitatiesPanel({ sollicitaties, toonHeader = false }: Props) {
   const gesorteerd = [...sollicitaties].sort(
     (a, b) => b.gesolliceerdOp.localeCompare(a.gesolliceerdOp)
   );
 
-  const actief = gesorteerd.filter(
-    (s) => s.status === "gesolliciteerd" || s.status === "in_gesprek"
-  );
-  const overig = gesorteerd.filter(
-    (s) => s.status !== "gesolliciteerd" && s.status !== "in_gesprek"
-  );
-
   return (
     <section className={styles.panel}>
-      <div className={styles.header}>
-        <span className={styles.titel}>Sollicitaties</span>
-        <span className={styles.teller}>{sollicitaties.length} totaal</span>
-      </div>
+      {toonHeader && (
+        <div className={styles.header}>
+          <span className={styles.titel}>Sollicitaties</span>
+          <span className={styles.teller}>{sollicitaties.length} totaal</span>
+        </div>
+      )}
       <div className={styles.lijstWrapper}>
         <table className={styles.tabel}>
           <tbody>

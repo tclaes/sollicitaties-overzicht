@@ -15,7 +15,7 @@ export function Nav({ datums }: Props) {
   return (
     <nav className={styles.nav} aria-label="Datum navigatie">
       <div className={styles.sectie}>
-        <span className={styles.sectieLabel}>Vandaag</span>
+        <span className={styles.sectieLabel}>Overzicht</span>
         <a
           href="/"
           className={`${styles.datumLink} ${huidigPad === "/" ? styles.actief : ""}`}
@@ -23,6 +23,13 @@ export function Nav({ datums }: Props) {
         >
           {formatDatumSidebar(vandaag)}
           {heeftVandaag && <span className={styles.dot} />}
+        </a>
+        <a
+          href="/sollicitaties"
+          className={`${styles.datumLink} ${huidigPad === "/sollicitaties" ? styles.actief : ""}`}
+          aria-current={huidigPad === "/sollicitaties" ? "page" : undefined}
+        >
+          Sollicitaties
         </a>
       </div>
 

@@ -1,10 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
-import { getVacaturesVandaag, getSollicitaties } from "~/lib/vacatures";
+import { getVacaturesVandaag } from "~/lib/vacatures";
 import { VacatureTabel } from "~/components/vacatures/VacatureTabel";
 import { StatsTeller } from "~/components/vacatures/StatsTeller";
 import { FilterPills } from "~/components/vacatures/FilterPills";
-import { SollicitatiesPanel } from "~/components/sollicitaties/SollicitatiesPanel";
 import { formatDatum } from "~/lib/date";
 import { StatusSchema, BronSchema } from "~/lib/schemas";
 import styles from "./index.module.css";
@@ -17,17 +16,14 @@ const searchSchema = z.object({
 export const Route = createFileRoute("/")({
   validateSearch: searchSchema,
   loader: async () => {
-    const [vandaag, sollicitaties] = await Promise.all([
-      getVacaturesVandaag(),
-      getSollicitaties(),
-    ]);
-    return { vandaag, sollicitaties };
+    const vandaag = await getVacaturesVandaag();
+    return { vandaag };
   },
   component: DashboardPage,
 });
 
 function DashboardPage() {
-  const { vandaag, sollicitaties } = Route.useLoaderData();
+  const { vandaag } = Route.useLoaderData();
   const search = Route.useSearch();
   const vandaagDatum = new Date().toISOString().slice(0, 10);
 
@@ -45,8 +41,6 @@ function DashboardPage() {
         <h1 className={styles.titel}>Vandaag</h1>
         <p className={styles.datum}>{formatDatum(vandaagDatum)}</p>
       </header>
-
-      <SollicitatiesPanel sollicitaties={sollicitaties} />
 
       {vandaag ? (
         <>
