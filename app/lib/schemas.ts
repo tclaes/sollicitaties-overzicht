@@ -31,7 +31,7 @@ export const VacatureSchema = z.object({
   bedrijf: z.string(),
   locatie: z.string(),
   regio: RegioSchema,
-  url: z.string().url(),
+  url: z.union([z.string().url(), z.literal(""), z.string().startsWith("/")]),
   beschrijving: z.string(),
   bron: BronSchema,
   gevondenOp: z.string().datetime(),
