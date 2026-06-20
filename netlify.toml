@@ -7,7 +7,7 @@
   NODE_VERSION = "22"
 
 [functions]
-  included_files = ["dist/server/**"]
+  included_files = ["dist/server/**", "data/**"]
 
 [[redirects]]
   from = "/_server/*"
