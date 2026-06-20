@@ -9,10 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SollicitatiesRouteImport } from './routes/sollicitaties'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as VacaturesIndexRouteImport } from './routes/vacatures/index'
 import { Route as VacaturesIdRouteImport } from './routes/vacatures/$id'
 
+const SollicitatiesRoute = SollicitatiesRouteImport.update({
+  id: '/sollicitaties',
+  path: '/sollicitaties',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,36 +37,47 @@ const VacaturesIdRoute = VacaturesIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/sollicitaties': typeof SollicitatiesRoute
   '/vacatures/$id': typeof VacaturesIdRoute
   '/vacatures/': typeof VacaturesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/sollicitaties': typeof SollicitatiesRoute
   '/vacatures/$id': typeof VacaturesIdRoute
   '/vacatures': typeof VacaturesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/sollicitaties': typeof SollicitatiesRoute
   '/vacatures/$id': typeof VacaturesIdRoute
   '/vacatures/': typeof VacaturesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/vacatures/$id' | '/vacatures/'
+  fullPaths: '/' | '/sollicitaties' | '/vacatures/$id' | '/vacatures/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/vacatures/$id' | '/vacatures'
-  id: '__root__' | '/' | '/vacatures/$id' | '/vacatures/'
+  to: '/' | '/sollicitaties' | '/vacatures/$id' | '/vacatures'
+  id: '__root__' | '/' | '/sollicitaties' | '/vacatures/$id' | '/vacatures/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SollicitatiesRoute: typeof SollicitatiesRoute
   VacaturesIdRoute: typeof VacaturesIdRoute
   VacaturesIndexRoute: typeof VacaturesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sollicitaties': {
+      id: '/sollicitaties'
+      path: '/sollicitaties'
+      fullPath: '/sollicitaties'
+      preLoaderRoute: typeof SollicitatiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SollicitatiesRoute: SollicitatiesRoute,
   VacaturesIdRoute: VacaturesIdRoute,
   VacaturesIndexRoute: VacaturesIndexRoute,
 }
