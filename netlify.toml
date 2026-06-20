@@ -6,6 +6,9 @@
 [build.environment]
   NODE_VERSION = "22"
 
+[functions]
+  included_files = ["dist/server/**"]
+
 [[redirects]]
   from = "/_server/*"
   to = "/.netlify/functions/ssr/:splat"
@@ -15,8 +18,7 @@
   from = "/*"
   to = "/.netlify/functions/ssr"
   status = 200
-  force = false
-  conditions = {Role = []}
+  force = true
 
 [[headers]]
   for = "/*"
