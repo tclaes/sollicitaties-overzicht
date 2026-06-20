@@ -1,16 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
 import { getAlleVacatures, getVacaturesVoorDatum } from "~/server/vacatures";
-import { VacatureList } from "~/components/vacatures/VacatureList";
-import { VacatureFilter } from "~/components/vacatures/VacatureFilter";
+import { VacatureTabel } from "~/components/vacatures/VacatureTabel";
+import { StatsTeller } from "~/components/vacatures/StatsTeller";
+import { FilterPills } from "~/components/vacatures/FilterPills";
 import { formatDatum } from "~/lib/date";
-import { StatusSchema, RegioSchema, BronSchema } from "~/lib/schemas";
+import { StatusSchema, BronSchema } from "~/lib/schemas";
 import styles from "./index.module.css";
 
 const searchSchema = z.object({
   datum: z.string().optional(),
   status: StatusSchema.optional(),
-  regio: RegioSchema.optional(),
   bron: BronSchema.optional(),
 });
 
@@ -36,22 +36,22 @@ function VacaturesPage() {
 
   const gefilterd = vacatures.filter((v) => {
     if (search.status && v.status !== search.status) return false;
-    if (search.regio && v.regio !== search.regio) return false;
     if (search.bron && v.bron !== search.bron) return false;
     return true;
   });
 
   return (
-    <main className={styles.page}>
+    <div className={styles.page}>
       <header className={styles.header}>
         <h1 className={styles.titel}>
           {datum ? formatDatum(datum) : "Alle vacatures"}
         </h1>
-        <p className={styles.teller}>{gefilterd.length} vacatures</p>
+        <span className={styles.teller}>{gefilterd.length} vacatures</span>
       </header>
 
-      <VacatureFilter huidigSearch={search} />
-      <VacatureList vacatures={gefilterd} datum={datum ?? undefined} />
-    </main>
+      <StatsTeller vacatures={vacatures} />
+      <FilterPills huidigSearch={search} />
+      <VacatureTabel vacatures={gefilterd} />
+    </div>
   );
 }

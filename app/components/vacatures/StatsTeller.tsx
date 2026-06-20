@@ -1,11 +1,5 @@
-import type { Vacature, Status } from "~/lib/schemas";
+import type { Vacature } from "~/lib/schemas";
 import styles from "./StatsTeller.module.css";
-
-const STATS: { status: Status; label: string }[] = [
-  { status: "nieuw", label: "Nieuw" },
-  { status: "bekeken", label: "Bekeken" },
-  { status: "gesolliciteerd", label: "Gesolliciteerd" },
-];
 
 export function StatsTeller({ vacatures }: { vacatures: Vacature[] }) {
   const telling = vacatures.reduce<Record<string, number>>(
@@ -14,17 +8,26 @@ export function StatsTeller({ vacatures }: { vacatures: Vacature[] }) {
   );
 
   return (
-    <dl className={styles.lijst}>
+    <div className={styles.strip}>
       <div className={styles.item}>
-        <dt className={styles.label}>Totaal</dt>
-        <dd className={styles.waarde}>{vacatures.length}</dd>
+        <span className={styles.getal}>{vacatures.length}</span>
+        <span className={styles.label}>Totaal</span>
       </div>
-      {STATS.map(({ status, label }) => (
-        <div key={status} className={`${styles.item} ${styles[status]}`}>
-          <dt className={styles.label}>{label}</dt>
-          <dd className={styles.waarde}>{telling[status] ?? 0}</dd>
-        </div>
-      ))}
-    </dl>
+      <div className={`${styles.item} ${styles.nieuw}`}>
+        <span className={styles.dot} />
+        <span className={styles.getal}>{telling["nieuw"] ?? 0}</span>
+        <span className={styles.label}>Nieuw</span>
+      </div>
+      <div className={`${styles.item} ${styles.bekeken}`}>
+        <span className={styles.dot} />
+        <span className={styles.getal}>{telling["bekeken"] ?? 0}</span>
+        <span className={styles.label}>Bekeken</span>
+      </div>
+      <div className={`${styles.item} ${styles.gesolliciteerd}`}>
+        <span className={styles.dot} />
+        <span className={styles.getal}>{telling["gesolliciteerd"] ?? 0}</span>
+        <span className={styles.label}>Gesolliciteerd</span>
+      </div>
+    </div>
   );
 }

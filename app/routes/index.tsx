@@ -1,27 +1,42 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { getVacaturesVandaag, getAlleDatums } from "~/server/vacatures";
-import { VacatureList } from "~/components/vacatures/VacatureList";
+import { z } from "zod";
+import { getVacaturesVandaag } from "~/server/vacatures";
+import { VacatureTabel } from "~/components/vacatures/VacatureTabel";
 import { StatsTeller } from "~/components/vacatures/StatsTeller";
+import { FilterPills } from "~/components/vacatures/FilterPills";
 import { formatDatum } from "~/lib/date";
+import { StatusSchema, BronSchema } from "~/lib/schemas";
 import styles from "./index.module.css";
 
+const searchSchema = z.object({
+  status: StatusSchema.optional(),
+  bron: BronSchema.optional(),
+});
+
 export const Route = createFileRoute("/")({
+  validateSearch: searchSchema,
   loader: async () => {
-    const [vandaag, datums] = await Promise.all([
-      getVacaturesVandaag(),
-      getAlleDatums(),
-    ]);
-    return { vandaag, datums };
+    const vandaag = await getVacaturesVandaag();
+    return { vandaag };
   },
   component: DashboardPage,
 });
 
 function DashboardPage() {
-  const { vandaag, datums } = Route.useLoaderData();
+  const { vandaag } = Route.useLoaderData();
+  const search = Route.useSearch();
   const vandaagDatum = new Date().toISOString().slice(0, 10);
 
+  const gefilterd = vandaag
+    ? vandaag.vacatures.filter((v) => {
+        if (search.status && v.status !== search.status) return false;
+        if (search.bron && v.bron !== search.bron) return false;
+        return true;
+      })
+    : [];
+
   return (
-    <main className={styles.page}>
+    <div className={styles.page}>
       <header className={styles.header}>
         <h1 className={styles.titel}>Vandaag</h1>
         <p className={styles.datum}>{formatDatum(vandaagDatum)}</p>
@@ -30,31 +45,15 @@ function DashboardPage() {
       {vandaag ? (
         <>
           <StatsTeller vacatures={vandaag.vacatures} />
-          <VacatureList vacatures={vandaag.vacatures} datum={vandaag.datum} />
+          <FilterPills huidigSearch={search} basePad="/" />
+          <VacatureTabel vacatures={gefilterd} />
         </>
       ) : (
         <div className={styles.leeg}>
           <p>Nog geen vacatures voor vandaag.</p>
-          <p className={styles.leegSub}>
-            De dagelijkse taak loopt elke dag om 12:00.
-          </p>
+          <p className={styles.leegSub}>De dagelijkse taak loopt elke werkdag om 18:30.</p>
         </div>
       )}
-
-      {datums.length > 0 && (
-        <aside className={styles.historie}>
-          <h2 className={styles.historieTitle}>Eerder</h2>
-          <ul className={styles.datumLijst}>
-            {datums.slice(0, 7).map((datum) => (
-              <li key={datum}>
-                <a href={`/vacatures?datum=${datum}`} className={styles.datumLink}>
-                  {formatDatum(datum)}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </aside>
-      )}
-    </main>
+    </div>
   );
 }

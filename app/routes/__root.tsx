@@ -5,9 +5,14 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { AppShell } from "~/components/layout/AppShell";
+import { getAlleDatums } from "~/server/vacatures";
 import "~/styles/global.css";
 
 export const Route = createRootRoute({
+  loader: async () => {
+    const datums = await getAlleDatums();
+    return { datums };
+  },
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -20,13 +25,14 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
+  const { datums } = Route.useLoaderData();
   return (
     <html lang="nl">
       <head>
         <HeadContent />
       </head>
       <body>
-        <AppShell>
+        <AppShell datums={datums}>
           <Outlet />
         </AppShell>
         <Scripts />
