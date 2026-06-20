@@ -25,6 +25,8 @@ export const RegioSchema = z.enum([
   "andere",
 ]);
 
+export const MatchScoreSchema = z.enum(["sterk", "goed", "matig", "laag"]);
+
 export const VacatureSchema = z.object({
   id: z.string(),
   titel: z.string(),
@@ -37,6 +39,10 @@ export const VacatureSchema = z.object({
   gevondenOp: z.string().datetime(),
   status: StatusSchema.default("nieuw"),
   tags: z.array(z.string()).default([]),
+  match: z.object({
+    score: MatchScoreSchema,
+    toelichting: z.string(),
+  }).optional(),
 });
 
 export const DagOverzichtSchema = z.object({
@@ -52,5 +58,6 @@ export const DagOverzichtSchema = z.object({
 export type Bron = z.infer<typeof BronSchema>;
 export type Status = z.infer<typeof StatusSchema>;
 export type Regio = z.infer<typeof RegioSchema>;
+export type MatchScore = z.infer<typeof MatchScoreSchema>;
 export type Vacature = z.infer<typeof VacatureSchema>;
 export type DagOverzicht = z.infer<typeof DagOverzichtSchema>;

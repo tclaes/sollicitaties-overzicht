@@ -28,6 +28,7 @@
 .colBron    { width: 66px; }
 .colTags    { width: 160px; }
 .colLocatie { width: 100px; }
+.colMatch   { width: 66px; }
 .colActie   { width: 24px; }
 
 .rij {
@@ -96,6 +97,40 @@
 }
 
 .rij:hover .actie { color: var(--color-text-muted); }
+
+.matchBadge {
+  display: inline-block;
+  font-size: var(--text-xs);
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  font-weight: var(--font-medium);
+  white-space: nowrap;
+}
+
+.match_sterk {
+  background: #dcfce7;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+
+.match_goed {
+  background: var(--color-accent-subtle);
+  color: var(--color-accent-text);
+  border-color: #bfdbfe;
+}
+
+.match_matig {
+  background: #fef9c3;
+  color: #a16207;
+  border-color: #fef08a;
+}
+
+.match_laag {
+  background: var(--color-bg);
+  color: var(--color-text-subtle);
+  border-color: var(--color-border);
+}
 
 .leeg {
   padding: var(--space-12) var(--space-8);

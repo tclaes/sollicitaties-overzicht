@@ -12,7 +12,11 @@
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["frontend", "software engineering"]
+      "tags": ["frontend", "software engineering"],
+      "match": {
+        "score": "laag",
+        "toelichting": "Junior-niveau past niet bij 10+ jaar ervaring. Risico op onderwaardering."
+      }
     },
     {
       "id": "recommand-senior-software-engineer",
@@ -25,7 +29,11 @@
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["frontend", "software engineering"]
+      "tags": ["frontend", "software engineering"],
+      "match": {
+        "score": "goed",
+        "toelichting": "Senior-niveau past. Stack onbekend maar brede SE-rol geeft ruimte. Limburg."
+      }
     },
     {
       "id": "phpro-allround-web-developer",
@@ -38,7 +46,11 @@
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["PHP", "web development", "full-stack"]
+      "tags": ["PHP", "web development", "full-stack"],
+      "match": {
+        "score": "goed",
+        "toelichting": "PHP is niet de kern, maar 'allround' laat ruimte voor frontend. Hasselt."
+      }
     },
     {
       "id": "elision-frontend-developer",
@@ -51,7 +63,11 @@
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["frontend", "JavaScript"]
+      "tags": ["frontend", "JavaScript"],
+      "match": {
+        "score": "sterk",
+        "toelichting": "Core frontend rol in Limburg. Past exact bij profiel."
+      }
     },
     {
       "id": "inline-blue-angular-developer-architect",
@@ -64,7 +80,11 @@
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["Angular", "frontend", "architect", "TypeScript"]
+      "tags": ["Angular", "frontend", "architect", "TypeScript"],
+      "match": {
+        "score": "sterk",
+        "toelichting": "Angular is expertisedomein. Architect-rol past bij 10+ jaar senioriteit. Hasselt."
+      }
     },
     {
       "id": "buzzworks-ervaren-web-ontwikkelaar",
@@ -77,7 +97,11 @@
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["web development", "JavaScript", "frontend"]
+      "tags": ["web development", "JavaScript", "frontend"],
+      "match": {
+        "score": "goed",
+        "toelichting": "'Ervaren' past qua niveau. JS/web-gericht, Limburg."
+      }
     },
     {
       "id": "buzzworks-ai-engineer",
@@ -90,7 +114,11 @@
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["AI", "machine learning", "engineering"]
+      "tags": ["AI", "machine learning", "engineering"],
+      "match": {
+        "score": "laag",
+        "toelichting": "ML/AI engineering vereist een heel ander profiel. Niet relevant."
+      }
     },
     {
       "id": "fenego-full-stack-developer",
@@ -103,7 +131,11 @@
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["full-stack", "JavaScript", "frontend"]
+      "tags": ["full-stack", "JavaScript", "frontend"],
+      "match": {
+        "score": "goed",
+        "toelichting": "Full-stack met frontend-insteek, Hasselt. JS-based stack."
+      }
     },
     {
       "id": "outpost24-full-stack-developer",
@@ -116,7 +148,11 @@
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["full-stack", "security", "JavaScript"]
+      "tags": ["full-stack", "security", "JavaScript"],
+      "match": {
+        "score": "goed",
+        "toelichting": "Cybersecurity context interessant. Leuven is verder maar haalbaar."
+      }
     },
     {
       "id": "twipe-frontend-engineer",
@@ -129,7 +165,11 @@
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["frontend", "JavaScript", "React"]
+      "tags": ["frontend", "JavaScript", "React"],
+      "match": {
+        "score": "sterk",
+        "toelichting": "React-expertise + FE-rol, media-tech domein. Leuven, iets verder maar sterk profiel."
+      }
     },
     {
       "id": "with-eleven-frontend-angular-react",
@@ -142,7 +182,11 @@
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["Angular", "React", "frontend", "TypeScript"]
+      "tags": ["Angular", "React", "frontend", "TypeScript"],
+      "match": {
+        "score": "sterk",
+        "toelichting": "Angular expert + React ervaring = ideale stack voor deze rol."
+      }
     },
     {
       "id": "kaspar-solutions-senior-full-stack-developer",
@@ -155,7 +199,11 @@
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["full-stack", "teamlead", "senior", "JavaScript"]
+      "tags": ["full-stack", "teamlead", "senior", "JavaScript"],
+      "match": {
+        "score": "goed",
+        "toelichting": "Teamlead-component interessant voor senioriteit, maar vereist ook sterke backend."
+      }
     },
     {
       "id": "octiva-react-native-developer",
@@ -168,7 +216,11 @@
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["React Native", "mobile", "JavaScript", "React"]
+      "tags": ["React Native", "mobile", "JavaScript", "React"],
+      "match": {
+        "score": "matig",
+        "toelichting": "Mobile-focus (React Native) is niet primaire expertise. React kent Tom wel."
+      }
     },
     {
       "id": "editx-madison-fullstack-js-developer",
@@ -181,7 +233,11 @@
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["JavaScript", "full-stack", "Node.js", "frontend"]
+      "tags": ["JavaScript", "full-stack", "Node.js", "frontend"],
+      "match": {
+        "score": "goed",
+        "toelichting": "Node.js/JS fullstack, vertrouwde stack. Olen (Antwerpen) iets verder."
+      }
     },
     {
       "id": "moon-rc-full-stack-developer",
@@ -194,7 +250,11 @@
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["full-stack", "JavaScript", "frontend"]
+      "tags": ["full-stack", "JavaScript", "frontend"],
+      "match": {
+        "score": "goed",
+        "toelichting": "Medior/Senior level, JS-based. Heist-op-den-Berg iets verder van Beringen."
+      }
     },
     {
       "id": "pauwels-consulting-full-stack-net-react",
@@ -207,7 +267,11 @@
       "bron": "vdab",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": [".NET", "React", "Redux", "Zustand", "microservices", "full-stack"]
+      "tags": [".NET", "React", "Redux", "Zustand", "microservices", "full-stack"],
+      "match": {
+        "score": "matig",
+        "toelichting": "React-kant past, maar 3+ jaar .NET backend is harde vereiste die ontbreekt."
+      }
     },
     {
       "id": "team-blue-senior-frontend-react",
@@ -220,7 +284,11 @@
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["React", "frontend", "TypeScript", "remote"]
+      "tags": ["React", "frontend", "TypeScript", "remote"],
+      "match": {
+        "score": "sterk",
+        "toelichting": "React, senior, volledig remote = uitstekende match. Locatie irrelevant."
+      }
     },
     {
       "id": "lga-it-developer-leuven-1",
@@ -233,7 +301,11 @@
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["development", "frontend", "JavaScript"]
+      "tags": ["development", "frontend", "JavaScript"],
+      "match": {
+        "score": "matig",
+        "toelichting": "Node/React maar zwaar cloud/infra-component. Leuven is verder."
+      }
     },
     {
       "id": "lga-it-developer-leuven-2",
@@ -246,7 +318,11 @@
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["development", "frontend", "JavaScript"]
+      "tags": ["development", "frontend", "JavaScript"],
+      "match": {
+        "score": "matig",
+        "toelichting": "Generieke fullstack rol, onduidelijke stack. Leuven is verder."
+      }
     },
     {
       "id": "quasydoc-developer-hasselt",
@@ -259,7 +335,11 @@
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["development", "frontend", "web development"]
+      "tags": ["development", "frontend", "web development"],
+      "match": {
+        "score": "matig",
+        "toelichting": "PHP-zwaartepunt is niet de kern. Hasselt is dichtbij."
+      }
     },
     {
       "id": "prezly-full-stack-engineer-remote",
@@ -272,7 +352,11 @@
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
-      "tags": ["full-stack", "remote", "JavaScript", "TypeScript"]
+      "tags": ["full-stack", "remote", "JavaScript", "TypeScript"],
+      "match": {
+        "score": "goed",
+        "toelichting": "React-kant sterk, PHP mindere match, maar volledig remote is aantrekkelijk."
+      }
     }
   ],
   "metadata": {

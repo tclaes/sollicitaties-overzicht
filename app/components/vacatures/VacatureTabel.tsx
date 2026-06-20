@@ -22,6 +22,7 @@ export function VacatureTabel({ vacatures }: Props) {
             <th>Functie</th>
             <th className={styles.colTags}>Tags</th>
             <th className={styles.colLocatie}>Locatie</th>
+            <th className={styles.colMatch}>Match</th>
             <th className={styles.colActie} aria-hidden="true"></th>
           </tr>
         </thead>
@@ -50,6 +51,13 @@ export function VacatureTabel({ vacatures }: Props) {
                 </ul>
               </td>
               <td className={styles.locatie}>{v.locatie.split(",")[0]}</td>
+              <td>
+                {v.match ? (
+                  <span className={`${styles.matchBadge} ${styles[`match_${v.match.score}`]}`} title={v.match.toelichting}>
+                    {v.match.score}
+                  </span>
+                ) : null}
+              </td>
               <td className={styles.actie} aria-hidden="true">›</td>
             </tr>
           ))}
