@@ -8,10 +8,13 @@ import { formatDatum } from "~/lib/date";
 import { StatusSchema, BronSchema } from "~/lib/schemas";
 import styles from "./index.module.css";
 
+const SorteerSchema = z.enum(["match", "datum", "titel"]);
+
 const searchSchema = z.object({
   datum: z.string().optional(),
   status: StatusSchema.optional(),
   bron: BronSchema.optional(),
+  sorteer: SorteerSchema.default("match"),
 });
 
 export const Route = createFileRoute("/vacatures/")({
@@ -33,11 +36,26 @@ function VacaturesPage() {
   const { vacatures, datum } = Route.useLoaderData();
   const search = Route.useSearch();
 
-  const gefilterd = vacatures.filter((v) => {
-    if (search.status && v.status !== search.status) return false;
-    if (search.bron && v.bron !== search.bron) return false;
-    return true;
-  });
+  const matchVolgorde: Record<string, number> = { sterk: 0, goed: 1, matig: 2, laag: 3 };
+
+  const gefilterd = vacatures
+    .filter((v) => {
+      if (search.status && v.status !== search.status) return false;
+      if (search.bron && v.bron !== search.bron) return false;
+      return true;
+    })
+    .sort((a, b) => {
+      if (search.sorteer === "datum") {
+        return new Date(b.gevondenOp).getTime() - new Date(a.gevondenOp).getTime();
+      }
+      if (search.sorteer === "titel") {
+        return a.titel.localeCompare(b.titel, "nl");
+      }
+      // match (default)
+      const ma = matchVolgorde[a.match?.score ?? "laag"] ?? 3;
+      const mb = matchVolgorde[b.match?.score ?? "laag"] ?? 3;
+      return ma - mb;
+    });
 
   return (
     <div className={styles.page}>

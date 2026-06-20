@@ -2,7 +2,7 @@ import { BronSchema, StatusSchema } from "~/lib/schemas";
 import styles from "./FilterPills.module.css";
 
 interface Props {
-  huidigSearch: { status?: string; bron?: string; datum?: string };
+  huidigSearch: { status?: string; bron?: string; datum?: string; sorteer?: string };
   basePad?: string;
 }
 
@@ -45,6 +45,23 @@ export function FilterPills({ huidigSearch, basePad = "/vacatures" }: Props) {
             {statusLabels[status]}
           </a>
         ))}
+
+      <span className={styles.scheiding} />
+
+      <span className={styles.groepLabel}>Sortering</span>
+      {(["match", "datum", "titel"] as const).map((optie) => {
+        const actief = (huidigSearch.sorteer ?? "match") === optie;
+        const labels = { match: "Match", datum: "Datum", titel: "Titel" };
+        return (
+          <a
+            key={optie}
+            href={buildUrl({ sorteer: optie })}
+            className={`${styles.pill} ${actief ? styles.actief : ""}`}
+          >
+            {labels[optie]}
+          </a>
+        );
+      })}
 
       <span className={styles.scheiding} />
 
