@@ -1,93 +1,102 @@
 :root {
-  /* Kleur — neutraal palet */
-  --color-bg: #f7f7f5;
-  --color-surface: #ffffff;
-  --color-surface-raised: #ffffff;
-  --color-border: #e4e4e0;
-  --color-border-strong: #c8c8c2;
+  /* ── Neutraal palet ──────────────────────────────────────────── */
+  --color-bg:              #f5f5f3;
+  --color-surface:         #ffffff;
+  --color-border:          #e8e8e4;
+  --color-border-strong:   #c9c9c3;
 
-  /* Kleur — tekst */
-  --color-text: #1a1a18;
-  --color-text-muted: #6b6b65;
-  --color-text-subtle: #9b9b93;
-  --color-text-inverse: #ffffff;
+  /* ── Tekst ───────────────────────────────────────────────────── */
+  --color-text:            #111110;
+  --color-text-muted:      #6a6a63;
+  --color-text-subtle:     #9c9c94;
+  --color-text-inverse:    #ffffff;
 
-  /* Kleur — accent (blauw) */
-  --color-accent: #2563eb;
-  --color-accent-hover: #1d4ed8;
-  --color-accent-subtle: #eff6ff;
-  --color-accent-text: #1e40af;
+  /* ── Accent ──────────────────────────────────────────────────── */
+  --color-accent:          #2563eb;
+  --color-accent-hover:    #1d4ed8;
+  --color-accent-subtle:   #eff6ff;
+  --color-accent-text:     #1e40af;
 
-  /* Kleur — status badges */
-  --color-status-nieuw: #16a34a;
-  --color-status-nieuw-bg: #f0fdf4;
-  --color-status-bekeken: #ca8a04;
-  --color-status-bekeken-bg: #fefce8;
-  --color-status-gesolliciteerd: #2563eb;
-  --color-status-gesolliciteerd-bg: #eff6ff;
-  --color-status-afgewezen: #dc2626;
-  --color-status-afgewezen-bg: #fef2f2;
-  --color-status-niet-interessant: #6b7280;
-  --color-status-niet-interessant-bg: #f9fafb;
+  /* ── Status ──────────────────────────────────────────────────── */
+  --color-status-nieuw-dot:             #3b82f6;
+  --color-status-nieuw-bg:              #eff6ff;
+  --color-status-nieuw-text:            #1d4ed8;
 
-  /* Kleur — bron badges */
-  --color-bron-indeed: #2557a7;
-  --color-bron-vdab: #e8380d;
-  --color-bron-jobat: #ff6600;
-  --color-bron-linkedin: #0a66c2;
-  --color-bron-andere: #6b7280;
+  --color-status-bekeken-dot:           #9ca3af;
+  --color-status-bekeken-bg:            #f9fafb;
+  --color-status-bekeken-text:          #4b5563;
 
-  /* Spacing — 4px basis */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.25rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
-  --space-10: 2.5rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
+  --color-status-gesolliciteerd-dot:    #10b981;
+  --color-status-gesolliciteerd-bg:     #ecfdf5;
+  --color-status-gesolliciteerd-text:   #065f46;
 
-  /* Typografie */
-  --font-sans: system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono: ui-monospace, "Cascadia Code", monospace;
+  --color-status-afgewezen-dot:         #ef4444;
+  --color-status-afgewezen-bg:          #fef2f2;
+  --color-status-afgewezen-text:        #991b1b;
 
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
-  --text-3xl: 1.875rem;
+  --color-status-ni-dot:                #d1d5db;
+  --color-status-ni-bg:                 #f9fafb;
+  --color-status-ni-text:               #6b7280;
 
-  --leading-tight: 1.25;
-  --leading-snug: 1.375;
-  --leading-normal: 1.5;
-  --leading-relaxed: 1.625;
+  /* ── Bron ────────────────────────────────────────────────────── */
+  --color-bron-indeed-bg:   #eef2fb;
+  --color-bron-indeed-text: #1a4a9e;
 
-  --font-normal: 400;
-  --font-medium: 500;
+  --color-bron-vdab-bg:     #fff0ee;
+  --color-bron-vdab-text:   #b82d0b;
+
+  --color-bron-jobat-bg:    #fff4eb;
+  --color-bron-jobat-text:  #c24f00;
+
+  --color-bron-linkedin-bg: #edf5fc;
+  --color-bron-linkedin-text: #0a4f96;
+
+  --color-bron-andere-bg:   #f4f4f2;
+  --color-bron-andere-text: #5a5a55;
+
+  /* ── Spacing (4px basis) ─────────────────────────────────────── */
+  --space-1:  0.25rem;   /*  4px */
+  --space-2:  0.5rem;    /*  8px */
+  --space-3:  0.75rem;   /* 12px */
+  --space-4:  1rem;      /* 16px */
+  --space-5:  1.25rem;   /* 20px */
+  --space-6:  1.5rem;    /* 24px */
+  --space-8:  2rem;      /* 32px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-12: 3rem;      /* 48px */
+  --space-16: 4rem;      /* 64px */
+
+  /* ── Typografie ──────────────────────────────────────────────── */
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', monospace;
+
+  --text-xs:   0.6875rem;  /* 11px */
+  --text-sm:   0.8125rem;  /* 13px */
+  --text-base: 0.9375rem;  /* 15px */
+  --text-lg:   1.0625rem;  /* 17px */
+  --text-xl:   1.25rem;    /* 20px */
+  --text-2xl:  1.5rem;     /* 24px */
+
+  --leading-tight:   1.2;
+  --leading-snug:    1.35;
+  --leading-normal:  1.5;
+
+  --font-normal:   400;
+  --font-medium:   500;
   --font-semibold: 600;
-  --font-bold: 700;
 
-  /* Grenzen */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
+  /* ── Borders & radius ────────────────────────────────────────── */
+  --radius-sm:   3px;
+  --radius-md:   6px;
+  --radius-lg:   10px;
   --radius-full: 9999px;
 
-  /* Schaduwen */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  /* ── Layout ──────────────────────────────────────────────────── */
+  --header-height: 44px;
+  --sidebar-width: 200px;
+  --content-max:  1200px;
 
-  /* Layout */
-  --content-max: 1200px;
-  --sidebar-width: 240px;
-  --header-height: 60px;
-
-  /* Transitie */
+  /* ── Transitie ───────────────────────────────────────────────── */
   --transition-fast: 100ms ease;
   --transition-base: 150ms ease;
 }

@@ -1,6 +1,7 @@
 .strip {
   display: flex;
   border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
 }
 
 .item {
@@ -8,30 +9,29 @@
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  padding: var(--space-3) var(--space-6);
+  padding: var(--space-3) var(--space-5);
   border-right: 1px solid var(--color-border);
 }
 
-.item:last-child {
-  border-right: none;
-}
+.item:last-child { border-right: none; }
 
 .dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   flex-shrink: 0;
 }
 
-.nieuw .dot         { background: var(--color-accent); }
-.bekeken .dot       { background: var(--color-text-subtle); }
-.gesolliciteerd .dot { background: var(--color-status-nieuw); }
+.nieuw .dot         { background: var(--color-status-nieuw-dot); }
+.bekeken .dot       { background: var(--color-status-bekeken-dot); }
+.gesolliciteerd .dot { background: var(--color-status-gesolliciteerd-dot); }
 
 .getal {
-  font-size: var(--text-2xl);
+  font-size: var(--text-xl);
   font-weight: var(--font-semibold);
   color: var(--color-text);
   line-height: 1;
+  letter-spacing: -0.02em;
 }
 
 .label {
