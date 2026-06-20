@@ -1,0 +1,21 @@
+.shell {
+  display: grid;
+  grid-template-rows: var(--header-height) 1fr;
+  min-height: 100vh;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+}
+
+.content {
+  overflow: auto;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .body {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,36 @@
+name: Valideer en deploy vacaturedata
+
+on:
+  push:
+    paths:
+      - "data/vacatures/**"
+
+jobs:
+  valideer-en-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node.js installeren
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Dependencies installeren
+        run: npm ci
+
+      - name: JSON schema valideren
+        run: node --import tsx/esm scripts/validate-data.ts
+
+      - name: Netlify deploy triggeren
+        run: |
+          curl -s -X POST "${{ secrets.NETLIFY_DEPLOY_HOOK_URL }}" \
+            -H "Content-Type: application/json" \
+            --fail-with-body
+        env:
+          NETLIFY_DEPLOY_HOOK_URL: ${{ secrets.NETLIFY_DEPLOY_HOOK_URL }}

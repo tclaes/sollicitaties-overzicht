@@ -1,0 +1,38 @@
+.lijst {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+}
+
+.item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+}
+
+.label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-1);
+}
+
+.waarde {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.nieuw .waarde { color: var(--color-status-nieuw); }
+.bekeken .waarde { color: var(--color-status-bekeken); }
+.gesolliciteerd .waarde { color: var(--color-status-gesolliciteerd); }
+
+@media (max-width: 640px) {
+  .lijst {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
