@@ -45,10 +45,15 @@ export async function createSollicitatie(data: {
   gesolliceerdOp: string;
 }): Promise<void> {
   const id = `${data.bedrijf.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-${data.gesolliceerdOp}`;
-  await setDoc(doc(db, "sollicitaties", id), {
-    status: "gesolliciteerd",
-    ...data,
-  });
+  await Promise.all([
+    setDoc(doc(db, "sollicitaties", id), {
+      status: "gesolliciteerd",
+      ...data,
+    }),
+    updateDoc(doc(db, "vacatures", data.vacatureId), {
+      status: "gesolliciteerd",
+    }),
+  ]);
 }
 
 export async function updateSollicitatie(id: string, status: SollicitatieStatus): Promise<void> {
