@@ -90,11 +90,18 @@
   color: var(--color-text-muted);
 }
 
-.sollicitatiedatum {
+.sollicitatielabel {
   display: block;
   font-size: var(--text-xs);
   color: var(--color-text-muted);
-  margin-top: 2px;
+  margin-top: 1px;
+}
+
+.sollicitatiedatum {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--color-text-subtle);
+  margin-top: 1px;
 }
 
 .solliciteerBtn {

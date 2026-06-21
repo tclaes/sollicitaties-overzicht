@@ -1,22 +1,33 @@
 import { useState } from "react";
-import type { Vacature } from "~/lib/schemas";
+import type { Vacature, Sollicitatie } from "~/lib/schemas";
 import { StatusBadge } from "./StatusBadge";
 import { BronBadge } from "./BronBadge";
-import { setStatus, setSollicitatieDatum } from "~/lib/statusStore";
 import styles from "./VacatureTabel.module.css";
+
+const SOLLICITATIE_STATUS_LABELS: Record<Sollicitatie["status"], string> = {
+  gesolliciteerd: "wacht",
+  in_gesprek: "in gesprek",
+  afgewezen: "afgewezen",
+  niet_wervend: "niet wervend",
+  geen_reactie: "geen reactie",
+  aangenomen: "aangenomen",
+};
 
 interface Props {
   vacatures: Vacature[];
+  sollicitatiePerId?: Map<string, Sollicitatie>;
+  onSolliciteer?: (data: { vacatureId: string; bedrijf: string; rol: string; gesolliceerdOp: string }) => Promise<void>;
 }
 
 function vandaag() {
   return new Date().toISOString().slice(0, 10);
 }
 
-export function VacatureTabel({ vacatures }: Props) {
-  const [lokaleUpdates, setLokaleUpdates] = useState<Record<string, { datum?: string }>>({});
+export function VacatureTabel({ vacatures, sollicitatiePerId = new Map(), onSolliciteer }: Props) {
+  const [lokaalGesolliciteerd, setLokaalGesolliciteerd] = useState<Record<string, string>>({});
   const [openActie, setOpenActie] = useState<string | null>(null);
   const [datumInput, setDatumInput] = useState("");
+  const [bezig, setBezig] = useState(false);
 
   if (vacatures.length === 0) {
     return <div className={styles.leeg}>Geen vacatures gevonden.</div>;
@@ -28,13 +39,23 @@ export function VacatureTabel({ vacatures }: Props) {
     setDatumInput(vandaag());
   }
 
-  function bevestig(e: React.FormEvent, id: string) {
+  async function bevestig(e: React.FormEvent, v: Vacature) {
     e.preventDefault();
     e.stopPropagation();
-    setStatus(id, "gesolliciteerd");
-    if (datumInput) setSollicitatieDatum(id, datumInput);
-    setLokaleUpdates((prev) => ({ ...prev, [id]: { datum: datumInput || undefined } }));
-    setOpenActie(null);
+    if (!onSolliciteer) return;
+    setBezig(true);
+    try {
+      await onSolliciteer({
+        vacatureId: v.id,
+        bedrijf: v.bedrijf,
+        rol: v.titel,
+        gesolliceerdOp: datumInput || vandaag(),
+      });
+      setLokaalGesolliciteerd((prev) => ({ ...prev, [v.id]: datumInput || vandaag() }));
+    } finally {
+      setBezig(false);
+      setOpenActie(null);
+    }
   }
 
   function annuleer(e: React.MouseEvent) {
@@ -58,9 +79,15 @@ export function VacatureTabel({ vacatures }: Props) {
         </thead>
         <tbody>
           {vacatures.map((v) => {
-            const lokaal = lokaleUpdates[v.id];
-            const isGesolliciteerd = v.status === "gesolliciteerd" || !!lokaal;
-            const sollicitatieDatum = lokaal?.datum;
+            const sollicitatie = sollicitatiePerId.get(v.id);
+            const lokaalDatum = lokaalGesolliciteerd[v.id];
+            const isGesolliciteerd = !!sollicitatie || !!lokaalDatum;
+            const sollicitatieLabel = sollicitatie
+              ? SOLLICITATIE_STATUS_LABELS[sollicitatie.status]
+              : lokaalDatum
+              ? "wacht"
+              : null;
+            const datum = sollicitatie?.gesolliceerdOp ?? lokaalDatum;
 
             return (
               <tr
@@ -70,8 +97,11 @@ export function VacatureTabel({ vacatures }: Props) {
               >
                 <td>
                   <StatusBadge status={isGesolliciteerd ? "gesolliciteerd" : v.status} />
-                  {isGesolliciteerd && sollicitatieDatum && (
-                    <span className={styles.sollicitatiedatum}>{sollicitatieDatum}</span>
+                  {isGesolliciteerd && sollicitatieLabel && (
+                    <span className={styles.sollicitatielabel}>{sollicitatieLabel}</span>
+                  )}
+                  {isGesolliciteerd && datum && (
+                    <span className={styles.sollicitatiedatum}>{datum}</span>
                   )}
                 </td>
                 <td>
@@ -100,7 +130,7 @@ export function VacatureTabel({ vacatures }: Props) {
                   ) : null}
                 </td>
                 <td className={styles.colSolliciteer} onClick={(e) => e.stopPropagation()}>
-                  {!isGesolliciteerd && openActie !== v.id && (
+                  {!isGesolliciteerd && onSolliciteer && openActie !== v.id && (
                     <button
                       className={styles.solliciteerBtn}
                       onClick={(e) => openSolliciteer(e, v.id)}
@@ -111,7 +141,7 @@ export function VacatureTabel({ vacatures }: Props) {
                   {openActie === v.id && (
                     <form
                       className={styles.solliciteerForm}
-                      onSubmit={(e) => bevestig(e, v.id)}
+                      onSubmit={(e) => bevestig(e, v)}
                     >
                       <input
                         type="date"
@@ -120,7 +150,7 @@ export function VacatureTabel({ vacatures }: Props) {
                         onChange={(e) => setDatumInput(e.target.value)}
                         autoFocus
                       />
-                      <button type="submit" className={styles.bevestigBtn} title="Bevestigen">✓</button>
+                      <button type="submit" className={styles.bevestigBtn} title="Bevestigen" disabled={bezig}>✓</button>
                       <button type="button" className={styles.annuleerBtn} title="Annuleren" onClick={annuleer}>✕</button>
                     </form>
                   )}

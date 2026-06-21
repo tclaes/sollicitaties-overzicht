@@ -72,6 +72,22 @@
   text-overflow: ellipsis;
 }
 
+.statusCol {
+  width: 130px;
+}
+
+.statusSelect {
+  font-size: var(--text-xs);
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  font-weight: var(--font-medium);
+  white-space: nowrap;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
 .badge {
   display: inline-block;
   font-size: var(--text-xs);
@@ -82,37 +98,43 @@
   white-space: nowrap;
 }
 
-.status_gesolliciteerd {
+.badge.status_gesolliciteerd,
+.statusSelect.status_gesolliciteerd {
   background: var(--color-accent-subtle);
   color: var(--color-accent-text);
   border-color: #bfdbfe;
 }
 
-.status_in_gesprek {
+.badge.status_in_gesprek,
+.statusSelect.status_in_gesprek {
   background: #f3e8ff;
   color: #7c3aed;
   border-color: #ddd6fe;
 }
 
-.status_afgewezen {
+.badge.status_afgewezen,
+.statusSelect.status_afgewezen {
   background: #fef2f2;
   color: #b91c1c;
   border-color: #fecaca;
 }
 
-.status_niet_wervend {
+.badge.status_niet_wervend,
+.statusSelect.status_niet_wervend {
   background: var(--color-bg);
   color: var(--color-text-subtle);
   border-color: var(--color-border);
 }
 
-.status_geen_reactie {
+.badge.status_geen_reactie,
+.statusSelect.status_geen_reactie {
   background: #fef9c3;
   color: #a16207;
   border-color: #fef08a;
 }
 
-.status_aangenomen {
+.badge.status_aangenomen,
+.statusSelect.status_aangenomen {
   background: #dcfce7;
   color: #15803d;
   border-color: #bbf7d0;

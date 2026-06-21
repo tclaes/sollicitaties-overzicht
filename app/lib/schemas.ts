@@ -38,6 +38,7 @@ export const SollicitatieStatusSchema = z.enum([
 
 export const SollicitatieSchema = z.object({
   id: z.string(),
+  vacatureId: z.string().optional(),
   bedrijf: z.string(),
   rol: z.string(),
   gesolliceerdOp: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
