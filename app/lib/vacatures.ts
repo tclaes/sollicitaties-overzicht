@@ -13,9 +13,14 @@ function applyStatussen(vacatures: Vacature[]): Vacature[] {
 
 export async function getVacaturesOverzicht(): Promise<DagOverzicht | null> {
   try {
-    const snap = await getDoc(doc(db, "overzicht", "huidig"));
-    if (!snap.exists()) return null;
-    const overzicht = DagOverzichtSchema.parse(snap.data());
+    const [overzichtSnap, vacaturesSnap] = await Promise.all([
+      getDoc(doc(db, "overzicht", "huidig")),
+      getDocs(collection(db, "vacatures")),
+    ]);
+    if (!overzichtSnap.exists()) return null;
+    const { datum, metadata } = overzichtSnap.data();
+    const vacatures = vacaturesSnap.docs.map((d) => d.data());
+    const overzicht = DagOverzichtSchema.parse({ datum, vacatures, metadata });
     return { ...overzicht, vacatures: applyStatussen(overzicht.vacatures) };
   } catch {
     return null;
