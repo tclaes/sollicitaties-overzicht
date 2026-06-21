@@ -1,3 +1,4 @@
+import { logout } from "~/lib/auth";
 import styles from "./Header.module.css";
 
 export function Header() {
@@ -24,6 +25,7 @@ export function Header() {
           Alle vacatures
         </a>
       </nav>
+      <button className={styles.logout} onClick={() => logout()}>Uitloggen</button>
     </header>
   );
 }

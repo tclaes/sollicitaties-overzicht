@@ -1,4 +1,6 @@
 import { z } from "zod";
+import { collection, getDocs, doc, setDoc, updateDoc } from "firebase/firestore";
+import { db } from "./firebase";
 import { DagOverzichtSchema, SollicitatieSchema } from "./schemas";
 import type { Vacature, DagOverzicht, Sollicitatie, SollicitatieStatus } from "./schemas";
 import { getAlleStatussen } from "./statusStore";
@@ -22,14 +24,10 @@ export async function getVacaturesOverzicht(): Promise<DagOverzicht | null> {
 
 export async function getSollicitaties(): Promise<Sollicitatie[]> {
   try {
-    const res = await fetch("/api/sollicitaties");
-    if (res.ok) return z.array(SollicitatieSchema).parse(await res.json());
-  } catch {}
-  // Fallback voor lokale dev zonder netlify dev
-  try {
-    const res = await fetch("/data/sollicitaties.json");
-    if (!res.ok) return [];
-    return z.array(SollicitatieSchema).parse(await res.json());
+    const snapshot = await getDocs(collection(db, "sollicitaties"));
+    return z.array(SollicitatieSchema).parse(
+      snapshot.docs.map((d) => ({ id: d.id, ...d.data() }))
+    );
   } catch {
     return [];
   }
@@ -42,19 +40,14 @@ export async function createSollicitatie(data: {
   gesolliceerdOp: string;
 }): Promise<void> {
   const id = `${data.bedrijf.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-${data.gesolliceerdOp}`;
-  await fetch("/api/sollicitaties", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ id, status: "gesolliciteerd", ...data }),
+  await setDoc(doc(db, "sollicitaties", id), {
+    status: "gesolliciteerd",
+    ...data,
   });
 }
 
 export async function updateSollicitatie(id: string, status: SollicitatieStatus): Promise<void> {
-  await fetch("/api/sollicitaties", {
-    method: "PATCH",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ id, status }),
-  });
+  await updateDoc(doc(db, "sollicitaties", id), { status });
 }
 
 export async function getAlleVacatures(): Promise<Vacature[]> {
