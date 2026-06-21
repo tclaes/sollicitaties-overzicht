@@ -7,3 +7,4 @@ node_modules
 app.config.timestamp_*.js
 .vinxi
 dist/
+public/data/vacatures/data.json

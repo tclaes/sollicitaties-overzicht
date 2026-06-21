@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { collection, getDocs, doc, setDoc, updateDoc } from "firebase/firestore";
+import { collection, getDocs, doc, setDoc, updateDoc, getDoc } from "firebase/firestore";
 import { db } from "./firebase";
 import { DagOverzichtSchema, SollicitatieSchema } from "./schemas";
 import type { Vacature, DagOverzicht, Sollicitatie, SollicitatieStatus } from "./schemas";
@@ -13,9 +13,9 @@ function applyStatussen(vacatures: Vacature[]): Vacature[] {
 
 export async function getVacaturesOverzicht(): Promise<DagOverzicht | null> {
   try {
-    const res = await fetch("/data/vacatures/data.json");
-    if (!res.ok) return null;
-    const overzicht = DagOverzichtSchema.parse(await res.json());
+    const snap = await getDoc(doc(db, "overzicht", "huidig"));
+    if (!snap.exists()) return null;
+    const overzicht = DagOverzichtSchema.parse(snap.data());
     return { ...overzicht, vacatures: applyStatussen(overzicht.vacatures) };
   } catch {
     return null;
