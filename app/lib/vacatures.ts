@@ -16,10 +16,14 @@ export async function getAlleDatums(): Promise<string[]> {
 }
 
 export async function getVacaturesVoorDatum(datum: string): Promise<DagOverzicht | null> {
-  const res = await fetch(`/data/vacatures/${datum}.json`);
-  if (!res.ok) return null;
-  const overzicht = DagOverzichtSchema.parse(await res.json());
-  return { ...overzicht, vacatures: applyStatussen(overzicht.vacatures) };
+  try {
+    const res = await fetch(`/data/vacatures/${datum}.json`);
+    if (!res.ok) return null;
+    const overzicht = DagOverzichtSchema.parse(await res.json());
+    return { ...overzicht, vacatures: applyStatussen(overzicht.vacatures) };
+  } catch {
+    return null;
+  }
 }
 
 export async function getVacaturesVandaag(): Promise<DagOverzicht | null> {
