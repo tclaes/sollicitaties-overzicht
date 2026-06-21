@@ -9,9 +9,12 @@ import { StatusSchema, BronSchema } from "~/lib/schemas";
 import type { Sollicitatie } from "~/lib/schemas";
 import styles from "./index.module.css";
 
+const SorteerSchema = z.enum(["match", "datum", "titel"]);
+
 const searchSchema = z.object({
   status: StatusSchema.optional(),
   bron: BronSchema.optional(),
+  sorteer: SorteerSchema.default("match"),
 });
 
 export const Route = createFileRoute("/")({
@@ -34,6 +37,8 @@ function DashboardPage() {
     sollicitaties.flatMap((s) => s.vacatureId ? [[s.vacatureId, s]] : [])
   );
 
+  const matchVolgorde: Record<string, number> = { sterk: 0, goed: 1, matig: 2, laag: 3 };
+
   const gefilterd = overzicht
     ? overzicht.vacatures.filter((v) => {
         if (search.status && v.status !== search.status) return false;
@@ -41,6 +46,16 @@ function DashboardPage() {
         return true;
       })
     : [];
+
+  const gesorteerd = [...gefilterd].sort((a, b) => {
+    if (search.sorteer === "datum") {
+      return new Date(b.gevondenOp).getTime() - new Date(a.gevondenOp).getTime();
+    }
+    if (search.sorteer === "titel") {
+      return a.titel.localeCompare(b.titel, "nl");
+    }
+    return (matchVolgorde[a.match?.score ?? "laag"] ?? 3) - (matchVolgorde[b.match?.score ?? "laag"] ?? 3);
+  });
 
   return (
     <div className={styles.page}>
@@ -54,7 +69,7 @@ function DashboardPage() {
           <StatsTeller vacatures={overzicht.vacatures} />
           <FilterPills huidigSearch={search} basePad="/" />
           <VacatureTabel
-            vacatures={gefilterd}
+            vacatures={gesorteerd}
             sollicitatiePerId={sollicitatiePerId}
             onSolliciteer={createSollicitatie}
           />
