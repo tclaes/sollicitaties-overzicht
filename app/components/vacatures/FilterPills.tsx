@@ -2,7 +2,7 @@ import { BronSchema, StatusSchema } from "~/lib/schemas";
 import styles from "./FilterPills.module.css";
 
 interface Props {
-  huidigSearch: { status?: string; bron?: string; datum?: string; sorteer?: string };
+  huidigSearch: { status?: string; bron?: string; sorteer?: string };
   basePad?: string;
 }
 

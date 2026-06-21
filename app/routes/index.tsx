@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
-import { getVacaturesVandaag } from "~/lib/vacatures";
+import { getVacaturesOverzicht } from "~/lib/vacatures";
 import { VacatureTabel } from "~/components/vacatures/VacatureTabel";
 import { StatsTeller } from "~/components/vacatures/StatsTeller";
 import { FilterPills } from "~/components/vacatures/FilterPills";
@@ -16,19 +16,18 @@ const searchSchema = z.object({
 export const Route = createFileRoute("/")({
   validateSearch: searchSchema,
   loader: async () => {
-    const vandaag = await getVacaturesVandaag();
-    return { vandaag };
+    const overzicht = await getVacaturesOverzicht();
+    return { overzicht };
   },
   component: DashboardPage,
 });
 
 function DashboardPage() {
-  const { vandaag } = Route.useLoaderData();
+  const { overzicht } = Route.useLoaderData();
   const search = Route.useSearch();
-  const vandaagDatum = new Date().toISOString().slice(0, 10);
 
-  const gefilterd = vandaag
-    ? vandaag.vacatures.filter((v) => {
+  const gefilterd = overzicht
+    ? overzicht.vacatures.filter((v) => {
         if (search.status && v.status !== search.status) return false;
         if (search.bron && v.bron !== search.bron) return false;
         return true;
@@ -38,19 +37,19 @@ function DashboardPage() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <h1 className={styles.titel}>Vandaag</h1>
-        <p className={styles.datum}>{formatDatum(vandaagDatum)}</p>
+        <h1 className={styles.titel}>Vacatures</h1>
+        {overzicht && <p className={styles.datum}>Bijgewerkt op {formatDatum(overzicht.datum)}</p>}
       </header>
 
-      {vandaag ? (
+      {overzicht ? (
         <>
-          <StatsTeller vacatures={vandaag.vacatures} />
+          <StatsTeller vacatures={overzicht.vacatures} />
           <FilterPills huidigSearch={search} basePad="/" />
           <VacatureTabel vacatures={gefilterd} />
         </>
       ) : (
         <div className={styles.leeg}>
-          <p>Nog geen vacatures voor vandaag.</p>
+          <p>Nog geen vacatures gevonden.</p>
           <p className={styles.leegSub}>De dagelijkse taak loopt elke werkdag om 18:30.</p>
         </div>
       )}

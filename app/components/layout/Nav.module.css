@@ -46,11 +46,3 @@
   color: var(--color-text);
   font-weight: var(--font-medium);
 }
-
-.dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--color-accent);
-  flex-shrink: 0;
-}

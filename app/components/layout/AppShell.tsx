@@ -5,15 +5,14 @@ import styles from "./AppShell.module.css";
 
 interface Props {
   children: ReactNode;
-  datums: string[];
 }
 
-export function AppShell({ children, datums }: Props) {
+export function AppShell({ children }: Props) {
   return (
     <div className={styles.shell}>
       <Header />
       <div className={styles.body}>
-        <Nav datums={datums} />
+        <Nav />
         <div className={styles.content}>{children}</div>
       </div>
     </div>

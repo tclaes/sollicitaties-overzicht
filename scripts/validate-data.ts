@@ -1,15 +1,15 @@
 /**
  * validate-data.ts
  *
- * Valideert alle JSON bestanden in data/vacatures/ tegen het Zod schema.
- * Draait in GitHub Actions na elke push naar data/.
+ * Valideert alle JSON bestanden in public/data/vacatures/ tegen het Zod schema.
+ * Draait in GitHub Actions na elke push naar public/data/.
  */
 
 import { readdirSync, readFileSync } from "fs";
 import { join } from "path";
 import { DagOverzichtSchema } from "../app/lib/schemas.js";
 
-const DATA_DIR = join(process.cwd(), "data", "vacatures");
+const DATA_DIR = join(process.cwd(), "public", "data", "vacatures");
 const bestanden = readdirSync(DATA_DIR).filter((f) => f.endsWith(".json"));
 
 let fouten = 0;

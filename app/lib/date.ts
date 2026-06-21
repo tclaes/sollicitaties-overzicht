@@ -1,11 +1,3 @@
-export function formatDatumSidebar(iso: string): string {
-  return new Date(iso).toLocaleDateString("nl-BE", {
-    weekday: "short",
-    day: "numeric",
-    month: "long",
-  });
-}
-
 export function vandaagIso(): string {
   return new Date().toISOString().slice(0, 10);
 }

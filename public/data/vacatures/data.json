@@ -1,5 +1,5 @@
 {
-  "datum": "2026-06-20",
+  "datum": "2026-06-21",
   "vacatures": [
     {
       "id": "recommand-junior-software-engineer",
@@ -42,7 +42,7 @@
       "locatie": "Hasselt / Kontich / Aalst, België",
       "regio": "limburg",
       "url": "https://www.phpro.be/nl/jobs/web-developer",
-      "beschrijving": "Allround webontwikkelaar bij PHPro, met Hasselt als één van de vestigingen.",
+      "beschrijving": "Allround webontwikkelaar bij PHPro, met Hasselt als één van de vestigingen. Niet verifieerbaar op 21-06-2026 (Cloudflare bot-check blokkeerde de paginalaad) — behouden als actief op basis van de bevestiging van 20-06-2026.",
       "bron": "andere",
       "gevondenOp": "2026-06-20T12:00:00.000Z",
       "status": "nieuw",
@@ -104,6 +104,23 @@
       }
     },
     {
+      "id": "buzzworks-ai-engineer",
+      "titel": "AI Engineer",
+      "bedrijf": "Buzzworks",
+      "locatie": "Hasselt-regio, België",
+      "regio": "limburg",
+      "url": "https://www.buzzworks.be/nl-BE/careers",
+      "beschrijving": "AI-rol bij Buzzworks, niet kern-frontend.",
+      "bron": "andere",
+      "gevondenOp": "2026-06-20T12:00:00.000Z",
+      "status": "nieuw",
+      "tags": ["AI"],
+      "match": {
+        "score": "laag",
+        "toelichting": "ML/AI engineering vereist een heel ander profiel dan Tom's frontend expertise."
+      }
+    },
+    {
       "id": "fenego-full-stack-developer",
       "titel": "Full-stack Developer",
       "bedrijf": "Fenego",
@@ -155,7 +172,7 @@
       }
     },
     {
-      "id": "with-eleven-frontend-angular-react-developer",
+      "id": "with-eleven-frontend-angular-react",
       "titel": "Front-end / Angular / React Developer",
       "bedrijf": "With Eleven",
       "locatie": "Diverse (consultancy), België",
@@ -172,7 +189,7 @@
       }
     },
     {
-      "id": "kaspar-solutions-senior-full-stack-developer-teamlead",
+      "id": "kaspar-solutions-senior-full-stack-developer",
       "titel": "Senior Full Stack Developer / Teamlead",
       "bedrijf": "Kaspar Solutions",
       "locatie": "Heist-op-den-Berg (hybride), België",
@@ -189,7 +206,7 @@
       }
     },
     {
-      "id": "octiva-mobile-developer-react-native",
+      "id": "octiva-react-native-developer",
       "titel": "Senior/Medior Mobile Developer (React Native)",
       "bedrijf": "Octiva",
       "locatie": "Leuven (hybride), België",
@@ -206,7 +223,7 @@
       }
     },
     {
-      "id": "editx-fullstack-javascript-developer",
+      "id": "editx-madison-fullstack-js-developer",
       "titel": "Fullstack Javascript Developer",
       "bedrijf": "Editx / Madison Recruitment",
       "locatie": "Olen (deels thuiswerk), België",
@@ -223,7 +240,7 @@
       }
     },
     {
-      "id": "moon-rc-full-stack-developer-medior-senior",
+      "id": "moon-rc-full-stack-developer",
       "titel": "Full Stack Developer (Medior/Senior)",
       "bedrijf": "MOoN R&C",
       "locatie": "Heist-op-den-Berg (hybride), België",
@@ -240,7 +257,7 @@
       }
     },
     {
-      "id": "pauwels-consulting-full-stack-net-developer-microservices-react",
+      "id": "pauwels-consulting-full-stack-net-react",
       "titel": "Full Stack .NET Developer – Microservices & React",
       "bedrijf": "Pauwels Consulting",
       "locatie": "Dessel, België",
@@ -257,24 +274,7 @@
       }
     },
     {
-      "id": "buzzworks-ai-engineer",
-      "titel": "AI Engineer",
-      "bedrijf": "Buzzworks",
-      "locatie": "Hasselt-regio, België",
-      "regio": "limburg",
-      "url": "https://www.buzzworks.be/nl-BE/careers",
-      "beschrijving": "AI-rol bij Buzzworks, niet kern-frontend.",
-      "bron": "andere",
-      "gevondenOp": "2026-06-20T12:00:00.000Z",
-      "status": "nieuw",
-      "tags": ["AI"],
-      "match": {
-        "score": "laag",
-        "toelichting": "ML/AI engineering vereist een heel ander profiel dan Tom's frontend expertise."
-      }
-    },
-    {
-      "id": "team-blue-senior-front-end-developer-react",
+      "id": "team-blue-senior-frontend-react",
       "titel": "Senior Front-End Developer (React)",
       "bedrijf": "team.blue",
       "locatie": "Gent / Remote, België",
@@ -291,7 +291,7 @@
       }
     },
     {
-      "id": "lga-it-fullstack-developer",
+      "id": "lga-it-developer-leuven-1",
       "titel": "Fullstack Developer",
       "bedrijf": "LGA IT",
       "locatie": "Leuven, België",
@@ -308,7 +308,7 @@
       }
     },
     {
-      "id": "lga-it-fullstack-software-developer",
+      "id": "lga-it-developer-leuven-2",
       "titel": "Fullstack Software Developer",
       "bedrijf": "LGA IT",
       "locatie": "Leuven, België",
@@ -325,7 +325,7 @@
       }
     },
     {
-      "id": "quasydoc-developer",
+      "id": "quasydoc-developer-hasselt",
       "titel": "Developer",
       "bedrijf": "Quasydoc",
       "locatie": "Hasselt, België",
@@ -342,7 +342,7 @@
       }
     },
     {
-      "id": "prezly-full-stack-engineer-react-php",
+      "id": "prezly-full-stack-engineer-remote",
       "titel": "Full Stack Engineer (React + PHP)",
       "bedrijf": "Prezly",
       "locatie": "Volledig remote (Europa), België",
@@ -357,11 +357,28 @@
         "score": "matig",
         "toelichting": "React-kant past goed, volledig remote is aantrekkelijk, maar PHP-backend is niet Tom's expertise."
       }
+    },
+    {
+      "id": "go4jobs-full-stack-developer-react-blockchain",
+      "titel": "Full Stack Developer (React + Blockchain)",
+      "bedrijf": "Go4Jobs (Kempen)",
+      "locatie": "Herenthout, België",
+      "regio": "antwerpen",
+      "url": "https://www.vdab.be/vindeenjob/vacatures/73981659",
+      "beschrijving": "Full Stack Developer met React-frontend en Blockchain/Web3-zwaartepunt bij Go4Jobs (Kempen). Herplaatst op VDAB (#73981659) na verlopen Indeed-vermelding (jk=90cd88c0d19b8382). Contractvorm gewijzigd naar interim met optie vast werk, startdatum 02-07-2026.",
+      "bron": "vdab",
+      "gevondenOp": "2026-06-21T12:00:00.000Z",
+      "status": "nieuw",
+      "tags": ["React", "blockchain", "Web3", "full-stack"],
+      "match": {
+        "score": "matig",
+        "toelichting": "React past, maar blockchain/Web3-zwaartepunt is geen kernexpertise. Buiten Limburg-kern."
+      }
     }
   ],
   "metadata": {
-    "bronBestand": "vacatures_actief_overzicht_20_06_2026.json",
-    "aantalGevonden": 21,
-    "verwerktOp": "2026-06-20T12:00:00.000Z"
+    "bronBestand": "hernoemd van 2026-06-21.json naar data.json (vaste canonieke bestandsnaam, geen datum-suffix meer, op vraag Tom 21-06-2026) — content ongewijzigd t.o.v. de samenvoeging van 2026-06-20.json + 2026-06-21.json",
+    "aantalGevonden": 22,
+    "verwerktOp": "2026-06-21T18:30:00.000Z"
   }
 }

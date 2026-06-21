@@ -9,26 +9,15 @@ function applyStatussen(vacatures: Vacature[]): Vacature[] {
   return vacatures.map((v) => (overrides[v.id] ? { ...v, status: overrides[v.id] } : v));
 }
 
-export async function getAlleDatums(): Promise<string[]> {
-  const res = await fetch("/data/index.json");
-  if (!res.ok) return [];
-  return z.array(z.string()).parse(await res.json());
-}
-
-export async function getVacaturesVoorDatum(datum: string): Promise<DagOverzicht | null> {
+export async function getVacaturesOverzicht(): Promise<DagOverzicht | null> {
   try {
-    const res = await fetch(`/data/vacatures/${datum}.json`);
+    const res = await fetch("/data/vacatures/data.json");
     if (!res.ok) return null;
     const overzicht = DagOverzichtSchema.parse(await res.json());
     return { ...overzicht, vacatures: applyStatussen(overzicht.vacatures) };
   } catch {
     return null;
   }
-}
-
-export async function getVacaturesVandaag(): Promise<DagOverzicht | null> {
-  const datum = new Date().toISOString().slice(0, 10);
-  return getVacaturesVoorDatum(datum);
 }
 
 export async function getSollicitaties(): Promise<Sollicitatie[]> {
@@ -38,19 +27,12 @@ export async function getSollicitaties(): Promise<Sollicitatie[]> {
 }
 
 export async function getAlleVacatures(): Promise<Vacature[]> {
-  const datums = await getAlleDatums();
-  const resultaten = await Promise.all(datums.map(getVacaturesVoorDatum));
-  return resultaten.flatMap((o) => o?.vacatures ?? []);
+  const overzicht = await getVacaturesOverzicht();
+  return overzicht?.vacatures ?? [];
 }
 
 export async function getVacature(id: string): Promise<Vacature | null> {
-  const datums = await getAlleDatums();
-  for (const datum of datums) {
-    const overzicht = await getVacaturesVoorDatum(datum);
-    if (!overzicht) continue;
-    const gevonden = overzicht.vacatures.find((v) => v.id === id);
-    if (gevonden) return gevonden;
-  }
-  return null;
+  const overzicht = await getVacaturesOverzicht();
+  return overzicht?.vacatures.find((v) => v.id === id) ?? null;
 }
 
