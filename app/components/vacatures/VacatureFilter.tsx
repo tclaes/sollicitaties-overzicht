@@ -1,19 +1,19 @@
-import { StatusSchema, RegioSchema, BronSchema } from "~/lib/schemas";
+import { StatusSchema, RegionSchema, SourceSchema } from "~/lib/schemas";
 import styles from "./VacatureFilter.module.css";
 
 interface Props {
-  huidigSearch: {
+  currentSearch: {
     status?: string;
     regio?: string;
     bron?: string;
   };
 }
 
-export function VacatureFilter({ huidigSearch }: Props) {
+export function VacatureFilter({ currentSearch }: Props) {
   function buildUrl(params: Record<string, string | undefined>) {
     const search = new URLSearchParams(
       Object.fromEntries(
-        Object.entries({ ...huidigSearch, ...params }).filter(
+        Object.entries({ ...currentSearch, ...params }).filter(
           ([, v]) => v !== undefined
         ) as [string, string][]
       )
@@ -28,7 +28,7 @@ export function VacatureFilter({ huidigSearch }: Props) {
         <div className={styles.knoppen}>
           <a
             href={buildUrl({ status: undefined })}
-            className={`${styles.knop} ${!huidigSearch.status ? styles.actief : ""}`}
+            className={`${styles.knop} ${!currentSearch.status ? styles.actief : ""}`}
           >
             Alle
           </a>
@@ -36,7 +36,7 @@ export function VacatureFilter({ huidigSearch }: Props) {
             <a
               key={status}
               href={buildUrl({ status })}
-              className={`${styles.knop} ${huidigSearch.status === status ? styles.actief : ""}`}
+              className={`${styles.knop} ${currentSearch.status === status ? styles.actief : ""}`}
             >
               {status.charAt(0).toUpperCase() + status.slice(1)}
             </a>
@@ -49,15 +49,15 @@ export function VacatureFilter({ huidigSearch }: Props) {
         <div className={styles.knoppen}>
           <a
             href={buildUrl({ regio: undefined })}
-            className={`${styles.knop} ${!huidigSearch.regio ? styles.actief : ""}`}
+            className={`${styles.knop} ${!currentSearch.regio ? styles.actief : ""}`}
           >
             Alle
           </a>
-          {RegioSchema.options.map((regio) => (
+          {RegionSchema.options.map((regio) => (
             <a
               key={regio}
               href={buildUrl({ regio })}
-              className={`${styles.knop} ${huidigSearch.regio === regio ? styles.actief : ""}`}
+              className={`${styles.knop} ${currentSearch.regio === regio ? styles.actief : ""}`}
             >
               {regio.charAt(0).toUpperCase() + regio.slice(1)}
             </a>
@@ -70,15 +70,15 @@ export function VacatureFilter({ huidigSearch }: Props) {
         <div className={styles.knoppen}>
           <a
             href={buildUrl({ bron: undefined })}
-            className={`${styles.knop} ${!huidigSearch.bron ? styles.actief : ""}`}
+            className={`${styles.knop} ${!currentSearch.bron ? styles.actief : ""}`}
           >
             Alle
           </a>
-          {BronSchema.options.map((bron) => (
+          {SourceSchema.options.map((bron) => (
             <a
               key={bron}
               href={buildUrl({ bron })}
-              className={`${styles.knop} ${huidigSearch.bron === bron ? styles.actief : ""}`}
+              className={`${styles.knop} ${currentSearch.bron === bron ? styles.actief : ""}`}
             >
               {bron.charAt(0).toUpperCase() + bron.slice(1)}
             </a>

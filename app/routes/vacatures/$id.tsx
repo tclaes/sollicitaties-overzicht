@@ -3,7 +3,7 @@ import { getVacature } from "~/lib/vacatures";
 import { setStatus } from "~/lib/statusStore";
 import { StatusBadge } from "~/components/vacatures/StatusBadge";
 import { BronBadge } from "~/components/vacatures/BronBadge";
-import { formatDatum } from "~/lib/date";
+import { formatDate } from "~/lib/date";
 import styles from "./$id.module.css";
 
 export const Route = createFileRoute("/vacatures/$id")({
@@ -50,7 +50,7 @@ function VacatureDetailPage() {
             <span>{vacature.locatie}</span>
             <span aria-hidden>·</span>
             <span className={styles.datum}>
-              Gevonden op {formatDatum(vacature.gevondenOp.slice(0, 10))}
+              Gevonden op {formatDate(vacature.gevondenOp.slice(0, 10))}
             </span>
           </p>
         </header>

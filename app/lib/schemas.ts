@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const BronSchema = z.enum([
+export const SourceSchema = z.enum([
   "indeed",
   "vdab",
   "jobat",
@@ -16,7 +16,7 @@ export const StatusSchema = z.enum([
   "niet-interessant",
 ]);
 
-export const RegioSchema = z.enum([
+export const RegionSchema = z.enum([
   "limburg",
   "antwerpen",
   "brussel",
@@ -51,10 +51,10 @@ export const VacatureSchema = z.object({
   titel: z.string(),
   bedrijf: z.string(),
   locatie: z.string(),
-  regio: RegioSchema,
+  regio: RegionSchema,
   url: z.union([z.string().url(), z.literal(""), z.string().startsWith("/")]),
   beschrijving: z.string(),
-  bron: BronSchema,
+  bron: SourceSchema,
   gevondenOp: z.string().datetime(),
   status: StatusSchema.default("nieuw"),
   tags: z.array(z.string()).default([]),
@@ -74,9 +74,9 @@ export const DagOverzichtSchema = z.object({
   }),
 });
 
-export type Bron = z.infer<typeof BronSchema>;
+export type Bron = z.infer<typeof SourceSchema>;
 export type Status = z.infer<typeof StatusSchema>;
-export type Regio = z.infer<typeof RegioSchema>;
+export type Region = z.infer<typeof RegionSchema>;
 export type MatchScore = z.infer<typeof MatchScoreSchema>;
 export type SollicitatieStatus = z.infer<typeof SollicitatieStatusSchema>;
 export type Sollicitatie = z.infer<typeof SollicitatieSchema>;

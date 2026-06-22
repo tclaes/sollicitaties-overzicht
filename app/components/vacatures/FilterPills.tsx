@@ -1,8 +1,8 @@
-import { BronSchema, StatusSchema } from "~/lib/schemas";
+import { SourceSchema, StatusSchema } from "~/lib/schemas";
 import styles from "./FilterPills.module.css";
 
 interface Props {
-  huidigSearch: { status?: string; bron?: string; sorteer?: string };
+  currentSearch: { status?: string; source?: string; sort?: string };
   basePad?: string;
 }
 
@@ -14,9 +14,9 @@ const statusLabels: Record<string, string> = {
   "niet-interessant": "Niet interessant",
 };
 
-export function FilterPills({ huidigSearch, basePad = "/vacatures" }: Props) {
+export function FilterPills({ currentSearch, basePad = "/vacatures" }: Props) {
   function buildUrl(params: Record<string, string | undefined>) {
-    const merged = { ...huidigSearch, ...params };
+    const merged = { ...currentSearch, ...params };
     const search = new URLSearchParams(
       Object.fromEntries(
         Object.entries(merged).filter(([, v]) => v !== undefined) as [string, string][]
@@ -30,7 +30,7 @@ export function FilterPills({ huidigSearch, basePad = "/vacatures" }: Props) {
       <span className={styles.groepLabel}>Status</span>
       <a
         href={buildUrl({ status: undefined })}
-        className={`${styles.pill} ${!huidigSearch.status ? styles.actief : ""}`}
+        className={`${styles.pill} ${!currentSearch.status ? styles.actief : ""}`}
       >
         Alle
       </a>
@@ -40,7 +40,7 @@ export function FilterPills({ huidigSearch, basePad = "/vacatures" }: Props) {
           <a
             key={status}
             href={buildUrl({ status })}
-            className={`${styles.pill} ${huidigSearch.status === status ? styles.actief : ""}`}
+            className={`${styles.pill} ${currentSearch.status === status ? styles.actief : ""}`}
           >
             {statusLabels[status]}
           </a>
@@ -50,7 +50,7 @@ export function FilterPills({ huidigSearch, basePad = "/vacatures" }: Props) {
 
       <span className={styles.groepLabel}>Sortering</span>
       {(["match", "datum", "titel"] as const).map((optie) => {
-        const actief = (huidigSearch.sorteer ?? "match") === optie;
+        const actief = (currentSearch.sort ?? "match") === optie;
         const labels = { match: "Match", datum: "Datum", titel: "Titel" };
         return (
           <a
@@ -68,15 +68,15 @@ export function FilterPills({ huidigSearch, basePad = "/vacatures" }: Props) {
       <span className={styles.groepLabel}>Bron</span>
       <a
         href={buildUrl({ bron: undefined })}
-        className={`${styles.pill} ${!huidigSearch.bron ? styles.actief : ""}`}
+        className={`${styles.pill} ${!currentSearch.source ? styles.actief : ""}`}
       >
         Alle
       </a>
-      {BronSchema.options.map((bron) => (
+      {SourceSchema.options.map((bron) => (
         <a
           key={bron}
           href={buildUrl({ bron })}
-          className={`${styles.pill} ${huidigSearch.bron === bron ? styles.actief : ""}`}
+          className={`${styles.pill} ${currentSearch.source === bron ? styles.actief : ""}`}
         >
           {bron}
         </a>

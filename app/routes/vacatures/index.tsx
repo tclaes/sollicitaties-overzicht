@@ -4,15 +4,15 @@ import { getAlleVacatures } from "~/lib/vacatures";
 import { VacatureTabel } from "~/components/vacatures/VacatureTabel";
 import { StatsTeller } from "~/components/vacatures/StatsTeller";
 import { FilterPills } from "~/components/vacatures/FilterPills";
-import { StatusSchema, BronSchema } from "~/lib/schemas";
+import { StatusSchema, SourceSchema } from "~/lib/schemas";
 import styles from "./index.module.css";
 
-const SorteerSchema = z.enum(["match", "datum", "titel"]);
+const sortingSchema = z.enum(["match", "datum", "titel"]);
 
 const searchSchema = z.object({
   status: StatusSchema.optional(),
-  bron: BronSchema.optional(),
-  sorteer: SorteerSchema.default("match"),
+  source: SourceSchema.optional(),
+  sort: sortingSchema.default("match"),
 });
 
 export const Route = createFileRoute("/vacatures/")({
@@ -30,17 +30,17 @@ function VacaturesPage() {
 
   const matchVolgorde: Record<string, number> = { sterk: 0, goed: 1, matig: 2, laag: 3 };
 
-  const gefilterd = vacatures
+  const filtered = vacatures
     .filter((v) => {
       if (search.status && v.status !== search.status) return false;
-      if (search.bron && v.bron !== search.bron) return false;
-      return true;
+      return !(search.source && v.bron !== search.source);
+
     })
     .sort((a, b) => {
-      if (search.sorteer === "datum") {
+      if (search.sort === "datum") {
         return new Date(b.gevondenOp).getTime() - new Date(a.gevondenOp).getTime();
       }
-      if (search.sorteer === "titel") {
+      if (search.sort === "titel") {
         return a.titel.localeCompare(b.titel, "nl");
       }
       // match (default)
@@ -53,12 +53,12 @@ function VacaturesPage() {
     <div className={styles.page}>
       <header className={styles.header}>
         <h1 className={styles.titel}>Alle vacatures</h1>
-        <span className={styles.teller}>{gefilterd.length} vacatures</span>
+        <span className={styles.teller}>{filtered.length} vacatures</span>
       </header>
 
       <StatsTeller vacatures={vacatures} />
-      <FilterPills huidigSearch={search} />
-      <VacatureTabel vacatures={gefilterd} />
+      <FilterPills currentSearch={search} />
+      <VacatureTabel vacatures={filtered} />
     </div>
   );
 }

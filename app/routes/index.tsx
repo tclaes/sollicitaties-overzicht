@@ -4,17 +4,17 @@ import { getVacaturesOverzicht, getSollicitaties, createSollicitatie } from "~/l
 import { VacatureTabel } from "~/components/vacatures/VacatureTabel";
 import { StatsTeller } from "~/components/vacatures/StatsTeller";
 import { FilterPills } from "~/components/vacatures/FilterPills";
-import { formatDatum } from "~/lib/date";
-import { StatusSchema, BronSchema } from "~/lib/schemas";
+import { formatDate } from "~/lib/date";
+import { StatusSchema, SourceSchema } from "~/lib/schemas";
 import type { Sollicitatie } from "~/lib/schemas";
 import styles from "./index.module.css";
 
-const SorteerSchema = z.enum(["match", "datum", "titel"]);
+const sortingScheme = z.enum(["match", "datum", "titel"]);
 
 const searchSchema = z.object({
-  status: StatusSchema.optional(),
-  bron: BronSchema.optional(),
-  sorteer: SorteerSchema.default("match"),
+  status: StatusSchema.default("nieuw"),
+  source: SourceSchema.optional(),
+  sort: sortingScheme.default("match"),
 });
 
 export const Route = createFileRoute("/")({
@@ -40,20 +40,19 @@ function DashboardPage() {
 
   const matchVolgorde: Record<string, number> = { sterk: 0, goed: 1, matig: 2, laag: 3 };
 
-  const gefilterd = overview
+  const prefiltered = overview
     ? overview.vacatures.filter((v) => {
-        if (v.status === "gesolliciteerd" || sollicitatiePerId.has(v.id)) return false;
         if (search.status && v.status !== search.status) return false;
-        return !(search.bron && v.bron !== search.bron);
+        return !(search.source && v.bron !== search.source);
 
       })
     : [];
 
-  const gesorteerd = [...gefilterd].sort((a, b) => {
-    if (search.sorteer === "datum") {
+  const sorted = [...prefiltered].sort((a, b) => {
+    if (search.sort === "datum") {
       return new Date(b.gevondenOp).getTime() - new Date(a.gevondenOp).getTime();
     }
-    if (search.sorteer === "titel") {
+    if (search.sort === "titel") {
       return a.titel.localeCompare(b.titel, "nl");
     }
     return (matchVolgorde[a.match?.score ?? "laag"] ?? 3) - (matchVolgorde[b.match?.score ?? "laag"] ?? 3);
@@ -68,15 +67,15 @@ function DashboardPage() {
     <div className={styles.page}>
       <header className={styles.header}>
         <h1 className={styles.titel}>Vacatures</h1>
-        {overview && <p className={styles.datum}>Bijgewerkt op {formatDatum(overview.datum)}</p>}
+        {overview && <p className={styles.datum}>Bijgewerkt op {formatDate(overview.datum)}</p>}
       </header>
 
       {overview ? (
         <>
           <StatsTeller vacatures={overview.vacatures} />
-          <FilterPills huidigSearch={search} basePad="/" />
+          <FilterPills currentSearch={search} basePad="/" />
           <VacatureTabel
-            vacatures={gesorteerd}
+            vacatures={sorted}
             sollicitatiePerId={sollicitatiePerId}
             onSolliciteer={handleSolliciteer}
           />
