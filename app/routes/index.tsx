@@ -4,7 +4,6 @@ import { getVacaturesOverzicht, getSollicitaties, createSollicitatie } from "~/l
 import { VacatureTabel } from "~/components/vacatures/VacatureTabel";
 import { StatsTeller } from "~/components/vacatures/StatsTeller";
 import { FilterPills } from "~/components/vacatures/FilterPills";
-import { SollicitatiesPanel } from "~/components/sollicitaties/SollicitatiesPanel";
 import { formatDatum } from "~/lib/date";
 import { StatusSchema, BronSchema } from "~/lib/schemas";
 import type { Sollicitatie } from "~/lib/schemas";
@@ -25,13 +24,13 @@ export const Route = createFileRoute("/")({
       getVacaturesOverzicht(),
       getSollicitaties(),
     ]);
-    return { overzicht, sollicitaties };
+    return { overview: overzicht, sollicitaties };
   },
   component: DashboardPage,
 });
 
 function DashboardPage() {
-  const { overzicht, sollicitaties } = Route.useLoaderData();
+  const { overview, sollicitaties } = Route.useLoaderData();
   const search = Route.useSearch();
   const router = useRouter();
 
@@ -41,12 +40,12 @@ function DashboardPage() {
 
   const matchVolgorde: Record<string, number> = { sterk: 0, goed: 1, matig: 2, laag: 3 };
 
-  const gefilterd = overzicht
-    ? overzicht.vacatures.filter((v) => {
+  const gefilterd = overview
+    ? overview.vacatures.filter((v) => {
         if (v.status === "gesolliciteerd" || sollicitatiePerId.has(v.id)) return false;
         if (search.status && v.status !== search.status) return false;
-        if (search.bron && v.bron !== search.bron) return false;
-        return true;
+        return !(search.bron && v.bron !== search.bron);
+
       })
     : [];
 
@@ -69,26 +68,23 @@ function DashboardPage() {
     <div className={styles.page}>
       <header className={styles.header}>
         <h1 className={styles.titel}>Vacatures</h1>
-        {overzicht && <p className={styles.datum}>Bijgewerkt op {formatDatum(overzicht.datum)}</p>}
+        {overview && <p className={styles.datum}>Bijgewerkt op {formatDatum(overview.datum)}</p>}
       </header>
 
-      {overzicht ? (
+      {overview ? (
         <>
-          <StatsTeller vacatures={overzicht.vacatures} />
+          <StatsTeller vacatures={overview.vacatures} />
           <FilterPills huidigSearch={search} basePad="/" />
           <VacatureTabel
             vacatures={gesorteerd}
             sollicitatiePerId={sollicitatiePerId}
             onSolliciteer={handleSolliciteer}
           />
-          {sollicitaties.length > 0 && (
-            <SollicitatiesPanel sollicitaties={sollicitaties} toonHeader />
-          )}
         </>
       ) : (
         <div className={styles.leeg}>
           <p>Nog geen vacatures gevonden.</p>
-          <p className={styles.leegSub}>De dagelijkse taak loopt elke werkdag om 18:30.</p>
+          <p className={styles.leegSub}>De dagelijkse taak loopt elke werkdag om 12:00.</p>
         </div>
       )}
     </div>

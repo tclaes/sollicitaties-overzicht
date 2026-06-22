@@ -5,7 +5,7 @@ import { BronBadge } from "./BronBadge";
 import styles from "./VacatureTabel.module.css";
 
 const SOLLICITATIE_STATUS_LABELS: Record<Sollicitatie["status"], string> = {
-  gesolliciteerd: "wacht",
+  gesolliciteerd: "gesolliciteerd",
   in_gesprek: "in gesprek",
   afgewezen: "afgewezen",
   niet_wervend: "niet wervend",
