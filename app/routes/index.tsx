@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { z } from "zod";
 import { getVacaturesOverzicht, getSollicitaties, createSollicitatie } from "~/lib/vacatures";
 import { VacatureTabel } from "~/components/vacatures/VacatureTabel";
@@ -32,6 +32,12 @@ export const Route = createFileRoute("/")({
 function DashboardPage() {
   const { overzicht, sollicitaties } = Route.useLoaderData();
   const search = Route.useSearch();
+  const router = useRouter();
+
+  async function handleSolliciteer(data: { vacatureId: string; bedrijf: string; rol: string; gesolliceerdOp: string }) {
+    await createSollicitatie(data);
+    await router.invalidate();
+  }
 
   const sollicitatiePerId = new Map<string, Sollicitatie>(
     sollicitaties.flatMap((s) => s.vacatureId ? [[s.vacatureId, s]] : [])
@@ -71,7 +77,7 @@ function DashboardPage() {
           <VacatureTabel
             vacatures={gesorteerd}
             sollicitatiePerId={sollicitatiePerId}
-            onSolliciteer={createSollicitatie}
+            onSolliciteer={handleSolliciteer}
           />
         </>
       ) : (
