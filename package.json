@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sync:firestore": "node scripts/sync-vacatures-naar-firestore.mjs"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.120.0",
