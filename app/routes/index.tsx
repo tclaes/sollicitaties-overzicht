@@ -4,6 +4,7 @@ import { getVacaturesOverzicht, getSollicitaties, createSollicitatie } from "~/l
 import { VacatureTabel } from "~/components/vacatures/VacatureTabel";
 import { StatsTeller } from "~/components/vacatures/StatsTeller";
 import { FilterPills } from "~/components/vacatures/FilterPills";
+import { SollicitatiesPanel } from "~/components/sollicitaties/SollicitatiesPanel";
 import { formatDatum } from "~/lib/date";
 import { StatusSchema, BronSchema } from "~/lib/schemas";
 import type { Sollicitatie } from "~/lib/schemas";
@@ -34,11 +35,6 @@ function DashboardPage() {
   const search = Route.useSearch();
   const router = useRouter();
 
-  async function handleSolliciteer(data: { vacatureId: string; bedrijf: string; rol: string; gesolliceerdOp: string }) {
-    await createSollicitatie(data);
-    await router.invalidate();
-  }
-
   const sollicitatiePerId = new Map<string, Sollicitatie>(
     sollicitaties.flatMap((s) => s.vacatureId ? [[s.vacatureId, s]] : [])
   );
@@ -47,6 +43,7 @@ function DashboardPage() {
 
   const gefilterd = overzicht
     ? overzicht.vacatures.filter((v) => {
+        if (v.status === "gesolliciteerd" || sollicitatiePerId.has(v.id)) return false;
         if (search.status && v.status !== search.status) return false;
         if (search.bron && v.bron !== search.bron) return false;
         return true;
@@ -62,6 +59,11 @@ function DashboardPage() {
     }
     return (matchVolgorde[a.match?.score ?? "laag"] ?? 3) - (matchVolgorde[b.match?.score ?? "laag"] ?? 3);
   });
+
+  async function handleSolliciteer(data: { vacatureId: string; bedrijf: string; rol: string; gesolliceerdOp: string }) {
+    await createSollicitatie(data);
+    await router.invalidate();
+  }
 
   return (
     <div className={styles.page}>
@@ -79,6 +81,9 @@ function DashboardPage() {
             sollicitatiePerId={sollicitatiePerId}
             onSolliciteer={handleSolliciteer}
           />
+          {sollicitaties.length > 0 && (
+            <SollicitatiesPanel sollicitaties={sollicitaties} toonHeader />
+          )}
         </>
       ) : (
         <div className={styles.leeg}>
