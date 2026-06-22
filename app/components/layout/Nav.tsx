@@ -1,7 +1,7 @@
 import styles from "./Nav.module.css";
 
 export function Nav() {
-  const huidigPad = typeof window !== "undefined" ? window.location.pathname : "/";
+  const currentPath = typeof window !== "undefined" ? window.location.pathname : "/";
 
   return (
     <nav className={styles.nav} aria-label="Navigatie">
@@ -9,15 +9,15 @@ export function Nav() {
         <span className={styles.sectieLabel}>Overzicht</span>
         <a
           href="/"
-          className={`${styles.datumLink} ${huidigPad === "/" ? styles.actief : ""}`}
-          aria-current={huidigPad === "/" ? "page" : undefined}
+          className={`${styles.datumLink} ${currentPath === "/" ? styles.actief : ""}`}
+          aria-current={currentPath === "/" ? "page" : undefined}
         >
           Vacatures
         </a>
         <a
           href="/sollicitaties"
-          className={`${styles.datumLink} ${huidigPad === "/sollicitaties" ? styles.actief : ""}`}
-          aria-current={huidigPad === "/sollicitaties" ? "page" : undefined}
+          className={`${styles.datumLink} ${currentPath === "/sollicitaties" ? styles.actief : ""}`}
+          aria-current={currentPath === "/sollicitaties" ? "page" : undefined}
         >
           Sollicitaties
         </a>
