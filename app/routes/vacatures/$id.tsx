@@ -6,7 +6,7 @@ import {BronBadge} from "~/components/elements/BronBadge";
 import {formatDate} from "~/lib/date";
 import styles from "./$id.module.css";
 import {StatusSchema} from "~/lib/schemas";
-import {TLink} from "~/components/elements/CLink";
+import {CLink} from "~/components/elements/CLink";
 
 export const Route = createFileRoute("/vacatures/$id")({
     loader: async ({params}) => {
@@ -84,7 +84,7 @@ function VacatureDetailPage() {
                         >
                             Bekijk vacature →
                         </a>
-                        <TLink>Bekijk →</TLink>
+                        <CLink url={vacature.url} variant={"cta"}>Bekijk →</CLink>
                         <div className="archive">
                             <label htmlFor="archive">Archive </label>
                             <input type="checkbox" id="archive" onChange={(e) => archiveVacature(vacature.id, e)}/>
