@@ -80,10 +80,12 @@
   --leading-tight:   1.2;
   --leading-snug:    1.35;
   --leading-normal:  1.5;
+  --leading-relaxed:  1.6;
 
   --font-normal:   400;
   --font-medium:   500;
   --font-semibold: 600;
+  --font-bold:     700;
 
   /* ── Borders & radius ────────────────────────────────────────── */
   --radius-sm:   3px;

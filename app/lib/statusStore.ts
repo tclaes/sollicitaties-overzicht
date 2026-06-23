@@ -1,24 +1,21 @@
-import type { Status } from "./schemas";
+import {SollicitatieStatus, Status} from "./schemas";
+import {doc, updateDoc} from "firebase/firestore";
+import {db} from "~/lib/firebase";
 
 const KEY = "vacature-statussen";
 const DATUM_KEY = "vacature-sollicitaties";
 
-export function getAlleStatussen(): Record<string, Status> {
-  try {
-    return JSON.parse(localStorage.getItem(KEY) ?? "{}");
-  } catch {
-    return {};
-  }
+export async function updateSollicitatie(
+    id: string,
+    status: SollicitatieStatus,
+): Promise<void> {
+  await updateDoc(doc(db, "sollicitaties", id), {status});
 }
 
-export function setStatus(id: string, status: Status): void {
-  const statussen = getAlleStatussen();
-  statussen[id] = status;
-  localStorage.setItem(KEY, JSON.stringify(statussen));
-}
+export async function setStatus(id: string, status: Status) {
+  await updateDoc(doc(db, 'vacatures', id), {status})
 
-export function getStatus(id: string): Status | undefined {
-  return getAlleStatussen()[id];
+
 }
 
 export function getSollicitatieDatum(id: string): string | undefined {

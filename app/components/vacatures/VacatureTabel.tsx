@@ -5,7 +5,7 @@ import { BronBadge } from "./BronBadge";
 import styles from "./VacatureTabel.module.css";
 
 const SOLLICITATIE_STATUS_LABELS: Record<Sollicitatie["status"], string> = {
-  gesolliciteerd: "wacht",
+  gesolliciteerd: "gesolliciteerd",
   in_gesprek: "in gesprek",
   afgewezen: "afgewezen",
   niet_wervend: "niet wervend",
@@ -19,15 +19,16 @@ interface Props {
   onSolliciteer?: (data: { vacatureId: string; bedrijf: string; rol: string; gesolliceerdOp: string }) => Promise<void>;
 }
 
-function vandaag() {
+function today() {
   return new Date().toISOString().slice(0, 10);
 }
 
 export function VacatureTabel({ vacatures, sollicitatiePerId = new Map(), onSolliciteer }: Props) {
   const [lokaalGesolliciteerd, setLokaalGesolliciteerd] = useState<Record<string, string>>({});
-  const [openActie, setOpenActie] = useState<string | null>(null);
+  const [openAction, setOpenAction] = useState<string | null>(null);
   const [datumInput, setDatumInput] = useState("");
-  const [bezig, setBezig] = useState(false);
+  const [loading, setLoading] = useState(false);
+
 
   if (vacatures.length === 0) {
     return <div className={styles.leeg}>Geen vacatures gevonden.</div>;
@@ -35,32 +36,32 @@ export function VacatureTabel({ vacatures, sollicitatiePerId = new Map(), onSoll
 
   function openSolliciteer(e: React.MouseEvent, id: string) {
     e.stopPropagation();
-    setOpenActie(id);
-    setDatumInput(vandaag());
+    setOpenAction(id);
+    setDatumInput(today());
   }
 
-  async function bevestig(e: React.FormEvent, v: Vacature) {
+  async function confirm(e: React.FormEvent, v: Vacature) {
     e.preventDefault();
     e.stopPropagation();
     if (!onSolliciteer) return;
-    setBezig(true);
+    setLoading(true);
     try {
       await onSolliciteer({
         vacatureId: v.id,
         bedrijf: v.bedrijf,
         rol: v.titel,
-        gesolliceerdOp: datumInput || vandaag(),
+        gesolliceerdOp: datumInput || today(),
       });
-      setLokaalGesolliciteerd((prev) => ({ ...prev, [v.id]: datumInput || vandaag() }));
+      setLokaalGesolliciteerd((prev) => ({ ...prev, [v.id]: datumInput || today() }));
     } finally {
-      setBezig(false);
-      setOpenActie(null);
+      setLoading(false);
+      setOpenAction(null);
     }
   }
 
-  function annuleer(e: React.MouseEvent) {
+  function cancel(e: React.MouseEvent) {
     e.stopPropagation();
-    setOpenActie(null);
+    setOpenAction(null);
   }
 
   return (
@@ -130,7 +131,7 @@ export function VacatureTabel({ vacatures, sollicitatiePerId = new Map(), onSoll
                   ) : null}
                 </td>
                 <td className={styles.colSolliciteer} onClick={(e) => e.stopPropagation()}>
-                  {!isGesolliciteerd && onSolliciteer && openActie !== v.id && (
+                  {!isGesolliciteerd && onSolliciteer && openAction !== v.id && (
                     <button
                       className={styles.solliciteerBtn}
                       onClick={(e) => openSolliciteer(e, v.id)}
@@ -138,10 +139,10 @@ export function VacatureTabel({ vacatures, sollicitatiePerId = new Map(), onSoll
                       Solliciteer
                     </button>
                   )}
-                  {openActie === v.id && (
+                  {openAction === v.id && (
                     <form
                       className={styles.solliciteerForm}
-                      onSubmit={(e) => bevestig(e, v)}
+                      onSubmit={(e) => confirm(e, v)}
                     >
                       <input
                         type="date"
@@ -150,8 +151,8 @@ export function VacatureTabel({ vacatures, sollicitatiePerId = new Map(), onSoll
                         onChange={(e) => setDatumInput(e.target.value)}
                         autoFocus
                       />
-                      <button type="submit" className={styles.bevestigBtn} title="Bevestigen" disabled={bezig}>✓</button>
-                      <button type="button" className={styles.annuleerBtn} title="Annuleren" onClick={annuleer}>✕</button>
+                      <button type="submit" className={styles.bevestigBtn} title="Bevestigen" disabled={loading}>✓</button>
+                      <button type="button" className={styles.annuleerBtn} title="Annuleren" onClick={cancel}>✕</button>
                     </form>
                   )}
                 </td>

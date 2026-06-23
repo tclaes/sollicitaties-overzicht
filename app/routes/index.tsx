@@ -1,96 +1,94 @@
-import { createFileRoute, useRouter } from "@tanstack/react-router";
-import { z } from "zod";
-import { getVacaturesOverzicht, getSollicitaties, createSollicitatie } from "~/lib/vacatures";
-import { VacatureTabel } from "~/components/vacatures/VacatureTabel";
-import { StatsTeller } from "~/components/vacatures/StatsTeller";
-import { FilterPills } from "~/components/vacatures/FilterPills";
-import { SollicitatiesPanel } from "~/components/sollicitaties/SollicitatiesPanel";
-import { formatDatum } from "~/lib/date";
-import { StatusSchema, BronSchema } from "~/lib/schemas";
-import type { Sollicitatie } from "~/lib/schemas";
+import {createFileRoute, useRouter} from "@tanstack/react-router";
+import {z} from "zod";
+import {createSollicitatie, getSollicitaties, getVacaturesDashboard} from "~/lib/vacatures";
+import {VacatureTabel} from "~/components/vacatures/VacatureTabel";
+import {StatsTeller} from "~/components/vacatures/StatsTeller";
+import {FilterPills} from "~/components/vacatures/FilterPills";
+import type {Sollicitatie} from "~/lib/schemas";
+import {SourceSchema, StatusSchema} from "~/lib/schemas";
 import styles from "./index.module.css";
 
-const SorteerSchema = z.enum(["match", "datum", "titel"]);
+const sortingScheme = z.enum(["match", "datum", "titel"]);
 
 const searchSchema = z.object({
-  status: StatusSchema.optional(),
-  bron: BronSchema.optional(),
-  sorteer: SorteerSchema.default("match"),
+    status: StatusSchema.optional(),
+    source: SourceSchema.optional(),
+    sort: sortingScheme.default("match"),
 });
 
 export const Route = createFileRoute("/")({
-  validateSearch: searchSchema,
-  loader: async () => {
-    const [overzicht, sollicitaties] = await Promise.all([
-      getVacaturesOverzicht(),
-      getSollicitaties(),
-    ]);
-    return { overzicht, sollicitaties };
-  },
-  component: DashboardPage,
+    validateSearch: searchSchema,
+    loader: async () => {
+        const [overview, sollicitaties] = await Promise.all([
+            getVacaturesDashboard(),
+            getSollicitaties(),
+        ]);
+        return {overview, sollicitaties};
+    },
+    component: DashboardPage,
 });
 
 function DashboardPage() {
-  const { overzicht, sollicitaties } = Route.useLoaderData();
-  const search = Route.useSearch();
-  const router = useRouter();
+    const {overview, sollicitaties} = Route.useLoaderData();
+    const search = Route.useSearch();
+    const router = useRouter();
 
-  const sollicitatiePerId = new Map<string, Sollicitatie>(
-    sollicitaties.flatMap((s) => s.vacatureId ? [[s.vacatureId, s]] : [])
-  );
+    const sollicitatiePerId = new Map<string, Sollicitatie>(
+        sollicitaties.flatMap((s) => s.vacatureId ? [[s.vacatureId, s]] : [])
+    );
 
-  const matchVolgorde: Record<string, number> = { sterk: 0, goed: 1, matig: 2, laag: 3 };
+    const matchVolgorde: Record<string, number> = {sterk: 0, goed: 1, matig: 2, laag: 3};
 
-  const gefilterd = overzicht
-    ? overzicht.vacatures.filter((v) => {
-        if (v.status === "gesolliciteerd" || sollicitatiePerId.has(v.id)) return false;
-        if (search.status && v.status !== search.status) return false;
-        if (search.bron && v.bron !== search.bron) return false;
-        return true;
-      })
-    : [];
+    const prefiltered = overview
+        ? overview.filter((v) => {
+            if (search.status && v.status !== search.status) return false;
+            return !(search.source && v.bron !== search.source);
 
-  const gesorteerd = [...gefilterd].sort((a, b) => {
-    if (search.sorteer === "datum") {
-      return new Date(b.gevondenOp).getTime() - new Date(a.gevondenOp).getTime();
+        })
+        : [];
+
+    const sorted = [...prefiltered].sort((a, b) => {
+        if (search.sort === "datum") {
+            return new Date(b.gevondenOp).getTime() - new Date(a.gevondenOp).getTime();
+        }
+        if (search.sort === "titel") {
+            return a.titel.localeCompare(b.titel, "nl");
+        }
+        return (matchVolgorde[a.match?.score ?? "laag"] ?? 3) - (matchVolgorde[b.match?.score ?? "laag"] ?? 3);
+    });
+
+    async function handleSolliciteer(data: {
+        vacatureId: string;
+        bedrijf: string;
+        rol: string;
+        gesolliceerdOp: string
+    }) {
+        await createSollicitatie(data);
+        await router.invalidate();
     }
-    if (search.sorteer === "titel") {
-      return a.titel.localeCompare(b.titel, "nl");
-    }
-    return (matchVolgorde[a.match?.score ?? "laag"] ?? 3) - (matchVolgorde[b.match?.score ?? "laag"] ?? 3);
-  });
 
-  async function handleSolliciteer(data: { vacatureId: string; bedrijf: string; rol: string; gesolliceerdOp: string }) {
-    await createSollicitatie(data);
-    await router.invalidate();
-  }
+    return (
+        <div className={styles.page}>
+            <header className={styles.header}>
+                <h1 className={styles.titel}>Vacatures</h1>
+            </header>
 
-  return (
-    <div className={styles.page}>
-      <header className={styles.header}>
-        <h1 className={styles.titel}>Vacatures</h1>
-        {overzicht && <p className={styles.datum}>Bijgewerkt op {formatDatum(overzicht.datum)}</p>}
-      </header>
-
-      {overzicht ? (
-        <>
-          <StatsTeller vacatures={overzicht.vacatures} />
-          <FilterPills huidigSearch={search} basePad="/" />
-          <VacatureTabel
-            vacatures={gesorteerd}
-            sollicitatiePerId={sollicitatiePerId}
-            onSolliciteer={handleSolliciteer}
-          />
-          {sollicitaties.length > 0 && (
-            <SollicitatiesPanel sollicitaties={sollicitaties} toonHeader />
-          )}
-        </>
-      ) : (
-        <div className={styles.leeg}>
-          <p>Nog geen vacatures gevonden.</p>
-          <p className={styles.leegSub}>De dagelijkse taak loopt elke werkdag om 18:30.</p>
+            {overview ? (
+                <>
+                    <StatsTeller vacatures={overview}/>
+                    <FilterPills currentSearch={search} basePad="/"/>
+                    <VacatureTabel
+                        vacatures={sorted}
+                        sollicitatiePerId={sollicitatiePerId}
+                        onSolliciteer={handleSolliciteer}
+                    />
+                </>
+            ) : (
+                <div className={styles.leeg}>
+                    <p>Nog geen vacatures gevonden.</p>
+                    <p className={styles.leegSub}>De dagelijkse taak loopt elke werkdag om 12:00.</p>
+                </div>
+            )}
         </div>
-      )}
-    </div>
-  );
+    );
 }

@@ -12,14 +12,14 @@ const STATUS_LABELS: Record<SollicitatieStatus, string> = {
   aangenomen: "aangenomen",
 };
 
-const STATUSSEN = Object.keys(STATUS_LABELS) as SollicitatieStatus[];
+const STATUSSES = Object.keys(STATUS_LABELS) as SollicitatieStatus[];
 
 interface Props {
   sollicitaties: Sollicitatie[];
-  toonHeader?: boolean;
+  showHeader?: boolean;
 }
 
-export function SollicitatiesPanel({ sollicitaties, toonHeader = false }: Props) {
+export function SollicitatiesPanel({ sollicitaties, showHeader = false }: Props) {
   const [lokaleStatussen, setLokaleStatussen] = useState<Record<string, SollicitatieStatus>>({});
 
   const gesorteerd = [...sollicitaties].sort(
@@ -42,7 +42,7 @@ export function SollicitatiesPanel({ sollicitaties, toonHeader = false }: Props)
 
   return (
     <section className={styles.panel}>
-      {toonHeader && (
+      {showHeader && (
         <div className={styles.header}>
           <span className={styles.titel}>Sollicitaties</span>
           <span className={styles.teller}>{sollicitaties.length} totaal</span>
@@ -52,7 +52,7 @@ export function SollicitatiesPanel({ sollicitaties, toonHeader = false }: Props)
         <table className={styles.tabel}>
           <tbody>
             {gesorteerd.map((s) => {
-              const huidigStatus = lokaleStatussen[s.id] ?? s.status;
+              const currentStatus = lokaleStatussen[s.id] ?? s.status;
               return (
                 <tr key={s.id} className={styles.rij} title={s.notitie}>
                   <td className={styles.datum}>
@@ -65,12 +65,12 @@ export function SollicitatiesPanel({ sollicitaties, toonHeader = false }: Props)
                   <td className={styles.rol}>{s.rol}</td>
                   <td className={styles.statusCol}>
                     <select
-                      className={`${styles.statusSelect} ${styles[`status_${huidigStatus}`]}`}
-                      value={huidigStatus}
+                      className={`${styles.statusSelect} ${styles[`status_${currentStatus}`]}`}
+                      value={currentStatus}
                       onChange={(e) => handleStatusChange(s.id, e.target.value as SollicitatieStatus)}
                       onClick={(e) => e.stopPropagation()}
                     >
-                      {STATUSSEN.map((st) => (
+                      {STATUSSES.map((st) => (
                         <option key={st} value={st}>{STATUS_LABELS[st]}</option>
                       ))}
                     </select>

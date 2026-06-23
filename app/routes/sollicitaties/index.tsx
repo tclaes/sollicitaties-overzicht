@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { getSollicitaties } from "~/lib/vacatures";
 import { SollicitatiesPanel } from "~/components/sollicitaties/SollicitatiesPanel";
-import styles from "./sollicitaties.module.css";
+import styles from "./index.module.css";
 
-export const Route = createFileRoute("/sollicitaties")({
+export const Route = createFileRoute("/sollicitaties/")({
   loader: async () => {
     const sollicitaties = await getSollicitaties();
     return { sollicitaties };
