@@ -2,8 +2,8 @@ import {createFileRoute} from "@tanstack/react-router";
 import {z} from "zod";
 import {getAllVacatures} from "~/lib/vacatures";
 import {VacatureTabel} from "~/components/vacatures/VacatureTabel";
-import {StatsTeller} from "~/components/vacatures/StatsTeller";
-import {FilterPills} from "~/components/vacatures/FilterPills";
+import {StatsTeller} from "~/components/elements/StatsTeller";
+import {FilterPills} from "~/components/elements/FilterPills";
 import {SourceSchema, StatusSchema} from "~/lib/schemas";
 import styles from "./index.module.css";
 

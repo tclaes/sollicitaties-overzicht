@@ -2,10 +2,11 @@ import {createFileRoute, notFound} from "@tanstack/react-router";
 import {archiveVacature, getVacature} from "~/lib/vacatures";
 import {setStatus} from "~/lib/statusStore";
 import {StatusBadge} from "~/components/vacatures/StatusBadge";
-import {BronBadge} from "~/components/vacatures/BronBadge";
+import {BronBadge} from "~/components/elements/BronBadge";
 import {formatDate} from "~/lib/date";
 import styles from "./$id.module.css";
 import {StatusSchema} from "~/lib/schemas";
+import {TLink} from "~/components/elements/CLink";
 
 export const Route = createFileRoute("/vacatures/$id")({
     loader: async ({params}) => {
@@ -83,6 +84,7 @@ function VacatureDetailPage() {
                         >
                             Bekijk vacature →
                         </a>
+                        <TLink>Bekijk →</TLink>
                         <div className="archive">
                             <label htmlFor="archive">Archive </label>
                             <input type="checkbox" id="archive" onChange={(e) => archiveVacature(vacature.id, e)}/>
