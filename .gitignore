@@ -11,3 +11,4 @@ secrets/*.json
 data/firestore-sync-input.json
 data/sync.log
 data/launchd.log
+.idea/
