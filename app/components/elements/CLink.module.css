@@ -1,0 +1,31 @@
+:global(.link) {
+    --_color-accent: var(--btn-color-accent, red);
+}
+
+.extern {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.extern:hover {
+    text-decoration: underline;
+}
+
+.cta {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-3) var(--space-6);
+    background: var(--_color-accent);
+    color: var(--color-text-inverse);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-medium);
+    transition: background var(--transition-fast);
+    text-decoration: none;
+}
+
+.cta:hover {
+    background: var(--color-accent-hover);
+    text-decoration: none;
+}
