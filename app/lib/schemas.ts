@@ -25,7 +25,7 @@ export const RegionSchema = z.enum([
     "andere",
 ]);
 
-export const MatchScoreSchema = z.enum(["sterk", "goed", "matig", "laag"]);
+export const MatchScoreSchema = z.enum(["sterk", "goed", "matig", "laag", "borderline"]);
 
 export const SollicitatieStatusSchema = z.enum([
     "gesolliciteerd",

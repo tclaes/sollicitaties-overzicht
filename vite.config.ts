@@ -1,18 +1,19 @@
-import { defineConfig } from "vite";
+import {defineConfig} from "vite";
 import react from "@vitejs/plugin-react";
-import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
-import tsConfigPaths from "vite-tsconfig-paths";
+import {TanStackRouterVite} from "@tanstack/router-plugin/vite";
 
 export default defineConfig({
-  plugins: [
-    TanStackRouterVite({
-      routesDirectory: "app/routes",
-      generatedRouteTree: "app/routeTree.gen.ts",
-    }),
-    react(),
-    tsConfigPaths(),
-  ],
-  build: {
-    outDir: "dist",
-  },
+    plugins: [
+        TanStackRouterVite({
+            routesDirectory: "app/routes",
+            generatedRouteTree: "app/routeTree.gen.ts",
+        }),
+        react(),
+    ],
+    build: {
+        outDir: "dist"
+    },
+    resolve: {
+        tsconfigPaths: true
+    }
 });
