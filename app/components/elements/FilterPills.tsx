@@ -22,7 +22,6 @@ export function FilterPills({currentSearch, basePad = "/vacatures"}: Props) {
                 Object.entries(merged).filter(([, v]) => v !== undefined) as [string, string][]
             )
         );
-        console.log(search.toString());
         return `${basePad}${search.size ? `?${search}` : ""}`;
     }
 

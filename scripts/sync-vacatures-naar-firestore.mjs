@@ -13,6 +13,15 @@
  *
  * Service-account: pad als 2e argument, of via env var FIREBASE_SERVICE_ACCOUNT_PATH.
  *
+ * Document-id: wordt afgeleid van de GENORMALISEERDE url (hostname + pad, zonder
+ * queryparameters/trailing slash), niet van bedrijf+titel-tekst. Dat is bewust: bedrijf/titel
+ * kunnen dag na dag licht anders geformuleerd worden ("Front-end" vs "Frontend Developer"),
+ * wat met een tekst-gebaseerd id telkens een NIEUW document opleverde i.p.v. een update
+ * (= de bron van de duplicaten die op 23-06-2026 zijn vastgesteld). Gebruik dus altijd dezelfde
+ * directe url voor dezelfde vacature, en geef bij `verlopen: true` ook diezelfde url (of het
+ * gekende `id`) mee — nooit enkel bedrijf/titel, anders wordt het verkeerde/geen document
+ * verwijderd. Alleen als `url` ontbreekt valt dit script terug op bedrijf+titel.
+ *
  * Belangrijk: status en gevondenOp van een BESTAAND Firestore-document worden nooit
  * overschreven. Die velden veranderen enkel via de app zelf (solliciteren/status wijzigen).
  * Dit script voegt alleen content toe of werkt content bij (titel/locatie/beschrijving/...).
@@ -59,6 +68,25 @@ function slugify(s) {
     .replace(/^-+|-+$/g, "");
 }
 
+function normaliseerUrl(url) {
+  if (!url) return null;
+  try {
+    const u = new URL(url);
+    const pad = u.pathname.replace(/\/+$/, "");
+    return `${u.hostname}${pad}`.toLowerCase();
+  } catch {
+    return url.toLowerCase().replace(/[?#].*$/, "").replace(/\/+$/, "");
+  }
+}
+
+// Document-id consistent houden over dagen heen: liefst uit de url (stabiel),
+// enkel terugvallen op bedrijf+titel als er geen url is. Zie opmerking hierboven.
+function genereerId(v) {
+  if (v.id) return v.id;
+  if (v.url) return slugify(normaliseerUrl(v.url));
+  return slugify(`${v.bedrijf}-${v.titel}`);
+}
+
 function valideer(v, i) {
   const fouten = [];
   if (!v.titel) fouten.push("titel ontbreekt");
@@ -84,7 +112,7 @@ let nieuw = 0, bijgewerkt = 0, verwijderd = 0, overgeslagen = 0;
 
 for (const [i, v] of input.entries()) {
   if (v.verlopen) {
-    const id = v.id || slugify(`${v.bedrijf}-${v.titel}`);
+    const id = genereerId(v);
     const ref = db.collection("vacatures").doc(id);
     const snap = await ref.get();
     if (snap.exists) {
