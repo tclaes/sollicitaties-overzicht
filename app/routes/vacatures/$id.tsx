@@ -29,6 +29,11 @@ export const Route = createFileRoute("/vacatures/$id")({
     ),
 });
 
+/**
+ * Renders the vacature detail page.
+ *
+ * Displays the vacature header, tags, description, and external link when available.
+ */
 function VacatureDetailPage() {
     const {vacature} = Route.useLoaderData();
 
