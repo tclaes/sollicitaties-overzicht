@@ -3,14 +3,27 @@
     "target": "ES2022",
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "jsx": "react-jsx",
     "strict": true,
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./app/*"]
+      "~/*": [
+        "./app/*"
+      ],
+      "~/elements/*": [
+        "./app/components/elements/*"
+      ]
     }
   },
-  "include": ["app", "scripts", "app/types"]
+  "include": [
+    "app",
+    "scripts",
+    "app/types"
+  ]
 }

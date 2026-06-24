@@ -1,31 +1,17 @@
-import { logout } from "~/lib/auth";
+import {logout} from "~/lib/auth";
 import styles from "./Header.module.css";
+import {CLink} from "../elements/Link/CLink"
 
 export function Header() {
-  const pad = typeof window !== "undefined" ? window.location.pathname : "/";
-
-  return (
-    <header className={styles.header}>
-      <a href="/" className={styles.logo}>
-        Sollicitaties
-      </a>
-      <nav className={styles.nav} aria-label="Hoofdnavigatie">
-        <a
-          href="/"
-          className={`${styles.link} ${pad === "/" ? styles.actief : ""}`}
-          aria-current={pad === "/" ? "page" : undefined}
-        >
-          Dashboard
-        </a>
-        <a
-          href="/vacatures"
-          className={`${styles.link} ${pad.startsWith("/vacatures") ? styles.actief : ""}`}
-          aria-current={pad.startsWith("/vacatures") ? "page" : undefined}
-        >
-          Alle vacatures
-        </a>
-      </nav>
-      <button className={styles.logout} onClick={() => logout()}>Uitloggen</button>
-    </header>
-  );
+    return (
+        <header className={styles.header}>
+            <a href="/" className={styles.logo}>
+                Sollicitaties
+            </a>
+            <nav className={styles.nav} aria-label="Hoofdnavigatie">
+                <CLink url={"/vacatures"} variant={"extern"} route={"/vacatures"}>Alle vacatures</CLink>
+            </nav>
+            <button className={styles.logout} onClick={() => logout()}>Uitloggen</button>
+        </header>
+    );
 }

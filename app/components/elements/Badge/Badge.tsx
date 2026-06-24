@@ -1,5 +1,5 @@
 import type {Status} from "~/lib/schemas";
-import styles from "./StatusBadge.module.css";
+import styles from "./Badge.module.css";
 
 const labels: Record<Status, string> = {
     nieuw: "Nieuw",
@@ -9,7 +9,7 @@ const labels: Record<Status, string> = {
     "niet-interessant": "Niet interessant",
 };
 
-export function StatusBadge({status}: { status: Status }) {
+export function Badge({status}: { status: Status }) {
     return (
         <span className={`${styles.badge} ${styles[status.replace("-", "")]}`}>
       {labels[status]}

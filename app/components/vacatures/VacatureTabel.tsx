@@ -1,7 +1,7 @@
 import {useState} from "react";
 import type {Sollicitatie, Vacature} from "~/lib/schemas";
-import {StatusBadge} from "./StatusBadge";
 import {BronBadge} from "../elements/BronBadge";
+import {Badge} from "../elements/Badge/Badge"
 import styles from "./VacatureTabel.module.css";
 
 const SOLLICITATIE_STATUS_LABELS: Record<Sollicitatie["status"], string> = {
@@ -104,7 +104,7 @@ export function VacatureTabel({vacatures, sollicitatiePerId = new Map(), onSolli
                             }}
                         >
                             <td>
-                                <StatusBadge status={isGesolliciteerd ? "gesolliciteerd" : v.status}/>
+                                <Badge status={isGesolliciteerd ? "gesolliciteerd" : v.status}/>
                                 {isGesolliciteerd && sollicitatieLabel && (
                                     <span className={styles.sollicitatielabel}>{sollicitatieLabel}</span>
                                 )}

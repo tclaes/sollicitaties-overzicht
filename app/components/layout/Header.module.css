@@ -13,34 +13,14 @@
 }
 
 .logo {
-  font-size: var(--text-sm);
-  font-weight: var(--font-semibold);
   color: var(--color-text);
-  letter-spacing: -0.01em;
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
 }
 
 .nav {
   display: flex;
   gap: 2px;
-}
-
-.link {
-  font-size: var(--text-sm);
-  padding: 4px var(--space-3);
-  border-radius: var(--radius-md);
-  color: var(--color-text-muted);
-  transition: background var(--transition-fast), color var(--transition-fast);
-}
-
-.link:hover {
-  background: var(--color-bg);
-  color: var(--color-text);
-}
-
-.actief {
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-weight: var(--font-medium);
 }
 
 .logout {
