@@ -14,7 +14,7 @@ export function CLink({url, variant, target = "_blank", children}: Props) {
             href={url}
             target={`${target}`}
             rel="noopener noreferrer"
-            className={`${styles.button} ${styles[variant]} link`}
+            className={`${styles.link} ${styles[variant]} link`}
         >
             {children}
         </a>
