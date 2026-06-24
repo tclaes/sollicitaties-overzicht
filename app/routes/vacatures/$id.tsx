@@ -25,7 +25,7 @@ export const Route = createFileRoute("/vacatures/$id")({
   notFoundComponent: () => (
     <div className={styles.notFound}>
       <h1>Vacature niet gevonden</h1>
-      <a href="/vacatures">Terug naar overzicht</a>
+      <a href="/dashboard">Terug naar overzicht</a>
     </div>
   ),
 });
@@ -71,10 +71,10 @@ function VacatureDetailPage() {
 
         {vacature.url && (
           <footer className={styles.footer}>
-            <CLink url={vacature.url} variant={"cta"}>Bekijk vacature →</CLink>
+            <CLink url={vacature.url} variant={"cta"} target={"_blank"}>Bekijk vacature →</CLink>
             <div className="archive">
               <label htmlFor="archive">Archive </label>
-              <input type="checkbox" id="archive" onChange={(e) => archiveVacature(vacature.id, e)}/>
+              <input type="checkbox" id="archive" onChange={(e) => archiveVacature(vacature.id, e.target.checked)}/>
             </div>
           </footer>
         )}
