@@ -6,26 +6,6 @@
   gap: var(--space-6);
 }
 
-:global(.link) {
-  --bg-color: purple;
-}
-
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-}
-
-.breadcrumb a {
-  color: var(--color-text-muted);
-}
-
-.breadcrumb a:hover {
-  color: var(--color-accent);
-  text-decoration: none;
-}
 
 .artikel {
   background: var(--color-surface);
