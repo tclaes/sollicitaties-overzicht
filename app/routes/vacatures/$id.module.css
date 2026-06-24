@@ -110,27 +110,6 @@
     }
 }
 
-:global(.link) {
-    --btn-color-accent: green;
-}
-
-.cta {
-    display: inline-flex;
-    align-items: center;
-    padding: var(--space-3) var(--space-6);
-    background: var(--color-accent);
-    color: var(--color-text-inverse);
-    border-radius: var(--radius-md);
-    font-weight: var(--font-medium);
-    transition: background var(--transition-fast);
-    text-decoration: none;
-}
-
-.cta:hover {
-    background: var(--color-accent-hover);
-    text-decoration: none;
-}
-
 .notFound {
     max-width: 400px;
     margin: var(--space-16) auto;

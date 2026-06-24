@@ -8,14 +8,14 @@
     <array>
         <string>/bin/bash</string>
         <string>-lc</string>
-        <string>/Users/tomclaes/Library/CloudStorage/OneDrive-Personal/Werk/SollicitatiesApp/scripts/run-firestore-sync.sh</string>
+        <string>/Users/tomclaes/bin/firestoresync.sh</string>
     </array>
     <key>StartCalendarInterval</key>
     <dict>
         <key>Hour</key>
-        <integer>12</integer>
+        <integer>13</integer>
         <key>Minute</key>
-        <integer>30</integer>
+        <integer>0</integer>
     </dict>
     <key>StandardOutPath</key>
     <string>/Users/tomclaes/Library/CloudStorage/OneDrive-Personal/Werk/SollicitatiesApp/data/launchd.log</string>
