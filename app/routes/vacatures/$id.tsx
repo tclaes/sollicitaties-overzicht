@@ -76,15 +76,7 @@ function VacatureDetailPage() {
 
                 {vacature.url && (
                     <footer className={styles.footer}>
-                        <a
-                            href={vacature.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={styles.cta}
-                        >
-                            Bekijk vacature →
-                        </a>
-                        <CLink url={vacature.url} variant={"cta"}>Bekijk →</CLink>
+                        <CLink url={vacature.url} variant={"cta"}>Bekijk vacature →</CLink>
                         <div className="archive">
                             <label htmlFor="archive">Archive </label>
                             <input type="checkbox" id="archive" onChange={(e) => archiveVacature(vacature.id, e)}/>
