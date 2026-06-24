@@ -92,7 +92,7 @@ export const DagOverzichtSchema = z.object({
   }),
 });
 
-export type Bron = z.infer<typeof SourceSchema>;
+export type Source = z.infer<typeof SourceSchema>;
 export type Status = z.infer<typeof StatusSchema>;
 export type Region = z.infer<typeof RegionSchema>;
 export type MatchScore = z.infer<typeof MatchScoreSchema>;

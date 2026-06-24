@@ -1,6 +1,6 @@
-import { signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
-import type { User } from "firebase/auth";
-import { auth } from "./firebase";
+import type {User} from "firebase/auth";
+import {onAuthStateChanged, signInWithEmailAndPassword, signOut} from "firebase/auth";
+import {auth} from "./firebase";
 
 export async function login(email: string, wachtwoord: string): Promise<void> {
   await signInWithEmailAndPassword(auth, email, wachtwoord);
@@ -14,6 +14,6 @@ export function onAuthChange(callback: (user: User | null) => void): () => void 
   return onAuthStateChanged(auth, callback);
 }
 
-export function huidigGebruiker() {
+export function currentUser() {
   return auth.currentUser;
 }
