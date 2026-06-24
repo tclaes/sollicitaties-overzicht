@@ -6,16 +6,14 @@ const KEY = "vacature-statussen";
 const DATUM_KEY = "vacature-sollicitaties";
 
 export async function updateSollicitatie(
-    id: string,
-    status: SollicitatieStatus,
+  id: string,
+  status: SollicitatieStatus,
 ): Promise<void> {
   await updateDoc(doc(db, "sollicitaties", id), {status});
 }
 
 export async function setStatus(id: string, status: Status) {
   await updateDoc(doc(db, 'vacatures', id), {status})
-
-
 }
 
 export function getSollicitatieDatum(id: string): string | undefined {
