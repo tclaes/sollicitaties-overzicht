@@ -24,7 +24,7 @@ export const Route = createFileRoute("/vacatures/$id")({
   notFoundComponent: () => (
     <div className={styles.notFound}>
       <h1>Vacature niet gevonden</h1>
-      <a href="/dashboard">Terug naar overzicht</a>
+      <a href="/">Terug naar overzicht</a>
     </div>
   ),
 });
