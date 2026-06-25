@@ -27,7 +27,7 @@ function DashboardPage() {
     sollicitaties.flatMap((s) => s.vacatureId ? [[s.vacatureId, s]] : [])
   );
 
-  const matchVolgorde: Record<string, number> = {sterk: 0, goed: 1, matig: 2, laag: 3};
+  const matchVolgorde: Record<string, number> = {sterk: 0, goed: 1, matig: 2, laag: 3, borderline: 4};
 
   const prefiltered = overview
     ? overview.filter((v) => {
