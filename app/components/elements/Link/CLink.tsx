@@ -12,7 +12,6 @@ type Props = {
 
 export function CLink({url, variant, target = "_self", route, children}: Props) {
   const path = typeof window !== "undefined" ? window.location.pathname : "/";
-  console.log(path.startsWith(route));
 
   return (
     <a
