@@ -1,20 +1,14 @@
 import {createFileRoute} from "@tanstack/react-router";
-import {z} from "zod";
 import {getAllVacatures} from "~/lib/vacatures";
 import {VacatureTabel} from "~/components/vacatures/VacatureTabel";
 import {StatsTeller} from "~/components/elements/StatsTeller";
 import {FilterPills} from "~/components/elements/FilterPills";
-import {SortingSchema, SourceSchema, StatusSchema} from "~/lib/schemas";
+import {DefaultSearchSchema} from "~/lib/schemas";
 import styles from "./index.module.css";
 
-const searchSchema = z.object({
-  status: StatusSchema.optional(),
-  source: SourceSchema.optional(),
-  sort: SortingSchema.default("match"),
-});
 
 export const Route = createFileRoute("/vacatures/")({
-  validateSearch: searchSchema,
+  validateSearch: DefaultSearchSchema,
   loader: async () => {
     const vacatures = await getAllVacatures();
     return {vacatures};
