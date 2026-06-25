@@ -5,8 +5,8 @@ type Target = "_blank" | "_self" | "_parent" | "_top";
 type Props = {
   target?: string;
   url: string;
-  variant: Variant;
-  route: string;
+  variant?: Variant;
+  route?: string;
   children?: React.ReactNode;
 }
 
