@@ -73,7 +73,14 @@ function VacatureDetailPage() {
             <CLink url={vacature.url} variant={"cta"} target={"_blank"}>Bekijk vacature →</CLink>
             <div className="archive">
               <label htmlFor="archive">Archive </label>
-              <input type="checkbox" id="archive" onChange={(e) => archiveVacature(vacature.id, e.target.checked)}/>
+              <input type="checkbox" id="archive" onChange={(e) => {
+                try {
+                  archiveVacature(vacature.id, e.target.checked)
+                } catch (err) {
+                  console.error(err);
+                  e.target.checked = false;
+                }
+              }}/>
             </div>
           </footer>
         )}
