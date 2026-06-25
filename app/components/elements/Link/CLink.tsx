@@ -1,4 +1,5 @@
 import styles from "./CLink.module.css"
+import path from "~/lib/utils"
 
 type Variant = "cta" | "extern";
 type Target = "_blank" | "_self" | "_parent" | "_top";
@@ -11,8 +12,6 @@ type Props = {
 }
 
 export function CLink({url, variant, target = "_self", route, children}: Props) {
-  const path = typeof window !== "undefined" ? window.location.pathname : "/";
-  console.log(path.startsWith(route));
 
   return (
     <a

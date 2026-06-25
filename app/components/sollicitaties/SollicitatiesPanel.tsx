@@ -17,13 +17,13 @@ export function SollicitatiesPanel({sollicitaties, showHeader = false}: Props) {
     (a, b) => b.gesolliceerdOp.localeCompare(a.gesolliceerdOp)
   );
 
-  async function handleStatusChange(id: string, status: SollicitatieStatus) {
+  async function handleStatusChange(id: string, status: SollicitatieStatus, vacatureId?: string) {
     setLokaleStatussen((prev) => ({...prev, [id]: status}));
     try {
       await updateSollicitatie(id, status);
 
       if (status === SollicitatieStatusSchema.enum.afgewezen) {
-        archiveVacature(id, true)
+        await archiveVacature(vacatureId, true)
       }
     } catch {
       // Revert on failure
