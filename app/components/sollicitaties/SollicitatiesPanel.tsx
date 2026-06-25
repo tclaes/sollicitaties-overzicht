@@ -17,13 +17,13 @@ export function SollicitatiesPanel({sollicitaties, showHeader = false}: Props) {
     (a, b) => b.gesolliceerdOp.localeCompare(a.gesolliceerdOp)
   );
 
-  async function handleStatusChange(id: string, status: SollicitatieStatus) {
+  async function handleStatusChange(id: string, status: SollicitatieStatus, vacatureId) {
     setLokaleStatussen((prev) => ({...prev, [id]: status}));
     try {
       await updateSollicitatie(id, status);
 
       if (status === SollicitatieStatusSchema.enum.afgewezen) {
-        archiveVacature(id, true)
+        archiveVacature(vacatureId, true)
       }
     } catch {
       // Revert on failure
@@ -62,7 +62,7 @@ export function SollicitatiesPanel({sollicitaties, showHeader = false}: Props) {
                   <select
                     className={`${styles.statusSelect} ${styles[`status_${currentStatus}`]}`}
                     value={currentStatus}
-                    onChange={(e) => handleStatusChange(s.id, e.target.value as SollicitatieStatus)}
+                    onChange={(e) => handleStatusChange(s.id, e.target.value as SollicitatieStatus, s.vacatureId)}
                     onClick={(e) => e.stopPropagation()}
                   >
                     {STATUSSES.map((st) => (
