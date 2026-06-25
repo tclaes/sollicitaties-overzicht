@@ -5,6 +5,8 @@ import {BronBadge} from "../elements/BronBadge";
 import {Badge} from "../elements/Badge/Badge"
 import styles from "./VacatureTabel.module.css";
 import {todayIso} from "~/lib/date";
+import {useNavigate} from '@tanstack/react-router'
+
 
 interface Props {
   vacatures: Vacature[];
@@ -22,6 +24,7 @@ export function VacatureTabel({vacatures, sollicitatiePerId = new Map(), onSolli
   const [openAction, setOpenAction] = useState<string | null>(null);
   const [datumInput, setDatumInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
 
   if (vacatures.length === 0) {
@@ -88,8 +91,8 @@ export function VacatureTabel({vacatures, sollicitatiePerId = new Map(), onSolli
             <tr
               key={v.id}
               className={styles.rij}
-              onClick={() => {
-                window.location.href = `/vacatures/${v.id}`;
+              onClick={async () => {
+                await navigate({to: `/vacatures/${v.id}`})
               }}
             >
               <td>
@@ -131,6 +134,7 @@ export function VacatureTabel({vacatures, sollicitatiePerId = new Map(), onSolli
                   <button
                     className={styles.solliciteerBtn}
                     onClick={(e) => openSolliciteer(e, v.id)}
+                    type="button"
                   >
                     Solliciteer
                   </button>
@@ -146,6 +150,7 @@ export function VacatureTabel({vacatures, sollicitatiePerId = new Map(), onSolli
                       value={datumInput}
                       onChange={(e) => setDatumInput(e.target.value)}
                       autoFocus
+                      aria-label="autofocus"
                     />
                     <button type="submit" className={styles.bevestigBtn} title="Bevestigen"
                             disabled={loading}>✓

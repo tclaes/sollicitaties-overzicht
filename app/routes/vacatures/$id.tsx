@@ -1,7 +1,7 @@
 import {createFileRoute, notFound} from "@tanstack/react-router";
 import {archiveVacature, getVacature} from "~/lib/vacatures";
 import {setStatus} from "~/lib/statusStore";
-import {Badge} from "../../components/elements/Badge/Badge"
+import {Badge} from "~/elements/Badge/Badge"
 import {BronBadge} from "~/components/elements/BronBadge";
 import {formatDate} from "~/lib/date";
 import styles from "./$id.module.css";
@@ -14,10 +14,9 @@ export const Route = createFileRoute("/vacatures/$id")({
     const vacature = await getVacature(params.id);
     if (!vacature) throw notFound();
 
-    if (vacature.status === StatusSchema.enum.nieuw) {
-      debugger
-      await setStatus(params.id, StatusSchema.enum.bekeken);
-      return {vacature: {...vacature, status: StatusSchema.enum.bekeken}};
+    if (vacature.status === StatusSchema.Values.nieuw) {
+      await setStatus(params.id, StatusSchema.Values.bekeken);
+      return {vacature: {...vacature, status: StatusSchema.Values.bekeken}};
     }
     return {vacature};
   },
