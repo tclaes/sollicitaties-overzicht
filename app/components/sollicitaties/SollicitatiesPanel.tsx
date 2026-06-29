@@ -5,7 +5,6 @@ import styles from "./SollicitatiesPanel.module.css";
 import {useNavigate} from "@tanstack/react-router";
 
 const STATUSSES = Object.keys(SOLLICITATIE_STATUS_LABELS) as SollicitatieStatus[];
-const navigate = useNavigate();
 
 interface Props {
   sollicitaties: Sollicitatie[];
@@ -22,12 +21,15 @@ export function SollicitatiesPanel({sollicitaties, showHeader = false}: Props) {
   async function handleStatusChange(id: string, status: SollicitatieStatus, vacatureId?: string) {
     setLokaleStatussen((prev) => ({...prev, [id]: status}));
     try {
-      await updateSollicitatie(id, status);
+      await updateSollicitatie(id, status).then(() => {
+        if (status === SollicitatieStatusSchema.enum.afgewezen && vacatureId) {
+          await archiveVacature(vacatureId, true)
+          const navigate = useNavigate();
+          await navigate({to: '/'})
+        }
+      })
 
-      if (status === SollicitatieStatusSchema.enum.afgewezen && vacatureId) {
-        await archiveVacature(vacatureId, true)
-        await navigate({to: '/'})
-      }
+
     } catch {
       // Revert on failure
       setLokaleStatussen((prev) => {
