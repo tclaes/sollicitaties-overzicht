@@ -2,8 +2,10 @@ import {useState} from "react";
 import {Sollicitatie, SOLLICITATIE_STATUS_LABELS, SollicitatieStatus, SollicitatieStatusSchema} from "~/lib/schemas";
 import {archiveVacature, updateSollicitatie} from "~/lib/vacatures";
 import styles from "./SollicitatiesPanel.module.css";
+import {useNavigate} from "@tanstack/react-router";
 
 const STATUSSES = Object.keys(SOLLICITATIE_STATUS_LABELS) as SollicitatieStatus[];
+const navigate = useNavigate();
 
 interface Props {
   sollicitaties: Sollicitatie[];
@@ -17,13 +19,14 @@ export function SollicitatiesPanel({sollicitaties, showHeader = false}: Props) {
     (a, b) => b.gesolliceerdOp.localeCompare(a.gesolliceerdOp)
   );
 
-  async function handleStatusChange(id: string, status: SollicitatieStatus, vacatureId) {
+  async function handleStatusChange(id: string, status: SollicitatieStatus, vacatureId?: string) {
     setLokaleStatussen((prev) => ({...prev, [id]: status}));
     try {
       await updateSollicitatie(id, status);
 
-      if (status === SollicitatieStatusSchema.enum.afgewezen) {
-        archiveVacature(vacatureId, true)
+      if (status === SollicitatieStatusSchema.enum.afgewezen && vacatureId) {
+        await archiveVacature(vacatureId, true)
+        await navigate({to: '/'})
       }
     } catch {
       // Revert on failure
