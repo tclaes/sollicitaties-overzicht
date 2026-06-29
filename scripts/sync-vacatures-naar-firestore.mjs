@@ -126,7 +126,7 @@ for (const [i, v] of input.entries()) {
   }
 
   valideer(v, i);
-  const id = v.id || slugify(`${v.bedrijf}-${v.titel}`);
+  const id = genereerId(v);
   const ref = db.collection("vacatures").doc(id);
   const snap = await ref.get();
 
