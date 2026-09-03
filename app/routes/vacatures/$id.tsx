@@ -1,12 +1,12 @@
 import {createFileRoute, notFound} from "@tanstack/react-router";
 import {archiveVacature, getVacature} from "~/lib/vacatures";
 import {setStatus} from "~/lib/statusStore";
-import {StatusBadge} from "~/components/vacatures/StatusBadge";
+import {Badge} from "~/components/elements/Badge/Badge";
 import {BronBadge} from "~/components/elements/BronBadge";
 import {formatDate} from "~/lib/date";
 import styles from "./$id.module.css";
 import {StatusSchema} from "~/lib/schemas";
-import {CLink} from "~/components/elements/CLink";
+import {CLink} from "~/components/elements/Link/CLink";
 
 export const Route = createFileRoute("/vacatures/$id")({
   loader: async ({params}) => {
@@ -44,7 +44,7 @@ function VacatureDetailPage() {
       <article className={styles.artikel}>
         <header className={styles.header}>
           <div className={styles.badges}>
-            <StatusBadge status={vacature.status}/>
+            <Badge status={vacature.status}/>
             <BronBadge bron={vacature.bron}/>
           </div>
           <h1 className={styles.titel}>{vacature.titel}</h1>
