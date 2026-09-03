@@ -28,5 +28,6 @@ npm run dedupe:firestore            # dry-run
 npm run dedupe:firestore -- --apply # ruimt harde duplicaten echt op
 ```
 
-`scripts/run-firestore-sync.sh` en `scripts/com.tomclaes.firestoresync.plist` zijn de
-oude lokale launchd-opzet. Die is vervangen door bovenstaande workflow.
+De oude lokale launchd-opzet (`scripts/run-firestore-sync.sh` en
+`scripts/com.tomclaes.firestoresync.plist`) is verwijderd; de workflow hierboven
+neemt die rol over.

@@ -9,5 +9,4 @@ dist/
 public/data/vacatures/data.json
 secrets/*.json
 data/sync.log
-data/launchd.log
 .idea/
