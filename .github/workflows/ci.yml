@@ -1,0 +1,51 @@
+name: CI
+
+# Bouwt en test elke PR naar main. Tot nu toe draaide er niets op PR-niveau: de
+# deploy-workflow triggert pas op push naar main, waardoor een build-brekende
+# wijziging pas zichtbaar werd nadat die al gemerged was (zie de gefaalde deploys
+# vanaf 24-06-2026).
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+# Bij snel opeenvolgende pushes naar dezelfde PR telt alleen de laatste.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-en-test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node.js installeren
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Dependencies installeren
+        run: npm ci
+
+      - name: Tests
+        run: npm test -- --run
+
+      # Zelfde stap als in deploy.yml, zodat een PR faalt op precies wat ook de
+      # deploy zou breken. De VITE_-waarden zijn buildtime-config; zonder deze
+      # secrets bouwt Vite een app die naar een leeg Firebase-project wijst.
+      - name: Build
+        run: npm run build
+        env:
+          VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+          VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}
+          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
+          VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
