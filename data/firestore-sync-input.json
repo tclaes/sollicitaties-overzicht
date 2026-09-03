@@ -1,0 +1,560 @@
+[
+  {
+    "titel": "Junior Software Engineer",
+    "bedrijf": "Recommand",
+    "locatie": "Hasselt",
+    "regio": "limburg",
+    "url": "https://recommand.eu/en/jobs/junior-software-engineer",
+    "beschrijving": "Junior front-end/full-stack rol bij softwarebedrijf Recommand in Hasselt.",
+    "bron": "andere",
+    "tags": [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "modern web-stack"
+    ]
+  },
+  {
+    "titel": "Senior Software Engineer",
+    "bedrijf": "Recommand",
+    "locatie": "Hasselt",
+    "regio": "limburg",
+    "url": "https://recommand.eu/en/jobs/senior-software-engineer",
+    "beschrijving": "Senior front-end/full-stack rol bij Recommand in Hasselt.",
+    "bron": "andere",
+    "tags": [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "modern web-stack"
+    ]
+  },
+  {
+    "titel": "Full Stack Developer",
+    "bedrijf": "Outpost24",
+    "locatie": "Leuven",
+    "regio": "andere",
+    "url": "https://careers.outpost24.com/jobs/7206297-full-stack-developer",
+    "beschrijving": "Full Stack Developer met Angular-frontend en Python-backend bij cybersecuritybedrijf Outpost24.",
+    "bron": "andere",
+    "tags": [
+      "Angular",
+      "Python"
+    ]
+  },
+  {
+    "titel": "Frontend Engineer",
+    "bedrijf": "Twipe",
+    "locatie": "Leuven (hybride)",
+    "regio": "andere",
+    "url": "https://careers.twipemobile.com/o/frontend-engineer",
+    "beschrijving": "Frontend Engineer bij medialeverancier Twipe, hybride werken vanuit Leuven (4+ jaar ervaring vereist).",
+    "bron": "andere",
+    "tags": [
+      "React",
+      "React Native",
+      "TypeScript"
+    ]
+  },
+  {
+    "titel": "Senior/Medior Mobile Developer (React Native)",
+    "bedrijf": "Octiva",
+    "locatie": "Leuven (hybride)",
+    "regio": "andere",
+    "url": "https://octiva.tech/jobs/",
+    "beschrijving": "Mobile developer-rol bij greenhouse-tech bedrijf Octiva.",
+    "bron": "andere",
+    "tags": [
+      "React Native",
+      "TypeScript"
+    ]
+  },
+  {
+    "titel": "Senior Fullstack Developer (.NET/React)",
+    "bedrijf": "Madison Recruitment (via Editx)",
+    "locatie": "Mechelen",
+    "regio": "andere",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/73959210",
+    "beschrijving": "Senior fullstack-rol, min. 6 jaar ervaring, vast contract. Elektrische bedrijfswagen, maaltijd-/ecocheques, 20+9 verlofdagen, 1-2 thuiswerkdagen/week.",
+    "bron": "vdab",
+    "tags": [
+      "C#",
+      ".NET 6/7",
+      "Angular",
+      "React",
+      "Azure"
+    ]
+  },
+  {
+    "titel": "Senior Full Stack Engineer (React/TypeScript)",
+    "bedrijf": "Sitemark",
+    "locatie": "Leuven (hybride, 2 dagen/week op kantoor)",
+    "regio": "andere",
+    "url": "https://join.com/companies/sitemark/16517879-senior-full-stack-engineer-react-typescript",
+    "beschrijving": "Vacature niet meer beschikbaar (bevestigd 12-08-2026).",
+    "bron": "andere",
+    "tags": [],
+    "verlopen": true
+  },
+  {
+    "titel": "Front-end Developer",
+    "bedrijf": "DevLab.Career",
+    "locatie": "Benelux (geen vaste locatie vermeld)",
+    "regio": "remote",
+    "url": "https://www.devlab.career/careers/front-end-developer/",
+    "beschrijving": "Front-end Developer bij DevLab.Career, een .NET-gerichte consultancy/talent-incubator. Vereiste skills: HTML, JavaScript, CSS, SASS, React/Angular/Vue, Service Workers/PWA's, Headless CMS.",
+    "bron": "andere",
+    "tags": [
+      "frontend",
+      "react",
+      "angular",
+      "vue",
+      "consultancy"
+    ]
+  },
+  {
+    "titel": "Senior Front-end Developer",
+    "bedrijf": "DigiFist",
+    "locatie": "Remote/hybride (agency in Antwerpen)",
+    "regio": "remote",
+    "url": "https://www.digifist.com/careers",
+    "beschrijving": "Senior Front-end Developer bij e-commerce/Shopify-agency DigiFist, primair gericht op Shopify front-end development. Volledig remote/hybride mogelijk.",
+    "bron": "andere",
+    "tags": [
+      "HTML5",
+      "CSS",
+      "JavaScript ES6",
+      "Shopify/Liquid"
+    ]
+  },
+  {
+    "titel": "Fullstack PHP developer met AI ambitie",
+    "bedrijf": "KRITS",
+    "locatie": "Hasselt",
+    "regio": "limburg",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74213711/fullstack-php-developer-met-ai-ambitie",
+    "beschrijving": "Klein, snelgroeiend digitaal bureau in Hasselt dat software op maat en AI-oplossingen bouwt voor Belgische kmo's. Fullstack rol met Laravel + moderne frontend (Vue/Nuxt) en AI-integraties.",
+    "bron": "vdab",
+    "tags": [
+      "Laravel",
+      "Vue",
+      "Nuxt",
+      "AI/LLM-integraties",
+      "WordPress (plus)"
+    ]
+  },
+  {
+    "titel": "Full Stack Engineer (AI Platform / RBQM)",
+    "bedrijf": "Clario (Thermo Fisher Scientific)",
+    "locatie": "Leuven",
+    "regio": "andere",
+    "url": "https://builtin.com/job/full-stack-engineer-ai-platform-rbqm/10260171",
+    "beschrijving": "AI-platform (NXT) voor Risk-Based Quality Management in klinische studies. Angular-frontend met C#/.NET-backend, AWS/Kubernetes.",
+    "bron": "andere",
+    "tags": [
+      "Angular",
+      "C#/.NET",
+      "AWS"
+    ]
+  },
+  {
+    "titel": "Angular developer SaaS-applicatie",
+    "bedrijf": "Kingfisher Recruitment (client, entertainment/vrijetijdssector)",
+    "locatie": "Olen",
+    "regio": "limburg",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/front-end/angular-developer-saas-applicatie",
+    "beschrijving": "SaaS-platform in de vrijetijdssector met internationaal succes en miljoenen eindgebruikers. Front-end developer rol met voorkeur Angular-ervaring.",
+    "bron": "andere",
+    "tags": [
+      "Angular"
+    ]
+  },
+  {
+    "titel": "Lead Software Engineer (.NET/Angular)",
+    "bedrijf": "Kingfisher Recruitment (client, softwareontwikkelaar)",
+    "locatie": "regio Antwerpen/Limburg",
+    "regio": "limburg",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/lead-developer/lead-software-engineer-netangular",
+    "beschrijving": "Lead-rol bij softwareontwikkelaar via Kingfisher Recruitment.",
+    "bron": "andere",
+    "tags": [
+      ".NET",
+      "Angular"
+    ]
+  },
+  {
+    "titel": ".NET Angular Developer (in-house)",
+    "bedrijf": "Kingfisher Recruitment (client, softwareorganisatie)",
+    "locatie": "regio Antwerpen/Limburg",
+    "regio": "limburg",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/net-angular-developer-in-house",
+    "beschrijving": "In-house .NET/Angular ontwikkelaarsrol via Kingfisher Recruitment.",
+    "bron": "andere",
+    "tags": [
+      ".NET",
+      "Angular"
+    ]
+  },
+  {
+    "titel": "Node.js Developer | Veel flexibiliteit",
+    "bedrijf": "Kingfisher Recruitment (client, marktleider platform+app)",
+    "locatie": "regio Antwerpen/Limburg",
+    "regio": "limburg",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/nodejs-developer-veel-flexibiliteit",
+    "beschrijving": "Node.js developer-rol bij marktleidend platform via Kingfisher Recruitment.",
+    "bron": "andere",
+    "tags": [
+      "Node.js"
+    ]
+  },
+  {
+    "titel": "React Developer | 3 dagen thuiswerk",
+    "bedrijf": "Kingfisher Recruitment (client, marktleider platform+app, regio Lummen)",
+    "locatie": "Lummen",
+    "regio": "limburg",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/react-developer-3-dagen-thuiswerk",
+    "beschrijving": "React developer-rol met 3 dagen thuiswerk via Kingfisher Recruitment.",
+    "bron": "andere",
+    "tags": [
+      "React"
+    ]
+  },
+  {
+    "titel": "Full-Stack Developer | React/Node.js",
+    "bedrijf": "Kingfisher Recruitment (client, marktleider platform+app)",
+    "locatie": "regio Antwerpen/Limburg",
+    "regio": "limburg",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/full-stack-developer-reactnodejs",
+    "beschrijving": "Full-stack developer-rol via Kingfisher Recruitment.",
+    "bron": "andere",
+    "tags": [
+      "React",
+      "Node.js"
+    ]
+  },
+  {
+    "titel": "React developer (Tesla bedrijfswagen)",
+    "bedrijf": "Kingfisher Recruitment (client, SaaS energiebeheer scale-up)",
+    "locatie": "regio Antwerpen/Limburg",
+    "regio": "limburg",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/front-end/react-developer-tesla-bedrijfswagen",
+    "beschrijving": "React developer-rol bij SaaS energiebeheer scale-up via Kingfisher Recruitment.",
+    "bron": "andere",
+    "tags": [
+      "React"
+    ]
+  },
+  {
+    "titel": "Front-end Developer (Angular, React of Vue)",
+    "bedrijf": "Kingfisher Recruitment (client, software-incubator)",
+    "locatie": "regio Antwerpen/Limburg",
+    "regio": "limburg",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/front-end/front-end-developer-angular-react-of-vue",
+    "beschrijving": "Front-end developer-rol bij software-incubator via Kingfisher Recruitment.",
+    "bron": "andere",
+    "tags": [
+      "Angular",
+      "React",
+      "Vue"
+    ]
+  },
+  {
+    "titel": "Full-stack developer",
+    "bedrijf": "Kingfisher Recruitment (client, workforce-management platform)",
+    "locatie": "regio Antwerpen/Limburg",
+    "regio": "limburg",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/full-stack-developer-1",
+    "beschrijving": "Full-stack developer-rol bij workforce-management platform via Kingfisher Recruitment.",
+    "bron": "andere",
+    "tags": [
+      "Full-stack"
+    ]
+  },
+  {
+    "titel": "Vue Developer",
+    "bedrijf": "Kingfisher Recruitment (client, recruitment-softwarebedrijf)",
+    "locatie": "regio Antwerpen/Limburg",
+    "regio": "limburg",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/front-end/vue-developernbsp",
+    "beschrijving": "Vue developer-rol bij recruitment-softwarebedrijf via Kingfisher Recruitment.",
+    "bron": "andere",
+    "tags": [
+      "Vue"
+    ]
+  },
+  {
+    "titel": "Front-End Developer (Angular of React)",
+    "bedrijf": "Kingfisher Recruitment (client, consultancy, 2 oprichters)",
+    "locatie": "regio Antwerpen/Limburg",
+    "regio": "limburg",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/front-end/nl-18",
+    "beschrijving": "Front-end developer-rol bij kleine consultancy via Kingfisher Recruitment.",
+    "bron": "andere",
+    "tags": [
+      "Angular",
+      "React"
+    ]
+  },
+  {
+    "titel": "Fullstack Node.js Developer",
+    "bedrijf": "LGA IT",
+    "locatie": "Leuven",
+    "regio": "andere",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/73597458",
+    "beschrijving": "Fullstack Node.js developer-rol bij LGA IT in Leuven.",
+    "bron": "vdab",
+    "tags": [
+      "Node.js"
+    ]
+  },
+  {
+    "titel": "Node/React developer",
+    "bedrijf": "LGA IT",
+    "locatie": "Leuven",
+    "regio": "andere",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/73692100/node-react-developer",
+    "beschrijving": "Vacature niet meer beschikbaar (bevestigd 12-08-2026: 'Deze vacature is niet meer gepubliceerd').",
+    "bron": "vdab",
+    "tags": [],
+    "verlopen": true
+  },
+  {
+    "titel": "Full Stack Developer (Python/Vue.js)",
+    "bedrijf": "Clovr",
+    "locatie": "regio Antwerpen",
+    "regio": "andere",
+    "url": "https://clovr.be/vacatures/full-stack-developer-python-vue-js/",
+    "beschrijving": "Full Stack Developer met Python-backend en Vue.js-frontend bij Clovr.",
+    "bron": "andere",
+    "tags": [
+      "Python",
+      "Vue.js"
+    ]
+  },
+  {
+    "titel": "Full Stack Developer",
+    "bedrijf": "Digiti",
+    "locatie": "regio Antwerpen",
+    "regio": "andere",
+    "url": "https://digiti.be/en/jobs/job-openings/fullstack-developer",
+    "beschrijving": "Full Stack Developer bij full-service digital agency Digiti.",
+    "bron": "andere",
+    "tags": [
+      "Full-stack"
+    ]
+  },
+  {
+    "titel": "Solution Architect - Node.js, Vue & TypeScript",
+    "bedrijf": "Sweco",
+    "locatie": "Hasselt",
+    "regio": "limburg",
+    "url": "https://be.indeed.com/viewjob?jk=e640a447742daf78",
+    "beschrijving": "Solution Architect bij Sweco Hasselt, ontwerpt architectuur voor webplatformen. Node.js/TypeScript backend, Vue 3/TypeScript frontend, REST/GraphQL, Azure/AWS.",
+    "bron": "indeed",
+    "tags": [
+      "Node.js",
+      "Vue.js",
+      "TypeScript"
+    ]
+  },
+  {
+    "titel": "Senior Fullstack Developer (React/Node.js)",
+    "bedrijf": "Talent-IT (Team4Talent-groep)",
+    "locatie": "regio Antwerpen",
+    "regio": "andere",
+    "url": "https://talent-it.be/nl/vacatures/senior-fullstack-developer-reactnodejs",
+    "beschrijving": "Senior fullstack developer-rol bij Talent-IT.",
+    "bron": "andere",
+    "tags": [
+      "React",
+      "Node.js"
+    ]
+  },
+  {
+    "titel": "Software Developer – Sustainable Supply Chain & LCA Tools",
+    "bedrijf": "Qplox Engineering",
+    "locatie": "regio Leuven",
+    "regio": "andere",
+    "url": "https://www.qplox.com/jobs/software-developer-sustainable-supply-chain-lca-tools/",
+    "beschrijving": "Software developer-rol bij Qplox Engineering, gericht op duurzame supply chain en LCA-tools.",
+    "bron": "andere",
+    "tags": [
+      "Full-stack"
+    ]
+  },
+  {
+    "titel": "Full-Stack developer | React/C#",
+    "bedrijf": "Kingfisher Recruitment (client, start-up softwareonderneming)",
+    "locatie": "regio Antwerpen/Limburg",
+    "regio": "limburg",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/full-stack-developer-reactc",
+    "beschrijving": "Full-stack developer-rol bij start-up softwareonderneming via Kingfisher Recruitment.",
+    "bron": "andere",
+    "tags": [
+      "React",
+      "C#"
+    ]
+  },
+  {
+    "titel": "React developer | Veel flexibiliteit en groeimogelijkheden",
+    "bedrijf": "Kingfisher Recruitment (client, start-up softwareonderneming)",
+    "locatie": "regio Antwerpen/Limburg",
+    "regio": "limburg",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/react-developer-veel-flexibiliteit-en-groeimogelijkheden",
+    "beschrijving": "React developer-rol bij start-up softwareonderneming via Kingfisher Recruitment.",
+    "bron": "andere",
+    "tags": [
+      "React"
+    ]
+  },
+  {
+    "titel": "Team Lead Full Stack Developer",
+    "bedrijf": "Kingfisher Recruitment (client, gevestigde Belgische softwareontwikkelaar)",
+    "locatie": "regio Antwerpen/Limburg",
+    "regio": "limburg",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/lead-developer/team-lead-full-stack-developer",
+    "beschrijving": "Team Lead Full Stack Developer-rol via Kingfisher Recruitment.",
+    "bron": "andere",
+    "tags": [
+      "Full-stack",
+      "Lead"
+    ]
+  },
+  {
+    "titel": "Software developer | React",
+    "bedrijf": "Kingfisher Recruitment (client, start-up softwareonderneming)",
+    "locatie": "regio Antwerpen/Limburg",
+    "regio": "limburg",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/software-developer-react",
+    "beschrijving": "Software developer-rol (React) bij start-up softwareonderneming via Kingfisher Recruitment.",
+    "bron": "andere",
+    "tags": [
+      "React"
+    ]
+  },
+  {
+    "titel": "Fullstack Web Developer",
+    "bedrijf": "Goed zorgwinkel",
+    "locatie": "regio Vlaanderen",
+    "regio": "vlaanderen",
+    "url": "https://www.linkedin.com/jobs/view/4441315019/",
+    "beschrijving": "Vacature niet meer beschikbaar (bevestigd 18-08-2026: LinkedIn toont 'Er kan niet meer worden gesolliciteerd').",
+    "bron": "linkedin",
+    "tags": [],
+    "verlopen": true
+  },
+  {
+    "titel": "Full Stack Engineer",
+    "bedrijf": "Vivid Resourcing (client, internationale staffing company)",
+    "locatie": "Mechelen (hybride)",
+    "regio": "andere",
+    "url": "https://www.linkedin.com/jobs/view/4449642430/",
+    "beschrijving": "Frontend Developer-rol bij internationale staffingorganisatie, Vue.js 3/Composition API + TypeScript, focus op technische SEO en Core Web Vitals. Salaris €3.500-€5.000, bedrijfswagen, hybride werken vanuit Mechelen.",
+    "bron": "linkedin",
+    "tags": [
+      "Vue.js",
+      "TypeScript",
+      "SEO"
+    ]
+  },
+  {
+    "titel": "Senior Frontend Engineer (Full-stack)",
+    "bedrijf": "Soda",
+    "locatie": "Volledig remote (EU)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4449047288/",
+    "beschrijving": "Vacature niet meer beschikbaar (bevestigd 12-08-2026: LinkedIn toont 'Er kan niet meer worden gesolliciteerd').",
+    "bron": "linkedin",
+    "tags": [],
+    "verlopen": true
+  },
+  {
+    "titel": "Full Stack Developer Senior",
+    "bedrijf": "KCS iT",
+    "locatie": "Leuven",
+    "regio": "andere",
+    "url": "https://www.linkedin.com/jobs/view/4443802245-kcs/",
+    "beschrijving": "Vacature-ID ongeldig / vacatureplaatsing verwijderd (bevestigd 07-08-2026).",
+    "bron": "linkedin",
+    "tags": [],
+    "verlopen": true
+  },
+  {
+    "titel": "Frontend Developer",
+    "bedrijf": "MindWalk",
+    "locatie": "Diepenbeek",
+    "regio": "limburg",
+    "url": "https://www.mindwalkai.com/company/careers/open-positions/frontend-developer",
+    "beschrijving": "MindWalk is een biologics discovery bedrijf dat AI en data combineert voor antilichaam-ontwikkeling. Frontend rol voor het SaaS-portaal, gebouwd met React, TypeScript en JavaScript.",
+    "bron": "indeed",
+    "tags": [
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "AWS"
+    ]
+  },
+  {
+    "titel": "REACT Javascript Developer",
+    "bedrijf": "HR organizer",
+    "locatie": "Regio Leuven",
+    "regio": "andere",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74400501/react-javascript-developer",
+    "beschrijving": "HR organizer bouwt een webapplicatie voor online solliciteren en werkenbij-websites. Multidisciplinair team, ook open voor gemotiveerde starters.",
+    "bron": "vdab",
+    "tags": [
+      "React",
+      "VueJS",
+      "Git",
+      "Webpack"
+    ]
+  },
+  {
+    "titel": "Senior Software Engineer",
+    "bedrijf": "Auditstage",
+    "locatie": "Leuven (hybride)",
+    "regio": "andere",
+    "url": "https://www.linkedin.com/jobs/view/4449633467/",
+    "beschrijving": "Auditstage bouwt agentic auditing software voor financiële auditors (audit ERP van de toekomst), gevestigd in Leuven. Senior Software Engineer bouwt end-to-end mee: React/TypeScript-frontend en typed Node-backend (tRPC/Hono), sterke nadruk op PostgreSQL-datamodellering.",
+    "bron": "linkedin",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL"
+    ]
+  },
+  {
+    "titel": "Full stack developer",
+    "bedrijf": "Yellow Jersey",
+    "locatie": "Kontich",
+    "regio": "antwerpen",
+    "url": "https://www.yellowjersey.be/jobs/full-stack-developer",
+    "beschrijving": "Klein digitaal bureau/consultancy in Kontich dat web-, Android- en iOS-projecten uitvoert. Als full stack consultant werk je zelfstandig bij klanten met een uitgesproken JavaScript-stack (React, Node). Eerste ervaring in full-stackontwikkeling volstaat.",
+    "bron": "indeed",
+    "tags": [
+      "React",
+      "Node.js",
+      "JavaScript",
+      "full-stack"
+    ]
+  },
+  {
+    "titel": "AI ontwikkelaar (React/Next.js)",
+    "bedrijf": "Ittes",
+    "locatie": "Turnhout",
+    "regio": "andere",
+    "url": "https://ittes.be/vacatures/ai-ontwikkelaar-react-next-js/",
+    "beschrijving": "Ontwikkelen en onderhouden van het AI-portaal van Ittes met React en/of Next.js en TypeScript, inclusief API-integraties met AI-providers en databasekoppelingen via Prisma/MySQL. Agile (Scrum) team, tests met Jest en Cypress. Vereist: 2-3 jaar ervaring met React of Next.js en solide TypeScript-kennis.",
+    "bron": "indeed",
+    "tags": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "MySQL",
+      "Jest",
+      "Cypress"
+    ]
+  }
+]

@@ -13,6 +13,7 @@ interface Props {
 
 export function SollicitatiesPanel({sollicitaties, showHeader = false}: Props) {
   const [lokaleStatussen, setLokaleStatussen] = useState<Record<string, SollicitatieStatus>>({});
+  const navigate = useNavigate();
 
   const gesorteerd = [...sollicitaties].sort(
     (a, b) => b.gesolliceerdOp.localeCompare(a.gesolliceerdOp)
@@ -21,15 +22,11 @@ export function SollicitatiesPanel({sollicitaties, showHeader = false}: Props) {
   async function handleStatusChange(id: string, status: SollicitatieStatus, vacatureId?: string) {
     setLokaleStatussen((prev) => ({...prev, [id]: status}));
     try {
-      await updateSollicitatie(id, status).then(() => {
-        if (status === SollicitatieStatusSchema.enum.afgewezen && vacatureId) {
-          await archiveVacature(vacatureId, true)
-          const navigate = useNavigate();
-          await navigate({to: '/'})
-        }
-      })
-
-
+      await updateSollicitatie(id, status);
+      if (status === SollicitatieStatusSchema.enum.afgewezen && vacatureId) {
+        await archiveVacature(vacatureId, true);
+        await navigate({to: "/"});
+      }
     } catch {
       // Revert on failure
       setLokaleStatussen((prev) => {

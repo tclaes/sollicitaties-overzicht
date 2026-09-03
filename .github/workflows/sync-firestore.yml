@@ -1,0 +1,84 @@
+name: Sync vacatures naar Firestore
+
+# Draait wanneer data/firestore-sync-input.json wijzigt op main, of handmatig.
+# Vervangt de vroegere lokale launchd-job (com.tomclaes.firestoresync), die afhing
+# van Tom's Mac en daar stukliep op macOS TCC-restricties.
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "data/firestore-sync-input.json"
+  workflow_dispatch:
+    inputs:
+      dedupe_fix:
+        description: "Duplicaten ook echt verwijderen (i.p.v. enkel rapporteren)"
+        type: boolean
+        default: false
+
+# Nooit twee syncs tegelijk naar dezelfde Firestore-database.
+concurrency:
+  group: firestore-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node.js installeren
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Dependencies installeren
+        run: npm ci
+
+      - name: Controleren of de input bestaat
+        run: |
+          if [ ! -f data/firestore-sync-input.json ]; then
+            echo "::error::data/firestore-sync-input.json ontbreekt in de repo."
+            exit 1
+          fi
+          echo "Input gevonden ($(wc -c < data/firestore-sync-input.json) bytes)."
+
+      - name: Service-account klaarzetten
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          if [ -z "${FIREBASE_SERVICE_ACCOUNT:-}" ]; then
+            echo "::error::Secret FIREBASE_SERVICE_ACCOUNT ontbreekt. Zie .github/workflows/sync-firestore.yml."
+            exit 1
+          fi
+          umask 077
+          printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/firebase-service-account.json"
+          node -e 'JSON.parse(require("fs").readFileSync(process.env.RUNNER_TEMP + "/firebase-service-account.json","utf8"))' \
+            || { echo "::error::Secret is geen geldige JSON."; exit 1; }
+
+      - name: Sync naar Firestore
+        env:
+          FIREBASE_SERVICE_ACCOUNT_PATH: ${{ runner.temp }}/firebase-service-account.json
+        run: npm run sync:firestore -- data/firestore-sync-input.json
+
+      # Rapporteert duplicaten. Standaard dry-run: mag de sync zelf nooit doen falen.
+      - name: Dedupe-check
+        if: success()
+        continue-on-error: true
+        env:
+          FIREBASE_SERVICE_ACCOUNT_PATH: ${{ runner.temp }}/firebase-service-account.json
+        run: |
+          if [ "${{ inputs.dedupe_fix }}" = "true" ]; then
+            npm run dedupe:firestore -- --apply
+          else
+            npm run dedupe:firestore
+          fi
+
+      - name: Service-account opruimen
+        if: always()
+        run: rm -f "$RUNNER_TEMP/firebase-service-account.json"
