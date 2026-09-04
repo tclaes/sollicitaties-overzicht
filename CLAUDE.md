@@ -13,7 +13,16 @@ De vacature-sync draait in GitHub Actions, niet meer lokaal.
 
 - Workflow: `.github/workflows/sync-firestore.yml`
 - Trigger: elke push naar `main` die `data/firestore-sync-input.json` wijzigt, plus handmatig
-  via *Run workflow* (met optie om duplicaten echt op te ruimen).
+  via *Run workflow* (met optie om duplicaten echt op te ruimen) of via de CLI:
+
+  ```
+  npm run trigger:sync              # start de workflow en volgt de run
+  npm run trigger:sync -- --dedupe  # idem, maar ruimt duplicaten ook echt op
+  ```
+
+  `trigger:sync` gebruikt `gh workflow run sync-firestore.yml --ref main`, dus de
+  cowork-app kan de sync volledig op GitHub starten zonder eerst naar `main` te pushen.
+  Vereist een ingelogde GitHub CLI (`gh auth status`) met `repo`-scope.
 - Auth: repo-secret `FIREBASE_SERVICE_ACCOUNT` — de volledige inhoud van de
   service-account JSON. De workflow schrijft die naar een tijdelijk bestand en ruimt
   het daarna op.
