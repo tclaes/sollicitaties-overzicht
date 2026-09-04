@@ -8,7 +8,8 @@
     "preview": "vite preview",
     "test": "vitest",
     "sync:firestore": "node scripts/sync-vacatures-naar-firestore.mjs",
-    "dedupe:firestore": "node scripts/dedupe-vacatures.mjs"
+    "dedupe:firestore": "node scripts/dedupe-vacatures.mjs",
+    "trigger:sync": "node scripts/trigger-firestore-sync.mjs"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.120.0",
