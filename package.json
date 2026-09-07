@@ -8,6 +8,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "sync:firestore": "node scripts/sync-vacatures-naar-firestore.mjs",
+    "pdf:vacatures": "node scripts/genereer-vacature-pdf.mjs",
     "dedupe:firestore": "node scripts/dedupe-vacatures.mjs",
     "trigger:sync": "node scripts/trigger-firestore-sync.mjs"
   },
