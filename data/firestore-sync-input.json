@@ -93,7 +93,6 @@
     "url": "https://join.com/companies/sitemark/16517879-senior-full-stack-engineer-react-typescript",
     "beschrijving": "Vacature niet meer beschikbaar (bevestigd 12-08-2026).",
     "bron": "andere",
-    "tags": [],
     "verlopen": true
   },
   {
@@ -315,7 +314,6 @@
     "url": "https://www.vdab.be/vindeenjob/vacatures/73692100/node-react-developer",
     "beschrijving": "Vacature niet meer beschikbaar (bevestigd 12-08-2026: 'Deze vacature is niet meer gepubliceerd').",
     "bron": "vdab",
-    "tags": [],
     "verlopen": true
   },
   {
@@ -440,7 +438,6 @@
     "url": "https://www.linkedin.com/jobs/view/4441315019/",
     "beschrijving": "Vacature niet meer beschikbaar (bevestigd 18-08-2026: LinkedIn toont 'Er kan niet meer worden gesolliciteerd').",
     "bron": "linkedin",
-    "tags": [],
     "verlopen": true
   },
   {
@@ -465,7 +462,6 @@
     "url": "https://www.linkedin.com/jobs/view/4449047288/",
     "beschrijving": "Vacature niet meer beschikbaar (bevestigd 12-08-2026: LinkedIn toont 'Er kan niet meer worden gesolliciteerd').",
     "bron": "linkedin",
-    "tags": [],
     "verlopen": true
   },
   {
@@ -476,7 +472,6 @@
     "url": "https://www.linkedin.com/jobs/view/4443802245-kcs/",
     "beschrijving": "Vacature-ID ongeldig / vacatureplaatsing verwijderd (bevestigd 07-08-2026).",
     "bron": "linkedin",
-    "tags": [],
     "verlopen": true
   },
   {
@@ -525,36 +520,103 @@
     ]
   },
   {
-    "titel": "Full stack developer",
-    "bedrijf": "Yellow Jersey",
-    "locatie": "Kontich",
-    "regio": "antwerpen",
-    "url": "https://www.yellowjersey.be/jobs/full-stack-developer",
-    "beschrijving": "Klein digitaal bureau/consultancy in Kontich dat web-, Android- en iOS-projecten uitvoert. Als full stack consultant werk je zelfstandig bij klanten met een uitgesproken JavaScript-stack (React, Node). Eerste ervaring in full-stackontwikkeling volstaat.",
-    "bron": "indeed",
+    "titel": "Angular front-end developer",
+    "bedrijf": "Imengine",
+    "locatie": "Leuven (Tiensevest 43)",
+    "regio": "andere",
+    "url": "https://www.imengine.be/vacature-Angular-front-end-web-developer",
+    "beschrijving": "Front-end rol bij Imengine in Leuven: Angular of React, HTML5/CSS3/TypeScript, mobile development als pluspunt. Gevonden via WebSearch en gecheckt op de bedrijfspagina zelf. Contracttype staat niet expliciet op de pagina; bedrijfswagen, fietsvergoeding en 'kies zelf welke dagen je naar kantoor komt' wijzen op een vaste aanwerving.",
+    "bron": "andere",
     "tags": [
+      "Angular",
       "React",
-      "Node.js",
-      "JavaScript",
+      "TypeScript",
+      "HTML5/CSS3"
+    ]
+  },
+  {
+    "titel": ".Net / Angular Ontwikkelaar",
+    "bedrijf": "Kingfisher Recruitment (client)",
+    "locatie": "Nijlen",
+    "regio": "antwerpen",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/net-angular-ontwikkelaar",
+    "beschrijving": "Vast contract. BORDERLINE: de vacature vraagt 'een zeer sterke werkervaring in .Net en Angular' en full-stack verantwoordelijkheid inclusief het architecturale plaatje. Frontend is hier dus geen loutere pluspunt, maar het zwaartepunt ligt ook niet uitsluitend op frontend.",
+    "bron": "andere",
+    "tags": [
+      ".NET",
+      "Angular",
       "full-stack"
     ]
   },
   {
-    "titel": "AI ontwikkelaar (React/Next.js)",
-    "bedrijf": "Ittes",
-    "locatie": "Turnhout",
+    "titel": "Full-stack Developer (.NET / Angular)",
+    "bedrijf": "Kingfisher Recruitment (client)",
+    "locatie": "Wilrijk",
+    "regio": "antwerpen",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/full-stack-developer-net-angular",
+    "beschrijving": "BORDERLINE: ontwikkeling 'over de full stack, van backend tot frontend' met 'goede ervaring met Angular', maar gevraagd wordt minimaal 5 jaar ervaring als Full-Stack .NET Developer, plus SQL, Docker/Kubernetes en Azure. Contracttype staat niet expliciet op de pagina.",
+    "bron": "andere",
+    "tags": [
+      ".NET",
+      "Angular",
+      "SQL",
+      "Azure"
+    ]
+  },
+  {
+    "titel": "Software Engineer",
+    "bedrijf": "Predikt",
+    "locatie": "Leuven (Martelarenplein 20E)",
     "regio": "andere",
-    "url": "https://ittes.be/vacatures/ai-ontwikkelaar-react-next-js/",
-    "beschrijving": "Ontwikkelen en onderhouden van het AI-portaal van Ittes met React en/of Next.js en TypeScript, inclusief API-integraties met AI-providers en databasekoppelingen via Prisma/MySQL. Agile (Scrum) team, tests met Jest en Cypress. Vereist: 2-3 jaar ervaring met React of Next.js en solide TypeScript-kennis.",
-    "bron": "indeed",
+    "url": "https://jobs.ashbyhq.com/predikt",
+    "beschrijving": "BORDERLINE: Python + FastAPI backend met Next.js + TypeScript + React frontend; gevraagd wordt 'production experience with TypeScript and React - enough to independently build the frontend portion', maar de listing noemt zichzelf uitdrukkelijk 'a broad software-engineering role, not a frontend-specialist position'. Gevonden via englishjobs.be (geplaatst 16-08); de Ashby-detailpagina kon in deze cloudrun niet opgehaald worden, dus titel en stack komen van die listing plus de careers-pagina predikt.ai/about-us/careers.",
+    "bron": "andere",
     "tags": [
       "React",
-      "Next.js",
       "TypeScript",
-      "Prisma",
-      "MySQL",
-      "Jest",
-      "Cypress"
+      "Next.js",
+      "Python/FastAPI"
+    ]
+  },
+  {
+    "titel": "Front End Developer (Angular)",
+    "bedrijf": "Rydoo",
+    "locatie": "Mechelen",
+    "regio": "antwerpen",
+    "url": "https://www.rydoo.com/company/careers/jobs/front-end-developer-angular-mechelen/?gh_jid=6163461002",
+    "beschrijving": "Niet terugvindbaar als openstaande vacature (nagekeken 02-09-2026). De pagina rendert nog wel, maar de 'Apply now'-knop linkt terug naar het vacature-overzicht in plaats van naar een sollicitatieformulier, en dezelfde slug rendert met meerdere verschillende gh_jid's - een achtergebleven Greenhouse-pagina. Rydoo werft intussen via Workable (apply.workable.com/rydoo), dat JS-gerendeerd is en dus niet leesbaar vanuit de cloud. Bewaard als verlopen zodat een volgende cloudrun deze pagina niet opnieuw als nieuw oppikt.",
+    "bron": "andere",
+    "verlopen": true
+  },
+  {
+    "titel": "Senior Full-Stack Engineer (React/TypeScript)",
+    "bedrijf": "Conveo (Conveo.ai)",
+    "locatie": "Antwerpen (vacature vermeldt 'Antwerp / London')",
+    "regio": "antwerpen",
+    "url": "https://jobs.ashbyhq.com/conveo/87708aaa-34b0-4a5c-ad85-76ceed219b0d",
+    "beschrijving": "AI-marktonderzoeksplatform (YC S24, $5,3M seed; klanten o.a. Unilever, Google, Orange) met AI-video-interviewers. Full-time rol, frontend in React/TypeScript met React Router v7 of Remix, backend Node.js/PostgreSQL, AWS/GCP en LLM-API's; gevraagd 6+ jaar full-stack ervaring, geen product managers dus direct klantcontact. Gegevens gelezen op de Y Combinator-jobpagina (ycombinator.com/companies/conveo/jobs/AcfXgkk-...), die server-rendered is; de Ashby-pagina zelf is JS-gerendeerd en toont vanuit de cloud geen inhoud. BORDERLINE op twee punten: de locatie staat als 'Antwerp / London' en het salaris wordt in pond opgegeven (GBP 100-140k), dus of Antwerpen de hoofdstandplaats is valt van hieruit niet hard te maken; en het is een full-stack- geen zuivere frontend-rol, al staat React/TypeScript wel vooraan. Opgedoken via englishjobs.be (frontend_developer, provincie Antwerpen) waar Conveo op 02-09 ook een 'Senior Product Engineer' in Antwerpen plaatste (Ashby, EUR 90-110k) waarvan de stack niet leesbaar was.",
+    "bron": "andere",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL"
+    ]
+  },
+  {
+    "titel": "Senior Product Engineer",
+    "bedrijf": "Conveo (Conveo.ai)",
+    "locatie": "Antwerpen (3 dagen/week op kantoor)",
+    "regio": "antwerpen",
+    "url": "https://www.ycombinator.com/companies/conveo/jobs/oRvcpht-senior-product-engineer-90-110k-benefits-equity",
+    "beschrijving": "AI-marktonderzoeksplatform (YC S24) met AI-video-interviewers. Full-time, EUR 90.000-110.000 + benefits + equity, 3 dagen/week op kantoor in Antwerpen. De rol leidt uitdrukkelijk de frontend-architectuur: 'React is the core of what customers see and touch - you lead frontend architecture in React and TypeScript, set the quality bar for components, state management, and performance.' Daarnaast gevraagd: 6+ jaar full-stack ervaring met TypeScript en Node.js, API-ontwerp, PostgreSQL, background jobs/async workflows, AWS (S3, media pipelines) en LLM-API's; React Router v7 of Remix als plus. BORDERLINE: formeel een full-stack rol met een even zware backendcomponent, dus geen zuivere frontend-vacature - maar de frontend-leiding is expliciet en de standplaats Antwerpen en het euro-salaris staan hier wel hard vermeld, anders dan bij de andere Conveo-vacature (Antwerp / London, in pond). Gelezen op de server-rendered Y Combinator-jobpagina; de Ashby-pagina van Conveo is JS-gerendeerd en blijft vanuit de cloud onleesbaar, dus de Ashby-URL van deze specifieke vacature is niet bekend.",
+    "bron": "andere",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "AWS"
     ]
   }
 ]
