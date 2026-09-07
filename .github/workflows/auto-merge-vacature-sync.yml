@@ -1,0 +1,92 @@
+name: Auto-merge vacature-sync PR
+
+# De cowork-task volgt de git-workflow uit CLAUDE.md: nooit rechtstreeks naar main,
+# altijd via een branch + PR. Maar de Firestore-sync (sync-firestore.yml) draait
+# alleen op de versie van data/firestore-sync-input.json die OP main staat. Zonder
+# tussenkomst blijft zo'n PR openstaan en wordt Firestore nooit bijgewerkt.
+#
+# Deze workflow sluit dat gat: een PR die UITSLUITEND data/firestore-sync-input.json
+# wijzigt en geldige JSON bevat, wordt automatisch gemerged. Daarna start hij de
+# sync expliciet (een merge via GITHUB_TOKEN triggert zelf geen nieuwe workflows).
+#
+# Raakt de PR ook maar één ander bestand, dan doet deze workflow niets en wacht de
+# PR gewoon op een handmatige review.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches:
+      - main
+    paths:
+      - "data/firestore-sync-input.json"
+
+# Nooit twee auto-merges tegelijk voor dezelfde PR.
+concurrency:
+  group: auto-merge-vacature-sync-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: write
+
+    steps:
+      - name: Checkout (PR-merge-resultaat)
+        uses: actions/checkout@v4
+
+      - name: Controleren dat de PR enkel de sync-input wijzigt
+        id: scope
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          files=$(gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json files --jq '.files[].path')
+          echo "Gewijzigde bestanden in PR #$PR:"
+          echo "$files"
+          if [ "$files" = "data/firestore-sync-input.json" ]; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::PR raakt meer dan data/firestore-sync-input.json — geen auto-merge, wacht op handmatige review."
+          fi
+
+      - name: Sync-input valideren
+        if: steps.scope.outputs.ok == 'true'
+        run: |
+          node -e '
+            const fs = require("node:fs");
+            const data = JSON.parse(fs.readFileSync("data/firestore-sync-input.json", "utf8"));
+            if (!Array.isArray(data)) throw new Error("Verwacht een JSON-array.");
+            for (const [i, v] of data.entries()) {
+              if (!v || typeof v !== "object") throw new Error(`Item ${i} is geen object.`);
+              if (v.verlopen === true) continue;
+              for (const veld of ["titel", "bedrijf", "url"]) {
+                if (!v[veld] || typeof v[veld] !== "string") {
+                  throw new Error(`Item ${i} (${v.bedrijf ?? "?"} / ${v.titel ?? "?"}) mist verplicht veld "${veld}".`);
+                }
+              }
+            }
+            console.log(`OK — ${data.length} vacatures.`);
+          '
+
+      - name: PR mergen
+        if: steps.scope.outputs.ok == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          gh pr merge "$PR" --repo "$GITHUB_REPOSITORY" --squash --delete-branch
+
+      - name: Firestore-sync starten
+        if: steps.scope.outputs.ok == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Een merge via GITHUB_TOKEN triggert de push-trigger van sync-firestore.yml
+          # niet, dus starten we die hier expliciet op main.
+          gh workflow run sync-firestore.yml --repo "$GITHUB_REPOSITORY" --ref main
+          echo "sync-firestore.yml gestart op main."
