@@ -10,3 +10,6 @@ public/data/vacatures/data.json
 secrets/*.json
 data/sync.log
 .idea/
+
+# Vacaturescan browser-MCP scratch
+.playwright-mcp/
