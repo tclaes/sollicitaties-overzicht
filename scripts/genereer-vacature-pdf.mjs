@@ -81,13 +81,18 @@ for (const lijst of perRegio.values()) {
 const esc = (s) =>
   String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 
+const FUNCTIE_LABEL = { frontend: "frontend", fullstack: "full stack" };
+
 function rij(v) {
   const tags = (v.tags || []).map((t) => `<span class="tag">${esc(t)}</span>`).join(" ");
+  const functie = v.functie
+    ? `<span class="functiebadge functie-${esc(v.functie)}">${esc(FUNCTIE_LABEL[v.functie] || v.functie)}</span>`
+    : "";
   const url = v.url
     ? `<a href="${esc(v.url)}">${esc(v.url.replace(/^https?:\/\//, ""))}</a>`
     : "<span class=\"muted\">geen url</span>";
   return `<tr>
-    <td><div class="functie">${esc(v.titel)}</div><div class="bedrijf">${esc(v.bedrijf)}</div></td>
+    <td><div class="functie">${esc(v.titel)}${functie}</div><div class="bedrijf">${esc(v.bedrijf)}</div></td>
     <td>${esc(v.locatie)}</td>
     <td><div class="besch">${esc(v.beschrijving)}</div><div class="tags">${tags}</div></td>
     <td class="url">${url}</td>
@@ -119,6 +124,9 @@ const html = `<!doctype html><html lang="nl"><head><meta charset="utf-8">
   td { padding: 6px; border-bottom: 1px solid #eee; vertical-align: top; }
   tr { break-inside: avoid; }
   .functie { font-weight: 600; }
+  .functiebadge { display: inline-block; margin-left: 5px; font-weight: 500; font-size: 8px; border-radius: 3px; padding: 0 4px; vertical-align: middle; }
+  .functie-frontend { background: #e0edfb; color: #1d4ed8; }
+  .functie-fullstack { background: #f3e8ff; color: #7e22ce; }
   .bedrijf { color: #555; }
   .besch { max-width: 260px; }
   .tags { margin-top: 3px; }
@@ -128,7 +136,7 @@ const html = `<!doctype html><html lang="nl"><head><meta charset="utf-8">
   .muted { color: #aaa; }
   footer { margin-top: 20px; color: #999; font-size: 8.5px; }
 </style></head><body>
-  <h1>Actief vacature-overzicht — Frontend / Web Developer</h1>
+  <h1>Actief vacature-overzicht — Frontend &amp; Full-stack Developer</h1>
   <div class="peil">Peildatum ${peildatum} · ${actief.length} actieve vacatures · regio Limburg + Leuven/Mechelen/Antwerpen/Kempen</div>
   ${secties || "<p>Geen actieve vacatures.</p>"}
   <footer>Automatisch gegenereerd uit data/firestore-sync-input.json door de dagelijkse vacaturescan.</footer>

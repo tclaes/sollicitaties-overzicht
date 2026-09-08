@@ -8,6 +8,7 @@
  * Input JSON: array van objecten met
  *   titel, bedrijf, locatie, regio (limburg|antwerpen|brussel|vlaanderen|remote|andere),
  *   url, beschrijving, bron (indeed|vdab|jobat|linkedin|andere),
+ *   functie?: "frontend" | "fullstack",
  *   tags?: string[], match?: { score, toelichting }, id?: string,
  *   verlopen?: boolean  -> true = verwijder dit document i.p.v. het bij te werken
  *
@@ -37,6 +38,7 @@ const DEFAULT_SERVICE_ACCOUNT_PATH = join(__dirname, "..", "secrets", "firebase-
 
 const REGIOS = ["limburg", "antwerpen", "brussel", "vlaanderen", "remote", "andere"];
 const BRONNEN = ["indeed", "vdab", "jobat", "linkedin", "andere"];
+const FUNCTIES = ["frontend", "fullstack"];
 
 const [, , inputPath, serviceAccountArg] = process.argv;
 if (!inputPath) {
@@ -96,6 +98,7 @@ function valideer(v, i) {
   if (!v.url || (!v.url.startsWith("http") && !v.url.startsWith("/") && v.url !== "")) fouten.push("url ongeldig");
   if (!v.beschrijving) fouten.push("beschrijving ontbreekt");
   if (!BRONNEN.includes(v.bron)) fouten.push(`bron '${v.bron}' ongeldig (${BRONNEN.join("|")})`);
+  if (v.functie != null && !FUNCTIES.includes(v.functie)) fouten.push(`functie '${v.functie}' ongeldig (${FUNCTIES.join("|")})`);
   if (fouten.length) throw new Error(`Vacature #${i} (${v.bedrijf ?? "?"} - ${v.titel ?? "?"}): ${fouten.join(", ")}`);
 }
 
@@ -139,6 +142,7 @@ for (const [i, v] of input.entries()) {
     url: v.url,
     beschrijving: v.beschrijving,
     bron: v.bron,
+    ...(v.functie ? { functie: v.functie } : {}),
     tags: v.tags ?? [],
     ...(v.match ? { match: v.match } : {}),
   };

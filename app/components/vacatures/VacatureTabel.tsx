@@ -1,6 +1,6 @@
 import {useState} from "react";
 import type {Sollicitatie, Vacature} from "~/lib/schemas";
-import {SOLLICITATIE_STATUS_LABELS} from "~/lib/schemas";
+import {FUNCTIE_LABELS, SOLLICITATIE_STATUS_LABELS} from "~/lib/schemas";
 import {BronBadge} from "../elements/BronBadge";
 import {Badge} from "../elements/Badge/Badge"
 import styles from "./VacatureTabel.module.css";
@@ -108,7 +108,14 @@ export function VacatureTabel({vacatures, sollicitatiePerId = new Map(), onSolli
                 <BronBadge bron={v.bron}/>
               </td>
               <td className={styles.functieCol}>
-                <span className={styles.titel}>{v.titel}</span>
+                <span className={styles.titel}>
+                  {v.titel}
+                  {v.functie && (
+                    <span className={`${styles.functieBadge} ${styles[`functie_${v.functie}`]}`}>
+                      {FUNCTIE_LABELS[v.functie]}
+                    </span>
+                  )}
+                </span>
                 <span className={styles.bedrijf}>{v.bedrijf}</span>
               </td>
               <td>

@@ -54,6 +54,13 @@
   --color-bron-andere-bg:   #f4f4f2;
   --color-bron-andere-text: #5a5a55;
 
+  /* ── Functie ─────────────────────────────────────────────────── */
+  --color-functie-frontend-bg:    #eff6ff;
+  --color-functie-frontend-text:  #1e40af;
+
+  --color-functie-fullstack-bg:   #f3e8ff;
+  --color-functie-fullstack-text: #7e22ce;
+
   /* ── Spacing (4px basis) ─────────────────────────────────────── */
   --space-1:  0.25rem;   /*  4px */
   --space-2:  0.5rem;    /*  8px */
