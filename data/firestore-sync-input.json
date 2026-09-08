@@ -618,5 +618,52 @@
       "PostgreSQL",
       "AWS"
     ]
+  },
+  {
+    "titel": "JS/VUE/PHP Webdeveloper",
+    "bedrijf": "ENABLERS",
+    "locatie": "Bilzen-Hoeselt",
+    "regio": "limburg",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74546895/js-vue-php-webdeveloper",
+    "bron": "vdab",
+    "beschrijving": "Vaste voltijdse job bij ENABLERS (maatwerk-applicaties: webshops, CRM, workflow-automatisatie). Front-end zwaartepunt in Vue en JavaScript/TypeScript; kennis van PHP/MySQL is een pluspunt, geen must. Portfolio met minstens 1 Vue-applicatie vereist. Knelpuntberoep, contract onbepaalde duur.",
+    "tags": [
+      "Vue",
+      "JavaScript",
+      "TypeScript",
+      "PHP",
+      "frontend"
+    ]
+  },
+  {
+    "titel": "Angular Developer",
+    "bedrijf": "Axxes IT Consultancy",
+    "locatie": "Vlaanderen (hybride)",
+    "regio": "vlaanderen",
+    "url": "https://www.linkedin.com/jobs/view/4361611686/",
+    "bron": "linkedin",
+    "beschrijving": "Angular-ontwikkelaarsrol bij consultancy Axxes, fulltime, hybride, regio Vlaanderen. Sluit aan bij Toms Angular-expertise. Borderline: consultancy/detachering, volledige functiebeschrijving was niet leesbaar op LinkedIn. Tom heeft hier al op gesolliciteerd.",
+    "tags": [
+      "Angular",
+      "TypeScript",
+      "frontend",
+      "consultancy"
+    ]
+  },
+  {
+    "titel": "Web Developer - Node.js & React",
+    "bedrijf": "Pauwels Consulting",
+    "locatie": "Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4464483152/",
+    "bron": "linkedin",
+    "beschrijving": "Webdeveloper-rol met Node.js en React bij Pauwels Consulting, Antwerpen, fulltime, op locatie. Frontend-component via React. Borderline: consultancy en volledige functiebeschrijving was niet leesbaar op LinkedIn.",
+    "tags": [
+      "React",
+      "Node.js",
+      "JavaScript",
+      "frontend",
+      "consultancy"
+    ]
   }
 ]
