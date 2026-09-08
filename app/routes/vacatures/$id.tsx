@@ -5,7 +5,7 @@ import {Badge} from "~/components/elements/Badge/Badge";
 import {BronBadge} from "~/components/elements/BronBadge";
 import {formatDate} from "~/lib/date";
 import styles from "./$id.module.css";
-import {StatusSchema} from "~/lib/schemas";
+import {FUNCTIE_LABELS, StatusSchema} from "~/lib/schemas";
 import {CLink} from "~/components/elements/Link/CLink";
 
 export const Route = createFileRoute("/vacatures/$id")({
@@ -46,6 +46,9 @@ function VacatureDetailPage() {
           <div className={styles.badges}>
             <Badge status={vacature.status}/>
             <BronBadge bron={vacature.bron}/>
+            {vacature.functie && (
+              <span className={styles.functieBadge}>{FUNCTIE_LABELS[vacature.functie]}</span>
+            )}
           </div>
           <h1 className={styles.titel}>{vacature.titel}</h1>
           <p className={styles.bedrijf}>{vacature.bedrijf}</p>

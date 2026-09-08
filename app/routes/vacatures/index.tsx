@@ -24,6 +24,7 @@ function VacaturesPage() {
 
   const filtered = vacatures?.filter((v) => {
     if (search.status && v.status !== search.status) return false;
+    if (search.functie && v.functie !== search.functie) return false;
     return !(search.source && v.bron !== search.source);
 
   })

@@ -18,9 +18,17 @@ export const StatusSchema = z.enum([
   "niet-interessant",
 ]);
 
+export const FunctieSchema = z.enum(["frontend", "fullstack"]);
+
+export const FUNCTIE_LABELS: Record<Functie, string> = {
+  frontend: "frontend",
+  fullstack: "full stack",
+};
+
 export const DefaultSearchSchema = z.object({
   status: StatusSchema.optional(),
   source: SourceSchema.optional(),
+  functie: FunctieSchema.optional(),
   sort: SortingSchema.default("match"),
 });
 
@@ -72,6 +80,7 @@ export const VacatureSchema = z.object({
   url: z.union([z.string().url(), z.literal(""), z.string().startsWith("/")]),
   beschrijving: z.string(),
   bron: SourceSchema,
+  functie: FunctieSchema.optional(),
   gevondenOp: z.string().datetime(),
   status: StatusSchema.default("nieuw"),
   isArchived: z.boolean().optional(),
@@ -95,6 +104,7 @@ export const DagOverzichtSchema = z.object({
 export type Bron = z.infer<typeof SourceSchema>;
 export type Status = z.infer<typeof StatusSchema>;
 export type Region = z.infer<typeof RegionSchema>;
+export type Functie = z.infer<typeof FunctieSchema>;
 export type MatchScore = z.infer<typeof MatchScoreSchema>;
 export type SollicitatieStatus = z.infer<typeof SollicitatieStatusSchema>;
 export type Sollicitatie = z.infer<typeof SollicitatieSchema>;

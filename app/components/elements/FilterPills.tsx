@@ -1,8 +1,8 @@
-import {SourceSchema, StatusSchema} from "~/lib/schemas";
+import {FUNCTIE_LABELS, FunctieSchema, SourceSchema, StatusSchema} from "~/lib/schemas";
 import styles from "./FilterPills.module.css";
 
 interface Props {
-  currentSearch: { status?: string; source?: string; sort?: string };
+  currentSearch: { status?: string; source?: string; functie?: string; sort?: string };
   basePad?: string;
 }
 
@@ -45,6 +45,25 @@ export function FilterPills({currentSearch, basePad = "/vacatures"}: Props) {
             {statusLabels[status]}
           </a>
         ))}
+
+      <span className={styles.scheiding}/>
+
+      <span className={styles.groepLabel}>Functie</span>
+      <a
+        href={buildUrl({functie: undefined})}
+        className={`${styles.pill} ${!currentSearch.functie ? styles.actief : ""}`}
+      >
+        Alle
+      </a>
+      {FunctieSchema.options.map((functie) => (
+        <a
+          key={functie}
+          href={buildUrl({functie})}
+          className={`${styles.pill} ${currentSearch.functie === functie ? styles.actief : ""}`}
+        >
+          {FUNCTIE_LABELS[functie]}
+        </a>
+      ))}
 
       <span className={styles.scheiding}/>
 
