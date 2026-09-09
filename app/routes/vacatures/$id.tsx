@@ -83,9 +83,9 @@ function VacatureDetailPage() {
           reden={vacature.archiefReden}
         />
 
-        {vacature.url && (
+        {(vacature.url && !vacature.isArchived) && (
           <footer className={styles.footer}>
-            <CLink url={vacature.url} variant={"cta"}>Bekijk vacature →</CLink>
+            <CLink url={vacature.url} variant={"cta"} target={"_blank"}>Bekijk vacature →</CLink>
           </footer>
         )}
       </article>
