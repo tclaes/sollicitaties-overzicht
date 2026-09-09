@@ -15,7 +15,7 @@
   padding: var(--space-8);
 }
 
-.titel {
+.title {
   font-size: var(--text-xl);
   font-weight: var(--font-semibold);
   color: var(--color-text);
@@ -52,7 +52,7 @@
   border-color: var(--color-accent);
 }
 
-.fout {
+.error {
   font-size: var(--text-sm);
   color: #b91c1c;
 }

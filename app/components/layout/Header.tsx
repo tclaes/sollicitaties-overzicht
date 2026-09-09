@@ -9,7 +9,7 @@ export function Header() {
                 Sollicitaties
             </a>
             <nav className={styles.nav} aria-label="Hoofdnavigatie">
-                <CLink url={"/vacatures"} variant={"extern"} route={"/vacatures"}>Alle vacatures</CLink>
+                <CLink url={"/vacatures"} variant={"external"} route={"/vacatures"}>Alle vacatures</CLink>
             </nav>
             <button className={styles.logout} onClick={() => logout()}>Uitloggen</button>
         </header>

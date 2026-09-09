@@ -7,28 +7,28 @@
 
 import {readdirSync, readFileSync} from "fs";
 import {join} from "path";
-import {DagOverzichtSchema} from "~/lib/schemas";
+import {DailyOverviewSchema} from "~/lib/schemas";
 
 const DATA_DIR = join(process.cwd(), "public", "data", "vacatures");
-const bestanden = readdirSync(DATA_DIR).filter((f) => f.endsWith(".json"));
+const files = readdirSync(DATA_DIR).filter((f) => f.endsWith(".json"));
 
-let fouten = 0;
+let errors = 0;
 
-for (const bestand of bestanden) {
-    const pad = join(DATA_DIR, bestand);
+for (const file of files) {
+    const filePath = join(DATA_DIR, file);
     try {
-        const raw = JSON.parse(readFileSync(pad, "utf-8"));
-        DagOverzichtSchema.parse(raw);
-        console.log(`✅ ${bestand}`);
+        const raw = JSON.parse(readFileSync(filePath, "utf-8"));
+        DailyOverviewSchema.parse(raw);
+        console.log(`✅ ${file}`);
     } catch (err) {
-        console.error(`❌ ${bestand}: ${err instanceof Error ? err.message : err}`);
-        fouten++;
+        console.error(`❌ ${file}: ${err instanceof Error ? err.message : err}`);
+        errors++;
     }
 }
 
-if (fouten > 0) {
-    console.error(`\n${fouten} bestand(en) ongeldig. Deploy geannuleerd.`);
+if (errors > 0) {
+    console.error(`\n${errors} bestand(en) ongeldig. Deploy geannuleerd.`);
     process.exit(1);
 }
 
-console.log(`\n✅ Alle ${bestanden.length} bestanden geldig.`);
+console.log(`\n✅ Alle ${files.length} bestanden geldig.`);

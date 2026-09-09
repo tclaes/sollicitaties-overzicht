@@ -39,27 +39,27 @@
   --color-status-ni-text:               #6b7280;
 
   /* ── Bron ────────────────────────────────────────────────────── */
-  --color-bron-indeed-bg:   #eef2fb;
-  --color-bron-indeed-text: #1a4a9e;
+  --color-source-indeed-bg:   #eef2fb;
+  --color-source-indeed-text: #1a4a9e;
 
-  --color-bron-vdab-bg:     #fff0ee;
-  --color-bron-vdab-text:   #b82d0b;
+  --color-source-vdab-bg:     #fff0ee;
+  --color-source-vdab-text:   #b82d0b;
 
-  --color-bron-jobat-bg:    #fff4eb;
-  --color-bron-jobat-text:  #c24f00;
+  --color-source-jobat-bg:    #fff4eb;
+  --color-source-jobat-text:  #c24f00;
 
-  --color-bron-linkedin-bg: #edf5fc;
-  --color-bron-linkedin-text: #0a4f96;
+  --color-source-linkedin-bg: #edf5fc;
+  --color-source-linkedin-text: #0a4f96;
 
-  --color-bron-andere-bg:   #f4f4f2;
-  --color-bron-andere-text: #5a5a55;
+  --color-source-andere-bg:   #f4f4f2;
+  --color-source-andere-text: #5a5a55;
 
   /* ── Functie ─────────────────────────────────────────────────── */
-  --color-functie-frontend-bg:    #eff6ff;
-  --color-functie-frontend-text:  #1e40af;
+  --color-role-frontend-bg:    #eff6ff;
+  --color-role-frontend-text:  #1e40af;
 
-  --color-functie-fullstack-bg:   #f3e8ff;
-  --color-functie-fullstack-text: #7e22ce;
+  --color-role-fullstack-bg:   #f3e8ff;
+  --color-role-fullstack-text: #7e22ce;
 
   /* ── Spacing (4px basis) ─────────────────────────────────────── */
   --space-1:  0.25rem;   /*  4px */

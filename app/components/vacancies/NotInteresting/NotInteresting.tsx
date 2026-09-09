@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {herstelVacature, markeerNietInteressant} from "~/lib/vacatures";
+import {restoreVacancy, markNotInteresting} from "~/lib/vacancies";
 import {useRouter} from "@tanstack/react-router";
 import styles from "./NotInteresting.module.css"
 
@@ -13,7 +13,7 @@ export function NotInteresting({id, isArchived, reason}: { id: string; isArchive
     e.preventDefault();
     setBusy(true);
     try {
-      await markeerNietInteressant(id, text.trim() || "Niet interessant voor mij");
+      await markNotInteresting(id, text.trim() || "Niet interessant voor mij");
       setOpen(false);
       setText("");
       await router.invalidate();
@@ -25,7 +25,7 @@ export function NotInteresting({id, isArchived, reason}: { id: string; isArchive
   async function repair() {
     setBusy(true);
     try {
-      await herstelVacature(id);
+      await restoreVacancy(id);
       await router.invalidate();
     } finally {
       setBusy(false);

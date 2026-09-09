@@ -4,13 +4,13 @@
   min-height: 80vh;
 }
 
-.tabel {
+.table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
 }
 
-.tabel thead th {
+.table thead th {
   font-size: var(--text-xs);
   font-weight: var(--font-semibold);
   color: var(--color-text-subtle);
@@ -26,33 +26,33 @@
 }
 
 .colStatus      { width: 116px; }
-.colBron        { width: 66px; }
+.colSource      { width: 66px; }
 .colTags        { width: 160px; }
-.colLocatie     { width: 100px; }
+.colLocation    { width: 100px; }
 .colMatch       { width: 66px; }
-.colSolliciteer { width: 200px; text-align: right; }
+.colApply       { width: 200px; text-align: right; }
 
-.rij {
+.row {
   border-bottom: 1px solid var(--color-border);
   cursor: pointer;
   transition: background var(--transition-fast);
 }
 
-.rij:hover { background: var(--color-bg); }
+.row:hover { background: var(--color-bg); }
 
-.tabel td {
+.table td {
   padding: 7px var(--space-4);
   vertical-align: middle;
 }
 
-.functieCol {
+.roleCol {
   display: flex;
   flex-direction: column;
   gap: 1px;
   min-width: 0;
 }
 
-.titel {
+.title {
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
   color: var(--color-text);
@@ -61,7 +61,7 @@
   text-overflow: ellipsis;
 }
 
-.functieBadge {
+.roleBadge {
   display: inline-block;
   margin-left: var(--space-2);
   font-size: var(--text-xs);
@@ -72,17 +72,17 @@
   white-space: nowrap;
 }
 
-.functie_frontend {
-  background: var(--color-functie-frontend-bg);
-  color: var(--color-functie-frontend-text);
+.role_frontend {
+  background: var(--color-role-frontend-bg);
+  color: var(--color-role-frontend-text);
 }
 
-.functie_fullstack {
-  background: var(--color-functie-fullstack-bg);
-  color: var(--color-functie-fullstack-text);
+.role_fullstack {
+  background: var(--color-role-fullstack-bg);
+  color: var(--color-role-fullstack-text);
 }
 
-.bedrijf {
+.company {
   font-size: var(--text-xs);
   color: var(--color-text-muted);
   white-space: nowrap;
@@ -107,19 +107,19 @@
   white-space: nowrap;
 }
 
-.locatie {
+.location {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
 }
 
-.sollicitatielabel {
+.applicationLabel {
   display: block;
   font-size: var(--text-xs);
   color: var(--color-text-muted);
   margin-top: 1px;
 }
 
-.sollicitatiedatum {
+.applicationDate {
   display: block;
   font-size: var(--text-xs);
   color: var(--color-text-subtle);
@@ -160,7 +160,7 @@
   border-color: var(--color-border);
 }
 
-.leeg {
+.empty {
   padding: var(--space-12) var(--space-8);
   text-align: center;
   color: var(--color-text-muted);

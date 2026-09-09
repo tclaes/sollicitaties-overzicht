@@ -6,7 +6,7 @@ const token = config.tokens.access_token;
 const PROJECT = "sollicitaties-app";
 const BASE = `https://firestore.googleapis.com/v1/projects/${PROJECT}/databases/(default)/documents`;
 
-const sollicitaties = [
+const applications = [
   { id: "kpd-2026-04-16", bedrijf: "KPD", rol: "Frontend Developer", gesolliceerdOp: "2026-04-16", status: "geen_reactie", notitie: "CV + motivatiebrief verstuurd" },
   { id: "acagroup-2026-04-17", bedrijf: "ACA Group", rol: "Frontend Developer", gesolliceerdOp: "2026-04-17", status: "geen_reactie", notitie: "CV + motivatiebrief verstuurd" },
   { id: "climapulse-2026-05-01", bedrijf: "Climapulse", rol: "Senior Frontend Developer", gesolliceerdOp: "2026-05-01", status: "afgewezen", notitie: "Niet weerhouden door bedrijf op 10-06-2026" },
@@ -30,7 +30,7 @@ function toFirestoreFields(obj) {
 }
 
 let ok = 0;
-for (const { id, ...data } of sollicitaties) {
+for (const { id, ...data } of applications) {
   const res = await fetch(`${BASE}/sollicitaties/${id}`, {
     method: "PATCH",
     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
@@ -39,4 +39,4 @@ for (const { id, ...data } of sollicitaties) {
   if (res.ok) { ok++; process.stdout.write("."); }
   else { console.error(`\nFout bij ${id}:`, await res.text()); }
 }
-console.log(`\n✓ ${ok}/${sollicitaties.length} sollicitaties geïmporteerd`);
+console.log(`\n✓ ${ok}/${applications.length} sollicitaties geïmporteerd`);

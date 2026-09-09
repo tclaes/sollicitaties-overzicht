@@ -1,33 +1,33 @@
 import {createFileRoute, useRouter} from "@tanstack/react-router";
-import {createSollicitatie, getSollicitaties, getVacaturesDashboard} from "~/lib/vacatures";
-import {VacatureTabel} from "~/components/vacatures/VacatureTabel";
-import {StatsTeller} from "~/components/elements/StatsTeller";
+import {createApplication, getApplications, getVacanciesDashboard} from "~/lib/vacancies";
+import {VacancyTable} from "~/components/vacancies/VacancyTable";
+import {StatsCounter} from "~/components/elements/StatsCounter";
 import {FilterPills} from "~/components/elements/FilterPills";
-import {DefaultSearchSchema, Sollicitatie} from "~/lib/schemas";
+import {DefaultSearchSchema, Application} from "~/lib/schemas";
 import styles from "./index.module.css";
 
 export const Route = createFileRoute("/")({
   validateSearch: DefaultSearchSchema,
   loader: async () => {
-    const [overview, sollicitaties] = await Promise.all([
-      getVacaturesDashboard(),
-      getSollicitaties(),
+    const [overview, applications] = await Promise.all([
+      getVacanciesDashboard(),
+      getApplications(),
     ]);
-    return {overview, sollicitaties};
+    return {overview, applications};
   },
   component: DashboardPage,
 });
 
 function DashboardPage() {
-  const {overview, sollicitaties} = Route.useLoaderData();
+  const {overview, applications} = Route.useLoaderData();
   const search = Route.useSearch();
   const router = useRouter();
 
-  const sollicitatiePerId = new Map<string, Sollicitatie>(
-    sollicitaties.flatMap((s) => s.vacatureId ? [[s.vacatureId, s]] : [])
+  const applicationById = new Map<string, Application>(
+    applications.flatMap((s) => s.vacatureId ? [[s.vacatureId, s]] : [])
   );
 
-  const matchVolgorde: Record<string, number> = {sterk: 0, goed: 1, matig: 2, laag: 3, borderline: 4};
+  const matchOrder: Record<string, number> = {sterk: 0, goed: 1, matig: 2, laag: 3, borderline: 4};
 
   const prefiltered = overview
     ? overview.filter((v) => {
@@ -44,39 +44,39 @@ function DashboardPage() {
     if (search.sort === "titel") {
       return a.titel.localeCompare(b.titel, "nl");
     }
-    return (matchVolgorde[a.match?.score ?? "laag"] ?? 3) - (matchVolgorde[b.match?.score ?? "laag"] ?? 3);
+    return (matchOrder[a.match?.score ?? "laag"] ?? 3) - (matchOrder[b.match?.score ?? "laag"] ?? 3);
   });
 
-  async function handleSolliciteer(data: {
+  async function handleApply(data: {
     vacatureId: string;
     bedrijf: string;
     rol: string;
     gesolliceerdOp: string
   }) {
-    await createSollicitatie(data);
+    await createApplication(data);
     await router.invalidate();
   }
 
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <h1 className={styles.titel}>Vacatures</h1>
+        <h1 className={styles.title}>Vacatures</h1>
       </header>
 
       {overview ? (
         <>
-          <StatsTeller vacatures={overview}/>
-          <FilterPills currentSearch={search} basePad="/"/>
-          <VacatureTabel
-            vacatures={sorted}
-            sollicitatiePerId={sollicitatiePerId}
-            onSolliciteer={handleSolliciteer}
+          <StatsCounter vacancies={overview}/>
+          <FilterPills currentSearch={search} basePath="/"/>
+          <VacancyTable
+            vacancies={sorted}
+            applicationById={applicationById}
+            onApply={handleApply}
           />
         </>
       ) : (
-        <div className={styles.leeg}>
+        <div className={styles.empty}>
           <p>Nog geen vacatures gevonden.</p>
-          <p className={styles.leegSub}>De dagelijkse taak loopt elke werkdag om 12:00.</p>
+          <p className={styles.emptySub}>De dagelijkse taak loopt elke werkdag om 12:00.</p>
         </div>
       )}
     </div>

@@ -1,4 +1,4 @@
-.solliciteerBtn {
+.applyBtn {
   font-size: var(--text-xs);
   padding: 3px 10px;
   border-radius: var(--radius-sm);
@@ -10,21 +10,21 @@
   transition: opacity var(--transition-fast), background var(--transition-fast);
 }
 
-:global(.vacature-rij):hover .solliciteerBtn { opacity: 1; }
+:global(.vacancy-row):hover .applyBtn { opacity: 1; }
 
-.solliciteerBtn:hover {
+.applyBtn:hover {
   background: var(--color-bg);
   color: var(--color-text);
 }
 
-.solliciteerForm {
+.applyForm {
   display: flex;
   align-items: center;
   gap: var(--space-1);
   justify-content: flex-end;
 }
 
-.datumInput {
+.dateInput {
   font-size: var(--text-xs);
   padding: 2px 6px;
   border: 1px solid var(--color-border);
@@ -34,8 +34,8 @@
   width: 118px;
 }
 
-.bevestigBtn,
-.annuleerBtn {
+.confirmBtn,
+.cancelBtn {
   font-size: var(--text-xs);
   width: 22px;
   height: 22px;
@@ -49,13 +49,13 @@
   padding: 0;
 }
 
-.bevestigBtn {
+.confirmBtn {
   color: #15803d;
   border-color: #bbf7d0;
   background: #dcfce7;
 }
 
-.bevestigBtn:hover { background: #bbf7d0; }
+.confirmBtn:hover { background: #bbf7d0; }
 
-.annuleerBtn { color: var(--color-text-muted); }
-.annuleerBtn:hover { background: var(--color-bg); }
+.cancelBtn { color: var(--color-text-muted); }
+.cancelBtn:hover { background: var(--color-bg); }

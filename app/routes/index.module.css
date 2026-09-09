@@ -13,26 +13,26 @@
   gap: var(--space-3);
 }
 
-.titel {
+.title {
   font-size: var(--text-base);
   font-weight: var(--font-semibold);
   color: var(--color-text);
   letter-spacing: -0.01em;
 }
 
-.datum {
+.date {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   text-transform: capitalize;
 }
 
-.leeg {
+.empty {
   margin: var(--space-12) auto;
   text-align: center;
   color: var(--color-text-muted);
 }
 
-.leegSub {
+.emptySub {
   margin-top: var(--space-2);
   font-size: var(--text-sm);
   color: var(--color-text-subtle);

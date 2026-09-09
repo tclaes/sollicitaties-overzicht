@@ -1,7 +1,7 @@
 import {createFileRoute} from "@tanstack/react-router";
-import {getAllVacatures} from "~/lib/vacatures";
-import {VacatureTabel} from "~/components/vacatures/VacatureTabel";
-import {StatsTeller} from "~/components/elements/StatsTeller";
+import {getAllVacancies} from "~/lib/vacancies";
+import {VacancyTable} from "~/components/vacancies/VacancyTable";
+import {StatsCounter} from "~/components/elements/StatsCounter";
 import {FilterPills} from "~/components/elements/FilterPills";
 import {DefaultSearchSchema} from "~/lib/schemas";
 import styles from "./index.module.css";
@@ -10,21 +10,21 @@ import styles from "./index.module.css";
 export const Route = createFileRoute("/vacatures/")({
   validateSearch: DefaultSearchSchema,
   loader: async () => {
-    const vacatures = await getAllVacatures();
-    return {vacatures};
+    const vacancies = await getAllVacancies();
+    return {vacancies};
   },
-  component: VacaturesPage,
+  component: VacanciesPage,
 });
 
-function VacaturesPage() {
-  const {vacatures} = Route.useLoaderData();
+function VacanciesPage() {
+  const {vacancies} = Route.useLoaderData();
   const search = Route.useSearch();
 
-  const matchVolgorde: Record<string, number> = {sterk: 0, goed: 1, matig: 2, laag: 3};
+  const matchOrder: Record<string, number> = {sterk: 0, goed: 1, matig: 2, laag: 3};
 
   const showArchive = search.status === "niet-interessant";
 
-  const filtered = vacatures?.filter((v) => {
+  const filtered = vacancies?.filter((v) => {
     if (v.isArchived && !showArchive) return false;
     if (search.status && v.status !== search.status) return false;
     if (search.functie && v.functie !== search.functie) return false;
@@ -39,21 +39,21 @@ function VacaturesPage() {
         return a.titel.localeCompare(b.titel, "nl");
       }
       // match (default)
-      const ma = matchVolgorde[a.match?.score ?? "laag"] ?? 3;
-      const mb = matchVolgorde[b.match?.score ?? "laag"] ?? 3;
+      const ma = matchOrder[a.match?.score ?? "laag"] ?? 3;
+      const mb = matchOrder[b.match?.score ?? "laag"] ?? 3;
       return ma - mb;
     });
 
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <h1 className={styles.titel}>Alle vacatures</h1>
-        <span className={styles.teller}>{filtered?.length} vacatures</span>
+        <h1 className={styles.title}>Alle vacatures</h1>
+        <span className={styles.counter}>{filtered?.length} vacatures</span>
       </header>
 
-      <StatsTeller vacatures={vacatures}/>
+      <StatsCounter vacancies={vacancies}/>
       <FilterPills currentSearch={search}/>
-      <VacatureTabel vacatures={filtered}/>
+      <VacancyTable vacancies={filtered}/>
     </div>
   );
 }

@@ -1,13 +1,13 @@
-import {SollicitatieStatus, Status} from "./schemas";
+import {ApplicationStatus, Status} from "./schemas";
 import {doc, updateDoc} from "firebase/firestore";
 import {db} from "~/lib/firebase";
 
 const KEY = "vacature-statussen";
-const DATUM_KEY = "vacature-sollicitaties";
+const DATE_KEY = "vacature-sollicitaties";
 
-export async function updateSollicitatie(
+export async function updateApplication(
   id: string,
-  status: SollicitatieStatus,
+  status: ApplicationStatus,
 ): Promise<void> {
   await updateDoc(doc(db, "sollicitaties", id), {status});
 }
@@ -16,16 +16,16 @@ export async function setStatus(id: string, status: Status) {
   await updateDoc(doc(db, 'vacatures', id), {status})
 }
 
-export function getSollicitatieDatum(id: string): string | undefined {
+export function getApplicationDate(id: string): string | undefined {
   try {
-    return JSON.parse(localStorage.getItem(DATUM_KEY) ?? "{}")[id];
+    return JSON.parse(localStorage.getItem(DATE_KEY) ?? "{}")[id];
   } catch {
     return undefined;
   }
 }
 
-export function setSollicitatieDatum(id: string, datum: string): void {
-  const datums = JSON.parse(localStorage.getItem(DATUM_KEY) ?? "{}");
-  datums[id] = datum;
-  localStorage.setItem(DATUM_KEY, JSON.stringify(datums));
+export function setApplicationDate(id: string, date: string): void {
+  const dates = JSON.parse(localStorage.getItem(DATE_KEY) ?? "{}");
+  dates[id] = date;
+  localStorage.setItem(DATE_KEY, JSON.stringify(dates));
 }

@@ -3,7 +3,7 @@
  * Eenmalige opruiming van bestaande Firestore-duplicaten in de `vacatures`-collectie.
  *
  * Achtergrond: tot 23-06-2026 werd het document-id afgeleid van bedrijf+titel-tekst
- * (zie sync-vacatures-naar-firestore.mjs). Omdat die tekst dag na dag licht anders
+ * (zie sync-vacancies-to-firestore.mjs). Omdat die tekst dag na dag licht anders
  * geformuleerd kon zijn, ontstonden er meerdere documenten voor dezelfde vacature.
  * Sinds 23-06-2026 wordt het id afgeleid van de genormaliseerde url, wat dit voorkomt
  * voor NIEUWE schrijfbeurten — maar bestaande duplicaten in Firestore blijven staan
@@ -26,7 +26,7 @@
  * --apply worden de writes/deletes echt uitgevoerd.
  *
  * Gebruik:
- *   node scripts/dedupe-vacatures.mjs [service-account.json] [--apply]
+ *   node scripts/dedupe-vacancies.mjs [service-account.json] [--apply]
  */
 import { readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -37,7 +37,7 @@ import { getFirestore } from "firebase-admin/firestore";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DEFAULT_SERVICE_ACCOUNT_PATH = join(__dirname, "..", "secrets", "firebase-service-account.json");
 
-const STATUS_PRIORITEIT = ["gesolliciteerd", "interview", "aanbod", "afgewezen", "niet_wervend", "nieuw"];
+const STATUS_PRIORITY = ["gesolliciteerd", "interview", "aanbod", "afgewezen", "niet_wervend", "nieuw"];
 
 const args = process.argv.slice(2);
 const apply = args.includes("--apply");
@@ -67,32 +67,32 @@ function slugify(s) {
     .replace(/^-+|-+$/g, "");
 }
 
-function normaliseerUrl(url) {
+function normalizeUrl(url) {
   if (!url) return null;
   try {
     const u = new URL(url);
-    const pad = u.pathname.replace(/\/+$/, "");
-    return `${u.hostname}${pad}`.toLowerCase();
+    const path = u.pathname.replace(/\/+$/, "");
+    return `${u.hostname}${path}`.toLowerCase();
   } catch {
     return url.toLowerCase().replace(/[?#].*$/, "").replace(/\/+$/, "");
   }
 }
 
-function canoniekId(data) {
+function canonicalId(data) {
   if (!data.url) return null;
-  const genormaliseerd = normaliseerUrl(data.url);
-  return genormaliseerd ? slugify(genormaliseerd) : null;
+  const normalized = normalizeUrl(data.url);
+  return normalized ? slugify(normalized) : null;
 }
 
-function statusRang(status) {
-  const i = STATUS_PRIORITEIT.indexOf(status);
-  return i === -1 ? STATUS_PRIORITEIT.length : i;
+function statusRank(status) {
+  const i = STATUS_PRIORITY.indexOf(status);
+  return i === -1 ? STATUS_PRIORITY.length : i;
 }
 
-function kiesWinnaar(docs) {
+function pickWinner(docs) {
   return [...docs].sort((a, b) => {
-    const ra = statusRang(a.data.status);
-    const rb = statusRang(b.data.status);
+    const ra = statusRank(a.data.status);
+    const rb = statusRank(b.data.status);
     if (ra !== rb) return ra - rb;
     const ta = a.data.gevondenOp ?? "";
     const tb = b.data.gevondenOp ?? "";
@@ -100,14 +100,14 @@ function kiesWinnaar(docs) {
   })[0];
 }
 
-function mergeVelden(winnaar, anderen) {
-  const merged = { ...winnaar.data };
-  for (const doc of anderen) {
+function mergeFields(winner, others) {
+  const merged = { ...winner.data };
+  for (const doc of others) {
     for (const [k, v] of Object.entries(doc.data)) {
       if (k === "status" || k === "gevondenOp") continue; // nooit overschrijven, zie sync-script-invariant
-      const huidig = merged[k];
-      const leeg = huidig === undefined || huidig === null || huidig === "" || (Array.isArray(huidig) && huidig.length === 0);
-      if (leeg && v !== undefined && v !== null && v !== "") {
+      const current = merged[k];
+      const empty = current === undefined || current === null || current === "" || (Array.isArray(current) && current.length === 0);
+      if (empty && v !== undefined && v !== null && v !== "") {
         merged[k] = v;
       }
     }
@@ -119,53 +119,53 @@ console.log(apply ? "Modus: APPLY (schrijft/verwijdert echt)" : "Modus: DRY-RUN 
 console.log("");
 
 const snap = await db.collection("vacatures").get();
-const alleDocs = snap.docs.map((d) => ({ id: d.id, data: d.data() }));
-console.log(`Totaal ${alleDocs.length} documenten in 'vacatures'.`);
+const allDocs = snap.docs.map((d) => ({ id: d.id, data: d.data() }));
+console.log(`Totaal ${allDocs.length} documenten in 'vacatures'.`);
 
-const groepen = new Map(); // canoniekId -> docs[]
-const zonderUrl = [];
+const groups = new Map(); // canonicalId -> docs[]
+const withoutUrl = [];
 
-for (const doc of alleDocs) {
-  const cid = canoniekId(doc.data);
+for (const doc of allDocs) {
+  const cid = canonicalId(doc.data);
   if (!cid) {
-    zonderUrl.push(doc);
+    withoutUrl.push(doc);
     continue;
   }
-  if (!groepen.has(cid)) groepen.set(cid, []);
-  groepen.get(cid).push(doc);
+  if (!groups.has(cid)) groups.set(cid, []);
+  groups.get(cid).push(doc);
 }
 
-const duplicaatGroepen = [...groepen.entries()].filter(([, docs]) => docs.length > 1);
+const duplicateGroups = [...groups.entries()].filter(([, docs]) => docs.length > 1);
 
-console.log(`${duplicaatGroepen.length} duplicaatgroep(en) gevonden (op basis van url).`);
-if (zonderUrl.length) {
-  console.log(`${zonderUrl.length} document(en) zonder url-veld — niet automatisch gegroepeerd:`);
-  for (const d of zonderUrl) console.log(`  - ${d.id} (${d.data.bedrijf ?? "?"} - ${d.data.titel ?? "?"})`);
+console.log(`${duplicateGroups.length} duplicaatgroep(en) gevonden (op basis van url).`);
+if (withoutUrl.length) {
+  console.log(`${withoutUrl.length} document(en) zonder url-veld — niet automatisch gegroepeerd:`);
+  for (const d of withoutUrl) console.log(`  - ${d.id} (${d.data.bedrijf ?? "?"} - ${d.data.titel ?? "?"})`);
 }
 console.log("");
 
-let samengevoegd = 0;
-let verwijderd = 0;
+let merged = 0;
+let deleted = 0;
 
-for (const [cid, docs] of duplicaatGroepen) {
-  const winnaar = kiesWinnaar(docs);
-  const anderen = docs.filter((d) => d !== winnaar);
-  const merged = mergeVelden(winnaar, anderen);
-  merged.id = cid;
+for (const [cid, docs] of duplicateGroups) {
+  const winner = pickWinner(docs);
+  const others = docs.filter((d) => d !== winner);
+  const mergedDoc = mergeFields(winner, others);
+  mergedDoc.id = cid;
 
   console.log(`Groep '${cid}':`);
-  console.log(`  Winnaar: ${winnaar.id} (status: ${winnaar.data.status ?? "?"}, gevondenOp: ${winnaar.data.gevondenOp ?? "?"})`);
-  for (const d of anderen) {
+  console.log(`  Winnaar: ${winner.id} (status: ${winner.data.status ?? "?"}, gevondenOp: ${winner.data.gevondenOp ?? "?"})`);
+  for (const d of others) {
     console.log(`  Te verwijderen: ${d.id} (status: ${d.data.status ?? "?"}, gevondenOp: ${d.data.gevondenOp ?? "?"})`);
   }
 
   if (apply) {
-    await db.collection("vacatures").doc(cid).set(merged, { merge: true });
-    samengevoegd++;
+    await db.collection("vacatures").doc(cid).set(mergedDoc, { merge: true });
+    merged++;
     for (const d of docs) {
       if (d.id !== cid) {
         await db.collection("vacatures").doc(d.id).delete();
-        verwijderd++;
+        deleted++;
       }
     }
     console.log(`  -> geschreven onder '${cid}', ${docs.length - (docs.some((d) => d.id === cid) ? 1 : 0)} oude document(en) verwijderd.`);
@@ -174,7 +174,7 @@ for (const [cid, docs] of duplicaatGroepen) {
 }
 
 if (apply) {
-  console.log(`Klaar - ${samengevoegd} groep(en) samengevoegd, ${verwijderd} document(en) verwijderd.`);
+  console.log(`Klaar - ${merged} groep(en) samengevoegd, ${deleted} document(en) verwijderd.`);
 } else {
   console.log(`Dry-run klaar. Niets geschreven. Voer opnieuw uit met --apply om dit plan echt uit te voeren:`);
   console.log(`  npm run dedupe:firestore -- --apply`);

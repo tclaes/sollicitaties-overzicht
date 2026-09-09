@@ -1,30 +1,30 @@
 import { useState } from "react";
 import { login } from "~/lib/auth";
-import styles from "./LoginPagina.module.css";
+import styles from "./LoginPage.module.css";
 
-export function LoginPagina() {
+export function LoginPage() {
   const [email, setEmail] = useState("");
-  const [wachtwoord, setWachtwoord] = useState("");
-  const [fout, setFout] = useState<string | null>(null);
-  const [bezig, setBezig] = useState(false);
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setFout(null);
-    setBezig(true);
+    setError(null);
+    setSubmitting(true);
     try {
-      await login(email, wachtwoord);
+      await login(email, password);
     } catch {
-      setFout("Ongeldig e-mailadres of wachtwoord.");
+      setError("Ongeldig e-mailadres of wachtwoord.");
     } finally {
-      setBezig(false);
+      setSubmitting(false);
     }
   }
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.card}>
-        <h1 className={styles.titel}>Sollicitaties</h1>
+        <h1 className={styles.title}>Sollicitaties</h1>
         <form onSubmit={handleSubmit} className={styles.form}>
           <label className={styles.label}>
             E-mail
@@ -43,15 +43,15 @@ export function LoginPagina() {
             <input
               type="password"
               className={styles.input}
-              value={wachtwoord}
-              onChange={(e) => setWachtwoord(e.target.value)}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               autoComplete="current-password"
               required
             />
           </label>
-          {fout && <p className={styles.fout}>{fout}</p>}
-          <button type="submit" className={styles.btn} disabled={bezig}>
-            {bezig ? "Inloggen…" : "Inloggen"}
+          {error && <p className={styles.error}>{error}</p>}
+          <button type="submit" className={styles.btn} disabled={submitting}>
+            {submitting ? "Inloggen…" : "Inloggen"}
           </button>
         </form>
       </div>

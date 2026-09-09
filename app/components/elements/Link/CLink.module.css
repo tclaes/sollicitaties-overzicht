@@ -11,13 +11,13 @@
   }
 }
 
-.actief {
+.active {
   background: var(--color-bg);
   color: var(--color-text);
   font-weight: var(--font-bold);
 }
 
-.extern {
+.external {
   background: transparent;
   font-size: var(--text-sm);
   padding: 4px var(--space-3);

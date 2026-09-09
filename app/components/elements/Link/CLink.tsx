@@ -1,6 +1,6 @@
 import styles from "./CLink.module.css"
 
-type Variant = "default" | "cta" | "extern";
+type Variant = "default" | "cta" | "external";
 type Target = "_blank" | "_self" | "_parent" | "_top";
 type Props = {
   target?: Target;
@@ -18,7 +18,7 @@ export function CLink({url, variant = "default", target = "_self", route = '', c
       href={url}
       target={`${target}`}
       rel="noopener noreferrer"
-      className={`link ${styles.link} ${styles[variant]} ${path.startsWith(route) ? styles.actief : ""}`}
+      className={`link ${styles.link} ${styles[variant]} ${path.startsWith(route) ? styles.active : ""}`}
       aria-current={route && path.startsWith(route) ? "page" : undefined}
     >
       {children}
