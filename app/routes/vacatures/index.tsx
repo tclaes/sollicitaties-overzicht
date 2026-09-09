@@ -22,10 +22,10 @@ function VacaturesPage() {
 
   const matchVolgorde: Record<string, number> = {sterk: 0, goed: 1, matig: 2, laag: 3};
 
-  const toonArchief = search.status === "niet-interessant";
+  const showArchive = search.status === "niet-interessant";
 
   const filtered = vacatures?.filter((v) => {
-    if (v.isArchived && !toonArchief) return false;
+    if (v.isArchived && !showArchive) return false;
     if (search.status && v.status !== search.status) return false;
     if (search.functie && v.functie !== search.functie) return false;
     return !(search.source && v.bron !== search.source);
