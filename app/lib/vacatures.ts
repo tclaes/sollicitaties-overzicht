@@ -1,5 +1,5 @@
 import {z} from "zod";
-import {collection, doc, getDocs, setDoc, updateDoc,} from "firebase/firestore";
+import {collection, deleteField, doc, getDocs, setDoc, updateDoc,} from "firebase/firestore";
 import {db} from "./firebase";
 import {Sollicitatie, SollicitatieSchema, SollicitatieStatus, Vacature, VacatureSchema,} from "./schemas";
 
@@ -64,4 +64,25 @@ export async function archiveVacature(
   isArchived: boolean,
 ): Promise<void> {
   await updateDoc(doc(db, "vacatures", id), {isArchived});
+}
+
+export async function markeerNietInteressant(
+  id: string,
+  reden: string,
+): Promise<void> {
+  await updateDoc(doc(db, "vacatures", id), {
+    isArchived: true,
+    status: "niet-interessant",
+    archiefReden: reden,
+    gearchiveerdOp: new Date().toISOString(),
+  });
+}
+
+export async function herstelVacature(id: string): Promise<void> {
+  await updateDoc(doc(db, "vacatures", id), {
+    isArchived: false,
+    status: "bekeken",
+    archiefReden: deleteField(),
+    gearchiveerdOp: deleteField(),
+  });
 }

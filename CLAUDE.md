@@ -36,6 +36,19 @@ De vacature-sync draait in GitHub Actions, niet meer lokaal.
   service-account JSON. De workflow schrijft die naar een tijdelijk bestand en ruimt
   het daarna op.
 
+### Niet-interessante vacatures
+
+In de app kan Tom een vacature archiveren als "niet interessant" (detailpagina →
+knop *Niet interessant* + reden). Dat zet op het Firestore-doc `isArchived: true`,
+`status: "niet-interessant"`, `archiefReden` en `gearchiveerdOp`. In het overzicht
+zijn die verborgen tenzij de filter *Niet interessant* actief is.
+
+De sync-input kent hiervoor de flag `nietInteressant: true` (analoog aan
+`verlopen: true`): zo'n item wordt in Firestore gemerged met `isArchived` +
+`status: "niet-interessant"` (+ optioneel `archiefReden`), zonder het doc te
+verwijderen. De dagelijkse scan gebruikt deze flag én leest Firestore rechtstreeks
+om gearchiveerde vacatures niet opnieuw voor te stellen.
+
 ### Auto-merge van vacature-updates
 
 `.github/workflows/auto-merge-vacature-sync.yml` mergt automatisch elke PR naar
@@ -56,10 +69,12 @@ je de versie die al op `main` staat.)
 De scan draait als lokale scheduled task `dagelijkse-vacatures-frontend`
 (`~/.claude/scheduled-tasks/`, draait als de Claude-app open is). Die task:
 
-1. leest `data/firestore-sync-input.json` van `origin/main` als bekende stand;
+1. leest `data/firestore-sync-input.json` van `origin/main` als bekende stand, plus
+   de Firestore-collectie `vacatures` (docs met `isArchived: true`) als lijst
+   "niet interessant — niet opnieuw voorstellen";
 2. doorzoekt alle bronnen met de Playwright-browser (LinkedIn/Indeed blijven achter
    hun login en worden overgeslagen met een notitie);
-3. filtert op Toms profiel;
+3. filtert op Toms profiel en laat gearchiveerde/niet-interessante URLs vallen;
 4. stopt als er **geen** nieuwe of nieuw-verlopen vacatures zijn;
 5. bij wél wijzigingen: `data/firestore-sync-input.json` herschrijven,
    `npm run pdf:vacatures` draaien (overzicht-PDF naar

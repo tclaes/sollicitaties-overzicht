@@ -14,7 +14,8 @@
  *   <out>/vacatures_actief_overzicht_<date>.pdf
  * en print dat pad op stdout. Draait lokaal op Tom's Mac; in CI heeft het geen zin.
  *
- * Verlopen vacatures (verlopen: true) komen niet in de PDF.
+ * Verlopen vacatures (verlopen: true) en als niet-interessant gearchiveerde
+ * vacatures (nietInteressant: true) komen niet in de PDF.
  */
 import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from "node:fs";
 import { execFileSync } from "node:child_process";
@@ -56,7 +57,7 @@ if (!existsSync(CHROME)) {
 }
 
 const alle = JSON.parse(readFileSync(inputPad, "utf8"));
-const actief = alle.filter((v) => v.verlopen !== true);
+const actief = alle.filter((v) => v.verlopen !== true && v.nietInteressant !== true);
 
 const REGIO_LABEL = {
   limburg: "Limburg",
