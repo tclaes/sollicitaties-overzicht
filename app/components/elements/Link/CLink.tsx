@@ -1,16 +1,16 @@
 import styles from "./CLink.module.css"
 
-type Variant = "cta" | "extern";
+type Variant = "default" | "cta" | "extern";
 type Target = "_blank" | "_self" | "_parent" | "_top";
 type Props = {
-  target?: string;
+  target?: Target;
   url: string;
   variant?: Variant;
   route?: string;
   children?: React.ReactNode;
 }
 
-export function CLink({url, variant, target = "_self", route, children}: Props) {
+export function CLink({url, variant = "default", target = "_self", route = '', children}: Props) {
   const path = typeof window !== "undefined" ? window.location.pathname : "/";
 
   return (
@@ -19,7 +19,7 @@ export function CLink({url, variant, target = "_self", route, children}: Props) 
       target={`${target}`}
       rel="noopener noreferrer"
       className={`link ${styles.link} ${styles[variant]} ${path.startsWith(route) ? styles.actief : ""}`}
-      aria-current={path.startsWith(route) ? "page" : undefined}
+      aria-current={route && path.startsWith(route) ? "page" : undefined}
     >
       {children}
     </a>
