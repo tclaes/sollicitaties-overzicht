@@ -26,7 +26,7 @@
 .bekeken .dot       { background: var(--color-status-bekeken-dot); }
 .gesolliciteerd .dot { background: var(--color-status-gesolliciteerd-dot); }
 
-.getal {
+.count {
   font-size: var(--text-xl);
   font-weight: var(--font-semibold);
   color: var(--color-text);

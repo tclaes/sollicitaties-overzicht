@@ -23,7 +23,7 @@
   text-decoration: none;
 }
 
-.artikel {
+.article {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -37,15 +37,15 @@
   gap: var(--space-3);
 }
 
-.functieBadge {
+.roleBadge {
   display: inline-flex;
   align-items: center;
   padding: var(--space-1) var(--space-2);
   border-radius: var(--radius-full);
   font-size: var(--text-xs);
   font-weight: var(--font-medium);
-  background: var(--color-functie-fullstack-bg);
-  color: var(--color-functie-fullstack-text);
+  background: var(--color-role-fullstack-bg);
+  color: var(--color-role-fullstack-text);
   white-space: nowrap;
 }
 
@@ -54,13 +54,13 @@
   gap: var(--space-2);
 }
 
-.titel {
+.title {
   font-size: var(--text-2xl);
   font-weight: var(--font-bold);
   color: var(--color-text);
 }
 
-.bedrijf {
+.company {
   font-size: var(--text-lg);
   font-weight: var(--font-medium);
   color: var(--color-text-muted);
@@ -74,7 +74,7 @@
   color: var(--color-text-subtle);
 }
 
-.datum {
+.date {
   color: var(--color-text-subtle);
 }
 

@@ -13,7 +13,7 @@
   gap: var(--space-3);
 }
 
-.titel {
+.title {
   font-size: var(--text-base);
   font-weight: var(--font-semibold);
   color: var(--color-text);
@@ -21,7 +21,7 @@
   text-transform: capitalize;
 }
 
-.teller {
+.counter {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
 }

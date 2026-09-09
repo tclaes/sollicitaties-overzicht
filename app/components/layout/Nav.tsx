@@ -5,18 +5,18 @@ export function Nav() {
 
   return (
     <nav className={styles.nav} aria-label="Navigatie">
-      <div className={styles.sectie}>
-        <span className={styles.sectieLabel}>Overzicht</span>
+      <div className={styles.section}>
+        <span className={styles.sectionLabel}>Overzicht</span>
         <a
           href="/"
-          className={`${styles.datumLink} ${currentPath === "/" ? styles.actief : ""}`}
+          className={`${styles.navLink} ${currentPath === "/" ? styles.active : ""}`}
           aria-current={currentPath === "/" ? "page" : undefined}
         >
           Vacatures
         </a>
         <a
           href="/sollicitaties"
-          className={`${styles.datumLink} ${currentPath === "/sollicitaties" ? styles.actief : ""}`}
+          className={`${styles.navLink} ${currentPath === "/sollicitaties" ? styles.active : ""}`}
           aria-current={currentPath === "/sollicitaties" ? "page" : undefined}
         >
           Sollicitaties

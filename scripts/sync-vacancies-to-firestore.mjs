@@ -3,7 +3,7 @@
  * Sync browser-geverifieerde actieve vacatures naar Firestore.
  *
  * Gebruik:
- *   node scripts/sync-vacatures-naar-firestore.mjs <input.json> [service-account.json]
+ *   node scripts/sync-vacancies-to-firestore.mjs <input.json> [service-account.json]
  *
  * Input JSON: array van objecten met
  *   titel, bedrijf, locatie, regio (limburg|antwerpen|brussel|vlaanderen|remote|andere),
@@ -38,13 +38,13 @@ import { getFirestore } from "firebase-admin/firestore";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DEFAULT_SERVICE_ACCOUNT_PATH = join(__dirname, "..", "secrets", "firebase-service-account.json");
 
-const REGIOS = ["limburg", "antwerpen", "brussel", "vlaanderen", "remote", "andere"];
-const BRONNEN = ["indeed", "vdab", "jobat", "linkedin", "andere"];
-const FUNCTIES = ["frontend", "fullstack"];
+const REGIONS = ["limburg", "antwerpen", "brussel", "vlaanderen", "remote", "andere"];
+const SOURCES = ["indeed", "vdab", "jobat", "linkedin", "andere"];
+const ROLES = ["frontend", "fullstack"];
 
 const [, , inputPath, serviceAccountArg] = process.argv;
 if (!inputPath) {
-  console.error("Gebruik: node sync-vacatures-naar-firestore.mjs <input.json> [service-account.json]");
+  console.error("Gebruik: node sync-vacancies-to-firestore.mjs <input.json> [service-account.json]");
   process.exit(1);
 }
 
@@ -72,12 +72,12 @@ function slugify(s) {
     .replace(/^-+|-+$/g, "");
 }
 
-function normaliseerUrl(url) {
+function normalizeUrl(url) {
   if (!url) return null;
   try {
     const u = new URL(url);
-    const pad = u.pathname.replace(/\/+$/, "");
-    return `${u.hostname}${pad}`.toLowerCase();
+    const path = u.pathname.replace(/\/+$/, "");
+    return `${u.hostname}${path}`.toLowerCase();
   } catch {
     return url.toLowerCase().replace(/[?#].*$/, "").replace(/\/+$/, "");
   }
@@ -85,23 +85,23 @@ function normaliseerUrl(url) {
 
 // Document-id consistent houden over dagen heen: liefst uit de url (stabiel),
 // enkel terugvallen op bedrijf+titel als er geen url is. Zie opmerking hierboven.
-function genereerId(v) {
+function generateId(v) {
   if (v.id) return v.id;
-  if (v.url) return slugify(normaliseerUrl(v.url));
+  if (v.url) return slugify(normalizeUrl(v.url));
   return slugify(`${v.bedrijf}-${v.titel}`);
 }
 
-function valideer(v, i) {
-  const fouten = [];
-  if (!v.titel) fouten.push("titel ontbreekt");
-  if (!v.bedrijf) fouten.push("bedrijf ontbreekt");
-  if (!v.locatie) fouten.push("locatie ontbreekt");
-  if (!REGIOS.includes(v.regio)) fouten.push(`regio '${v.regio}' ongeldig (${REGIOS.join("|")})`);
-  if (!v.url || (!v.url.startsWith("http") && !v.url.startsWith("/") && v.url !== "")) fouten.push("url ongeldig");
-  if (!v.beschrijving) fouten.push("beschrijving ontbreekt");
-  if (!BRONNEN.includes(v.bron)) fouten.push(`bron '${v.bron}' ongeldig (${BRONNEN.join("|")})`);
-  if (v.functie != null && !FUNCTIES.includes(v.functie)) fouten.push(`functie '${v.functie}' ongeldig (${FUNCTIES.join("|")})`);
-  if (fouten.length) throw new Error(`Vacature #${i} (${v.bedrijf ?? "?"} - ${v.titel ?? "?"}): ${fouten.join(", ")}`);
+function validate(v, i) {
+  const errors = [];
+  if (!v.titel) errors.push("titel ontbreekt");
+  if (!v.bedrijf) errors.push("bedrijf ontbreekt");
+  if (!v.locatie) errors.push("locatie ontbreekt");
+  if (!REGIONS.includes(v.regio)) errors.push(`regio '${v.regio}' ongeldig (${REGIONS.join("|")})`);
+  if (!v.url || (!v.url.startsWith("http") && !v.url.startsWith("/") && v.url !== "")) errors.push("url ongeldig");
+  if (!v.beschrijving) errors.push("beschrijving ontbreekt");
+  if (!SOURCES.includes(v.bron)) errors.push(`bron '${v.bron}' ongeldig (${SOURCES.join("|")})`);
+  if (v.functie != null && !ROLES.includes(v.functie)) errors.push(`functie '${v.functie}' ongeldig (${ROLES.join("|")})`);
+  if (errors.length) throw new Error(`Vacature #${i} (${v.bedrijf ?? "?"} - ${v.titel ?? "?"}): ${errors.join(", ")}`);
 }
 
 const input = JSON.parse(readFileSync(inputPath, "utf8"));
@@ -110,52 +110,52 @@ if (!Array.isArray(input)) {
   process.exit(1);
 }
 
-const vandaag = new Date().toISOString().slice(0, 10);
-const nu = new Date().toISOString();
+const today = new Date().toISOString().slice(0, 10);
+const now = new Date().toISOString();
 
-let nieuw = 0, bijgewerkt = 0, verwijderd = 0, overgeslagen = 0, gearchiveerd = 0;
+let created = 0, updated = 0, deleted = 0, skipped = 0, archived = 0;
 
 for (const [i, v] of input.entries()) {
   if (v.nietInteressant) {
-    const id = genereerId(v);
+    const id = generateId(v);
     const ref = db.collection("vacatures").doc(id);
     const snap = await ref.get();
-    const archiefVelden = {
+    const archiveFields = {
       isArchived: true,
       status: "niet-interessant",
       ...(v.archiefReden ? { archiefReden: v.archiefReden } : {}),
     };
     if (snap.exists) {
-      await ref.set(archiefVelden, { merge: true });
-      gearchiveerd++;
+      await ref.set(archiveFields, { merge: true });
+      archived++;
       console.log(`Gearchiveerd (niet-interessant): ${id}`);
     } else {
-      overgeslagen++;
+      skipped++;
       console.log(`Overgeslagen (niet-interessant, doc bestaat niet): ${id}`);
     }
     continue;
   }
 
   if (v.verlopen) {
-    const id = genereerId(v);
+    const id = generateId(v);
     const ref = db.collection("vacatures").doc(id);
     const snap = await ref.get();
     if (snap.exists) {
       await ref.delete();
-      verwijderd++;
+      deleted++;
       console.log(`Verwijderd (verlopen): ${id}`);
     } else {
-      overgeslagen++;
+      skipped++;
     }
     continue;
   }
 
-  valideer(v, i);
-  const id = genereerId(v);
+  validate(v, i);
+  const id = generateId(v);
   const ref = db.collection("vacatures").doc(id);
   const snap = await ref.get();
 
-  const basisVelden = {
+  const baseFields = {
     id,
     titel: v.titel,
     bedrijf: v.bedrijf,
@@ -170,26 +170,26 @@ for (const [i, v] of input.entries()) {
   };
 
   if (snap.exists) {
-    await ref.set(basisVelden, { merge: true });
-    bijgewerkt++;
+    await ref.set(baseFields, { merge: true });
+    updated++;
     console.log(`Bijgewerkt: ${id}`);
   } else {
-    await ref.set({ ...basisVelden, status: "nieuw", gevondenOp: nu });
-    nieuw++;
+    await ref.set({ ...baseFields, status: "nieuw", gevondenOp: now });
+    created++;
     console.log(`Nieuw: ${id}`);
   }
 }
 
 await db.collection("overzicht").doc("huidig").set(
   {
-    datum: vandaag,
+    datum: today,
     metadata: {
       bronBestand: inputPath,
       aantalGevonden: input.filter((v) => !v.verlopen && !v.nietInteressant).length,
-      verwerktOp: nu,
+      verwerktOp: now,
     },
   },
   { merge: true }
 );
 
-console.log(`\nKlaar - ${nieuw} nieuw, ${bijgewerkt} bijgewerkt, ${gearchiveerd} gearchiveerd, ${verwijderd} verwijderd, ${overgeslagen} overgeslagen.`);
+console.log(`\nKlaar - ${created} nieuw, ${updated} bijgewerkt, ${archived} gearchiveerd, ${deleted} verwijderd, ${skipped} overgeslagen.`);

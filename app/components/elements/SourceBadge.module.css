@@ -1,0 +1,16 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.indeed  { background: var(--color-source-indeed-bg);  color: var(--color-source-indeed-text); }
+.vdab    { background: var(--color-source-vdab-bg);    color: var(--color-source-vdab-text); }
+.jobat   { background: var(--color-source-jobat-bg);   color: var(--color-source-jobat-text); }
+.linkedin { background: var(--color-source-linkedin-bg); color: var(--color-source-linkedin-text); }
+.andere  { background: var(--color-source-andere-bg);  color: var(--color-source-andere-text); }

@@ -8,13 +8,13 @@
   overflow-y: auto;
 }
 
-.sectie {
+.section {
   display: flex;
   flex-direction: column;
   gap: 1px;
 }
 
-.sectieLabel {
+.sectionLabel {
   font-size: 10px;
   font-weight: var(--font-semibold);
   color: var(--color-text-subtle);
@@ -24,7 +24,7 @@
   margin-bottom: var(--space-1);
 }
 
-.datumLink {
+.navLink {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -36,12 +36,12 @@
   text-transform: capitalize;
 }
 
-.datumLink:hover {
+.navLink:hover {
   background: var(--color-bg);
   color: var(--color-text);
 }
 
-.actief {
+.active {
   background: var(--color-bg);
   color: var(--color-text);
   font-weight: var(--font-medium);
