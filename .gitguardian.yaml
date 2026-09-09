@@ -1,0 +1,7 @@
+version: 2
+secret:
+  ignored-paths:
+    # Fixture credential for the local-only Firebase Auth emulator used by the
+    # e2e test suite (see e2e/seed.ts, CLAUDE.md "Testen"). It only ever talks
+    # to 127.0.0.1's Auth emulator, never a real account or service.
+    - e2e/seed.ts

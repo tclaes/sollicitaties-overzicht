@@ -1,0 +1,39 @@
+import { describe, it, expect } from "vitest";
+import { render, screen } from "@testing-library/react";
+import { FilterPills } from "./FilterPills";
+
+describe("FilterPills", () => {
+  it("renders every filter group", () => {
+    render(<FilterPills currentSearch={{}} />);
+
+    expect(screen.getByRole("group", { name: "Filters" })).toBeInTheDocument();
+    expect(screen.getByText("Status")).toBeInTheDocument();
+    expect(screen.getByText("Functie")).toBeInTheDocument();
+    expect(screen.getByText("Sortering")).toBeInTheDocument();
+    expect(screen.getByText("Bron")).toBeInTheDocument();
+  });
+
+  it("builds hrefs against basePath, merging in the current search", () => {
+    render(<FilterPills currentSearch={{ status: "bekeken" }} basePath="/" />);
+
+    const nieuwLink = screen.getByRole("link", { name: "Nieuw" });
+    expect(nieuwLink).toHaveAttribute("href", "/?status=nieuw");
+  });
+
+  it("defaults basePath to /vacatures", () => {
+    render(<FilterPills currentSearch={{}} />);
+
+    const frontendLink = screen.getByRole("link", { name: "frontend" });
+    expect(frontendLink).toHaveAttribute("href", "/vacatures?functie=frontend");
+  });
+
+  it("preserves other search params when changing one filter", () => {
+    render(<FilterPills currentSearch={{ status: "bekeken", sort: "datum" }} basePath="/" />);
+
+    const frontendLink = screen.getByRole("link", { name: "frontend" });
+    expect(frontendLink).toHaveAttribute(
+      "href",
+      "/?status=bekeken&sort=datum&functie=frontend"
+    );
+  });
+});
