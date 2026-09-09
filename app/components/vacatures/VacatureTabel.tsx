@@ -3,8 +3,8 @@ import type {Sollicitatie, Vacature} from "~/lib/schemas";
 import {FUNCTIE_LABELS, SOLLICITATIE_STATUS_LABELS} from "~/lib/schemas";
 import {BronBadge} from "../elements/BronBadge";
 import {Badge} from "../elements/Badge/Badge"
+import {ApplyForJob} from "./ApplyForJob/ApplyForJob";
 import styles from "./VacatureTabel.module.css";
-import {todayIso} from "~/lib/date";
 import {useNavigate} from '@tanstack/react-router'
 
 
@@ -21,44 +21,11 @@ interface Props {
 
 export function VacatureTabel({vacatures, sollicitatiePerId = new Map(), onSolliciteer}: Props) {
   const [lokaalGesolliciteerd, setLokaalGesolliciteerd] = useState<Record<string, string>>({});
-  const [openAction, setOpenAction] = useState<string | null>(null);
-  const [datumInput, setDatumInput] = useState("");
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
 
   if (vacatures.length === 0) {
     return <div className={styles.leeg}>Geen vacatures gevonden.</div>;
-  }
-
-  function openSolliciteer(e: React.MouseEvent, id: string) {
-    e.stopPropagation();
-    setOpenAction(id);
-    setDatumInput(todayIso());
-  }
-
-  async function confirm(e: React.FormEvent, v: Vacature) {
-    e.preventDefault();
-    e.stopPropagation();
-    if (!onSolliciteer) return;
-    setLoading(true);
-    try {
-      await onSolliciteer({
-        vacatureId: v.id,
-        bedrijf: v.bedrijf,
-        rol: v.titel,
-        gesolliceerdOp: datumInput || todayIso(),
-      });
-      setLokaalGesolliciteerd((prev) => ({...prev, [v.id]: datumInput || todayIso()}));
-    } finally {
-      setLoading(false);
-      setOpenAction(null);
-    }
-  }
-
-  function cancel(e: React.MouseEvent) {
-    e.stopPropagation();
-    setOpenAction(null);
   }
 
   return (
@@ -90,7 +57,7 @@ export function VacatureTabel({vacatures, sollicitatiePerId = new Map(), onSolli
           return (
             <tr
               key={v.id}
-              className={styles.rij}
+              className={`${styles.rij} vacature-rij`}
               onClick={async () => {
                 await navigate({to: `/vacatures/${v.id}`})
               }}
@@ -137,35 +104,14 @@ export function VacatureTabel({vacatures, sollicitatiePerId = new Map(), onSolli
                 ) : null}
               </td>
               <td className={styles.colSolliciteer} onClick={(e) => e.stopPropagation()}>
-                {!isGesolliciteerd && onSolliciteer && openAction !== v.id && (
-                  <button
-                    className={styles.solliciteerBtn}
-                    onClick={(e) => openSolliciteer(e, v.id)}
-                    type="button"
-                  >
-                    Solliciteer
-                  </button>
-                )}
-                {openAction === v.id && (
-                  <form
-                    className={styles.solliciteerForm}
-                    onSubmit={(e) => confirm(e, v)}
-                  >
-                    <input
-                      type="date"
-                      className={styles.datumInput}
-                      value={datumInput}
-                      onChange={(e) => setDatumInput(e.target.value)}
-                      autoFocus
-                      aria-label="autofocus"
-                    />
-                    <button type="submit" className={styles.bevestigBtn} title="Bevestigen"
-                            disabled={loading}>✓
-                    </button>
-                    <button type="button" className={styles.annuleerBtn} title="Annuleren"
-                            onClick={cancel}>✕
-                    </button>
-                  </form>
+                {!isGesolliciteerd && onSolliciteer && (
+                  <ApplyForJob
+                    vacature={v}
+                    onSolliciteer={onSolliciteer}
+                    onGesolliciteerd={(datum) =>
+                      setLokaalGesolliciteerd((prev) => ({...prev, [v.id]: datum}))
+                    }
+                  />
                 )}
               </td>
             </tr>

@@ -126,68 +126,6 @@
   margin-top: 1px;
 }
 
-.solliciteerBtn {
-  font-size: var(--text-xs);
-  padding: 3px 10px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
-  color: var(--color-text-muted);
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity var(--transition-fast), background var(--transition-fast);
-}
-
-.rij:hover .solliciteerBtn { opacity: 1; }
-
-.solliciteerBtn:hover {
-  background: var(--color-bg);
-  color: var(--color-text);
-}
-
-.solliciteerForm {
-  display: flex;
-  align-items: center;
-  gap: var(--space-1);
-  justify-content: flex-end;
-}
-
-.datumInput {
-  font-size: var(--text-xs);
-  padding: 2px 6px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  background: var(--color-surface);
-  color: var(--color-text);
-  width: 118px;
-}
-
-.bevestigBtn,
-.annuleerBtn {
-  font-size: var(--text-xs);
-  width: 22px;
-  height: 22px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
-
-.bevestigBtn {
-  color: #15803d;
-  border-color: #bbf7d0;
-  background: #dcfce7;
-}
-
-.bevestigBtn:hover { background: #bbf7d0; }
-
-.annuleerBtn { color: var(--color-text-muted); }
-.annuleerBtn:hover { background: var(--color-bg); }
-
 .matchBadge {
   display: inline-block;
   font-size: var(--text-xs);
