@@ -796,5 +796,58 @@
       "AWS",
       "serverless"
     ]
+  },
+  {
+    "titel": "Full stack developer (React/Python)",
+    "bedrijf": "Madison Recruitment (klant: wereldleider zonne-energie/drone-software, Leuven)",
+    "locatie": "Leuven",
+    "regio": "vlaanderen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74233465/full-stack-developer-react-python",
+    "beschrijving": "Fullstack software engineer voor een dronesoftware-platform in de zonne-energiesector. Stack: moderne JavaScript-frameworks (React, Express, Node.js) + Python; Docker/AWS/Azure/Postgres. Wellicht dezelfde klant als de eerder verlopen Sitemark-vacature.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      "Node.js",
+      "Express",
+      "TypeScript",
+      "Python",
+      "AWS"
+    ]
+  },
+  {
+    "titel": "Full-Stack .NET Developer",
+    "bedrijf": "Hifferman",
+    "locatie": "Kontich",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74265361/full-stack-net-developer",
+    "beschrijving": "In-house full-stack rol op eigen softwareomgeving, van backend tot frontend. Stack: .NET 10 / ASP.NET Core, RabbitMQ, MySQL (EF Core) en Angular met DevExtreme op Azure AKS. Frontend (Angular) is een volwaardig deel van de rol.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      "Angular",
+      ".NET",
+      "ASP.NET Core",
+      "TypeScript",
+      "Azure"
+    ]
+  },
+  {
+    "titel": "Full Stack Java Developer",
+    "bedrijf": "Clovr (klant: familiaal softwarebedrijf, maatwerk-producten)",
+    "locatie": "Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/73959351/full-stack-java-developer",
+    "beschrijving": "In-house full-stack rol bij softwarebedrijf dat digitale producten op maat bouwt. Back-end: Java/Spring Boot, Node.js, REST API's. Front-end: Angular, React en/of React Native. Borderline: Java-zwaartepunt, maar frontend (Angular/React) is een volwaardig deel.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      "Angular",
+      "React",
+      "React Native",
+      "Java",
+      "Spring Boot",
+      "Node.js"
+    ]
   }
 ]
