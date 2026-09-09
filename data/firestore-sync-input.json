@@ -715,5 +715,86 @@
       "GraphQL",
       "MongoDB"
     ]
+  },
+  {
+    "titel": "Software Developer .NET & React",
+    "bedrijf": "Kingfisher Recruitment (client, gevestigde Belgische speler bouwsector)",
+    "locatie": "Mechelen",
+    "regio": "antwerpen",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/software-developer-net-react",
+    "beschrijving": "Full-stack rol in een multidisciplinair team: React op de front-end, .NET in de backend. Focus op componenten, UX, state management en technische richting van de front-end voor een strategisch bedrijfsplatform.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      ".NET",
+      "TypeScript",
+      "front-end"
+    ]
+  },
+  {
+    "titel": ".NET/React AI Software Engineer",
+    "bedrijf": "Kingfisher Recruitment (client, gevestigde Belgische speler bouwsector)",
+    "locatie": "Lier",
+    "regio": "antwerpen",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/netreact-ai-software-engineer",
+    "beschrijving": "Zelfde klant als de Mechelen-vacature: React front-end + .NET backend voor een strategisch platform, met daarnaast AI-initiatieven (AI-assisted development, eigen AI-oplossingen).",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      ".NET",
+      "AI",
+      "front-end"
+    ]
+  },
+  {
+    "titel": "Full Stack Engineer (Products)",
+    "bedrijf": "Eno Health",
+    "locatie": "Brussel (hybride)",
+    "regio": "brussel",
+    "url": "https://www.linkedin.com/jobs/view/4464323099/",
+    "beschrijving": "Product-rol bij AI-platform voor zorgverleners: practitioner console, patient dashboard, API en mobiele omgeving in een TypeScript-stack. Front-end is uitdrukkelijk een volwaardig, load-bearing deel van de rol. Borderline op regio (Brussel, hybride).",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "TypeScript",
+      "React",
+      "API",
+      "mobile",
+      "healthcare"
+    ]
+  },
+  {
+    "titel": "Fullstack Software Engineer - Payroll & Benefits Platform for HR",
+    "bedrijf": "Alan",
+    "locatie": "Remote (België)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4462172634/",
+    "beschrijving": "Voltijdse remote rol bij verzekerings-/preventieplatform Alan aan het payroll- & benefits-platform voor HR-teams. Borderline: full-stack rol, frontend-aandeel niet volledig bevestigd uit de omschrijving.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "TypeScript",
+      "React",
+      "fullstack",
+      "remote"
+    ]
+  },
+  {
+    "titel": "Full Stack Engineer (Dexxter)",
+    "bedrijf": "Teamleader (Dexxter)",
+    "locatie": "Mechelen (hybride)",
+    "regio": "antwerpen",
+    "url": "https://techjobs.be/nl/ict-jobs/28956-full-stack-engineer-dexxter",
+    "beschrijving": "Senior end-to-end product-rol (frontend, backend, infra) op het boekhoudplatform Dexxter. Stack: Vue 3 + Node.js in een serverless AWS-omgeving. Frontend is een volwaardig deel van de rol.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "Vue",
+      "Node.js",
+      "AWS",
+      "serverless"
+    ]
   }
 ]
