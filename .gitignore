@@ -13,3 +13,15 @@ data/sync.log
 
 # Vacaturescan browser-MCP scratch
 .playwright-mcp/
+
+# Firebase emulators (e2e tests)
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+.firebase/
+
+# Playwright
+/playwright-report/
+/test-results/
+/blob-report/
+/playwright/.cache/

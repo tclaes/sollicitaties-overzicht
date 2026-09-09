@@ -83,8 +83,6 @@ De scan draait als lokale scheduled task `dagelijkse-vacatures-frontend`
 `npm run pdf:vacatures` genereert de overzicht-PDF uit de sync-input via headless
 Chrome; opties `--out <map>` en `--date <DD_MM_YYYY>`.
 
-De cloud-cowork-taak die dit vroeger deels deed, is afgevoerd.
-
 Lokaal draaien kan nog steeds, met `secrets/firebase-service-account.json` op zijn plaats:
 
 ```
@@ -93,6 +91,19 @@ npm run dedupe:firestore            # dry-run
 npm run dedupe:firestore -- --apply # ruimt harde duplicaten echt op
 ```
 
-De oude lokale launchd-opzet (`scripts/run-firestore-sync.sh` en
-`scripts/com.tomclaes.firestoresync.plist`) is verwijderd; de workflow hierboven
-neemt die rol over.
+## Testen
+
+- `npm test` — unit- en componenttests (Vitest + Testing Library), draait ook in CI (`build-en-test`).
+- `npm run test:e2e` — e2e-tests (Playwright) tegen de golden paths (inloggen,
+  solliciteren, niet interessant markeren/herstellen). Draait volledig tegen de
+  **Firebase-emulators** (Firestore + Auth) met vaste fixture-data uit `e2e/seed.ts`
+  — nooit tegen de echte productie-Firestore. `firebase emulators:exec` start de
+  emulators, seedt data via Playwright's `globalSetup`, en start zelf ook
+  `vite dev` (zie `playwright.config.ts`).
+  - Vereist een lokale Java-runtime (voor de Firestore-emulator), bv.
+    `brew install openjdk@21` en dan `/opt/homebrew/opt/openjdk@21/bin` op het PATH.
+  - CI installeert Java (`actions/setup-java`) en Playwright's Chromium zelf; geen
+    Firebase-secrets nodig, want de emulators draaien tegen een dummy `demo-test`-project.
+
+Testbestanden staan naast de code die ze testen (`*.test.ts(x)`); e2e-specs staan in
+`e2e/*.spec.ts`.

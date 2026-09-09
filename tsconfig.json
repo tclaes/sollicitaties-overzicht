@@ -24,6 +24,8 @@
   "include": [
     "app",
     "scripts",
-    "app/types"
+    "app/types",
+    "e2e",
+    "playwright.config.ts"
   ]
 }
