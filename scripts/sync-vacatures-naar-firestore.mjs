@@ -11,6 +11,8 @@
  *   functie?: "frontend" | "fullstack",
  *   tags?: string[], match?: { score, toelichting }, id?: string,
  *   verlopen?: boolean  -> true = verwijder dit document i.p.v. het bij te werken
+ *   nietInteressant?: boolean  -> true = archiveer dit document (isArchived + status
+ *     "niet-interessant"), optioneel met archiefReden. Overige velden mogen minimaal zijn.
  *
  * Service-account: pad als 2e argument, of via env var FIREBASE_SERVICE_ACCOUNT_PATH.
  *
@@ -111,9 +113,29 @@ if (!Array.isArray(input)) {
 const vandaag = new Date().toISOString().slice(0, 10);
 const nu = new Date().toISOString();
 
-let nieuw = 0, bijgewerkt = 0, verwijderd = 0, overgeslagen = 0;
+let nieuw = 0, bijgewerkt = 0, verwijderd = 0, overgeslagen = 0, gearchiveerd = 0;
 
 for (const [i, v] of input.entries()) {
+  if (v.nietInteressant) {
+    const id = genereerId(v);
+    const ref = db.collection("vacatures").doc(id);
+    const snap = await ref.get();
+    const archiefVelden = {
+      isArchived: true,
+      status: "niet-interessant",
+      ...(v.archiefReden ? { archiefReden: v.archiefReden } : {}),
+    };
+    if (snap.exists) {
+      await ref.set(archiefVelden, { merge: true });
+      gearchiveerd++;
+      console.log(`Gearchiveerd (niet-interessant): ${id}`);
+    } else {
+      overgeslagen++;
+      console.log(`Overgeslagen (niet-interessant, doc bestaat niet): ${id}`);
+    }
+    continue;
+  }
+
   if (v.verlopen) {
     const id = genereerId(v);
     const ref = db.collection("vacatures").doc(id);
@@ -163,11 +185,11 @@ await db.collection("overzicht").doc("huidig").set(
     datum: vandaag,
     metadata: {
       bronBestand: inputPath,
-      aantalGevonden: input.filter((v) => !v.verlopen).length,
+      aantalGevonden: input.filter((v) => !v.verlopen && !v.nietInteressant).length,
       verwerktOp: nu,
     },
   },
   { merge: true }
 );
 
-console.log(`\nKlaar - ${nieuw} nieuw, ${bijgewerkt} bijgewerkt, ${verwijderd} verwijderd, ${overgeslagen} overgeslagen.`);
+console.log(`\nKlaar - ${nieuw} nieuw, ${bijgewerkt} bijgewerkt, ${gearchiveerd} gearchiveerd, ${verwijderd} verwijderd, ${overgeslagen} overgeslagen.`);

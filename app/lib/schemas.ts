@@ -84,6 +84,8 @@ export const VacatureSchema = z.object({
   gevondenOp: z.string().datetime(),
   status: StatusSchema.default("nieuw"),
   isArchived: z.boolean().optional(),
+  archiefReden: z.string().optional(),
+  gearchiveerdOp: z.string().datetime().optional(),
   tags: z.array(z.string()).default([]),
   match: z.object({
     score: MatchScoreSchema,

@@ -28,6 +28,11 @@ export function StatsTeller({ vacatures }: { vacatures: Vacature[] }) {
         <span className={styles.getal}>{telling["gesolliciteerd"] ?? 0}</span>
         <span className={styles.label}>Gesolliciteerd</span>
       </div>
+      <div className={styles.item}>
+        <span className={styles.dot} />
+        <span className={styles.getal}>{telling["niet-interessant"] ?? 0}</span>
+        <span className={styles.label}>Niet interessant</span>
+      </div>
     </div>
   );
 }

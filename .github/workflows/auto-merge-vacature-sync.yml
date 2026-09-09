@@ -63,7 +63,7 @@ jobs:
             if (!Array.isArray(data)) throw new Error("Verwacht een JSON-array.");
             for (const [i, v] of data.entries()) {
               if (!v || typeof v !== "object") throw new Error(`Item ${i} is geen object.`);
-              if (v.verlopen === true) continue;
+              if (v.verlopen === true || v.nietInteressant === true) continue;
               for (const veld of ["titel", "bedrijf", "url"]) {
                 if (!v[veld] || typeof v[veld] !== "string") {
                   throw new Error(`Item ${i} (${v.bedrijf ?? "?"} / ${v.titel ?? "?"}) mist verplicht veld "${veld}".`);
