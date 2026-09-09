@@ -1,6 +1,5 @@
-import {useState} from "react";
-import {createFileRoute, notFound, useRouter} from "@tanstack/react-router";
-import {getVacature, herstelVacature, markeerNietInteressant} from "~/lib/vacatures";
+import {createFileRoute, notFound} from "@tanstack/react-router";
+import {getVacature} from "~/lib/vacatures";
 import {setStatus} from "~/lib/statusStore";
 import {Badge} from "~/components/elements/Badge/Badge";
 import {BronBadge} from "~/components/elements/BronBadge";
@@ -8,6 +7,8 @@ import {formatDate} from "~/lib/date";
 import styles from "./$id.module.css";
 import {FUNCTIE_LABELS, StatusSchema} from "~/lib/schemas";
 import {CLink} from "~/components/elements/Link/CLink";
+import {NotFoundComponent} from "~/elements/NotFound/NotFoundComponent";
+import {NotInteresting} from "~/components/vacatures/NotInteresting/NotInteresting";
 
 export const Route = createFileRoute("/vacatures/$id")({
   loader: async ({params}) => {
@@ -21,12 +22,7 @@ export const Route = createFileRoute("/vacatures/$id")({
     return {vacature};
   },
   component: VacatureDetailPage,
-  notFoundComponent: () => (
-    <div className={styles.notFound}>
-      <h1>Vacature niet gevonden</h1>
-      <a href="/vacatures">Terug naar overzicht</a>
-    </div>
-  ),
+  notFoundComponent: NotFoundComponent
 });
 
 function VacatureDetailPage() {
@@ -72,15 +68,15 @@ function VacatureDetailPage() {
           </ul>
         )}
 
-        <section className={styles.beschrijving}>
+        <section className={styles.description}>
           <h2 className={styles.sectieTitle}>Beschrijving</h2>
           <p>{vacature.beschrijving}</p>
         </section>
 
-        <NietInteressant
+        <NotInteresting
           id={vacature.id}
           isArchived={vacature.isArchived ?? false}
-          reden={vacature.archiefReden}
+          reason={vacature.archiefReden}
         />
 
         {(vacature.url && !vacature.isArchived) && (
@@ -93,77 +89,3 @@ function VacatureDetailPage() {
   );
 }
 
-function NietInteressant({id, isArchived, reden}: { id: string; isArchived: boolean; reden?: string }) {
-  const router = useRouter();
-  const [open, setOpen] = useState(false);
-  const [tekst, setTekst] = useState("");
-  const [bezig, setBezig] = useState(false);
-
-  async function bevestig(e: React.FormEvent) {
-    e.preventDefault();
-    setBezig(true);
-    try {
-      await markeerNietInteressant(id, tekst.trim() || "Niet interessant voor mij");
-      setOpen(false);
-      setTekst("");
-      await router.invalidate();
-    } finally {
-      setBezig(false);
-    }
-  }
-
-  async function herstel() {
-    setBezig(true);
-    try {
-      await herstelVacature(id);
-      await router.invalidate();
-    } finally {
-      setBezig(false);
-    }
-  }
-
-  if (isArchived) {
-    return (
-      <section className={styles.archief}>
-        <h2 className={styles.sectieTitle}>Gearchiveerd — niet interessant</h2>
-        <p className={styles.archiefReden}>{reden || "Niet interessant voor mij"}</p>
-        <button type="button" className={styles.herstelBtn} onClick={herstel} disabled={bezig}>
-          Terugzetten
-        </button>
-      </section>
-    );
-  }
-
-  return (
-    <section className={styles.archief}>
-      {!open ? (
-        <button type="button" className={styles.nietInteressantBtn} onClick={() => setOpen(true)}>
-          Niet interessant
-        </button>
-      ) : (
-        <form className={styles.archiefForm} onSubmit={bevestig}>
-          <label htmlFor="archiefReden" className={styles.sectieTitle}>
-            Waarom is deze vacature niet interessant?
-          </label>
-          <textarea
-            id="archiefReden"
-            className={styles.archiefTextarea}
-            value={tekst}
-            onChange={(e) => setTekst(e.target.value)}
-            rows={3}
-            autoFocus
-            placeholder="Bijv. te backend-gericht, buiten de regio, freelance…"
-          />
-          <div className={styles.archiefActies}>
-            <button type="submit" className={styles.nietInteressantBtn} disabled={bezig}>
-              Archiveren
-            </button>
-            <button type="button" className={styles.herstelBtn} onClick={() => setOpen(false)} disabled={bezig}>
-              Annuleren
-            </button>
-          </div>
-        </form>
-      )}
-    </section>
-  );
-}

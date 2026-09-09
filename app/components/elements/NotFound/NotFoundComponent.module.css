@@ -1,0 +1,7 @@
+.notFound {
+  max-width: 400px;
+  margin: var(--space-16) auto;
+  text-align: center;
+  display: grid;
+  gap: var(--space-4);
+}

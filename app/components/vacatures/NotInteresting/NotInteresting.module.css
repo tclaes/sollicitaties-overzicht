@@ -1,0 +1,65 @@
+.archive {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-6);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.archiveActions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.archiveForm {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.archiveReason {
+  color: var(--color-text);
+  line-height: var(--leading-relaxed);
+}
+
+.archiveTextarea {
+  width: 100%;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font: inherit;
+  resize: vertical;
+}
+
+.sectionTitle {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-3);
+}
+
+.notInterestingBtn,
+.repairBtn {
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+}
+
+.notInterestingBtn {
+  background: var(--color-accent-subtle);
+  color: var(--color-accent-text);
+  border: 1px solid var(--color-border);
+}
+
+.repairBtn {
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
