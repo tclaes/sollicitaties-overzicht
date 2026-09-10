@@ -1,26 +1,26 @@
 .wrapper {
-  overflow: auto;
   flex: 1;
   min-height: 80vh;
+  overflow: auto;
 }
 
 .table {
-  width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
+  width: 100%;
 }
 
 .table thead th {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-subtle);
   font-size: var(--text-xs);
   font-weight: var(--font-semibold);
-  color: var(--color-text-subtle);
-  text-transform: uppercase;
   letter-spacing: 0.06em;
   padding: var(--space-2) var(--space-4);
-  text-align: left;
-  border-bottom: 1px solid var(--color-border);
-  background: var(--color-surface);
   position: sticky;
+  text-align: left;
+  text-transform: uppercase;
   top: 0;
   z-index: 1;
 }
@@ -46,8 +46,8 @@
 }
 
 .colApply {
-  width: 200px;
   text-align: right;
+  width: 200px;
 }
 
 .row {
@@ -61,7 +61,7 @@
 }
 
 .table td {
-  padding: 7px var(--space-4);
+  padding: var(--space-1-75) var(--space-4);
   vertical-align: middle;
 }
 
@@ -73,21 +73,21 @@
 }
 
 .title {
+  color: var(--color-text);
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
-  color: var(--color-text);
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .roleBadge {
+  border-radius: var(--radius-full);
   display: inline-block;
-  margin-left: var(--space-2);
   font-size: var(--text-xs);
   font-weight: var(--font-medium);
+  margin-left: var(--space-2);
   padding: 0 var(--space-2);
-  border-radius: var(--radius-full);
   vertical-align: middle;
   white-space: nowrap;
 }
@@ -103,86 +103,86 @@
 }
 
 .company {
-  font-size: var(--text-xs);
   color: var(--color-text-muted);
-  white-space: nowrap;
+  font-size: var(--text-xs);
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .tags {
   display: flex;
-  gap: 4px;
   flex-wrap: nowrap;
+  gap: 4px;
   overflow: hidden;
 }
 
 .tag {
-  font-size: var(--text-xs);
-  padding: 1px 6px;
   background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  padding: var(--space-px) var(--space-1-5);
   white-space: nowrap;
 }
 
 .location {
-  font-size: var(--text-sm);
   color: var(--color-text-muted);
+  font-size: var(--text-sm);
 }
 
 .applicationLabel {
+  color: var(--color-text-muted);
   display: block;
   font-size: var(--text-xs);
-  color: var(--color-text-muted);
-  margin-top: 1px;
+  margin-top: var(--space-px);
 }
 
 .applicationDate {
+  color: var(--color-text-subtle);
   display: block;
   font-size: var(--text-xs);
-  color: var(--color-text-subtle);
-  margin-top: 1px;
+  margin-top: var(--space-px);
 }
 
 .matchBadge {
+  border: 1px solid transparent;
+  border-radius: var(--radius-full);
   display: inline-block;
   font-size: var(--text-xs);
-  padding: 2px 7px;
-  border-radius: var(--radius-full);
-  border: 1px solid transparent;
   font-weight: var(--font-medium);
+  padding: var(--space-0-5) var(--space-1-75);
   white-space: nowrap;
 }
 
 .match_sterk {
-  background: #dcfce7;
-  color: #15803d;
-  border-color: #bbf7d0;
+  background: var(--color-badge-success-bg);
+  border-color: var(--color-badge-success-border);
+  color: var(--color-badge-success-text);
 }
 
 .match_goed {
   background: var(--color-accent-subtle);
+  border-color: var(--color-badge-info-border);
   color: var(--color-accent-text);
-  border-color: #bfdbfe;
 }
 
 .match_matig {
-  background: #fef9c3;
-  color: #a16207;
-  border-color: #fef08a;
+  background: var(--color-badge-warning-bg);
+  border-color: var(--color-badge-warning-border);
+  color: var(--color-badge-warning-text);
 }
 
 .match_laag {
   background: var(--color-bg);
-  color: var(--color-text-subtle);
   border-color: var(--color-border);
+  color: var(--color-text-subtle);
 }
 
 .empty {
-  padding: var(--space-12) var(--space-8);
-  text-align: center;
   color: var(--color-text-muted);
   font-size: var(--text-sm);
+  padding: var(--space-12) var(--space-8);
+  text-align: center;
 }

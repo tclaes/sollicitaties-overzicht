@@ -12,6 +12,6 @@
 }
 
 .content {
-  overflow-y: auto;
   min-width: 0;
+  overflow-y: auto;
 }

@@ -11,16 +11,18 @@ test("marking a vacancy not interesting archives it, then restoring brings it ba
   await page.getByPlaceholder(/backend-gericht/).fill("Niet relevant voor e2e-test.");
   await page.getByRole("button", { name: "Archiveren" }).click();
 
-  await expect(page.getByText("Gearchiveerd — niet interessant")).toBeVisible();
-  await expect(page.getByText("Niet relevant voor e2e-test.")).toBeVisible();
-
-  await page.goto("/vacatures");
+  // Archiveren stuurt terug naar het overzicht (zie NotInteresting.tsx); het
+  // overzicht toont de vacature dan niet meer, tenzij de "Niet interessant"-filter aanstaat.
+  await expect(page).toHaveURL(/\/vacatures(\?|$)/);
   await expect(page.getByText("Nieuwe Frontend Rol")).not.toBeVisible();
 
   await page.getByRole("link", { name: "Niet interessant" }).click();
   await expect(page.getByText("Nieuwe Frontend Rol")).toBeVisible();
 
   await page.goto("/vacatures/vacancy-nieuw");
+  await expect(page.getByText("Gearchiveerd — niet interessant")).toBeVisible();
+  await expect(page.getByText("Niet relevant voor e2e-test.")).toBeVisible();
+
   await page.getByRole("button", { name: "Terugzetten" }).click();
   await expect(page.getByRole("button", { name: "Niet interessant" })).toBeVisible();
 

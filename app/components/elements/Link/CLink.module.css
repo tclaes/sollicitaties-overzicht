@@ -19,10 +19,10 @@
 
 .external {
   background: transparent;
-  font-size: var(--text-sm);
-  padding: 4px var(--space-3);
   border-radius: var(--radius-md);
   color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  padding: var(--space-1) var(--space-3);
   transition: background var(--transition-fast), color var(--transition-fast);
 
   &:hover {
@@ -32,13 +32,13 @@
 }
 
 .cta {
-  background: var(--_bg-color);
-  display: inline-flex;
   align-items: center;
-  padding: var(--space-3) var(--space-6);
-  color: var(--color-text-inverse);
+  background: var(--_bg-color);
   border-radius: var(--radius-md);
+  color: var(--color-text-inverse);
+  display: inline-flex;
   font-weight: var(--font-medium);
-  transition: background var(--transition-fast);
+  padding: var(--space-3) var(--space-6);
   text-decoration: none;
+  transition: background var(--transition-fast);
 }

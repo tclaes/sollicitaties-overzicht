@@ -11,7 +11,8 @@
     "sync:firestore": "node scripts/sync-vacancies-to-firestore.mjs",
     "pdf:vacatures": "node scripts/generate-vacancy-pdf.mjs",
     "dedupe:firestore": "node scripts/dedupe-vacancies.mjs",
-    "trigger:sync": "node scripts/trigger-firestore-sync.mjs"
+    "trigger:sync": "node scripts/trigger-firestore-sync.mjs",
+    "lint:css": "stylelint \"app/**/*.css\""
   },
   "dependencies": {
     "@tanstack/react-router": "^1.120.0",
@@ -34,6 +35,9 @@
     "firebase-admin": "^14.0.0",
     "firebase-tools": "^15.29.0",
     "jsdom": "^29.1.1",
+    "stylelint": "^17.15.0",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-order": "^8.1.1",
     "tsx": "^4.19.0",
     "typescript": "^5.8.0",
     "vite": "^8.1.0",
