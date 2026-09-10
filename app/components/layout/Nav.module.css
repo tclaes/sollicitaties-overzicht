@@ -1,11 +1,11 @@
 .nav {
-  border-right: 1px solid var(--color-border);
   background: var(--color-surface);
-  padding: var(--space-4) var(--space-3);
+  border-right: 1px solid var(--color-border);
   display: flex;
   flex-direction: column;
   gap: var(--space-5);
   overflow-y: auto;
+  padding: var(--space-4) var(--space-3);
 }
 
 .section {
@@ -15,25 +15,25 @@
 }
 
 .sectionLabel {
+  color: var(--color-text-subtle);
   font-size: 10px;
   font-weight: var(--font-semibold);
-  color: var(--color-text-subtle);
-  text-transform: uppercase;
   letter-spacing: 0.08em;
-  padding: 0 var(--space-2);
   margin-bottom: var(--space-1);
+  padding: 0 var(--space-2);
+  text-transform: uppercase;
 }
 
 .navLink {
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 5px var(--space-2);
   border-radius: var(--radius-md);
-  font-size: var(--text-sm);
   color: var(--color-text-muted);
-  transition: background var(--transition-fast), color var(--transition-fast);
+  display: flex;
+  font-size: var(--text-sm);
+  justify-content: space-between;
+  padding: var(--space-1-25) var(--space-2);
   text-transform: capitalize;
+  transition: background var(--transition-fast), color var(--transition-fast);
 }
 
 .navLink:hover {

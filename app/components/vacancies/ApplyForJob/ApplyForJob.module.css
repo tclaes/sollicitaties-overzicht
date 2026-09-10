@@ -1,12 +1,12 @@
 .applyBtn {
-  font-size: var(--text-xs);
-  padding: 3px 10px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border);
   background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
   color: var(--color-text-muted);
   cursor: pointer;
+  font-size: var(--text-xs);
   opacity: 0;
+  padding: var(--space-0-75) var(--space-2-5);
   transition: opacity var(--transition-fast), background var(--transition-fast);
 }
 
@@ -18,44 +18,44 @@
 }
 
 .applyForm {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: var(--space-1);
   justify-content: flex-end;
 }
 
 .dateInput {
-  font-size: var(--text-xs);
-  padding: 2px 6px;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  background: var(--color-surface);
   color: var(--color-text);
+  font-size: var(--text-xs);
+  padding: var(--space-0-5) var(--space-1-5);
   width: 118px;
 }
 
 .confirmBtn,
 .cancelBtn {
-  font-size: var(--text-xs);
-  width: 22px;
-  height: 22px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border);
+  align-items: center;
   background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
   cursor: pointer;
   display: flex;
-  align-items: center;
+  font-size: var(--text-xs);
+  height: 22px;
   justify-content: center;
   padding: 0;
+  width: 22px;
 }
 
 .confirmBtn {
-  color: #15803d;
-  border-color: #bbf7d0;
-  background: #dcfce7;
+  background: var(--color-badge-success-bg);
+  border-color: var(--color-badge-success-border);
+  color: var(--color-badge-success-text);
 }
 
-.confirmBtn:hover { background: #bbf7d0; }
+.confirmBtn:hover { background: var(--color-badge-success-border); }
 
 .cancelBtn { color: var(--color-text-muted); }
 .cancelBtn:hover { background: var(--color-bg); }

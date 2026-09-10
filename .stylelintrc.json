@@ -1,0 +1,19 @@
+{
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "order/properties-alphabetical-order": true,
+    "color-no-hex": true,
+    "declaration-property-value-disallowed-list": {
+      "/^margin/": ["/\\d+(\\.\\d+)?px/"],
+      "/^padding/": ["/\\d+(\\.\\d+)?px/"]
+    }
+  },
+  "overrides": [
+    {
+      "files": ["app/styles/tokens.css"],
+      "rules": {
+        "color-no-hex": null
+      }
+    }
+  ]
+}

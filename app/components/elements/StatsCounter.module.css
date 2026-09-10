@@ -1,25 +1,25 @@
 .strip {
-  display: flex;
-  border-bottom: 1px solid var(--color-border);
   background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
 }
 
 .item {
-  flex: 1;
-  display: flex;
   align-items: center;
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex: 1;
   gap: var(--space-2);
   padding: var(--space-3) var(--space-5);
-  border-right: 1px solid var(--color-border);
 }
 
 .item:last-child { border-right: none; }
 
 .dot {
-  width: 7px;
-  height: 7px;
   border-radius: 50%;
   flex-shrink: 0;
+  height: 7px;
+  width: 7px;
 }
 
 .nieuw .dot         { background: var(--color-status-nieuw-dot); }
@@ -27,14 +27,14 @@
 .gesolliciteerd .dot { background: var(--color-status-gesolliciteerd-dot); }
 
 .count {
+  color: var(--color-text);
   font-size: var(--text-xl);
   font-weight: var(--font-semibold);
-  color: var(--color-text);
-  line-height: 1;
   letter-spacing: -0.02em;
+  line-height: 1;
 }
 
 .label {
-  font-size: var(--text-xs);
   color: var(--color-text-muted);
+  font-size: var(--text-xs);
 }

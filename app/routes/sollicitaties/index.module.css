@@ -5,21 +5,21 @@
 }
 
 .header {
-  display: flex;
   align-items: baseline;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  flex-shrink: 0;
   gap: var(--space-3);
   padding: var(--space-5) var(--space-6);
-  border-bottom: 1px solid var(--color-border);
-  flex-shrink: 0;
 }
 
 .title {
+  color: var(--color-text);
   font-size: var(--text-lg);
   font-weight: var(--font-semibold);
-  color: var(--color-text);
 }
 
 .counter {
-  font-size: var(--text-sm);
   color: var(--color-text-subtle);
+  font-size: var(--text-sm);
 }
