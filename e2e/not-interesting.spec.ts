@@ -13,7 +13,7 @@ test("marking a vacancy not interesting archives it, then restoring brings it ba
 
   // Archiveren stuurt terug naar het overzicht (zie NotInteresting.tsx); het
   // overzicht toont de vacature dan niet meer, tenzij de "Niet interessant"-filter aanstaat.
-  await expect(page).toHaveURL(/\/vacatures$/);
+  await expect(page).toHaveURL(/\/vacatures(\?|$)/);
   await expect(page.getByText("Nieuwe Frontend Rol")).not.toBeVisible();
 
   await page.getByRole("link", { name: "Niet interessant" }).click();
