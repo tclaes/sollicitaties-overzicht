@@ -25,8 +25,12 @@ function VacanciesPage() {
   const showArchive = search.status === "niet-interessant";
 
   const filtered = vacancies?.filter((v) => {
-    if (v.isArchived && !showArchive) return false;
-    if (search.status && v.status !== search.status) return false;
+    if (showArchive) {
+      if (!v.isArchived) return false;
+    } else {
+      if (v.isArchived) return false;
+      if (search.status && v.status !== search.status) return false;
+    }
     if (search.functie && v.functie !== search.functie) return false;
     return !(search.source && v.bron !== search.source);
 
