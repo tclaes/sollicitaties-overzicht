@@ -849,5 +849,21 @@
       "Spring Boot",
       "Node.js"
     ]
+  },
+  {
+    "titel": "Full Stack Developer - AI",
+    "bedrijf": "Via Kingfisher Recruitment",
+    "locatie": "Rumst",
+    "regio": "antwerpen",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/full-stack-developer-ai",
+    "beschrijving": "Volwaardige full-stack rol: React op de front-end (component-architectuur, UX, state management, technische richting van de front-end) gecombineerd met .NET in de backend. Multidisciplinair team rond een strategisch softwareplatform, met AI-initiatieven. Vast contract, Nederlands vereist.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      "TypeScript",
+      ".NET",
+      "full-stack"
+    ]
   }
 ]
