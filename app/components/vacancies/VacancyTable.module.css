@@ -26,27 +26,27 @@
 }
 
 .colStatus {
-  min-width: 116px;
+  width: clamp(0px, 116px, 116px);
 }
 
 .colSource {
-  min-width: 66px;
+  width: 66px;
 }
 
 .colTags {
-  min-width: 160px;
+  width: 160px;
 }
 
 .colLocation {
-  min-width: 150px;
+  width: clamp(100px, 150px, 200px);
 }
 
 .colMatch {
-  min-width: 66px;
+  width: 66px;
 }
 
 .colApply {
-  min-width: 200px;
+  width: 200px;
   text-align: right;
 }
 

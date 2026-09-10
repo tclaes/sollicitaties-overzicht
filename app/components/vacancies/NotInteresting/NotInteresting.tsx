@@ -1,10 +1,11 @@
 import {useState} from "react";
 import {restoreVacancy, markNotInteresting} from "~/lib/vacancies";
-import {useRouter} from "@tanstack/react-router";
+import {useNavigate, useRouter} from "@tanstack/react-router";
 import styles from "./NotInteresting.module.css"
 
 export function NotInteresting({id, isArchived, reason}: { id: string; isArchived: boolean; reason?: string }) {
   const router = useRouter();
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [text, setText] = useState("");
   const [busy, setBusy] = useState(false);
@@ -14,9 +15,8 @@ export function NotInteresting({id, isArchived, reason}: { id: string; isArchive
     setBusy(true);
     try {
       await markNotInteresting(id, text.trim() || "Niet interessant voor mij");
-      setOpen(false);
-      setText("");
       await router.invalidate();
+      await navigate({to: "/vacatures"});
     } finally {
       setBusy(false);
     }
