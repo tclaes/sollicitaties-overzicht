@@ -18,7 +18,7 @@ vi.mock("firebase/firestore", () => ({
   getDocs: (...args: unknown[]) => getDocs(...args),
   setDoc: (...args: unknown[]) => setDoc(...args),
   updateDoc: (...args: unknown[]) => updateDoc(...args),
-  deleteField: (...args: unknown[]) => deleteField(...args),
+  deleteField: () => deleteField(),
 }));
 
 const {
