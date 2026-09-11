@@ -2,7 +2,7 @@ import styles from "./Breadcrumb.module.css";
 import {capitalizeFirstLetter, path} from "~/lib/utils"
 
 export function Breadcrumb({company}: { company: string }) {
-  const pathName = capitalizeFirstLetter(path.split("/")[1])
+  const pathName = capitalizeFirstLetter(path.split("/"))
 
   return (
     <nav className={styles.breadcrumb}>

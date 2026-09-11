@@ -40,7 +40,7 @@ De vacature-sync draait in GitHub Actions, niet meer lokaal.
 
 In de app kan Tom een vacature archiveren als "niet interessant" (detailpagina →
 knop *Niet interessant* + reden). Dat zet op het Firestore-doc `isArchived: true`,
-`status: "niet-interessant"`, `archiveReason` en `gearchiveerdOp`. In het overzicht
+`status: "niet-interessant"`, `archiveReason` en `dateArchived`. In het overzicht
 zijn die verborgen tenzij de filter *Niet interessant* actief is.
 
 De sync-input kent hiervoor de flag `nietInteressant: true` (analoog aan
