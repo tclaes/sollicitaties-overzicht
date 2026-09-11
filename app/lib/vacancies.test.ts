@@ -30,6 +30,7 @@ const {
   getVacancy,
   markNotInteresting,
   restoreVacancy,
+  toggleFavorite,
   updateApplication,
 } = await import("./vacancies");
 
@@ -211,6 +212,20 @@ describe("markNotInteresting", () => {
       archiefReden: "Te backend-gericht",
     });
     expect(fields.gearchiveerdOp).toMatch(/^\d{4}-\d{2}-\d{2}T/);
+  });
+});
+
+describe("toggleFavorite", () => {
+  it("writes the Dutch favoriet field", async () => {
+    await toggleFavorite("v1", true);
+
+    expect(updateDoc).toHaveBeenCalledWith({ __doc: "vacatures/v1" }, { favoriet: true });
+  });
+
+  it("can unset the favorite flag", async () => {
+    await toggleFavorite("v1", false);
+
+    expect(updateDoc).toHaveBeenCalledWith({ __doc: "vacatures/v1" }, { favoriet: false });
   });
 });
 

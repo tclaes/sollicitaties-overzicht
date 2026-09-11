@@ -92,3 +92,7 @@ export async function restoreVacancy(id: string): Promise<void> {
     gearchiveerdOp: deleteField(),
   });
 }
+
+export async function toggleFavorite(id: string, favorite: boolean): Promise<void> {
+  await updateDoc(doc(db, "vacatures", id), {favoriet: favorite});
+}

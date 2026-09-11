@@ -102,6 +102,7 @@ export const VacancySchema = z.object({
   isArchived: z.boolean().optional(),
   archiveReason: z.string().optional(),
   dateArchived: z.string().datetime().optional(),
+  favorite: z.boolean().optional(),
   tags: z.array(z.string()).default([]),
   match: z.object({
     score: MatchScoreSchema,

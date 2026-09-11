@@ -25,6 +25,11 @@
   z-index: 1;
 }
 
+.colFavorite {
+  text-align: center;
+  width: 36px;
+}
+
 .colStatus {
   width: clamp(0px, 116px, 116px);
 }

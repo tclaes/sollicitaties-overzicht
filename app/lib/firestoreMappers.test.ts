@@ -53,6 +53,11 @@ describe("vacancyFromFirestore", () => {
     expect(mapped.dateArchived).toBe("2026-04-01T09:00:00.000Z");
   });
 
+  it("maps the Dutch favoriet field to favorite", () => {
+    const mapped = vacancyFromFirestore({ ...rawVacancy, favoriet: true });
+    expect(mapped.favorite).toBe(true);
+  });
+
   it("throws when the mapped document doesn't satisfy the schema", () => {
     const { titel, ...withoutTitel } = rawVacancy;
     expect(() => vacancyFromFirestore(withoutTitel)).toThrow();
