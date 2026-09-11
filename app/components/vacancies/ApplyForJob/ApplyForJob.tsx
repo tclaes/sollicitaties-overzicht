@@ -6,10 +6,10 @@ import styles from "./ApplyForJob.module.css";
 interface Props {
   vacancy: Vacancy;
   onApply: (data: {
-    vacatureId: string;
-    bedrijf: string;
-    rol: string;
-    gesolliceerdOp: string
+    vacancyId: string;
+    company: string;
+    role: string;
+    appliedOn: string
   }) => Promise<void>;
   onApplied: (date: string) => void;
 }
@@ -32,10 +32,10 @@ export function ApplyForJob({vacancy, onApply, onApplied}: Props) {
     try {
       const date = dateInput || todayIso();
       await onApply({
-        vacatureId: vacancy.id,
-        bedrijf: vacancy.bedrijf,
-        rol: vacancy.titel,
-        gesolliceerdOp: date,
+        vacancyId: vacancy.id,
+        company: vacancy.company,
+        role: vacancy.title,
+        appliedOn: date,
       });
       onApplied(date);
     } finally {

@@ -1,21 +1,21 @@
 import {z} from "zod";
 
-export const SortingSchema = z.enum(["match", "datum", "titel"]);
+export const SortingSchema = z.enum(["match", "date", "title"]);
 
 export const SourceSchema = z.enum([
   "indeed",
   "vdab",
   "jobat",
   "linkedin",
-  "andere",
+  "other",
 ]);
 
 export const StatusSchema = z.enum([
-  "nieuw",
-  "bekeken",
-  "gesolliciteerd",
-  "afgewezen",
-  "niet-interessant",
+  "new",
+  "viewed",
+  "applied",
+  "rejected",
+  "not-interesting",
 ]);
 
 export const RoleSchema = z.enum(["frontend", "fullstack"]);
@@ -28,78 +28,78 @@ export const ROLE_LABELS: Record<Role, string> = {
 export const DefaultSearchSchema = z.object({
   status: StatusSchema.optional(),
   source: SourceSchema.optional(),
-  functie: RoleSchema.optional(),
+  function: RoleSchema.optional(),
   sort: SortingSchema.default("match"),
 });
 
 export const RegionSchema = z.enum([
   "limburg",
-  "antwerpen",
-  "brussel",
-  "vlaanderen",
+  "antwerp",
+  "brussels",
+  "flanders",
   "remote",
-  "andere",
+  "other",
 ]);
 
-export const MatchScoreSchema = z.enum(["sterk", "goed", "matig", "laag", "borderline"]);
+export const MatchScoreSchema = z.enum(["strong", "good", "moderate", "low", "borderline"]);
 
 export const ApplicationStatusSchema = z.enum([
-  "gesolliciteerd",
-  "in_gesprek",
-  "afgewezen",
-  "niet_wervend",
-  "geen_reactie",
-  "aangenomen",
+  "applied",
+  "interviewing",
+  "rejected",
+  "not_hiring",
+  "no_response",
+  "hired",
 ]);
 
 export const APPLICATION_STATUS_LABELS: Record<ApplicationStatus, string> = {
-  gesolliciteerd: "gesolliciteerd",
-  in_gesprek: "in gesprek",
-  afgewezen: "afgewezen",
-  niet_wervend: "niet wervend",
-  geen_reactie: "geen reactie",
-  aangenomen: "aangenomen",
+  applied: "gesolliciteerd",
+  interviewing: "in gesprek",
+  rejected: "afgewezen",
+  not_hiring: "niet wervend",
+  no_response: "geen reactie",
+  hired: "aangenomen",
 };
 
 export const ApplicationSchema = z.object({
   id: z.string(),
-  vacatureId: z.string().optional(),
-  bedrijf: z.string(),
-  rol: z.string(),
-  gesolliceerdOp: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  vacancyId: z.string().optional(),
+  company: z.string(),
+  role: z.string(),
+  appliedOn: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
   status: ApplicationStatusSchema,
-  notitie: z.string().optional(),
+  note: z.string().optional(),
 });
 
 export const VacancySchema = z.object({
   id: z.string(),
-  titel: z.string(),
-  bedrijf: z.string(),
-  locatie: z.string(),
-  regio: RegionSchema,
+  title: z.string(),
+  company: z.string(),
+  location: z.string(),
+  region: RegionSchema,
   url: z.union([z.string().url(), z.literal(""), z.string().startsWith("/")]),
-  beschrijving: z.string(),
-  bron: SourceSchema,
-  functie: RoleSchema.optional(),
-  gevondenOp: z.string().datetime(),
-  status: StatusSchema.default("nieuw"),
+  description: z.string(),
+  source: SourceSchema,
+  function: RoleSchema.optional(),
+  dateFound: z.string().datetime(),
+  status: StatusSchema.default("new"),
   isArchived: z.boolean().optional(),
-  archiefReden: z.string().optional(),
-  gearchiveerdOp: z.string().datetime().optional(),
+  archiveReason: z.string().optional(),
+  dateArchived: z.string().datetime().optional(),
   tags: z.array(z.string()).default([]),
   match: z.object({
     score: MatchScoreSchema,
-    toelichting: z.string(),
+    explanation: z.string(),
   }).optional(),
 });
 
 export const DailyOverviewSchema = z.object({
-  datum: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
-  vacatures: z.array(VacancySchema),
+  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  vacancies: z.array(VacancySchema),
   metadata: z.object({
-    bronBestand: z.string(),
-    aantalGevonden: z.number(),
-    verwerktOp: z.string().datetime(),
+    sourceFile: z.string(),
+    foundCount: z.number(),
+    processedAt: z.string().datetime(),
   }),
 });
 

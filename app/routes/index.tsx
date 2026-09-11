@@ -3,7 +3,7 @@ import {createApplication, getApplications, getVacanciesDashboard} from "~/lib/v
 import {VacancyTable} from "~/components/vacancies/VacancyTable";
 import {StatsCounter} from "~/components/elements/StatsCounter";
 import {FilterPills} from "~/components/elements/FilterPills";
-import {DefaultSearchSchema, Application} from "~/lib/schemas";
+import {Application, DefaultSearchSchema} from "~/lib/schemas";
 import styles from "./index.module.css";
 
 export const Route = createFileRoute("/")({
@@ -24,34 +24,34 @@ function DashboardPage() {
   const router = useRouter();
 
   const applicationById = new Map<string, Application>(
-    applications.flatMap((s) => s.vacatureId ? [[s.vacatureId, s]] : [])
+    applications.flatMap((s) => s.vacancyId ? [[s.vacancyId, s]] : [])
   );
 
-  const matchOrder: Record<string, number> = {sterk: 0, goed: 1, matig: 2, laag: 3, borderline: 4};
+  const matchOrder: Record<string, number> = {strong: 0, good: 1, moderate: 2, low: 3, borderline: 4};
 
   const prefiltered = overview
     ? overview.filter((v) => {
       if (search.status && v.status !== search.status) return false;
-      return !(search.source && v.bron !== search.source);
+      return !(search.source && v.source !== search.source);
 
     })
     : [];
 
   const sorted = [...prefiltered].sort((a, b) => {
-    if (search.sort === "datum") {
-      return new Date(b.gevondenOp).getTime() - new Date(a.gevondenOp).getTime();
+    if (search.sort === "date") {
+      return new Date(b.dateFound).getTime() - new Date(a.dateFound).getTime();
     }
-    if (search.sort === "titel") {
-      return a.titel.localeCompare(b.titel, "nl");
+    if (search.sort === "title") {
+      return a.title.localeCompare(b.title, "nl");
     }
-    return (matchOrder[a.match?.score ?? "laag"] ?? 3) - (matchOrder[b.match?.score ?? "laag"] ?? 3);
+    return (matchOrder[a.match?.score ?? "low"] ?? 3) - (matchOrder[b.match?.score ?? "low"] ?? 3);
   });
 
   async function handleApply(data: {
-    vacatureId: string;
-    bedrijf: string;
-    rol: string;
-    gesolliceerdOp: string
+    vacancyId: string;
+    company: string;
+    role: string;
+    appliedOn: string
   }) {
     await createApplication(data);
     await router.invalidate();

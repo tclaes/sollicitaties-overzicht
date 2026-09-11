@@ -1,21 +1,27 @@
 import {useState} from "react";
 import type {Application, Vacancy} from "~/lib/schemas";
-import {ROLE_LABELS, APPLICATION_STATUS_LABELS} from "~/lib/schemas";
+import {APPLICATION_STATUS_LABELS, ROLE_LABELS} from "~/lib/schemas";
 import {SourceBadge} from "../elements/SourceBadge";
 import {Badge} from "../elements/Badge/Badge"
 import {ApplyForJob} from "./ApplyForJob/ApplyForJob";
 import styles from "./VacancyTable.module.css";
 import {useNavigate} from '@tanstack/react-router'
 
+const MATCH_SCORE_CSS_CLASS: Record<string, string> = {
+  strong: "match_sterk",
+  good: "match_goed",
+  moderate: "match_matig",
+  low: "match_laag",
+};
 
 interface Props {
   vacancies: Vacancy[];
   applicationById?: Map<string, Application>;
   onApply?: (data: {
-    vacatureId: string;
-    bedrijf: string;
-    rol: string;
-    gesolliceerdOp: string
+    vacancyId: string;
+    company: string;
+    role: string;
+    appliedOn: string
   }) => Promise<void>;
 }
 
@@ -52,7 +58,7 @@ export function VacancyTable({vacancies, applicationById = new Map(), onApply}: 
             : localDate
               ? "wacht"
               : null;
-          const date = application?.gesolliceerdOp ?? localDate;
+          const date = application?.appliedOn ?? localDate;
 
           return (
             <tr
@@ -63,7 +69,7 @@ export function VacancyTable({vacancies, applicationById = new Map(), onApply}: 
               }}
             >
               <td>
-                <Badge status={hasApplied ? "gesolliciteerd" : v.status}/>
+                <Badge status={hasApplied ? "applied" : v.status}/>
                 {hasApplied && applicationLabel && (
                   <span className={styles.applicationLabel}>{applicationLabel}</span>
                 )}
@@ -72,18 +78,18 @@ export function VacancyTable({vacancies, applicationById = new Map(), onApply}: 
                 )}
               </td>
               <td>
-                <SourceBadge source={v.bron}/>
+                <SourceBadge source={v.source}/>
               </td>
               <td className={styles.roleCol}>
                 <span className={styles.title}>
-                  {v.titel}
-                  {v.functie && (
-                    <span className={`${styles.roleBadge} ${styles[`role_${v.functie}`]}`}>
-                      {ROLE_LABELS[v.functie]}
+                  {v.title}
+                  {v.function && (
+                    <span className={`${styles.roleBadge} ${styles[`role_${v.function}`]}`}>
+                      {ROLE_LABELS[v.function]}
                     </span>
                   )}
                 </span>
-                <span className={styles.company}>{v.bedrijf}</span>
+                <span className={styles.company}>{v.company}</span>
               </td>
               <td>
                 <ul className={styles.tags} aria-label="Tags">
@@ -92,12 +98,12 @@ export function VacancyTable({vacancies, applicationById = new Map(), onApply}: 
                   ))}
                 </ul>
               </td>
-              <td className={styles.location}>{v.locatie.split(",")[0]}</td>
+              <td className={styles.location}>{v.location.split(",")[0]}</td>
               <td>
                 {v.match ? (
                   <span
-                    className={`${styles.matchBadge} ${styles[`match_${v.match.score}`]}`}
-                    title={v.match.toelichting}
+                    className={`${styles.matchBadge} ${styles[MATCH_SCORE_CSS_CLASS[v.match.score]]}`}
+                    title={v.match.explanation}
                   >
                       {v.match.score}
                     </span>

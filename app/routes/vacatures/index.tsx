@@ -20,9 +20,9 @@ function VacanciesPage() {
   const {vacancies} = Route.useLoaderData();
   const search = Route.useSearch();
 
-  const matchOrder: Record<string, number> = {sterk: 0, goed: 1, matig: 2, laag: 3};
+  const matchOrder: Record<string, number> = {strong: 0, good: 1, moderate: 2, low: 3};
 
-  const showArchive = search.status === "niet-interessant";
+  const showArchive = search.status === "not-interesting";
 
   const filtered = vacancies?.filter((v) => {
     if (showArchive) {
@@ -31,20 +31,20 @@ function VacanciesPage() {
       if (v.isArchived) return false;
       if (search.status && v.status !== search.status) return false;
     }
-    if (search.functie && v.functie !== search.functie) return false;
-    return !(search.source && v.bron !== search.source);
+    if (search.function && v.function !== search.function) return false;
+    return !(search.source && v.source !== search.source);
 
   })
     .sort((a, b) => {
-      if (search.sort === "datum") {
-        return new Date(b.gevondenOp).getTime() - new Date(a.gevondenOp).getTime();
+      if (search.sort === "date") {
+        return new Date(b.dateFound).getTime() - new Date(a.dateFound).getTime();
       }
-      if (search.sort === "titel") {
-        return a.titel.localeCompare(b.titel, "nl");
+      if (search.sort === "title") {
+        return a.title.localeCompare(b.title, "nl");
       }
       // match (default)
-      const ma = matchOrder[a.match?.score ?? "laag"] ?? 3;
-      const mb = matchOrder[b.match?.score ?? "laag"] ?? 3;
+      const ma = matchOrder[a.match?.score ?? "low"] ?? 3;
+      const mb = matchOrder[b.match?.score ?? "low"] ?? 3;
       return ma - mb;
     });
 

@@ -3,34 +3,34 @@ import { ApplicationSchema, VacancySchema } from "./schemas";
 
 const validVacancy = {
   id: "v1",
-  titel: "Frontend Developer",
-  bedrijf: "Acme BV",
-  locatie: "Hasselt",
-  regio: "limburg",
+  title: "Frontend Developer",
+  company: "Acme BV",
+  location: "Hasselt",
+  region: "limburg",
   url: "https://example.com/vacature",
-  beschrijving: "Een leuke rol.",
-  bron: "indeed",
-  gevondenOp: "2026-03-05T10:00:00.000Z",
-  status: "nieuw",
+  description: "Een leuke rol.",
+  source: "indeed",
+  dateFound: "2026-03-05T10:00:00.000Z",
+  status: "new",
   tags: [],
 };
 
 const validApplication = {
   id: "a1",
-  bedrijf: "Acme BV",
-  rol: "Frontend Developer",
-  gesolliceerdOp: "2026-03-05",
-  status: "gesolliciteerd",
+  company: "Acme BV",
+  role: "Frontend Developer",
+  appliedOn: "2026-03-05",
+  status: "applied",
 };
 
 describe("VacancySchema", () => {
   it("accepts a valid vacancy", () => {
-    expect(VacancySchema.parse(validVacancy)).toMatchObject({ titel: "Frontend Developer" });
+    expect(VacancySchema.parse(validVacancy)).toMatchObject({ title: "Frontend Developer" });
   });
 
-  it("defaults status to nieuw when omitted", () => {
+  it("defaults status to new when omitted", () => {
     const { status, ...withoutStatus } = validVacancy;
-    expect(VacancySchema.parse(withoutStatus).status).toBe("nieuw");
+    expect(VacancySchema.parse(withoutStatus).status).toBe("new");
   });
 
   it("defaults tags to an empty array when omitted", () => {
@@ -44,12 +44,12 @@ describe("VacancySchema", () => {
   });
 
   it("rejects a missing required field", () => {
-    const { titel, ...withoutTitel } = validVacancy;
-    expect(() => VacancySchema.parse(withoutTitel)).toThrow();
+    const { title, ...withoutTitle } = validVacancy;
+    expect(() => VacancySchema.parse(withoutTitle)).toThrow();
   });
 
-  it("rejects an invalid regio value", () => {
-    expect(() => VacancySchema.parse({ ...validVacancy, regio: "wallonie" })).toThrow();
+  it("rejects an invalid region value", () => {
+    expect(() => VacancySchema.parse({ ...validVacancy, region: "wallonie" })).toThrow();
   });
 
   it("rejects an invalid url that isn't empty or root-relative", () => {
@@ -59,11 +59,11 @@ describe("VacancySchema", () => {
 
 describe("ApplicationSchema", () => {
   it("accepts a valid application", () => {
-    expect(ApplicationSchema.parse(validApplication)).toMatchObject({ bedrijf: "Acme BV" });
+    expect(ApplicationSchema.parse(validApplication)).toMatchObject({ company: "Acme BV" });
   });
 
-  it("rejects a gesolliceerdOp that isn't YYYY-MM-DD", () => {
-    expect(() => ApplicationSchema.parse({ ...validApplication, gesolliceerdOp: "05-03-2026" })).toThrow();
+  it("rejects an appliedOn that isn't YYYY-MM-DD", () => {
+    expect(() => ApplicationSchema.parse({ ...validApplication, appliedOn: "05-03-2026" })).toThrow();
   });
 
   it("rejects an unknown status", () => {

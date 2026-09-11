@@ -1,12 +1,17 @@
-import {z} from "zod";
 import {collection, deleteField, doc, getDocs, setDoc, updateDoc,} from "firebase/firestore";
 import {db} from "./firebase";
-import {Application, ApplicationSchema, ApplicationStatus, Vacancy, VacancySchema,} from "./schemas";
+import {Application, ApplicationStatus, Vacancy,} from "./schemas";
+import {
+  applicationFromFirestore,
+  applicationStatusToFirestore,
+  statusToFirestore,
+  vacancyFromFirestore,
+} from "./firestoreMappers";
 
 export async function getAllVacancies(): Promise<Vacancy[]> {
   try {
     const vacanciesSnap = await getDocs(collection(db, "vacatures"));
-    return vacanciesSnap.docs.map((d) => VacancySchema.parse(d.data()));
+    return vacanciesSnap.docs.map((d) => vacancyFromFirestore(d.data()));
   } catch (err) {
     console.error(err);
     return [];
@@ -21,28 +26,29 @@ export async function getVacanciesDashboard() {
 export async function getApplications(): Promise<Application[]> {
   try {
     const snapshot = await getDocs(collection(db, "sollicitaties"));
-    return z
-      .array(ApplicationSchema)
-      .parse(snapshot.docs.map((d) => ({id: d.id, ...d.data()})));
+    return snapshot.docs.map((d) => applicationFromFirestore({id: d.id, ...d.data()}));
   } catch {
     return [];
   }
 }
 
 export async function createApplication(data: {
-  vacatureId: string;
-  bedrijf: string;
-  rol: string;
-  gesolliceerdOp: string;
+  vacancyId: string;
+  company: string;
+  role: string;
+  appliedOn: string;
 }): Promise<void> {
-  const id = `${data.bedrijf.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-${data.gesolliceerdOp}`;
+  const id = `${data.company.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-${data.appliedOn}`;
   await Promise.all([
     setDoc(doc(db, "sollicitaties", id), {
-      status: "gesolliciteerd",
-      ...data,
+      vacatureId: data.vacancyId,
+      bedrijf: data.company,
+      rol: data.role,
+      gesolliceerdOp: data.appliedOn,
+      status: applicationStatusToFirestore("applied"),
     }),
-    updateDoc(doc(db, "vacatures", data.vacatureId), {
-      status: "gesolliciteerd",
+    updateDoc(doc(db, "vacatures", data.vacancyId), {
+      status: statusToFirestore("applied"),
     }),
   ]);
 }
@@ -51,7 +57,7 @@ export async function updateApplication(
   id: string,
   status: ApplicationStatus,
 ): Promise<void> {
-  await updateDoc(doc(db, "sollicitaties", id), {status});
+  await updateDoc(doc(db, "sollicitaties", id), {status: applicationStatusToFirestore(status)});
 }
 
 export async function getVacancy(id: string): Promise<Vacancy | null> {
@@ -72,7 +78,7 @@ export async function markNotInteresting(
 ): Promise<void> {
   await updateDoc(doc(db, "vacatures", id), {
     isArchived: true,
-    status: "niet-interessant",
+    status: statusToFirestore("not-interesting"),
     archiefReden: reason,
     gearchiveerdOp: new Date().toISOString(),
   });
@@ -81,7 +87,7 @@ export async function markNotInteresting(
 export async function restoreVacancy(id: string): Promise<void> {
   await updateDoc(doc(db, "vacatures", id), {
     isArchived: false,
-    status: "bekeken",
+    status: statusToFirestore("viewed"),
     archiefReden: deleteField(),
     gearchiveerdOp: deleteField(),
   });
