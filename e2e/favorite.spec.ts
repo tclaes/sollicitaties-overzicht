@@ -18,6 +18,7 @@ test("marking a vacancy as favorite moves it to the top of the overview", async 
 
   await page.goto("/vacatures/vacancy-gesolliciteerd");
   await page.getByRole("button", { name: "Verwijder favoriet" }).click();
+  await expect(page.getByRole("button", { name: "Markeer als favoriet" })).toBeVisible();
 
   await page.goto("/vacatures");
   await expect(page.locator("tbody tr").first()).toContainText("Nieuwe Frontend Rol");
