@@ -12,7 +12,8 @@
       "TypeScript",
       "React",
       "modern web-stack"
-    ]
+    ],
+    "functie": "fullstack"
   },
   {
     "titel": "Senior Software Engineer",
@@ -27,7 +28,8 @@
       "TypeScript",
       "React",
       "modern web-stack"
-    ]
+    ],
+    "functie": "fullstack"
   },
   {
     "titel": "Full Stack Developer",
@@ -187,7 +189,8 @@
     "tags": [
       ".NET",
       "Angular"
-    ]
+    ],
+    "functie": "fullstack"
   },
   {
     "titel": ".NET Angular Developer (in-house)",
@@ -545,7 +548,8 @@
       "TypeScript",
       "Node.js",
       "PostgreSQL"
-    ]
+    ],
+    "functie": "fullstack"
   },
   {
     "titel": "Angular front-end developer",
@@ -665,7 +669,8 @@
       "TypeScript",
       "PHP",
       "frontend"
-    ]
+    ],
+    "functie": "fullstack"
   },
   {
     "titel": "Angular Developer",
@@ -697,7 +702,8 @@
       "JavaScript",
       "frontend",
       "consultancy"
-    ]
+    ],
+    "functie": "fullstack"
   },
   {
     "titel": "Senior Software Engineer (Payflip Flex)",
@@ -864,6 +870,362 @@
       "TypeScript",
       ".NET",
       "full-stack"
+    ]
+  },
+  {
+    "titel": "Medior Front-End Developer",
+    "bedrijf": "Clovr (client, expertgroep)",
+    "locatie": "Antwerpen (hybride, 3 dagen/week thuiswerk)",
+    "regio": "antwerpen",
+    "url": "https://clovr.be/vacatures/medior-front-end-developer/",
+    "beschrijving": "Front-end developer rol bij expertgroep via recruitmentbureau Clovr. Agile/Scrum omgeving met JavaScript/TypeScript, HTML/CSS, VueJS, Cypress.",
+    "bron": "andere",
+    "functie": "frontend",
+    "tags": [
+      "VueJS",
+      "TypeScript",
+      "JavaScript",
+      "HTML/CSS",
+      "TailwindCSS",
+      "Cypress"
+    ]
+  },
+  {
+    "titel": "Front-end Developer",
+    "bedrijf": "Clovr (client, telecom provider)",
+    "locatie": "Hasselt (hybride, tot 3 dagen/week thuiswerk)",
+    "regio": "limburg",
+    "url": "https://clovr.be/vacatures/front-end-developer/",
+    "beschrijving": "Front-end developer rol bij grote telecom provider via recruitmentbureau Clovr. Min. 5 jaar ervaring, Vue.js/React/Angular, Node.js, TypeScript, React Native is een plus.",
+    "bron": "andere",
+    "functie": "frontend",
+    "tags": [
+      "Vue.js",
+      "React",
+      "Angular",
+      "Node.js",
+      "TypeScript",
+      "React Native"
+    ]
+  },
+  {
+    "titel": "Full Stack Developer",
+    "bedrijf": "OMETA",
+    "locatie": "Regio Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/70437324/full-stack-developer",
+    "beschrijving": "Full Stack Developer bij softwarebedrijf OMETA, werkt aan 'The Ometa Framework'. Backend in .NET Core/TypeScript, frontend met Angular.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      ".NET Core",
+      "Angular",
+      "TypeScript"
+    ]
+  },
+  {
+    "titel": "Full Stack Engineer",
+    "bedrijf": "Helion Market Research",
+    "locatie": "Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4459506167/",
+    "beschrijving": "Marktonderzoeksbedrijf brengt technologieontwikkeling in-house, zoekt full-stack developer. Volledige functieomschrijving zat achter LinkedIn-inlogmuur, tech-stack niet met zekerheid vastgesteld — borderline.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "fullstack",
+      "borderline"
+    ]
+  },
+  {
+    "titel": "Lead Front-End Developer",
+    "bedrijf": "CraftCode (Cronos-groep)",
+    "locatie": "Edegem (Antwerpen)",
+    "regio": "antwerpen",
+    "url": "https://it-jobs.be/vacature/lead-front-end-developer-edegem-cronos-edegem-188059",
+    "beschrijving": "Lead Front-End Developer consultant-rol bij CraftCode (Cronos-groep). Brede kennis van front-end frameworks (Angular/React), technisch leiderschap, kennisdeling.",
+    "bron": "andere",
+    "functie": "frontend",
+    "tags": [
+      "Angular",
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "DevOps",
+      "Lead"
+    ]
+  },
+  {
+    "titel": "Front-end Developer",
+    "bedrijf": "CraftCode (Cronos-groep)",
+    "locatie": "Edegem (Antwerpen)",
+    "regio": "antwerpen",
+    "url": "https://it-jobs.be/vacature/front-end-developer-edegem-cronos-edegem-187993",
+    "beschrijving": "Front-end developer consultant-rol bij CraftCode (Cronos-groep). Javascript, Angular en/of React, HTML/CSS, oog voor UI/UX.",
+    "bron": "andere",
+    "functie": "frontend",
+    "tags": [
+      "Angular",
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "UX/UI"
+    ]
+  },
+  {
+    "titel": "Full Stack developer",
+    "bedrijf": "CraftCode (Cronos-groep)",
+    "locatie": "Edegem (Antwerpen)",
+    "regio": "antwerpen",
+    "url": "https://it-jobs.be/vacature/full-stack-developer-edegem-cronos-edegem-187969",
+    "beschrijving": "Full Stack developer consultant-rol bij CraftCode (Cronos-groep). Backend in Java/Spring, frontend met React, Vue of Angular.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "Java",
+      "Spring",
+      "React",
+      "Vue",
+      "Angular"
+    ]
+  },
+  {
+    "titel": "Drupal Developer",
+    "bedrijf": "Dropsolid",
+    "locatie": "België (hubs in Gent, Hasselt en Edegem-Antwerpen)",
+    "regio": "limburg",
+    "url": "https://www.linkedin.com/jobs/view/4420742628/",
+    "beschrijving": "Rol staat expliciet open voor front-end of back-end Drupal-specialisten. Drupal-frontend staat als basis-skill in Toms profiel. Exacte vestigingsplaats niet met zekerheid vastgesteld vanaf de listing — borderline.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "Drupal",
+      "front-end",
+      "borderline"
+    ]
+  },
+  {
+    "titel": "Medior Frontend Developer",
+    "bedrijf": "Dignify",
+    "locatie": "Genk (hybride)",
+    "regio": "limburg",
+    "url": "https://www.linkedin.com/jobs/view/4464867494/",
+    "beschrijving": "Frontend developer rol bij Dignify in Genk. Volledige beschrijving zat achter LinkedIn-inlogmuur — tech-stack niet gekend, maar titel + locatie zijn een sterke match.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "frontend"
+    ]
+  },
+  {
+    "titel": "Full Stack Developer",
+    "bedrijf": "Collide (Bewire/Cronos-groep)",
+    "locatie": "Hasselt",
+    "regio": "limburg",
+    "url": "https://be.indeed.com/viewjob?jk=0aea4aeaa39e771c",
+    "beschrijving": "Full Stack Developer bij Collide (onderdeel van Bewire/Cronos-groep). HTML5/CSS3/JavaScript, Angular en/of React, NodeJS/Java/C#.",
+    "bron": "indeed",
+    "functie": "fullstack",
+    "tags": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Angular",
+      "React",
+      "NodeJS",
+      "Java",
+      "C#"
+    ]
+  },
+  {
+    "titel": "Front-end Vue Developer",
+    "bedrijf": "Craftzing",
+    "locatie": "Antwerpen (hybride)",
+    "regio": "antwerpen",
+    "url": "https://be.indeed.com/viewjob?jk=89165cc117f77214",
+    "beschrijving": "Front-end Vue Developer bij Craftzing, bouwt digitale platformen en webapplicaties. TypeScript en Vue/Nuxt, React is een plus. Vast contract.",
+    "bron": "indeed",
+    "functie": "frontend",
+    "tags": [
+      "Vue",
+      "Nuxt",
+      "TypeScript",
+      "React",
+      "Node.js",
+      "GraphQL"
+    ]
+  },
+  {
+    "titel": "Front end developer",
+    "bedrijf": "SkyeBase",
+    "locatie": "Antwerpen (remote werk mogelijk)",
+    "regio": "antwerpen",
+    "url": "https://be.indeed.com/viewjob?jk=2c4263718717101c",
+    "beschrijving": "Front-end developer bij drone-inspectie start-up SkyeBase, werkt aan het I-Spect Asset Inspection Platform. Vue.js/Nuxt, TypeScript, Node.js.",
+    "bron": "indeed",
+    "functie": "frontend",
+    "tags": [
+      "Vue.js",
+      "Nuxt",
+      "TypeScript",
+      "Node.js"
+    ]
+  },
+  {
+    "titel": "Front-end Software Developer",
+    "bedrijf": "Déhora Consultancy Group",
+    "locatie": "Antwerpen (of Buggenhout)",
+    "regio": "antwerpen",
+    "url": "https://be.indeed.com/viewjob?jk=ad61b592abf9573a",
+    "beschrijving": "Front-end developer voor Planpoint, workforce management platform van Déhora Consultancy. React, Redux, TypeScript, HTML, SCSS, Tailwind. Vast contract onbepaalde duur.",
+    "bron": "indeed",
+    "functie": "frontend",
+    "tags": [
+      "React",
+      "Redux",
+      "TypeScript",
+      "HTML",
+      "SCSS",
+      "Tailwind",
+      "Git"
+    ]
+  },
+  {
+    "titel": "Front-end Developer",
+    "bedrijf": "Engaged.be",
+    "locatie": "Antwerpen (hybride)",
+    "regio": "antwerpen",
+    "url": "https://be.indeed.com/viewjob?jk=3b1cc523701b4239",
+    "beschrijving": "Front-end developer bij digital agency Engaged.be, bouwt immersieve en interactieve webervaringen. JavaScript-frameworks zoals Vue, WebGL is een plus.",
+    "bron": "indeed",
+    "functie": "frontend",
+    "tags": [
+      "JavaScript",
+      "Vue",
+      "WebGL",
+      "Git"
+    ]
+  },
+  {
+    "titel": "Front-end Developer",
+    "bedrijf": "SENSO2ME",
+    "locatie": "Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://be.indeed.com/viewjob?jk=a09eb3a1217c80be",
+    "beschrijving": "Front-end developer bij zorgtechnologiebedrijf SENSO2ME. ES6/TypeScript, CSS, Angular is een grote plus, RESTful API's.",
+    "bron": "indeed",
+    "functie": "frontend",
+    "tags": [
+      "Angular",
+      "TypeScript",
+      "ES6",
+      "CSS",
+      "REST API"
+    ]
+  },
+  {
+    "titel": "Full Stack JavaScript Developer",
+    "bedrijf": "Skilt Digital People",
+    "locatie": "Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://be.indeed.com/viewjob?jk=341c7846abaf4758",
+    "beschrijving": "Full stack JavaScript developer consultant bij Skilt, werkt voor klanten als Telenet, DPG Media, Mediahuis, KBC. React, Node, TypeScript, GraphQL, AWS.",
+    "bron": "indeed",
+    "functie": "fullstack",
+    "tags": [
+      "JavaScript",
+      "React",
+      "Node.js",
+      "TypeScript",
+      "GraphQL",
+      "AWS"
+    ]
+  },
+  {
+    "titel": "Full Stack Developer",
+    "bedrijf": "Parte NV (klant: Properly, powered by Hg Capital)",
+    "locatie": "Antwerpen (hybride)",
+    "regio": "antwerpen",
+    "url": "https://be.indeed.com/viewjob?jk=09f26153ed687d20",
+    "beschrijving": "Full Stack Developer voor SaaS-platform Properly (vastgoedbeheer). Backend in .NET/C#/SQL Server, frontend in Vue 3 met TypeScript.",
+    "bron": "indeed",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "C#",
+      "SQL Server",
+      "Vue 3",
+      "TypeScript",
+      "Azure"
+    ]
+  },
+  {
+    "titel": "Frontend Developer React & UX",
+    "bedrijf": "Entico (klant, IoT-platform)",
+    "locatie": "Wilrijk (Antwerpen)",
+    "regio": "antwerpen",
+    "url": "https://be.indeed.com/viewjob?jk=0e69ec2cbecc05fe",
+    "beschrijving": "Senior Frontend Developer voor grootschalig IoT- en monitoringplatform. React/TypeScript, migratie naar nieuw design system en UI-component library.",
+    "bron": "indeed",
+    "functie": "frontend",
+    "tags": [
+      "React",
+      "TypeScript",
+      "design system",
+      "accessibility"
+    ]
+  },
+  {
+    "titel": "Full-stack Javascript Developer",
+    "bedrijf": "jstack",
+    "locatie": "Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://be.indeed.com/viewjob?jk=8d9dfd893d1c599a",
+    "beschrijving": "Full-stack JavaScript developer bij jstack. TypeScript, ExpressJS/Fastify, React/React Native, Docker, AWS/Azure.",
+    "bron": "indeed",
+    "functie": "fullstack",
+    "tags": [
+      "TypeScript",
+      "ExpressJS",
+      "Fastify",
+      "React",
+      "React Native",
+      "Docker"
+    ]
+  },
+  {
+    "titel": "Full stack developer",
+    "bedrijf": "Yellow Jersey",
+    "locatie": "Kontich (Antwerpen), remote mogelijk",
+    "regio": "antwerpen",
+    "url": "https://be.indeed.com/viewjob?jk=cfb9039de937bfac",
+    "beschrijving": "Full stack developer consultant bij Yellow Jersey. JavaScript-libraries, React, Node.",
+    "bron": "indeed",
+    "functie": "fullstack",
+    "tags": [
+      "JavaScript",
+      "React",
+      "Node"
+    ]
+  },
+  {
+    "titel": "Full-Stack Developer",
+    "bedrijf": "Lab900",
+    "locatie": "Berchem (Antwerpen)",
+    "regio": "antwerpen",
+    "url": "https://be.indeed.com/viewjob?jk=7e5e495ba568d7c6",
+    "beschrijving": "Senior Full-Stack Developer bij Lab900. Backend in Java/Spring Boot/NodeJS, frontend met Angular, React of React Native.",
+    "bron": "indeed",
+    "functie": "fullstack",
+    "tags": [
+      "Java",
+      "Spring Boot",
+      "NodeJS",
+      "Angular",
+      "React",
+      "React Native"
     ]
   }
 ]
