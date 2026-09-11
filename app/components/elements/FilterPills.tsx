@@ -1,4 +1,4 @@
-import {ROLE_LABELS, RoleSchema, SourceSchema, StatusSchema} from "~/lib/schemas";
+import {ROLE_LABELS, RoleSchema, SOURCE_LABELS, SourceSchema, StatusSchema} from "~/lib/schemas";
 import styles from "./FilterPills.module.css";
 
 interface Props {
@@ -97,7 +97,7 @@ export function FilterPills({currentSearch, basePath = "/vacatures"}: Props) {
           href={buildUrl({source})}
           className={`${styles.pill} ${currentSearch.source === source ? styles.active : ""}`}
         >
-          {source}
+          {SOURCE_LABELS[source]}
         </a>
       ))}
     </div>

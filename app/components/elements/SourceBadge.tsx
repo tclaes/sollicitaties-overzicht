@@ -1,4 +1,4 @@
-import type { Source } from "~/lib/schemas";
+import { SOURCE_LABELS, type Source } from "~/lib/schemas";
 import styles from "./SourceBadge.module.css";
 
 const SOURCE_CSS_CLASS: Record<Source, string> = {
@@ -10,5 +10,5 @@ const SOURCE_CSS_CLASS: Record<Source, string> = {
 };
 
 export function SourceBadge({ source }: { source: Source }) {
-  return <span className={`${styles.badge} ${styles[SOURCE_CSS_CLASS[source]]}`}>{source}</span>;
+  return <span className={`${styles.badge} ${styles[SOURCE_CSS_CLASS[source]]}`}>{SOURCE_LABELS[source]}</span>;
 }

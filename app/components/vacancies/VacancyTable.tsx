@@ -1,6 +1,6 @@
 import {useState} from "react";
 import type {Application, Vacancy} from "~/lib/schemas";
-import {APPLICATION_STATUS_LABELS, ROLE_LABELS} from "~/lib/schemas";
+import {APPLICATION_STATUS_LABELS, MATCH_SCORE_LABELS, ROLE_LABELS} from "~/lib/schemas";
 import {SourceBadge} from "../elements/SourceBadge";
 import {Badge} from "../elements/Badge/Badge"
 import {ApplyForJob} from "./ApplyForJob/ApplyForJob";
@@ -105,7 +105,7 @@ export function VacancyTable({vacancies, applicationById = new Map(), onApply}: 
                     className={`${styles.matchBadge} ${styles[MATCH_SCORE_CSS_CLASS[v.match.score]]}`}
                     title={v.match.explanation}
                   >
-                      {v.match.score}
+                      {MATCH_SCORE_LABELS[v.match.score]}
                     </span>
                 ) : null}
               </td>
