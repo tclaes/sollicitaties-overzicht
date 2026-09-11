@@ -25,6 +25,14 @@ export const ROLE_LABELS: Record<Role, string> = {
   fullstack: "full stack",
 };
 
+export const SOURCE_LABELS: Record<Source, string> = {
+  indeed: "indeed",
+  vdab: "vdab",
+  jobat: "jobat",
+  linkedin: "linkedin",
+  other: "andere",
+};
+
 export const DefaultSearchSchema = z.object({
   status: StatusSchema.optional(),
   source: SourceSchema.optional(),
@@ -42,6 +50,14 @@ export const RegionSchema = z.enum([
 ]);
 
 export const MatchScoreSchema = z.enum(["strong", "good", "moderate", "low", "borderline"]);
+
+export const MATCH_SCORE_LABELS: Record<MatchScore, string> = {
+  strong: "sterk",
+  good: "goed",
+  moderate: "matig",
+  low: "laag",
+  borderline: "borderline",
+};
 
 export const ApplicationStatusSchema = z.enum([
   "applied",
