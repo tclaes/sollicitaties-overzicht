@@ -36,6 +36,9 @@ function VacanciesPage() {
 
   })
     .sort((a, b) => {
+      const favoriteDiff = Number(b.favorite ?? false) - Number(a.favorite ?? false);
+      if (favoriteDiff !== 0) return favoriteDiff;
+
       if (search.sort === "date") {
         return new Date(b.dateFound).getTime() - new Date(a.dateFound).getTime();
       }

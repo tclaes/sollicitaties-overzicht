@@ -119,6 +119,7 @@ export function vacancyFromFirestore(raw: Record<string, unknown>): Vacancy {
     isArchived: raw.isArchived,
     archiveReason: raw.archiefReden,
     dateArchived: raw.gearchiveerdOp,
+    favorite: raw.favoriet,
     tags: raw.tags,
     match: match
       ? {

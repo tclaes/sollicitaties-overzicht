@@ -1,3 +1,4 @@
+import {useState} from "react";
 import {createFileRoute, notFound} from "@tanstack/react-router";
 import {getVacancy} from "~/lib/vacancies";
 import {setStatus} from "~/lib/statusStore";
@@ -9,6 +10,7 @@ import {ROLE_LABELS, StatusSchema} from "~/lib/schemas";
 import {CLink} from "~/components/elements/Link/CLink";
 import {NotFoundComponent} from "~/elements/NotFound/NotFoundComponent";
 import {NotInteresting} from "~/components/vacancies/NotInteresting/NotInteresting";
+import {FavoriteButton} from "~/components/elements/FavoriteButton/FavoriteButton";
 
 export const Route = createFileRoute("/vacatures/$id")({
   loader: async ({params}) => {
@@ -27,6 +29,7 @@ export const Route = createFileRoute("/vacatures/$id")({
 
 function VacancyDetailPage() {
   const {vacancy} = Route.useLoaderData();
+  const [favorite, setFavorite] = useState(vacancy.favorite ?? false);
 
   return (
     <main className={styles.page}>
@@ -46,6 +49,7 @@ function VacancyDetailPage() {
             {vacancy.function && (
               <span className={styles.roleBadge}>{ROLE_LABELS[vacancy.function]}</span>
             )}
+            <FavoriteButton id={vacancy.id} favorite={favorite} onToggled={setFavorite}/>
           </div>
           <h1 className={styles.title}>{vacancy.title}</h1>
           <p className={styles.company}>{vacancy.company}</p>

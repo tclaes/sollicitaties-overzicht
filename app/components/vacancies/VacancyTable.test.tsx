@@ -1,15 +1,21 @@
-import {describe, expect, it, vi} from "vitest";
+import {beforeEach, describe, expect, it, vi} from "vitest";
 import {render, screen} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import {VacancyTable} from "./VacancyTable";
 import type {Vacancy} from "~/lib/schemas";
 
+const navigate = vi.fn();
+
 vi.mock("@tanstack/react-router", () => ({
-  useNavigate: () => vi.fn(),
+  useNavigate: () => navigate,
 }));
 
 vi.mock("~/lib/date", () => ({
   todayIso: () => "2026-03-05",
+}));
+
+vi.mock("~/lib/vacancies", () => ({
+  toggleFavorite: vi.fn().mockResolvedValue(undefined),
 }));
 
 function makeVacancy(overrides: Partial<Vacancy> = {}): Vacancy {
@@ -30,6 +36,10 @@ function makeVacancy(overrides: Partial<Vacancy> = {}): Vacancy {
 }
 
 describe("VacancyTable", () => {
+  beforeEach(() => {
+    navigate.mockClear();
+  });
+
   it("shows an empty state when there are no vacancies", () => {
     render(<VacancyTable vacancies={[]}/>);
     expect(screen.getByText("Geen vacatures gevonden.")).toBeInTheDocument();
@@ -91,5 +101,17 @@ describe("VacancyTable", () => {
       role: "Frontend Developer",
       appliedOn: "2026-03-05",
     });
+  });
+
+  it("toggles a vacancy's favorite state without navigating to its detail page", async () => {
+    const {toggleFavorite} = await import("~/lib/vacancies");
+    const user = userEvent.setup();
+
+    render(<VacancyTable vacancies={[makeVacancy()]}/>);
+
+    await user.click(screen.getByRole("button", {name: "Markeer als favoriet"}));
+
+    expect(toggleFavorite).toHaveBeenCalledWith("v1", true);
+    expect(navigate).not.toHaveBeenCalled();
   });
 });

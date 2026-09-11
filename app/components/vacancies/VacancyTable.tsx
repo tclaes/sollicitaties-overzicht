@@ -3,6 +3,7 @@ import type {Application, Vacancy} from "~/lib/schemas";
 import {APPLICATION_STATUS_LABELS, MATCH_SCORE_LABELS, ROLE_LABELS} from "~/lib/schemas";
 import {SourceBadge} from "../elements/SourceBadge";
 import {Badge} from "../elements/Badge/Badge"
+import {FavoriteButton} from "../elements/FavoriteButton/FavoriteButton";
 import {ApplyForJob} from "./ApplyForJob/ApplyForJob";
 import styles from "./VacancyTable.module.css";
 import {useNavigate} from '@tanstack/react-router'
@@ -27,6 +28,7 @@ interface Props {
 
 export function VacancyTable({vacancies, applicationById = new Map(), onApply}: Props) {
   const [locallyApplied, setLocallyApplied] = useState<Record<string, string>>({});
+  const [favoriteOverrides, setFavoriteOverrides] = useState<Record<string, boolean>>({});
   const navigate = useNavigate();
 
 
@@ -39,6 +41,7 @@ export function VacancyTable({vacancies, applicationById = new Map(), onApply}: 
       <table className={styles.table}>
         <thead>
         <tr>
+          <th className={styles.colFavorite}></th>
           <th className={styles.colStatus}>Status</th>
           <th className={styles.colSource}>Bron</th>
           <th>Functie</th>
@@ -59,6 +62,7 @@ export function VacancyTable({vacancies, applicationById = new Map(), onApply}: 
               ? "wacht"
               : null;
           const date = application?.appliedOn ?? localDate;
+          const isFavorite = favoriteOverrides[v.id] ?? v.favorite ?? false;
 
           return (
             <tr
@@ -68,6 +72,15 @@ export function VacancyTable({vacancies, applicationById = new Map(), onApply}: 
                 await navigate({to: `/vacatures/${v.id}`})
               }}
             >
+              <td className={styles.colFavorite} onClick={(e) => e.stopPropagation()}>
+                <FavoriteButton
+                  id={v.id}
+                  favorite={isFavorite}
+                  onToggled={(next) =>
+                    setFavoriteOverrides((prev) => ({...prev, [v.id]: next}))
+                  }
+                />
+              </td>
               <td>
                 <Badge status={hasApplied ? "applied" : v.status}/>
                 {hasApplied && applicationLabel && (
