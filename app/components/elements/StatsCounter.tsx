@@ -13,24 +13,24 @@ export function StatsCounter({ vacancies }: { vacancies: Vacancy[] }) {
         <span className={styles.count}>{vacancies.length}</span>
         <span className={styles.label}>Totaal</span>
       </div>
-      <div className={`${styles.item} ${styles.nieuw}`}>
+      <div className={`${styles.item} ${styles.new}`}>
         <span className={styles.dot} />
-        <span className={styles.count}>{counts["nieuw"] ?? 0}</span>
+        <span className={styles.count}>{counts["new"] ?? 0}</span>
         <span className={styles.label}>Nieuw</span>
       </div>
-      <div className={`${styles.item} ${styles.bekeken}`}>
+      <div className={`${styles.item} ${styles.viewed}`}>
         <span className={styles.dot} />
-        <span className={styles.count}>{counts["bekeken"] ?? 0}</span>
+        <span className={styles.count}>{counts["viewed"] ?? 0}</span>
         <span className={styles.label}>Bekeken</span>
       </div>
-      <div className={`${styles.item} ${styles.gesolliciteerd}`}>
+      <div className={`${styles.item} ${styles.applied}`}>
         <span className={styles.dot} />
-        <span className={styles.count}>{counts["gesolliciteerd"] ?? 0}</span>
+        <span className={styles.count}>{counts["applied"] ?? 0}</span>
         <span className={styles.label}>Gesolliciteerd</span>
       </div>
       <div className={styles.item}>
         <span className={styles.dot} />
-        <span className={styles.count}>{counts["niet-interessant"] ?? 0}</span>
+        <span className={styles.count}>{counts["not-interesting"] ?? 0}</span>
         <span className={styles.label}>Niet interessant</span>
       </div>
     </div>

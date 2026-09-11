@@ -2,16 +2,16 @@ import {ROLE_LABELS, RoleSchema, SourceSchema, StatusSchema} from "~/lib/schemas
 import styles from "./FilterPills.module.css";
 
 interface Props {
-  currentSearch: { status?: string; source?: string; functie?: string; sort?: string };
+  currentSearch: { status?: string; source?: string; function?: string; sort?: string };
   basePath?: string;
 }
 
 const statusLabels: Record<string, string> = {
-  nieuw: "Nieuw",
-  bekeken: "Bekeken",
-  gesolliciteerd: "Gesolliciteerd",
-  afgewezen: "Afgewezen",
-  "niet-interessant": "Niet interessant",
+  new: "Nieuw",
+  viewed: "Bekeken",
+  applied: "Gesolliciteerd",
+  rejected: "Afgewezen",
+  "not-interesting": "Niet interessant",
 };
 
 export function FilterPills({currentSearch, basePath = "/vacatures"}: Props) {
@@ -35,7 +35,7 @@ export function FilterPills({currentSearch, basePath = "/vacatures"}: Props) {
         Alle
       </a>
       {StatusSchema.options
-        .filter((s) => s !== "afgewezen")
+        .filter((s) => s !== "rejected")
         .map((status) => (
           <a
             key={status}
@@ -50,16 +50,16 @@ export function FilterPills({currentSearch, basePath = "/vacatures"}: Props) {
 
       <span className={styles.groupLabel}>Functie</span>
       <a
-        href={buildUrl({functie: undefined})}
-        className={`${styles.pill} ${!currentSearch.functie ? styles.active : ""}`}
+        href={buildUrl({function: undefined})}
+        className={`${styles.pill} ${!currentSearch.function ? styles.active : ""}`}
       >
         Alle
       </a>
       {RoleSchema.options.map((role) => (
         <a
           key={role}
-          href={buildUrl({functie: role})}
-          className={`${styles.pill} ${currentSearch.functie === role ? styles.active : ""}`}
+          href={buildUrl({function: role})}
+          className={`${styles.pill} ${currentSearch.function === role ? styles.active : ""}`}
         >
           {ROLE_LABELS[role]}
         </a>
@@ -68,9 +68,9 @@ export function FilterPills({currentSearch, basePath = "/vacatures"}: Props) {
       <span className={styles.divider}/>
 
       <span className={styles.groupLabel}>Sortering</span>
-      {(["match", "datum", "titel"] as const).map((option) => {
+      {(["match", "date", "title"] as const).map((option) => {
         const active = (currentSearch.sort ?? "match") === option;
-        const labels = {match: "Match", datum: "Datum", titel: "Titel"};
+        const labels = {match: "Match", date: "Datum", title: "Titel"};
         return (
           <a
             key={option}

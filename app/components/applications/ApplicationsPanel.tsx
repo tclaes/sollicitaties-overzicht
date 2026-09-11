@@ -6,6 +6,15 @@ import {useNavigate} from "@tanstack/react-router";
 
 const STATUSES = Object.keys(APPLICATION_STATUS_LABELS) as ApplicationStatus[];
 
+const STATUS_CSS_CLASS: Record<ApplicationStatus, string> = {
+  applied: "status_gesolliciteerd",
+  interviewing: "status_in_gesprek",
+  rejected: "status_afgewezen",
+  not_hiring: "status_niet_wervend",
+  no_response: "status_geen_reactie",
+  hired: "status_aangenomen",
+};
+
 interface Props {
   applications: Application[];
   showHeader?: boolean;
@@ -16,15 +25,15 @@ export function ApplicationsPanel({applications, showHeader = false}: Props) {
   const navigate = useNavigate();
 
   const sorted = [...applications].sort(
-    (a, b) => b.gesolliceerdOp.localeCompare(a.gesolliceerdOp)
+    (a, b) => b.appliedOn.localeCompare(a.appliedOn)
   );
 
-  async function handleStatusChange(id: string, status: ApplicationStatus, vacatureId?: string) {
+  async function handleStatusChange(id: string, status: ApplicationStatus, vacancyId?: string) {
     setLocalStatuses((prev) => ({...prev, [id]: status}));
     try {
       await updateApplication(id, status);
-      if (status === ApplicationStatusSchema.enum.afgewezen && vacatureId) {
-        await archiveVacancy(vacatureId, true);
+      if (status === ApplicationStatusSchema.enum.rejected && vacancyId) {
+        await archiveVacancy(vacancyId, true);
         await navigate({to: "/"});
       }
     } catch {
@@ -51,20 +60,20 @@ export function ApplicationsPanel({applications, showHeader = false}: Props) {
           {sorted.map((s) => {
             const currentStatus = localStatuses[s.id] ?? s.status;
             return (
-              <tr key={s.id} className={styles.row} title={s.notitie}>
+              <tr key={s.id} className={styles.row} title={s.note}>
                 <td className={styles.date}>
-                  {new Date(s.gesolliceerdOp).toLocaleDateString("nl-BE", {
+                  {new Date(s.appliedOn).toLocaleDateString("nl-BE", {
                     day: "numeric",
                     month: "short",
                   })}
                 </td>
-                <td className={styles.company}>{s.bedrijf}</td>
-                <td className={styles.role}>{s.rol}</td>
+                <td className={styles.company}>{s.company}</td>
+                <td className={styles.role}>{s.role}</td>
                 <td className={styles.statusCol}>
                   <select
-                    className={`${styles.statusSelect} ${styles[`status_${currentStatus}`]}`}
+                    className={`${styles.statusSelect} ${styles[STATUS_CSS_CLASS[currentStatus]]}`}
                     value={currentStatus}
-                    onChange={(e) => handleStatusChange(s.id, e.target.value as ApplicationStatus, s.vacatureId)}
+                    onChange={(e) => handleStatusChange(s.id, e.target.value as ApplicationStatus, s.vacancyId)}
                     onClick={(e) => e.stopPropagation()}
                   >
                     {STATUSES.map((st) => (

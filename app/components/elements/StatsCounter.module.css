@@ -22,9 +22,9 @@
   width: 7px;
 }
 
-.nieuw .dot         { background: var(--color-status-nieuw-dot); }
-.bekeken .dot       { background: var(--color-status-bekeken-dot); }
-.gesolliciteerd .dot { background: var(--color-status-gesolliciteerd-dot); }
+.new .dot         { background: var(--color-status-nieuw-dot); }
+.viewed .dot       { background: var(--color-status-bekeken-dot); }
+.applied .dot { background: var(--color-status-gesolliciteerd-dot); }
 
 .count {
   color: var(--color-text);

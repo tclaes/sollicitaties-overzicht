@@ -14,26 +14,26 @@ describe("FilterPills", () => {
   });
 
   it("builds hrefs against basePath, merging in the current search", () => {
-    render(<FilterPills currentSearch={{ status: "bekeken" }} basePath="/" />);
+    render(<FilterPills currentSearch={{ status: "viewed" }} basePath="/" />);
 
     const nieuwLink = screen.getByRole("link", { name: "Nieuw" });
-    expect(nieuwLink).toHaveAttribute("href", "/?status=nieuw");
+    expect(nieuwLink).toHaveAttribute("href", "/?status=new");
   });
 
   it("defaults basePath to /vacatures", () => {
     render(<FilterPills currentSearch={{}} />);
 
     const frontendLink = screen.getByRole("link", { name: "frontend" });
-    expect(frontendLink).toHaveAttribute("href", "/vacatures?functie=frontend");
+    expect(frontendLink).toHaveAttribute("href", "/vacatures?function=frontend");
   });
 
   it("preserves other search params when changing one filter", () => {
-    render(<FilterPills currentSearch={{ status: "bekeken", sort: "datum" }} basePath="/" />);
+    render(<FilterPills currentSearch={{ status: "viewed", sort: "date" }} basePath="/" />);
 
     const frontendLink = screen.getByRole("link", { name: "frontend" });
     expect(frontendLink).toHaveAttribute(
       "href",
-      "/?status=bekeken&sort=datum&functie=frontend"
+      "/?status=viewed&sort=date&function=frontend"
     );
   });
 });
