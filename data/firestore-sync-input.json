@@ -1212,5 +1212,80 @@
       "React",
       "React Native"
     ]
+  },
+  {
+    "titel": "React Developer - In-House Softwareproduct",
+    "bedrijf": "Kingfisher Recruitment (client, familiebedrijf logistieke sector)",
+    "locatie": "Beveren-Waas (Oost-Vlaanderen)",
+    "regio": "andere",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/front-end/react-developer-in-house-softwareproduct",
+    "beschrijving": "Front-end/React developer rol bij familiebedrijf in de logistieke sector (Beveren-Waas), bouwt een eigen in-house softwareproduct. Kingfisher plaatst dezelfde vacature onder meerdere titels/niveaus (junior t/m lead front-end) op aparte URL's; dit is de representatieve URL. Borderline op regio: Beveren-Waas ligt net over de Schelde t.o.v. Antwerpen, niet expliciet in de kernregio's.",
+    "bron": "andere",
+    "functie": "frontend",
+    "tags": [
+      "React",
+      "frontend"
+    ]
+  },
+  {
+    "titel": "Angular developer",
+    "bedrijf": "Kingfisher Recruitment (client, automation/robotics, Industry 4.0)",
+    "locatie": "Kallo (Beveren, Oost-Vlaanderen)",
+    "regio": "andere",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/front-end/angular-developer",
+    "beschrijving": "Front-end developer rol (Angular) bij internationale robotica-/automatisatiespeler in Kallo (Beveren). Focus op kwaliteit en UX in nauw overleg met R&D en back-end team. Borderline op regio (Oost-Vlaanderen, net over de grens met Antwerpen).",
+    "bron": "andere",
+    "functie": "frontend",
+    "tags": [
+      "Angular",
+      "frontend",
+      "UX"
+    ]
+  },
+  {
+    "titel": "Full Stack (.NET/React) Developer",
+    "bedrijf": "Clovr (client, logistieke automatisatie, Waasland)",
+    "locatie": "Regio Waasland",
+    "regio": "andere",
+    "url": "https://clovr.be/vacatures/full-stack-net-react-developer/",
+    "beschrijving": "Full-stack rol bij snelgroeiende speler in geautomatiseerde logistieke systemen (WMS-software). Stack: .NET, C#, MS SQL en React, front-end en back-end door elkaar. Vast contract onbepaalde duur.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "C#",
+      "React",
+      "MS SQL"
+    ]
+  },
+  {
+    "titel": "Full Stack (.NET/Angular) Developer",
+    "bedrijf": "Clovr (client, softwarebedrijf datastromen & integraties)",
+    "locatie": "Regio Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://clovr.be/vacatures/full-stack-net-angular-developer/",
+    "beschrijving": "Full-stack rol bij softwarebedrijf gespecialiseerd in datastromen, integraties en digitale transformatie. Naast .NET (Core) backend-services ben je ook verantwoordelijk voor front-end applicaties in Angular/TypeScript. Vast contract.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      ".NET Core",
+      "Angular",
+      "TypeScript"
+    ]
+  },
+  {
+    "titel": "Frontend Developer",
+    "bedrijf": "Techmunity | AI Startup Recruitment",
+    "locatie": "Volledig remote (EU/EMEA)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4466325132/",
+    "beschrijving": "Fulltime remote frontend developer rol via recruitment-platform Techmunity voor AI-startups. Volledige functieomschrijving en tech-stack niet leesbaar op LinkedIn (inlogmuur) — borderline, titel en 'fulltime/op afstand' zijn wel bevestigd.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "frontend",
+      "remote",
+      "borderline"
+    ]
   }
 ]
