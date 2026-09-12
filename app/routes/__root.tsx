@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { createRootRoute, Outlet, useRouter } from "@tanstack/react-router";
 import { AppShell } from "~/components/layout/AppShell";
-import { LoginPage } from "~/components/LoginPage";
+import { LoginPage } from "~/components/login/LoginPage";
 import { useAuth } from "~/lib/useAuth";
 
 export const Route = createRootRoute({
@@ -20,7 +20,7 @@ function RootComponent() {
     // pre-login result in place.
     if (user && !wasAuthenticated.current) {
       wasAuthenticated.current = true;
-      router.invalidate();
+      void router.invalidate();
     }
     if (!user) {
       wasAuthenticated.current = false;

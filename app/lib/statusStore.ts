@@ -3,7 +3,6 @@ import {doc, updateDoc} from "firebase/firestore";
 import {db} from "~/lib/firebase";
 import {applicationStatusToFirestore, statusToFirestore} from "~/lib/firestoreMappers";
 
-const KEY = "vacature-statussen";
 const DATE_KEY = "vacature-sollicitaties";
 
 export async function updateApplication(

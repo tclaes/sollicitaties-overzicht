@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect } from "vite-plus/test";
 import { applicationFromFirestore, vacancyFromFirestore } from "./firestoreMappers";
 
 describe("vacancyFromFirestore", () => {
@@ -59,7 +59,7 @@ describe("vacancyFromFirestore", () => {
   });
 
   it("throws when the mapped document doesn't satisfy the schema", () => {
-    const { titel, ...withoutTitel } = rawVacancy;
+    const { titel: _titel, ...withoutTitel } = rawVacancy;
     expect(() => vacancyFromFirestore(withoutTitel)).toThrow();
   });
 });

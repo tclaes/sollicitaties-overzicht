@@ -25,26 +25,32 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Node.js installeren
-        uses: actions/setup-node@v4
+      - name: Vite+ installeren
+        uses: voidzero-dev/setup-vp@v1.20.0
         with:
-          node-version: "22"
-          cache: "npm"
+          node-version: "24"
+          cache: true
 
       - name: Dependencies installeren
-        run: npm ci
+        run: vp install
 
       - name: CSS-lint
-        run: npm run lint:css
+        run: vp exec npm run lint:css
+
+      - name: Type- & codecheck (Oxlint + tsgo)
+        run: vp check
+
+      - name: Boundary-lint (sheriff)
+        run: npm run lint:sheriff
 
       - name: Tests
-        run: npm test -- --run
+        run: vp test
 
       # Zelfde stap als in deploy.yml, zodat een PR faalt op precies wat ook de
       # deploy zou breken. De VITE_-waarden zijn buildtime-config; zonder deze
       # secrets bouwt Vite een app die naar een leeg Firebase-project wijst.
       - name: Build
-        run: npm run build
+        run: vp build
         env:
           VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
           VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
@@ -65,11 +71,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Node.js installeren
-        uses: actions/setup-node@v4
+      - name: Vite+ installeren
+        uses: voidzero-dev/setup-vp@v1.20.0
         with:
-          node-version: "22"
-          cache: "npm"
+          node-version: "24"
+          cache: true
 
       - name: Java installeren (voor de Firestore-emulator)
         uses: actions/setup-java@v4
@@ -78,10 +84,10 @@ jobs:
           java-version: "21"
 
       - name: Dependencies installeren
-        run: npm ci
+        run: vp install
 
       - name: Playwright browser installeren
-        run: npx playwright install --with-deps chromium
+        run: vp exec npx playwright install --with-deps chromium
 
       - name: E2E-tests
-        run: npm run test:e2e
+        run: vp run test:e2e

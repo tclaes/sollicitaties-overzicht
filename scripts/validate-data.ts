@@ -21,7 +21,7 @@ for (const file of files) {
         DailyOverviewSchema.parse(raw);
         console.log(`✅ ${file}`);
     } catch (err) {
-        console.error(`❌ ${file}: ${err instanceof Error ? err.message : err}`);
+        console.error(`❌ ${file}: ${err instanceof Error ? err.message : String(err)}`);
         errors++;
     }
 }

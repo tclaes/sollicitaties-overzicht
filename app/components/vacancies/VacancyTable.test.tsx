@@ -1,8 +1,8 @@
-import {beforeEach, describe, expect, it, vi} from "vitest";
-import {render, screen} from "@testing-library/react";
+import { beforeEach, describe, expect, it, vi } from "vite-plus/test";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import {VacancyTable} from "./VacancyTable";
-import type {Vacancy} from "~/lib/schemas";
+import { VacancyTable } from "./VacancyTable";
+import type { Vacancy } from "~/lib/schemas";
 
 const navigate = vi.fn();
 
@@ -41,7 +41,7 @@ describe("VacancyTable", () => {
   });
 
   it("shows an empty state when there are no vacancies", () => {
-    render(<VacancyTable vacancies={[]}/>);
+    render(<VacancyTable vacancies={[]} />);
     expect(screen.getByText("Geen vacatures gevonden.")).toBeInTheDocument();
   });
 
@@ -50,9 +50,14 @@ describe("VacancyTable", () => {
       <VacancyTable
         vacancies={[
           makeVacancy(),
-          makeVacancy({id: "v2", title: "Backend Developer", company: "Other BV", location: "Leuven"}),
+          makeVacancy({
+            id: "v2",
+            title: "Backend Developer",
+            company: "Other BV",
+            location: "Leuven",
+          }),
         ]}
-      />
+      />,
     );
 
     expect(screen.getByText("Frontend Developer")).toBeInTheDocument();
@@ -64,24 +69,33 @@ describe("VacancyTable", () => {
   });
 
   it("does not show an apply button when no onApply handler is given", () => {
-    render(<VacancyTable vacancies={[makeVacancy()]}/>);
-    expect(screen.queryByRole("button", {name: "Solliciteer"})).not.toBeInTheDocument();
+    render(<VacancyTable vacancies={[makeVacancy()]} />);
+    expect(screen.queryByRole("button", { name: "Solliciteer" })).not.toBeInTheDocument();
   });
 
   it("hides the apply button for a vacancy that already has an application", () => {
     const applicationById = new Map([
-      ["v1", {
-        id: "a1",
-        company: "Acme BV",
-        role: "Frontend Developer",
-        appliedOn: "2026-01-01",
-        status: "applied" as const
-      }],
+      [
+        "v1",
+        {
+          id: "a1",
+          company: "Acme BV",
+          role: "Frontend Developer",
+          appliedOn: "2026-01-01",
+          status: "applied" as const,
+        },
+      ],
     ]);
 
-    render(<VacancyTable vacancies={[makeVacancy()]} applicationById={applicationById} onApply={vi.fn()}/>);
+    render(
+      <VacancyTable
+        vacancies={[makeVacancy()]}
+        applicationById={applicationById}
+        onApply={vi.fn()}
+      />,
+    );
 
-    expect(screen.queryByRole("button", {name: "Solliciteer"})).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Solliciteer" })).not.toBeInTheDocument();
     expect(screen.getByText("gesolliciteerd")).toBeInTheDocument();
     expect(screen.getByText("2026-01-01")).toBeInTheDocument();
   });
@@ -90,9 +104,9 @@ describe("VacancyTable", () => {
     const user = userEvent.setup();
     const onApply = vi.fn().mockResolvedValue(undefined);
 
-    render(<VacancyTable vacancies={[makeVacancy()]} onApply={onApply}/>);
+    render(<VacancyTable vacancies={[makeVacancy()]} onApply={onApply} />);
 
-    await user.click(screen.getByRole("button", {name: "Solliciteer"}));
+    await user.click(screen.getByRole("button", { name: "Solliciteer" }));
     await user.click(screen.getByTitle("Bevestigen"));
 
     expect(onApply).toHaveBeenCalledWith({
@@ -104,12 +118,12 @@ describe("VacancyTable", () => {
   });
 
   it("toggles a vacancy's favorite state without navigating to its detail page", async () => {
-    const {toggleFavorite} = await import("~/lib/vacancies");
+    const { toggleFavorite } = await import("~/lib/vacancies");
     const user = userEvent.setup();
 
-    render(<VacancyTable vacancies={[makeVacancy()]}/>);
+    render(<VacancyTable vacancies={[makeVacancy()]} />);
 
-    await user.click(screen.getByRole("button", {name: "Markeer als favoriet"}));
+    await user.click(screen.getByRole("button", { name: "Markeer als favoriet" }));
 
     expect(toggleFavorite).toHaveBeenCalledWith("v1", true);
     expect(navigate).not.toHaveBeenCalled();

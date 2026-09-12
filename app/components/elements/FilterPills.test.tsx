@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect } from "vite-plus/test";
 import { render, screen } from "@testing-library/react";
 import { FilterPills } from "./FilterPills";
 
@@ -31,9 +31,6 @@ describe("FilterPills", () => {
     render(<FilterPills currentSearch={{ status: "viewed", sort: "date" }} basePath="/" />);
 
     const frontendLink = screen.getByRole("link", { name: "frontend" });
-    expect(frontendLink).toHaveAttribute(
-      "href",
-      "/?status=viewed&sort=date&function=frontend"
-    );
+    expect(frontendLink).toHaveAttribute("href", "/?status=viewed&sort=date&function=frontend");
   });
 });
