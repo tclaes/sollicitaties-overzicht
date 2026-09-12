@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from "vitest";
+import { describe, it, expect, beforeEach, vi } from "vite-plus/test";
 
 // getApplicationDate/setApplicationDate are pure localStorage helpers, but this
 // file transitively imports ~/lib/firebase (for the Firestore-backed functions

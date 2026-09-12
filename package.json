@@ -3,15 +3,17 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "preview": "vite preview",
-    "test": "vitest",
+    "dev": "vp dev",
+    "build": "vp build",
+    "preview": "vp preview",
+    "test": "vp test",
     "test:e2e": "firebase emulators:exec --project demo-test --only auth,firestore \"playwright test\"",
     "sync:firestore": "node scripts/sync-vacancies-to-firestore.mjs",
     "pdf:vacatures": "node scripts/generate-vacancy-pdf.mjs",
     "dedupe:firestore": "node scripts/dedupe-vacancies.mjs",
     "trigger:sync": "node scripts/trigger-firestore-sync.mjs",
+    "lint": "vp lint .",
+    "lint:sheriff": "sheriff verify",
     "lint:css": "stylelint \"app/**/*.css\""
   },
   "dependencies": {
@@ -25,6 +27,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
+    "@softarc/sheriff-core": "^0.19.6",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.7",
@@ -40,8 +43,11 @@
     "stylelint-order": "^8.1.1",
     "tsx": "^4.19.0",
     "typescript": "^5.8.0",
-    "vite": "^8.1.0",
+    "vite": "npm:@voidzero-dev/vite-plus-core@0.3.1",
     "vite-tsconfig-paths": "^6.1.1",
-    "vitest": "^4.1.9"
+    "vite-plus": "0.3.1"
+  },
+  "overrides": {
+    "vite": "npm:@voidzero-dev/vite-plus-core@0.3.1"
   }
 }

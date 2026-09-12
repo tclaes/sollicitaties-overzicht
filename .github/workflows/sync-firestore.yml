@@ -31,14 +31,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Node.js installeren
-        uses: actions/setup-node@v4
+      - name: Vite+ installeren
+        uses: voidzero-dev/setup-vp@v1.20.0
         with:
-          node-version: "22"
-          cache: "npm"
+          node-version: "24"
+          cache: true
 
       - name: Dependencies installeren
-        run: npm ci
+        run: vp install
 
       - name: Controleren of de input bestaat
         run: |
@@ -64,7 +64,7 @@ jobs:
       - name: Sync naar Firestore
         env:
           FIREBASE_SERVICE_ACCOUNT_PATH: ${{ runner.temp }}/firebase-service-account.json
-        run: npm run sync:firestore -- data/firestore-sync-input.json
+        run: vp run sync:firestore -- data/firestore-sync-input.json
 
       # Rapporteert duplicaten. Standaard dry-run: mag de sync zelf nooit doen falen.
       - name: Dedupe-check
@@ -74,9 +74,9 @@ jobs:
           FIREBASE_SERVICE_ACCOUNT_PATH: ${{ runner.temp }}/firebase-service-account.json
         run: |
           if [ "${{ inputs.dedupe_fix }}" = "true" ]; then
-            npm run dedupe:firestore -- --apply
+            vp run dedupe:firestore -- --apply
           else
-            npm run dedupe:firestore
+            vp run dedupe:firestore
           fi
 
       - name: Service-account opruimen

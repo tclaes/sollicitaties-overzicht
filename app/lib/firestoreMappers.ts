@@ -38,13 +38,6 @@ const SOURCE_FROM_FIRESTORE: Record<string, Source> = {
   linkedin: "linkedin",
   andere: "other",
 };
-const SOURCE_TO_FIRESTORE: Record<Source, string> = {
-  indeed: "indeed",
-  vdab: "vdab",
-  jobat: "jobat",
-  linkedin: "linkedin",
-  other: "andere",
-};
 
 const REGION_FROM_FIRESTORE: Record<string, Region> = {
   limburg: "limburg",

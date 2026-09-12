@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vite-plus/test";
 
 // vacancies.ts talks to the real firebase/firestore SDK against the `db`
 // exported by ~/lib/firebase. Mock both so these are pure unit tests of the
@@ -81,7 +81,7 @@ describe("getVacanciesDashboard", () => {
       snapshotOf([
         { id: "v1", data: rawVacancy },
         { id: "v2", data: { ...rawVacancy, id: "v2", isArchived: true } },
-      ])
+      ]),
     );
 
     const result = await getVacanciesDashboard();
@@ -96,7 +96,7 @@ describe("getVacancy", () => {
       snapshotOf([
         { id: "v1", data: rawVacancy },
         { id: "v2", data: { ...rawVacancy, id: "v2", titel: "Backend Developer" } },
-      ])
+      ]),
     );
 
     const result = await getVacancy("v2");
@@ -125,7 +125,7 @@ describe("getApplications", () => {
             status: "gesolliciteerd",
           },
         },
-      ])
+      ]),
     );
 
     const result = await getApplications();
@@ -168,14 +168,11 @@ describe("createApplication", () => {
         rol: "Frontend Developer",
         gesolliceerdOp: "2026-03-05",
         status: "gesolliciteerd",
-      }
+      },
     );
 
     expect(doc).toHaveBeenCalledWith({}, "vacatures", "v1");
-    expect(updateDoc).toHaveBeenCalledWith(
-      { __doc: "vacatures/v1" },
-      { status: "gesolliciteerd" }
-    );
+    expect(updateDoc).toHaveBeenCalledWith({ __doc: "vacatures/v1" }, { status: "gesolliciteerd" });
   });
 });
 
@@ -184,10 +181,7 @@ describe("updateApplication", () => {
     await updateApplication("a1", "interviewing");
 
     expect(doc).toHaveBeenCalledWith({}, "sollicitaties", "a1");
-    expect(updateDoc).toHaveBeenCalledWith(
-      { __doc: "sollicitaties/a1" },
-      { status: "in_gesprek" }
-    );
+    expect(updateDoc).toHaveBeenCalledWith({ __doc: "sollicitaties/a1" }, { status: "in_gesprek" });
   });
 });
 
@@ -240,7 +234,7 @@ describe("restoreVacancy", () => {
         status: "bekeken",
         archiefReden: "__DELETE_FIELD__",
         gearchiveerdOp: "__DELETE_FIELD__",
-      }
+      },
     );
   });
 });

@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect } from "vite-plus/test";
 import { ApplicationSchema, VacancySchema } from "./schemas";
 
 const validVacancy = {
@@ -29,12 +29,12 @@ describe("VacancySchema", () => {
   });
 
   it("defaults status to new when omitted", () => {
-    const { status, ...withoutStatus } = validVacancy;
+    const { status: _status, ...withoutStatus } = validVacancy;
     expect(VacancySchema.parse(withoutStatus).status).toBe("new");
   });
 
   it("defaults tags to an empty array when omitted", () => {
-    const { tags, ...withoutTags } = validVacancy;
+    const { tags: _tags, ...withoutTags } = validVacancy;
     expect(VacancySchema.parse(withoutTags).tags).toEqual([]);
   });
 
@@ -44,7 +44,7 @@ describe("VacancySchema", () => {
   });
 
   it("rejects a missing required field", () => {
-    const { title, ...withoutTitle } = validVacancy;
+    const { title: _title, ...withoutTitle } = validVacancy;
     expect(() => VacancySchema.parse(withoutTitle)).toThrow();
   });
 
@@ -63,7 +63,9 @@ describe("ApplicationSchema", () => {
   });
 
   it("rejects an appliedOn that isn't YYYY-MM-DD", () => {
-    expect(() => ApplicationSchema.parse({ ...validApplication, appliedOn: "05-03-2026" })).toThrow();
+    expect(() =>
+      ApplicationSchema.parse({ ...validApplication, appliedOn: "05-03-2026" }),
+    ).toThrow();
   });
 
   it("rejects an unknown status", () => {
