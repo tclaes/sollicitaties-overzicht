@@ -3,7 +3,8 @@ import {createApplication, getApplications, getVacanciesDashboard} from "~/lib/v
 import {VacancyTable} from "~/components/vacancies/VacancyTable";
 import {StatsCounter} from "~/components/elements/StatsCounter";
 import {FilterPills} from "~/components/elements/FilterPills";
-import {Application, DefaultSearchSchema} from "~/lib/schemas";
+import {Pagination} from "~/components/elements/Pagination";
+import {Application, DefaultSearchSchema, PAGE_SIZE} from "~/lib/schemas";
 import styles from "./index.module.css";
 
 export const Route = createFileRoute("/")({
@@ -47,6 +48,11 @@ function DashboardPage() {
     return (matchOrder[a.match?.score ?? "low"] ?? 3) - (matchOrder[b.match?.score ?? "low"] ?? 3);
   });
 
+  const totalItems = sorted.length;
+  const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
+  const currentPage = Math.min(search.page ?? 1, totalPages);
+  const pageItems = sorted.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+
   async function handleApply(data: {
     vacancyId: string;
     company: string;
@@ -68,9 +74,15 @@ function DashboardPage() {
           <StatsCounter vacancies={overview}/>
           <FilterPills currentSearch={search} basePath="/"/>
           <VacancyTable
-            vacancies={sorted}
+            vacancies={pageItems}
             applicationById={applicationById}
             onApply={handleApply}
+          />
+          <Pagination
+            totalItems={totalItems}
+            currentPage={currentPage}
+            basePath="/"
+            currentSearch={search}
           />
         </>
       ) : (

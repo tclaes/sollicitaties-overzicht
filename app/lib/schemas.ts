@@ -33,11 +33,14 @@ export const SOURCE_LABELS: Record<Source, string> = {
   other: "andere",
 };
 
+export const PAGE_SIZE = 25;
+
 export const DefaultSearchSchema = z.object({
   status: StatusSchema.optional(),
   source: SourceSchema.optional(),
   function: RoleSchema.optional(),
   sort: SortingSchema.default("match"),
+  page: z.coerce.number().int().min(1).default(1).catch(1),
 });
 
 export const RegionSchema = z.enum([
