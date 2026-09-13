@@ -1287,5 +1287,51 @@
       "remote",
       "borderline"
     ]
+  },
+  {
+    "titel": "Full Stack Developer (.NET/Angular)",
+    "bedrijf": "opdrachtgever via Kingfisher Recruitment",
+    "locatie": "Berchem (Antwerpen)",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74346631/full-stack-developer-net-angular",
+    "beschrijving": "Full-stack .NET/Angular rol, minstens 5 jaar ervaring, vast contract. Angular-frontend is een volwaardig onderdeel naast de .NET-backend.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "Angular"
+    ]
+  },
+  {
+    "titel": "Fullstack Node.js Developer",
+    "bedrijf": "opdrachtgever via LGA IT",
+    "locatie": "Leuven",
+    "regio": "vlaanderen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/73597458/fullstack-node-js-developer",
+    "beschrijving": "Node.js/TypeScript/React fullstack developer in event-driven microservices architectuur (AWS, Kafka, Docker/K8s), vast contract, 2 dagen thuiswerk.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      "Node.js",
+      "React",
+      "TypeScript",
+      "AWS",
+      "Kafka"
+    ]
+  },
+  {
+    "titel": "JS/VUE/PHP Webdeveloper",
+    "bedrijf": "Enablers bv",
+    "locatie": "Bilzen-Hoeselt",
+    "regio": "limburg",
+    "url": "https://www.stepstone.be/jobs--JS-VUE-PHP-Webdeveloper-BILZEN-HOESELT-Enablers-bv--2242308-inline.html",
+    "beschrijving": "Vue/JavaScript front-end developer (PHP-kennis is een plus, geen must) voor maatwerk webapplicaties, portfolio vereist.",
+    "bron": "andere",
+    "functie": "frontend",
+    "tags": [
+      "Vue",
+      "JavaScript",
+      "TypeScript"
+    ]
   }
 ]
