@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vite-plus/test";
-import { ApplicationSchema, VacancySchema } from "./schemas";
+import { ApplicationSchema, DefaultSearchSchema, VacancySchema } from "./schemas";
 
 const validVacancy = {
   id: "v1",
@@ -70,5 +70,23 @@ describe("ApplicationSchema", () => {
 
   it("rejects an unknown status", () => {
     expect(() => ApplicationSchema.parse({ ...validApplication, status: "onbekend" })).toThrow();
+  });
+});
+
+describe("DefaultSearchSchema", () => {
+  it("defaults page to 1 when omitted", () => {
+    expect(DefaultSearchSchema.parse({}).page).toBe(1);
+  });
+
+  it("accepts a numeric page", () => {
+    expect(DefaultSearchSchema.parse({ page: 3 }).page).toBe(3);
+  });
+
+  it("accepts a page coming from the URL as a string", () => {
+    expect(DefaultSearchSchema.parse({ page: "3" }).page).toBe(3);
+  });
+
+  it("falls back to 1 for an invalid page", () => {
+    expect(DefaultSearchSchema.parse({ page: "abc" }).page).toBe(1);
   });
 });

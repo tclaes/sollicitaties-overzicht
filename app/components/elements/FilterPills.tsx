@@ -1,4 +1,5 @@
 import {ROLE_LABELS, RoleSchema, SOURCE_LABELS, SourceSchema, StatusSchema} from "~/lib/schemas";
+import {buildSearchUrl} from "~/lib/searchParams";
 import styles from "./FilterPills.module.css";
 
 interface Props {
@@ -16,13 +17,7 @@ const statusLabels: Record<string, string> = {
 
 export function FilterPills({currentSearch, basePath = "/vacatures"}: Props) {
   function buildUrl(params: Record<string, string | undefined>) {
-    const merged = {...currentSearch, ...params};
-    const search = new URLSearchParams(
-      Object.fromEntries(
-        Object.entries(merged).filter(([, v]) => v !== undefined) as [string, string][]
-      )
-    );
-    return `${basePath}${search.size ? `?${search}` : ""}`;
+    return buildSearchUrl(basePath, currentSearch, {...params, page: undefined});
   }
 
   return (

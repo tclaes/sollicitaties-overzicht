@@ -3,7 +3,8 @@ import {getAllVacancies} from "~/lib/vacancies";
 import {VacancyTable} from "~/components/vacancies/VacancyTable";
 import {StatsCounter} from "~/components/elements/StatsCounter";
 import {FilterPills} from "~/components/elements/FilterPills";
-import {DefaultSearchSchema} from "~/lib/schemas";
+import {Pagination} from "~/components/elements/Pagination";
+import {DefaultSearchSchema, PAGE_SIZE} from "~/lib/schemas";
 import styles from "./index.module.css";
 
 
@@ -51,16 +52,34 @@ function VacanciesPage() {
       return ma - mb;
     });
 
+  const totalItems = filtered?.length ?? 0;
+  const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
+  const currentPage = Math.min(search.page ?? 1, totalPages);
+  const pageItems = filtered?.slice(
+    (currentPage - 1) * PAGE_SIZE,
+    currentPage * PAGE_SIZE
+  );
+  const pageStart = totalItems === 0 ? 0 : (currentPage - 1) * PAGE_SIZE + 1;
+  const pageEnd = Math.min(currentPage * PAGE_SIZE, totalItems);
+
   return (
     <div className={styles.page}>
       <header className={styles.header}>
         <h1 className={styles.title}>Alle vacatures</h1>
-        <span className={styles.counter}>{filtered?.length} vacatures</span>
+        <span className={styles.counter}>
+          {totalItems > 0 ? `${pageStart}–${pageEnd} van ${totalItems} vacatures` : "0 vacatures"}
+        </span>
       </header>
 
       <StatsCounter vacancies={vacancies}/>
       <FilterPills currentSearch={search}/>
-      <VacancyTable vacancies={filtered}/>
+      <VacancyTable vacancies={pageItems}/>
+      <Pagination
+        totalItems={totalItems}
+        currentPage={currentPage}
+        basePath="/vacatures"
+        currentSearch={search}
+      />
     </div>
   );
 }
