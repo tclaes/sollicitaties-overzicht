@@ -7,13 +7,13 @@
     "url": "https://recommand.eu/en/jobs/junior-software-engineer",
     "beschrijving": "Junior front-end/full-stack rol bij softwarebedrijf Recommand in Hasselt.",
     "bron": "andere",
+    "functie": "fullstack",
     "tags": [
       "JavaScript",
       "TypeScript",
       "React",
       "modern web-stack"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "Senior Software Engineer",
@@ -23,13 +23,13 @@
     "url": "https://recommand.eu/en/jobs/senior-software-engineer",
     "beschrijving": "Senior front-end/full-stack rol bij Recommand in Hasselt.",
     "bron": "andere",
+    "functie": "fullstack",
     "tags": [
       "JavaScript",
       "TypeScript",
       "React",
       "modern web-stack"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "Full Stack Developer",
@@ -39,11 +39,11 @@
     "url": "https://careers.outpost24.com/jobs/7206297-full-stack-developer",
     "beschrijving": "Full Stack Developer met Angular-frontend en Python-backend bij cybersecuritybedrijf Outpost24.",
     "bron": "andere",
+    "functie": "fullstack",
     "tags": [
       "Angular",
       "Python"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "Frontend Engineer",
@@ -53,12 +53,12 @@
     "url": "https://careers.twipemobile.com/o/frontend-engineer",
     "beschrijving": "Frontend Engineer bij medialeverancier Twipe, hybride werken vanuit Leuven (4+ jaar ervaring vereist).",
     "bron": "andere",
+    "functie": "frontend",
     "tags": [
       "React",
       "React Native",
       "TypeScript"
-    ],
-    "functie": "frontend"
+    ]
   },
   {
     "titel": "Senior/Medior Mobile Developer (React Native)",
@@ -81,14 +81,14 @@
     "url": "https://www.vdab.be/vindeenjob/vacatures/73959210",
     "beschrijving": "Senior fullstack-rol, min. 6 jaar ervaring, vast contract. Elektrische bedrijfswagen, maaltijd-/ecocheques, 20+9 verlofdagen, 1-2 thuiswerkdagen/week.",
     "bron": "vdab",
+    "functie": "fullstack",
     "tags": [
       "C#",
       ".NET 6/7",
       "Angular",
       "React",
       "Azure"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "Senior Full Stack Engineer (React/TypeScript)",
@@ -108,14 +108,14 @@
     "url": "https://www.devlab.career/careers/front-end-developer/",
     "beschrijving": "Front-end Developer bij DevLab.Career, een .NET-gerichte consultancy/talent-incubator. Vereiste skills: HTML, JavaScript, CSS, SASS, React/Angular/Vue, Service Workers/PWA's, Headless CMS.",
     "bron": "andere",
+    "functie": "frontend",
     "tags": [
       "frontend",
       "react",
       "angular",
       "vue",
       "consultancy"
-    ],
-    "functie": "frontend"
+    ]
   },
   {
     "titel": "Senior Front-end Developer",
@@ -125,13 +125,13 @@
     "url": "https://www.digifist.com/careers",
     "beschrijving": "Senior Front-end Developer bij e-commerce/Shopify-agency DigiFist, primair gericht op Shopify front-end development. Volledig remote/hybride mogelijk.",
     "bron": "andere",
+    "functie": "frontend",
     "tags": [
       "HTML5",
       "CSS",
       "JavaScript ES6",
       "Shopify/Liquid"
-    ],
-    "functie": "frontend"
+    ]
   },
   {
     "titel": "Fullstack PHP developer met AI ambitie",
@@ -141,14 +141,14 @@
     "url": "https://www.vdab.be/vindeenjob/vacatures/74213711/fullstack-php-developer-met-ai-ambitie",
     "beschrijving": "Klein, snelgroeiend digitaal bureau in Hasselt dat software op maat en AI-oplossingen bouwt voor Belgische kmo's. Fullstack rol met Laravel + moderne frontend (Vue/Nuxt) en AI-integraties.",
     "bron": "vdab",
+    "functie": "fullstack",
     "tags": [
       "Laravel",
       "Vue",
       "Nuxt",
       "AI/LLM-integraties",
       "WordPress (plus)"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "Full Stack Engineer (AI Platform / RBQM)",
@@ -158,12 +158,12 @@
     "url": "https://builtin.com/job/full-stack-engineer-ai-platform-rbqm/10260171",
     "beschrijving": "AI-platform (NXT) voor Risk-Based Quality Management in klinische studies. Angular-frontend met C#/.NET-backend, AWS/Kubernetes.",
     "bron": "andere",
+    "functie": "fullstack",
     "tags": [
       "Angular",
       "C#/.NET",
       "AWS"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "Angular developer SaaS-applicatie",
@@ -173,10 +173,10 @@
     "url": "https://kingfisher-recruitment.be/vacatures/it/development/front-end/angular-developer-saas-applicatie",
     "beschrijving": "SaaS-platform in de vrijetijdssector met internationaal succes en miljoenen eindgebruikers. Front-end developer rol met voorkeur Angular-ervaring.",
     "bron": "andere",
+    "functie": "frontend",
     "tags": [
       "Angular"
-    ],
-    "functie": "frontend"
+    ]
   },
   {
     "titel": "Lead Software Engineer (.NET/Angular)",
@@ -186,11 +186,11 @@
     "url": "https://kingfisher-recruitment.be/vacatures/it/development/lead-developer/lead-software-engineer-netangular",
     "beschrijving": "Lead-rol bij softwareontwikkelaar via Kingfisher Recruitment.",
     "bron": "andere",
+    "functie": "fullstack",
     "tags": [
       ".NET",
       "Angular"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": ".NET Angular Developer (in-house)",
@@ -200,11 +200,11 @@
     "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/net-angular-developer-in-house",
     "beschrijving": "In-house .NET/Angular ontwikkelaarsrol via Kingfisher Recruitment.",
     "bron": "andere",
+    "functie": "frontend",
     "tags": [
       ".NET",
       "Angular"
-    ],
-    "functie": "frontend"
+    ]
   },
   {
     "titel": "Node.js Developer | Veel flexibiliteit",
@@ -214,10 +214,10 @@
     "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/nodejs-developer-veel-flexibiliteit",
     "beschrijving": "Node.js developer-rol bij marktleidend platform via Kingfisher Recruitment.",
     "bron": "andere",
+    "functie": "fullstack",
     "tags": [
       "Node.js"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "React Developer | 3 dagen thuiswerk",
@@ -227,10 +227,10 @@
     "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/react-developer-3-dagen-thuiswerk",
     "beschrijving": "React developer-rol met 3 dagen thuiswerk via Kingfisher Recruitment.",
     "bron": "andere",
+    "functie": "frontend",
     "tags": [
       "React"
-    ],
-    "functie": "frontend"
+    ]
   },
   {
     "titel": "Full-Stack Developer | React/Node.js",
@@ -240,11 +240,11 @@
     "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/full-stack-developer-reactnodejs",
     "beschrijving": "Full-stack developer-rol via Kingfisher Recruitment.",
     "bron": "andere",
+    "functie": "fullstack",
     "tags": [
       "React",
       "Node.js"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "React developer (Tesla bedrijfswagen)",
@@ -254,10 +254,10 @@
     "url": "https://kingfisher-recruitment.be/vacatures/it/development/front-end/react-developer-tesla-bedrijfswagen",
     "beschrijving": "React developer-rol bij SaaS energiebeheer scale-up via Kingfisher Recruitment.",
     "bron": "andere",
+    "functie": "frontend",
     "tags": [
       "React"
-    ],
-    "functie": "frontend"
+    ]
   },
   {
     "titel": "Front-end Developer (Angular, React of Vue)",
@@ -267,12 +267,12 @@
     "url": "https://kingfisher-recruitment.be/vacatures/it/development/front-end/front-end-developer-angular-react-of-vue",
     "beschrijving": "Front-end developer-rol bij software-incubator via Kingfisher Recruitment.",
     "bron": "andere",
+    "functie": "frontend",
     "tags": [
       "Angular",
       "React",
       "Vue"
-    ],
-    "functie": "frontend"
+    ]
   },
   {
     "titel": "Full-stack developer",
@@ -282,10 +282,10 @@
     "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/full-stack-developer-1",
     "beschrijving": "Full-stack developer-rol bij workforce-management platform via Kingfisher Recruitment.",
     "bron": "andere",
+    "functie": "fullstack",
     "tags": [
       "Full-stack"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "Vue Developer",
@@ -295,10 +295,10 @@
     "url": "https://kingfisher-recruitment.be/vacatures/it/development/front-end/vue-developernbsp",
     "beschrijving": "Vue developer-rol bij recruitment-softwarebedrijf via Kingfisher Recruitment.",
     "bron": "andere",
+    "functie": "frontend",
     "tags": [
       "Vue"
-    ],
-    "functie": "frontend"
+    ]
   },
   {
     "titel": "Front-End Developer (Angular of React)",
@@ -308,11 +308,11 @@
     "url": "https://kingfisher-recruitment.be/vacatures/it/development/front-end/nl-18",
     "beschrijving": "Front-end developer-rol bij kleine consultancy via Kingfisher Recruitment.",
     "bron": "andere",
+    "functie": "frontend",
     "tags": [
       "Angular",
       "React"
-    ],
-    "functie": "frontend"
+    ]
   },
   {
     "titel": "Fullstack Node.js Developer",
@@ -322,10 +322,10 @@
     "url": "https://www.vdab.be/vindeenjob/vacatures/73597458",
     "beschrijving": "Fullstack Node.js developer-rol bij LGA IT in Leuven.",
     "bron": "vdab",
+    "functie": "fullstack",
     "tags": [
       "Node.js"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "Node/React developer",
@@ -345,11 +345,11 @@
     "url": "https://clovr.be/vacatures/full-stack-developer-python-vue-js/",
     "beschrijving": "Full Stack Developer met Python-backend en Vue.js-frontend bij Clovr.",
     "bron": "andere",
+    "functie": "fullstack",
     "tags": [
       "Python",
       "Vue.js"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "Full Stack Developer",
@@ -359,10 +359,10 @@
     "url": "https://digiti.be/en/jobs/job-openings/fullstack-developer",
     "beschrijving": "Full Stack Developer bij full-service digital agency Digiti.",
     "bron": "andere",
+    "functie": "fullstack",
     "tags": [
       "Full-stack"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "Solution Architect - Node.js, Vue & TypeScript",
@@ -386,11 +386,11 @@
     "url": "https://talent-it.be/nl/vacatures/senior-fullstack-developer-reactnodejs",
     "beschrijving": "Senior fullstack developer-rol bij Talent-IT.",
     "bron": "andere",
+    "functie": "fullstack",
     "tags": [
       "React",
       "Node.js"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "Software Developer – Sustainable Supply Chain & LCA Tools",
@@ -400,10 +400,10 @@
     "url": "https://www.qplox.com/jobs/software-developer-sustainable-supply-chain-lca-tools/",
     "beschrijving": "Software developer-rol bij Qplox Engineering, gericht op duurzame supply chain en LCA-tools.",
     "bron": "andere",
+    "functie": "fullstack",
     "tags": [
       "Full-stack"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "Full-Stack developer | React/C#",
@@ -413,11 +413,11 @@
     "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/full-stack-developer-reactc",
     "beschrijving": "Full-stack developer-rol bij start-up softwareonderneming via Kingfisher Recruitment.",
     "bron": "andere",
+    "functie": "fullstack",
     "tags": [
       "React",
       "C#"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "React developer | Veel flexibiliteit en groeimogelijkheden",
@@ -427,10 +427,10 @@
     "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/react-developer-veel-flexibiliteit-en-groeimogelijkheden",
     "beschrijving": "React developer-rol bij start-up softwareonderneming via Kingfisher Recruitment.",
     "bron": "andere",
+    "functie": "frontend",
     "tags": [
       "React"
-    ],
-    "functie": "frontend"
+    ]
   },
   {
     "titel": "Team Lead Full Stack Developer",
@@ -440,11 +440,11 @@
     "url": "https://kingfisher-recruitment.be/vacatures/it/development/lead-developer/team-lead-full-stack-developer",
     "beschrijving": "Team Lead Full Stack Developer-rol via Kingfisher Recruitment.",
     "bron": "andere",
+    "functie": "fullstack",
     "tags": [
       "Full-stack",
       "Lead"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "Software developer | React",
@@ -454,6 +454,7 @@
     "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/software-developer-react",
     "beschrijving": "Software developer-rol (React) bij start-up softwareonderneming via Kingfisher Recruitment.",
     "bron": "andere",
+    "functie": "frontend",
     "tags": [
       "React"
     ]
@@ -476,12 +477,12 @@
     "url": "https://www.linkedin.com/jobs/view/4449642430/",
     "beschrijving": "Frontend Developer-rol bij internationale staffingorganisatie, Vue.js 3/Composition API + TypeScript, focus op technische SEO en Core Web Vitals. Salaris €3.500-€5.000, bedrijfswagen, hybride werken vanuit Mechelen.",
     "bron": "linkedin",
+    "functie": "fullstack",
     "tags": [
       "Vue.js",
       "TypeScript",
       "SEO"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "Senior Frontend Engineer (Full-stack)",
@@ -511,13 +512,13 @@
     "url": "https://www.mindwalkai.com/company/careers/open-positions/frontend-developer",
     "beschrijving": "MindWalk is een biologics discovery bedrijf dat AI en data combineert voor antilichaam-ontwikkeling. Frontend rol voor het SaaS-portaal, gebouwd met React, TypeScript en JavaScript.",
     "bron": "indeed",
+    "functie": "frontend",
     "tags": [
       "React",
       "TypeScript",
       "JavaScript",
       "AWS"
-    ],
-    "functie": "frontend"
+    ]
   },
   {
     "titel": "REACT Javascript Developer",
@@ -527,13 +528,13 @@
     "url": "https://www.vdab.be/vindeenjob/vacatures/74400501/react-javascript-developer",
     "beschrijving": "HR organizer bouwt een webapplicatie voor online solliciteren en werkenbij-websites. Multidisciplinair team, ook open voor gemotiveerde starters.",
     "bron": "vdab",
+    "functie": "frontend",
     "tags": [
       "React",
       "VueJS",
       "Git",
       "Webpack"
-    ],
-    "functie": "frontend"
+    ]
   },
   {
     "titel": "Senior Software Engineer",
@@ -543,13 +544,13 @@
     "url": "https://www.linkedin.com/jobs/view/4449633467/",
     "beschrijving": "Auditstage bouwt agentic auditing software voor financiële auditors (audit ERP van de toekomst), gevestigd in Leuven. Senior Software Engineer bouwt end-to-end mee: React/TypeScript-frontend en typed Node-backend (tRPC/Hono), sterke nadruk op PostgreSQL-datamodellering.",
     "bron": "linkedin",
+    "functie": "fullstack",
     "tags": [
       "React",
       "TypeScript",
       "Node.js",
       "PostgreSQL"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "Angular front-end developer",
@@ -559,13 +560,13 @@
     "url": "https://www.imengine.be/vacature-Angular-front-end-web-developer",
     "beschrijving": "Front-end rol bij Imengine in Leuven: Angular of React, HTML5/CSS3/TypeScript, mobile development als pluspunt. Gevonden via WebSearch en gecheckt op de bedrijfspagina zelf. Contracttype staat niet expliciet op de pagina; bedrijfswagen, fietsvergoeding en 'kies zelf welke dagen je naar kantoor komt' wijzen op een vaste aanwerving.",
     "bron": "andere",
+    "functie": "frontend",
     "tags": [
       "Angular",
       "React",
       "TypeScript",
       "HTML5/CSS3"
-    ],
-    "functie": "frontend"
+    ]
   },
   {
     "titel": ".Net / Angular Ontwikkelaar",
@@ -575,12 +576,12 @@
     "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/net-angular-ontwikkelaar",
     "beschrijving": "Vast contract. BORDERLINE: de vacature vraagt 'een zeer sterke werkervaring in .Net en Angular' en full-stack verantwoordelijkheid inclusief het architecturale plaatje. Frontend is hier dus geen loutere pluspunt, maar het zwaartepunt ligt ook niet uitsluitend op frontend.",
     "bron": "andere",
+    "functie": "fullstack",
     "tags": [
       ".NET",
       "Angular",
       "full-stack"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "Full-stack Developer (.NET / Angular)",
@@ -590,13 +591,13 @@
     "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/full-stack-developer-net-angular",
     "beschrijving": "BORDERLINE: ontwikkeling 'over de full stack, van backend tot frontend' met 'goede ervaring met Angular', maar gevraagd wordt minimaal 5 jaar ervaring als Full-Stack .NET Developer, plus SQL, Docker/Kubernetes en Azure. Contracttype staat niet expliciet op de pagina.",
     "bron": "andere",
+    "functie": "fullstack",
     "tags": [
       ".NET",
       "Angular",
       "SQL",
       "Azure"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "Software Engineer",
@@ -631,13 +632,13 @@
     "url": "https://jobs.ashbyhq.com/conveo/87708aaa-34b0-4a5c-ad85-76ceed219b0d",
     "beschrijving": "AI-marktonderzoeksplatform (YC S24, $5,3M seed; klanten o.a. Unilever, Google, Orange) met AI-video-interviewers. Full-time rol, frontend in React/TypeScript met React Router v7 of Remix, backend Node.js/PostgreSQL, AWS/GCP en LLM-API's; gevraagd 6+ jaar full-stack ervaring, geen product managers dus direct klantcontact. Gegevens gelezen op de Y Combinator-jobpagina (ycombinator.com/companies/conveo/jobs/AcfXgkk-...), die server-rendered is; de Ashby-pagina zelf is JS-gerendeerd en toont vanuit de cloud geen inhoud. BORDERLINE op twee punten: de locatie staat als 'Antwerp / London' en het salaris wordt in pond opgegeven (GBP 100-140k), dus of Antwerpen de hoofdstandplaats is valt van hieruit niet hard te maken; en het is een full-stack- geen zuivere frontend-rol, al staat React/TypeScript wel vooraan. Opgedoken via englishjobs.be (frontend_developer, provincie Antwerpen) waar Conveo op 02-09 ook een 'Senior Product Engineer' in Antwerpen plaatste (Ashby, EUR 90-110k) waarvan de stack niet leesbaar was.",
     "bron": "andere",
+    "functie": "fullstack",
     "tags": [
       "React",
       "TypeScript",
       "Node.js",
       "PostgreSQL"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "Senior Product Engineer",
@@ -647,6 +648,7 @@
     "url": "https://www.ycombinator.com/companies/conveo/jobs/oRvcpht-senior-product-engineer-90-110k-benefits-equity",
     "beschrijving": "AI-marktonderzoeksplatform (YC S24) met AI-video-interviewers. Full-time, EUR 90.000-110.000 + benefits + equity, 3 dagen/week op kantoor in Antwerpen. De rol leidt uitdrukkelijk de frontend-architectuur: 'React is the core of what customers see and touch - you lead frontend architecture in React and TypeScript, set the quality bar for components, state management, and performance.' Daarnaast gevraagd: 6+ jaar full-stack ervaring met TypeScript en Node.js, API-ontwerp, PostgreSQL, background jobs/async workflows, AWS (S3, media pipelines) en LLM-API's; React Router v7 of Remix als plus. BORDERLINE: formeel een full-stack rol met een even zware backendcomponent, dus geen zuivere frontend-vacature - maar de frontend-leiding is expliciet en de standplaats Antwerpen en het euro-salaris staan hier wel hard vermeld, anders dan bij de andere Conveo-vacature (Antwerp / London, in pond). Gelezen op de server-rendered Y Combinator-jobpagina; de Ashby-pagina van Conveo is JS-gerendeerd en blijft vanuit de cloud onleesbaar, dus de Ashby-URL van deze specifieke vacature is niet bekend.",
     "bron": "andere",
+    "functie": "frontend",
     "tags": [
       "React",
       "TypeScript",
@@ -661,16 +663,16 @@
     "locatie": "Bilzen-Hoeselt",
     "regio": "limburg",
     "url": "https://www.vdab.be/vindeenjob/vacatures/74546895/js-vue-php-webdeveloper",
-    "bron": "vdab",
     "beschrijving": "Vaste voltijdse job bij ENABLERS (maatwerk-applicaties: webshops, CRM, workflow-automatisatie). Front-end zwaartepunt in Vue en JavaScript/TypeScript; kennis van PHP/MySQL is een pluspunt, geen must. Portfolio met minstens 1 Vue-applicatie vereist. Knelpuntberoep, contract onbepaalde duur.",
+    "bron": "vdab",
+    "functie": "fullstack",
     "tags": [
       "Vue",
       "JavaScript",
       "TypeScript",
       "PHP",
       "frontend"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "Angular Developer",
@@ -678,15 +680,15 @@
     "locatie": "Vlaanderen (hybride)",
     "regio": "vlaanderen",
     "url": "https://www.linkedin.com/jobs/view/4361611686/",
-    "bron": "linkedin",
     "beschrijving": "Angular-ontwikkelaarsrol bij consultancy Axxes, fulltime, hybride, regio Vlaanderen. Sluit aan bij Toms Angular-expertise. Borderline: consultancy/detachering, volledige functiebeschrijving was niet leesbaar op LinkedIn. Tom heeft hier al op gesolliciteerd.",
+    "bron": "linkedin",
+    "functie": "frontend",
     "tags": [
       "Angular",
       "TypeScript",
       "frontend",
       "consultancy"
-    ],
-    "functie": "frontend"
+    ]
   },
   {
     "titel": "Web Developer - Node.js & React",
@@ -694,16 +696,16 @@
     "locatie": "Antwerpen",
     "regio": "antwerpen",
     "url": "https://www.linkedin.com/jobs/view/4464483152/",
-    "bron": "linkedin",
     "beschrijving": "Webdeveloper-rol met Node.js en React bij Pauwels Consulting, Antwerpen, fulltime, op locatie. Frontend-component via React. Borderline: consultancy en volledige functiebeschrijving was niet leesbaar op LinkedIn.",
+    "bron": "linkedin",
+    "functie": "fullstack",
     "tags": [
       "React",
       "Node.js",
       "JavaScript",
       "frontend",
       "consultancy"
-    ],
-    "functie": "fullstack"
+    ]
   },
   {
     "titel": "Senior Software Engineer (Payflip Flex)",
@@ -1332,6 +1334,259 @@
       "Vue",
       "JavaScript",
       "TypeScript"
+    ]
+  },
+  {
+    "titel": "Full Stack Developer (.NET / Angular)",
+    "bedrijf": "onbekend (via Kingfisher Recruitment)",
+    "locatie": "Berchem (Antwerpen)",
+    "regio": "antwerpen",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/full-stack-developer-net-angular-2",
+    "beschrijving": "Full-stack .NET/Angular rol, vast contract.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "Angular"
+    ]
+  },
+  {
+    "titel": "Full Stack Developer (.NET / Angular)",
+    "bedrijf": "onbekend (via Kingfisher Recruitment)",
+    "locatie": "Antwerpen (Centrum)",
+    "regio": "antwerpen",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/full-stack-developer-net-angular-1",
+    "beschrijving": "Full-stack .NET/Angular rol, vast contract.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "Angular"
+    ]
+  },
+  {
+    "titel": "Lead Front-End Developer",
+    "bedrijf": "onbekend (via Clovr, Limburgs R&D-bedrijf)",
+    "locatie": "Hasselt - Stevoort",
+    "regio": "limburg",
+    "url": "https://clovr.be/vacatures/lead-front-end-developer/",
+    "beschrijving": "Senior/lead front-end rol, vast contract; Angular, TypeScript, RxJS.",
+    "bron": "andere",
+    "functie": "frontend",
+    "tags": [
+      "Angular",
+      "TypeScript",
+      "RxJS"
+    ]
+  },
+  {
+    "titel": "Lead Front-End Developer",
+    "bedrijf": "onbekend (via Clovr)",
+    "locatie": "Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://clovr.be/vacatures/lead-front-end-developer-2/",
+    "beschrijving": "Lead front-end rol, vast contract; design system/component library, Vue.js, TypeScript, TailwindCSS.",
+    "bron": "andere",
+    "functie": "frontend",
+    "tags": [
+      "Vue.js",
+      "TypeScript",
+      "TailwindCSS"
+    ]
+  },
+  {
+    "titel": "Software Engineer - QuietLoud",
+    "bedrijf": "AE Studio",
+    "locatie": "Heverlee (tot 60% telewerk)",
+    "regio": "vlaanderen",
+    "url": "https://jobs.lever.co/ae-2/7f669776-61f0-45e7-b78c-be5ea384e6fb",
+    "beschrijving": "Borderline: generalistische full-stack productrol, front-end (TypeScript/Vue.js/Angular) als pluspunt i.p.v. kernvereiste. Regio Leuven.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "TypeScript",
+      "Vue.js",
+      "Angular",
+      "Node.js"
+    ]
+  },
+  {
+    "titel": "Lead Front-End Developer Edegem",
+    "bedrijf": "CraftCode (via Cronos)",
+    "locatie": "Edegem",
+    "regio": "antwerpen",
+    "url": "https://www.codejobs.be/vacature/lead-front-end-developer-edegem-cronos-edegem-188059",
+    "beschrijving": "Consultancy-rol met vast contract; brede kennis Angular/React, JavaScript/HTML/CSS, technisch leiderschap.",
+    "bron": "andere",
+    "functie": "frontend",
+    "tags": [
+      "Angular",
+      "React",
+      "JavaScript",
+      "CSS"
+    ]
+  },
+  {
+    "titel": "Full Stack developer Edegem",
+    "bedrijf": "CraftCode (via Cronos)",
+    "locatie": "Edegem",
+    "regio": "antwerpen",
+    "url": "https://www.codejobs.be/vacature/full-stack-developer-edegem-cronos-edegem-187969",
+    "beschrijving": "Vast contract; Java/Spring backend + React/Vue/Angular front-end.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "Java",
+      "React",
+      "Vue",
+      "Angular"
+    ]
+  },
+  {
+    "titel": "Front-end Developer Edegem",
+    "bedrijf": "CraftCode (via Cronos)",
+    "locatie": "Edegem",
+    "regio": "antwerpen",
+    "url": "https://www.codejobs.be/vacature/front-end-developer-edegem-cronos-edegem-187993",
+    "beschrijving": "Consultancy-rol met vast contract; JavaScript, Angular en/of React, HTML/CSS.",
+    "bron": "andere",
+    "functie": "frontend",
+    "tags": [
+      "Angular",
+      "React",
+      "JavaScript"
+    ]
+  },
+  {
+    "titel": "Software Developer .NET & React",
+    "bedrijf": "onbekend (via VDAB/Kingfisher Recruitment)",
+    "locatie": "Mechelen",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74553859/software-developer-net-react",
+    "beschrijving": "Vaste job, React front-end + .NET backend.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      ".NET",
+      "C#"
+    ]
+  },
+  {
+    "titel": "Software developer | React",
+    "bedrijf": "onbekend (via VDAB/Kingfisher Recruitment, start-up)",
+    "locatie": "Meise",
+    "regio": "vlaanderen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/73732577/software-developer-react",
+    "beschrijving": "Vaste job, sterke focus op React frontend.",
+    "bron": "vdab",
+    "functie": "frontend",
+    "tags": [
+      "React",
+      "TypeScript"
+    ]
+  },
+  {
+    "titel": "Full-Stack developer | React/C#",
+    "bedrijf": "onbekend (via VDAB/Kingfisher Recruitment, start-up)",
+    "locatie": "Asse",
+    "regio": "vlaanderen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/73732583/full-stack-developer-react-c",
+    "beschrijving": "Vaste job, React-focus met groeipad naar fullstack.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      "C#"
+    ]
+  },
+  {
+    "titel": "HTML/CSS Front-end Developer",
+    "bedrijf": "HR organizer",
+    "locatie": "Tervuren",
+    "regio": "vlaanderen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74443093/html-css-front-end-developer",
+    "beschrijving": "Vaste job, front-end (HTML/CSS/JS) van e-recruitment webapp.",
+    "bron": "vdab",
+    "functie": "frontend",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
+  },
+  {
+    "titel": "Full Stack developer",
+    "bedrijf": "DevLab.Career",
+    "locatie": "Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://www.devlab.career/careers/full-stack-developer/",
+    "beschrijving": "Doorlopende vacature; .NET/C# + React/Angular/Vue. Borderline: consultant-rol bij klanten.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      "Angular",
+      "Vue",
+      ".NET"
+    ]
+  },
+  {
+    "titel": "Senior Frontend Engineer (Full-stack)",
+    "bedrijf": "Soda",
+    "locatie": "Nederland (op afstand)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4452491706/",
+    "beschrijving": "Leidt frontend van een TypeScript/Angular-app voor een Java-backend; frontend is de kern.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "Angular",
+      "TypeScript",
+      "Java"
+    ]
+  },
+  {
+    "titel": "Senior Frontend Engineer (Benelux)",
+    "bedrijf": "Lateral Group",
+    "locatie": "Maastricht/Benelux (op afstand)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4319477896/",
+    "beschrijving": "Senior frontend engineer, volledig remote binnen Benelux.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "Frontend",
+      "Remote"
+    ]
+  },
+  {
+    "titel": "JS/VUE/PHP Webdeveloper",
+    "bedrijf": "ENABLERS",
+    "locatie": "Bilzen-Hoeselt",
+    "regio": "limburg",
+    "url": "https://www.jobat.be/nl/jobs/js-vue-php-webdeveloper/job_6232209",
+    "beschrijving": "Vast contract; JS/Vue frontend met PHP-backend.",
+    "bron": "jobat",
+    "functie": "fullstack",
+    "tags": [
+      "JavaScript",
+      "Vue.js",
+      "PHP"
+    ]
+  },
+  {
+    "titel": ".NET Angular Developer (in-house)",
+    "bedrijf": "Kingfisher IT",
+    "locatie": "Herenthout",
+    "regio": "antwerpen",
+    "url": "https://www.jobat.be/nl/jobs/net-angular-developer-in-house/job_6262847",
+    "beschrijving": "In-house Angular+.NET rol in Kempen-regio.",
+    "bron": "jobat",
+    "functie": "fullstack",
+    "tags": [
+      "Angular",
+      ".NET"
     ]
   }
 ]
