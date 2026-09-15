@@ -1588,5 +1588,123 @@
       "Angular",
       ".NET"
     ]
+  },
+  {
+    "titel": "Medior Frontend Developer",
+    "bedrijf": "Dignify (Customer Collective)",
+    "locatie": "Genk (hybride/remote)",
+    "regio": "limburg",
+    "url": "https://be.indeed.com/viewjob?jk=e7da1b2854c197a9",
+    "beschrijving": "Front-end rol bij MarTech-bedrijf Dignify in Genk, vast contract. Kernstack JavaScript/HTML/CSS/SQL; Vue.js/React kennis is een plus, net als basiskennis PHP/Python/.NET. Borderline: marketing-automation tooling (Bloomreach, Salesforce, Selligent) i.p.v. een zuiver modern frontend-framework, maar frontend is wel de hoofdrol.",
+    "bron": "indeed",
+    "tags": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "SQL",
+      "Vue.js",
+      "React"
+    ],
+    "functie": "frontend"
+  },
+  {
+    "titel": "Full Stack Developer",
+    "bedrijf": "Collide (Bewire / Cronos Groep)",
+    "locatie": "Hasselt",
+    "regio": "limburg",
+    "url": "https://be.indeed.com/viewjob?jk=0aea4aeaa39e771c",
+    "beschrijving": "Full stack developer-rol bij consultancy Collide (onderdeel van Bewire/Cronos Groep) in Hasselt. HTML5/CSS3/JavaScript, Angular en/of React.js, met NodeJS, Java of C# als achterliggende kennis.",
+    "bron": "indeed",
+    "tags": [
+      "Angular",
+      "React",
+      "JavaScript",
+      "Node.js",
+      "HTML5",
+      "CSS3"
+    ],
+    "functie": "fullstack"
+  },
+  {
+    "titel": "Full Stack Developer – Automation & Robotics",
+    "bedrijf": "Galactus (klant: manufacturingbedrijf in Vlaams-Brabant)",
+    "locatie": "Vlaams-Brabant",
+    "regio": "vlaanderen",
+    "url": "https://be.indeed.com/viewjob?jk=e0d0e29cb0edd511",
+    "beschrijving": "Full stack rol via recruiter Galactus bij een internationaal manufacturingbedrijf in Vlaams-Brabant. TypeScript, React, Next.js, Node.js, NestJS, PostgreSQL, Azure; Python voor AI/data-integraties. Vast contract. Vermelde salarisrange (€60.000-€750.000) lijkt een fout in de bronvermelding.",
+    "bron": "indeed",
+    "tags": [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Node.js",
+      "NestJS",
+      "PostgreSQL",
+      "Azure"
+    ],
+    "functie": "fullstack"
+  },
+  {
+    "titel": "Frontend Engineer - Angular, JavaScript (Remote)",
+    "bedrijf": "Quik Hire Staffing",
+    "locatie": "Remote (EU)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4467438913/",
+    "beschrijving": "Volledig remote (EU) frontend-rol via staffingbureau Quik Hire Staffing, Angular/JavaScript, fulltime. Borderline: generieke staffing-vacature zonder genoemde eindklant.",
+    "bron": "linkedin",
+    "tags": [
+      "Angular",
+      "JavaScript",
+      "remote"
+    ],
+    "functie": "frontend"
+  },
+  {
+    "titel": "JavaScript Frontend Developer (Remote)",
+    "bedrijf": "Hire Feed",
+    "locatie": "Remote (EU)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4465206997/",
+    "beschrijving": "Volledig remote (EU) frontend-rol via staffingbureau Hire Feed, JavaScript, fulltime. Borderline: generieke staffing-vacature zonder genoemde eindklant.",
+    "bron": "linkedin",
+    "tags": [
+      "JavaScript",
+      "remote"
+    ],
+    "functie": "frontend"
+  },
+  {
+    "titel": "Full Stack Developer (f/m/d)",
+    "bedrijf": "TimeTac",
+    "locatie": "Remote of Graz, Oostenrijk",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4453415000/",
+    "beschrijving": "Volledig remote full-stack rol bij TimeTac (tijdsregistratiesoftware, Oostenrijk), fulltime. Backend- en frontendservices, API's en features. Borderline: exacte frontend-stack niet vermeld in de titel/korte omschrijving.",
+    "bron": "linkedin",
+    "tags": [
+      "fullstack",
+      "remote",
+      "API"
+    ],
+    "functie": "fullstack"
+  },
+  {
+    "titel": "Fullstack Node.js Developer",
+    "bedrijf": "LGA IT (klant, event-driven microservices)",
+    "locatie": "Leuven",
+    "regio": "vlaanderen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/73597458/fullstack-node-js-developer",
+    "beschrijving": "Fullstack rol via recruiter LGA IT in Leuven, vast contract onbepaalde duur. Backend Node.js/TypeScript/ExpressJS, frontend React, cloud-native op AWS (Lambda, EKS) met Docker/Kubernetes/Terraform, Kafka/MongoDB.",
+    "bron": "vdab",
+    "tags": [
+      "Node.js",
+      "TypeScript",
+      "Express",
+      "React",
+      "AWS",
+      "Docker",
+      "Kubernetes"
+    ],
+    "functie": "fullstack"
   }
 ]
