@@ -42,7 +42,9 @@ const REGIONS = ["limburg", "antwerpen", "brussel", "vlaanderen", "remote", "and
 const SOURCES = ["indeed", "vdab", "jobat", "linkedin", "andere"];
 const ROLES = ["frontend", "fullstack"];
 
-const [, , inputPath, serviceAccountArg] = process.argv;
+// vp run <script> -- <args> forwards the literal "--" as an argv entry (unlike npm,
+// which strips it), so filter it out before reading positional args.
+const [inputPath, serviceAccountArg] = process.argv.slice(2).filter((a) => a !== "--");
 if (!inputPath) {
   console.error("Gebruik: node sync-vacancies-to-firestore.mjs <input.json> [service-account.json]");
   process.exit(1);

@@ -39,7 +39,9 @@ const DEFAULT_SERVICE_ACCOUNT_PATH = join(__dirname, "..", "secrets", "firebase-
 
 const STATUS_PRIORITY = ["gesolliciteerd", "interview", "aanbod", "afgewezen", "niet_wervend", "nieuw"];
 
-const args = process.argv.slice(2);
+// vp run <script> -- <args> forwards the literal "--" as an argv entry (unlike npm,
+// which strips it), so filter it out before reading flags/positional args.
+const args = process.argv.slice(2).filter((a) => a !== "--");
 const apply = args.includes("--apply");
 const serviceAccountArg = args.find((a) => a !== "--apply");
 
