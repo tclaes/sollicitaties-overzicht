@@ -10,6 +10,10 @@
  *   url, beschrijving, bron (indeed|vdab|jobat|linkedin|andere),
  *   functie?: "frontend" | "fullstack",
  *   tags?: string[], match?: { score, toelichting }, id?: string,
+ *   extraBronnen?: { bron: string, url: string }[]  -> dezelfde vacature ook gezien op
+ *     andere bronnen. Maak GEEN apart item voor dezelfde vacature per bron: neem 1 item op
+ *     (primaire url/bron) en zet de overige bron+url-paren hier. Zo blijft er 1 Firestore-
+ *     document per echte vacature i.p.v. duplicaten (zie dedupe van 15-09-2026).
  *   verlopen?: boolean  -> true = verwijder dit document i.p.v. het bij te werken
  *   nietInteressant?: boolean  -> true = archiveer dit document (isArchived + status
  *     "niet-interessant"), optioneel met archiefReden. Overige velden mogen minimaal zijn.
@@ -169,6 +173,7 @@ for (const [i, v] of input.entries()) {
     ...(v.functie ? { functie: v.functie } : {}),
     tags: v.tags ?? [],
     ...(v.match ? { match: v.match } : {}),
+    ...(v.extraBronnen ? { extraBronnen: v.extraBronnen } : {}),
   };
 
   if (snap.exists) {

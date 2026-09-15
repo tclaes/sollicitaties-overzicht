@@ -671,7 +671,18 @@
       "JavaScript",
       "TypeScript",
       "PHP",
-      "frontend"
+      "frontend",
+      "Vue.js"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "jobat",
+        "url": "https://www.jobat.be/nl/jobs/js-vue-php-webdeveloper/job_6232209"
+      },
+      {
+        "bron": "andere",
+        "url": "https://www.stepstone.be/jobs--JS-VUE-PHP-Webdeveloper-BILZEN-HOESELT-Enablers-bv--2242308-inline.html"
+      }
     ]
   },
   {
@@ -1305,38 +1316,6 @@
     ]
   },
   {
-    "titel": "Fullstack Node.js Developer",
-    "bedrijf": "opdrachtgever via LGA IT",
-    "locatie": "Leuven",
-    "regio": "vlaanderen",
-    "url": "https://www.vdab.be/vindeenjob/vacatures/73597458/fullstack-node-js-developer",
-    "beschrijving": "Node.js/TypeScript/React fullstack developer in event-driven microservices architectuur (AWS, Kafka, Docker/K8s), vast contract, 2 dagen thuiswerk.",
-    "bron": "vdab",
-    "functie": "fullstack",
-    "tags": [
-      "Node.js",
-      "React",
-      "TypeScript",
-      "AWS",
-      "Kafka"
-    ]
-  },
-  {
-    "titel": "JS/VUE/PHP Webdeveloper",
-    "bedrijf": "Enablers bv",
-    "locatie": "Bilzen-Hoeselt",
-    "regio": "limburg",
-    "url": "https://www.stepstone.be/jobs--JS-VUE-PHP-Webdeveloper-BILZEN-HOESELT-Enablers-bv--2242308-inline.html",
-    "beschrijving": "Vue/JavaScript front-end developer (PHP-kennis is een plus, geen must) voor maatwerk webapplicaties, portfolio vereist.",
-    "bron": "andere",
-    "functie": "frontend",
-    "tags": [
-      "Vue",
-      "JavaScript",
-      "TypeScript"
-    ]
-  },
-  {
     "titel": "Full Stack Developer (.NET / Angular)",
     "bedrijf": "onbekend (via Kingfisher Recruitment)",
     "locatie": "Berchem (Antwerpen)",
@@ -1561,21 +1540,6 @@
     ]
   },
   {
-    "titel": "JS/VUE/PHP Webdeveloper",
-    "bedrijf": "ENABLERS",
-    "locatie": "Bilzen-Hoeselt",
-    "regio": "limburg",
-    "url": "https://www.jobat.be/nl/jobs/js-vue-php-webdeveloper/job_6232209",
-    "beschrijving": "Vast contract; JS/Vue frontend met PHP-backend.",
-    "bron": "jobat",
-    "functie": "fullstack",
-    "tags": [
-      "JavaScript",
-      "Vue.js",
-      "PHP"
-    ]
-  },
-  {
     "titel": ".NET Angular Developer (in-house)",
     "bedrijf": "Kingfisher IT",
     "locatie": "Herenthout",
@@ -1703,7 +1667,8 @@
       "React",
       "AWS",
       "Docker",
-      "Kubernetes"
+      "Kubernetes",
+      "Kafka"
     ],
     "functie": "fullstack"
   }
