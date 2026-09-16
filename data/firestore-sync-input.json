@@ -1671,5 +1671,117 @@
       "Kafka"
     ],
     "functie": "fullstack"
+  },
+  {
+    "titel": "Full Stack Developer (CraftCode)",
+    "bedrijf": "Cronos (klant: CraftCode)",
+    "locatie": "Edegem",
+    "regio": "antwerpen",
+    "url": "https://codejobs.be/vacature/full-stack-developer-edegem-cronos-edegem-187969",
+    "beschrijving": "Technisch ontwerp en ontwikkeling van applicaties, backend tot frontend, als consultant bij verschillende klanten binnen Cronos/CraftCode.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "JavaScript"
+    ]
+  },
+  {
+    "titel": "Front-end Developer (CraftCode)",
+    "bedrijf": "Cronos (klant: CraftCode)",
+    "locatie": "Edegem",
+    "regio": "antwerpen",
+    "url": "https://codejobs.be/vacature/front-end-developer-edegem-cronos-edegem-187993",
+    "beschrijving": "Front-end consultant die applicaties bouwt met oog voor design en user experience, ingezet bij diverse klanten van CraftCode/Cronos.",
+    "bron": "andere",
+    "functie": "frontend",
+    "tags": [
+      "JavaScript"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "andere",
+        "url": "https://it-jobs.be/vacature/front-end-developer-edegem-cronos-edegem-187993"
+      }
+    ]
+  },
+  {
+    "titel": "Lead Front-End Developer (CraftCode)",
+    "bedrijf": "Cronos (klant: CraftCode)",
+    "locatie": "Edegem",
+    "regio": "antwerpen",
+    "url": "https://codejobs.be/vacature/lead-front-end-developer-edegem-cronos-edegem-188059",
+    "beschrijving": "Front-end lead die het front-end verhaal binnen CraftCode verder uitbouwt en als consultant bij verschillende klanten wordt ingezet, met team-aansturing.",
+    "bron": "andere",
+    "functie": "frontend",
+    "tags": [
+      "JavaScript",
+      "lead"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "andere",
+        "url": "https://it-jobs.be/vacature/lead-front-end-developer-edegem-cronos-edegem-188059"
+      }
+    ]
+  },
+  {
+    "titel": "Senior Angular Front-End Engineer",
+    "bedrijf": "In The Pocket",
+    "locatie": "België (studio niet expliciet vermeld)",
+    "regio": "vlaanderen",
+    "url": "https://www.inthepocket.com/greenhouse-jobs/7842845---senior-full-stack-web-engineer",
+    "beschrijving": "Senior Angular front-end rol bij digital product studio In The Pocket, met affiniteit voor AI-integraties in schaalbare webapplicaties.",
+    "bron": "andere",
+    "functie": "frontend",
+    "tags": [
+      "Angular",
+      "AI"
+    ]
+  },
+  {
+    "titel": "Medior Frontend Developer",
+    "bedrijf": "Dignify (Customer Collective)",
+    "locatie": "Genk (Limburg, hybride)",
+    "regio": "limburg",
+    "url": "https://dignify.teamtailor.com/jobs/6191395-medior-frontend-developer",
+    "beschrijving": "Front-end developer voor marketing-automation platform, fulltime vast contract. JavaScript/HTML/CSS/SQL, kennis van Vue.js of React is een plus, plus tooling zoals Salesforce Marketing Cloud/Bloomreach.",
+    "bron": "andere",
+    "functie": "frontend",
+    "tags": [
+      "JavaScript",
+      "Vue",
+      "React",
+      "marketing-automation"
+    ]
+  },
+  {
+    "titel": "Frontend Engineer",
+    "bedrijf": "Rock.estate",
+    "locatie": "Brussel (hybride)",
+    "regio": "brussel",
+    "url": "https://www.linkedin.com/jobs/view/4464632344/",
+    "beschrijving": "Proptech-bedrijf (vastgoedwaardering via AI/geodata). Bouwt en onderhoudt complexe Vue-applicaties in TypeScript, min. 3 jaar ervaring met reactive JS-frameworks gevraagd. Fulltime.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "Vue",
+      "TypeScript",
+      "proptech"
+    ]
+  },
+  {
+    "titel": "Front-End Developer (Angular / TypeScript)",
+    "bedrijf": "craft it",
+    "locatie": "Elsene/Brussel (hybride)",
+    "regio": "brussel",
+    "url": "https://www.linkedin.com/jobs/view/4465014940/",
+    "beschrijving": "Bouwt software voor gereguleerde financiële instellingen (credit risk). Frontend-first rol in Angular/TypeScript, backend is C#/SQL (occasioneel bijdragen). Fulltime.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "Angular",
+      "TypeScript",
+      "fintech"
+    ]
   }
 ]
