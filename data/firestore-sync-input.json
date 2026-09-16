@@ -1020,19 +1020,6 @@
     ]
   },
   {
-    "titel": "Medior Frontend Developer",
-    "bedrijf": "Dignify",
-    "locatie": "Genk (hybride)",
-    "regio": "limburg",
-    "url": "https://www.linkedin.com/jobs/view/4464867494/",
-    "beschrijving": "Frontend developer rol bij Dignify in Genk. Volledige beschrijving zat achter LinkedIn-inlogmuur — tech-stack niet gekend, maar titel + locatie zijn een sterke match.",
-    "bron": "linkedin",
-    "functie": "frontend",
-    "tags": [
-      "frontend"
-    ]
-  },
-  {
     "titel": "Full Stack Developer",
     "bedrijf": "Collide (Bewire/Cronos-groep)",
     "locatie": "Hasselt",
@@ -1554,24 +1541,6 @@
     ]
   },
   {
-    "titel": "Medior Frontend Developer",
-    "bedrijf": "Dignify (Customer Collective)",
-    "locatie": "Genk (hybride/remote)",
-    "regio": "limburg",
-    "url": "https://be.indeed.com/viewjob?jk=e7da1b2854c197a9",
-    "beschrijving": "Front-end rol bij MarTech-bedrijf Dignify in Genk, vast contract. Kernstack JavaScript/HTML/CSS/SQL; Vue.js/React kennis is een plus, net als basiskennis PHP/Python/.NET. Borderline: marketing-automation tooling (Bloomreach, Salesforce, Selligent) i.p.v. een zuiver modern frontend-framework, maar frontend is wel de hoofdrol.",
-    "bron": "indeed",
-    "tags": [
-      "JavaScript",
-      "HTML",
-      "CSS",
-      "SQL",
-      "Vue.js",
-      "React"
-    ],
-    "functie": "frontend"
-  },
-  {
     "titel": "Full Stack Developer",
     "bedrijf": "Collide (Bewire / Cronos Groep)",
     "locatie": "Hasselt",
@@ -1739,22 +1708,6 @@
     ]
   },
   {
-    "titel": "Medior Frontend Developer",
-    "bedrijf": "Dignify (Customer Collective)",
-    "locatie": "Genk (Limburg, hybride)",
-    "regio": "limburg",
-    "url": "https://dignify.teamtailor.com/jobs/6191395-medior-frontend-developer",
-    "beschrijving": "Front-end developer voor marketing-automation platform, fulltime vast contract. JavaScript/HTML/CSS/SQL, kennis van Vue.js of React is een plus, plus tooling zoals Salesforce Marketing Cloud/Bloomreach.",
-    "bron": "andere",
-    "functie": "frontend",
-    "tags": [
-      "JavaScript",
-      "Vue",
-      "React",
-      "marketing-automation"
-    ]
-  },
-  {
     "titel": "Frontend Engineer",
     "bedrijf": "Rock.estate",
     "locatie": "Brussel (hybride)",
@@ -1782,6 +1735,35 @@
       "Angular",
       "TypeScript",
       "fintech"
+    ]
+  },
+  {
+    "titel": "Medior Frontend Developer",
+    "bedrijf": "Dignify (Customer Collective)",
+    "locatie": "Genk (Limburg, hybride)",
+    "regio": "limburg",
+    "url": "https://dignify.teamtailor.com/jobs/6191395-medior-frontend-developer",
+    "beschrijving": "Front-end rol bij MarTech-bedrijf Dignify in Genk, vast contract. Kernstack JavaScript/HTML/CSS/SQL; Vue.js/React kennis is een plus, net als basiskennis PHP/Python/.NET. Borderline: marketing-automation tooling (Bloomreach, Salesforce, Selligent) i.p.v. een zuiver modern frontend-framework, maar frontend is wel de hoofdrol.",
+    "bron": "andere",
+    "functie": "frontend",
+    "tags": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "SQL",
+      "Vue.js",
+      "React",
+      "marketing-automation"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "indeed",
+        "url": "https://be.indeed.com/viewjob?jk=e7da1b2854c197a9"
+      },
+      {
+        "bron": "linkedin",
+        "url": "https://www.linkedin.com/jobs/view/4464867494/"
+      }
     ]
   }
 ]
