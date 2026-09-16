@@ -81,6 +81,7 @@ function VacancyDetailPage() {
           id={vacancy.id}
           isArchived={vacancy.isArchived ?? false}
           reason={vacancy.archiveReason}
+          status={vacancy.status}
         />
 
         {(vacancy.url && !vacancy.isArchived) && (

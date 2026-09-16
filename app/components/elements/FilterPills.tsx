@@ -13,6 +13,7 @@ const statusLabels: Record<string, string> = {
   applied: "Gesolliciteerd",
   rejected: "Afgewezen",
   "not-interesting": "Niet interessant",
+  "not-hired": "Niet aangeworven",
 };
 
 export function FilterPills({currentSearch, basePath = "/vacatures"}: Props) {

@@ -23,11 +23,12 @@ function VacanciesPage() {
 
   const matchOrder: Record<string, number> = {strong: 0, good: 1, moderate: 2, low: 3};
 
-  const showArchive = search.status === "not-interesting";
+  const showArchive = search.status === "not-interesting" || search.status === "not-hired";
 
   const filtered = vacancies?.filter((v) => {
     if (showArchive) {
       if (!v.isArchived) return false;
+      if (v.status !== search.status) return false;
     } else {
       if (v.isArchived) return false;
       if (search.status && v.status !== search.status) return false;

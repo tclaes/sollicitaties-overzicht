@@ -33,6 +33,11 @@ export function StatsCounter({ vacancies }: { vacancies: Vacancy[] }) {
         <span className={styles.count}>{counts["not-interesting"] ?? 0}</span>
         <span className={styles.label}>Niet interessant</span>
       </div>
+      <div className={styles.item}>
+        <span className={styles.dot} />
+        <span className={styles.count}>{counts["not-hired"] ?? 0}</span>
+        <span className={styles.label}>Niet aangeworven</span>
+      </div>
     </div>
   );
 }

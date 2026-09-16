@@ -48,3 +48,9 @@
   color: var(--color-status-ni-text);
 }
 .nietinteressant::before { background: var(--color-status-ni-dot); }
+
+.nietaangeworven {
+  background: var(--color-status-na-bg);
+  color: var(--color-status-na-text);
+}
+.nietaangeworven::before { background: var(--color-status-na-dot); }

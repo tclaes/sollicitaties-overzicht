@@ -207,6 +207,17 @@ describe("markNotInteresting", () => {
     });
     expect(fields.gearchiveerdOp).toMatch(/^\d{4}-\d{2}-\d{2}T/);
   });
+
+  it("archives an applied vacancy as not-hired instead of not-interesting", async () => {
+    await markNotInteresting("v1", "Toch niet aangenomen", "applied");
+
+    const [, fields] = updateDoc.mock.calls[0];
+    expect(fields).toMatchObject({
+      isArchived: true,
+      status: "niet-aangeworven",
+      archiefReden: "Toch niet aangenomen",
+    });
+  });
 });
 
 describe("toggleFavorite", () => {
@@ -235,6 +246,15 @@ describe("restoreVacancy", () => {
         archiefReden: "__DELETE_FIELD__",
         gearchiveerdOp: "__DELETE_FIELD__",
       },
+    );
+  });
+
+  it("resets status to applied when restoring a not-hired vacancy", async () => {
+    await restoreVacancy("v1", true);
+
+    expect(updateDoc).toHaveBeenCalledWith(
+      { __doc: "vacatures/v1" },
+      expect.objectContaining({ status: "gesolliciteerd" }),
     );
   });
 });

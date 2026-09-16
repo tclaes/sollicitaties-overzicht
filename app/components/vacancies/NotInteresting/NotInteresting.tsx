@@ -1,9 +1,12 @@
 import {useState} from "react";
 import {restoreVacancy, markNotInteresting} from "~/lib/vacancies";
 import {useCanGoBack, useNavigate, useRouter} from "@tanstack/react-router";
+import type {Status} from "~/lib/schemas";
 import styles from "./NotInteresting.module.css"
 
-export function NotInteresting({id, isArchived, reason}: { id: string; isArchived: boolean; reason?: string }) {
+export function NotInteresting(
+  {id, isArchived, reason, status}: { id: string; isArchived: boolean; reason?: string; status?: Status },
+) {
   const router = useRouter();
   const navigate = useNavigate();
   const canGoBack = useCanGoBack();
@@ -15,7 +18,7 @@ export function NotInteresting({id, isArchived, reason}: { id: string; isArchive
     e.preventDefault();
     setBusy(true);
     try {
-      await markNotInteresting(id, text.trim() || "Niet interessant voor mij");
+      await markNotInteresting(id, text.trim() || "Niet interessant voor mij", status);
       await router.invalidate();
       if (canGoBack) {
         router.history.back();
@@ -30,7 +33,7 @@ export function NotInteresting({id, isArchived, reason}: { id: string; isArchive
   async function repair() {
     setBusy(true);
     try {
-      await restoreVacancy(id);
+      await restoreVacancy(id, status === "not-hired");
       await router.invalidate();
     } finally {
       setBusy(false);
@@ -38,9 +41,10 @@ export function NotInteresting({id, isArchived, reason}: { id: string; isArchive
   }
 
   if (isArchived) {
+    const title = status === "not-hired" ? "Gearchiveerd — niet aangeworven" : "Gearchiveerd — niet interessant";
     return (
       <section className={styles.archive}>
-        <h2 className={styles.sectionTitle}>Gearchiveerd — niet interessant</h2>
+        <h2 className={styles.sectionTitle}>{title}</h2>
         <p className={styles.archiveReason}>{reason || "Niet interessant voor mij"}</p>
         <button type="button" className={styles.repairBtn} onClick={repair} disabled={busy}>
           Terugzetten
