@@ -28,7 +28,7 @@ function VacanciesPage() {
   const filtered = vacancies?.filter((v) => {
     if (showArchive) {
       if (!v.isArchived) return false;
-      if (v.status !== search.status) return false;
+      if (search.status === "not-hired" && v.status !== "not-hired") return false;
     } else {
       if (v.isArchived) return false;
       if (search.status && v.status !== search.status) return false;
