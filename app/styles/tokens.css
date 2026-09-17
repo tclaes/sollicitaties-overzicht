@@ -38,6 +38,10 @@
   --color-status-ni-bg:                 #f9fafb;
   --color-status-ni-text:               #6b7280;
 
+  --color-status-na-dot:                #f59e0b;
+  --color-status-na-bg:                 #fffbeb;
+  --color-status-na-text:               #92400e;
+
   /* ── Bron ────────────────────────────────────────────────────── */
   --color-source-indeed-bg:   #eef2fb;
   --color-source-indeed-text: #1a4a9e;

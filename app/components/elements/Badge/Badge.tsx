@@ -7,6 +7,7 @@ const labels: Record<Status, string> = {
     applied: "Gesolliciteerd",
     rejected: "Afgewezen",
     "not-interesting": "Niet interessant",
+    "not-hired": "Niet aangeworven",
 };
 
 const cssClass: Record<Status, string> = {
@@ -15,6 +16,7 @@ const cssClass: Record<Status, string> = {
     applied: "gesolliciteerd",
     rejected: "afgewezen",
     "not-interesting": "nietinteressant",
+    "not-hired": "nietaangeworven",
 };
 
 export function Badge({status}: { status: Status }) {

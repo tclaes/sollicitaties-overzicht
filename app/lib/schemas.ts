@@ -16,6 +16,7 @@ export const StatusSchema = z.enum([
   "applied",
   "rejected",
   "not-interesting",
+  "not-hired",
 ]);
 
 export const RoleSchema = z.enum(["frontend", "fullstack"]);

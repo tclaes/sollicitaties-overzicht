@@ -1,6 +1,6 @@
 import {collection, deleteField, doc, getDocs, setDoc, updateDoc,} from "firebase/firestore";
 import {db} from "./firebase";
-import {Application, ApplicationStatus, Vacancy,} from "./schemas";
+import {Application, ApplicationStatus, Status, Vacancy,} from "./schemas";
 import {
   applicationFromFirestore,
   applicationStatusToFirestore,
@@ -75,19 +75,21 @@ export async function archiveVacancy(
 export async function markNotInteresting(
   id: string,
   reason: string,
+  currentStatus?: Status,
 ): Promise<void> {
+  const targetStatus: Status = currentStatus === "applied" ? "not-hired" : "not-interesting";
   await updateDoc(doc(db, "vacatures", id), {
     isArchived: true,
-    status: statusToFirestore("not-interesting"),
+    status: statusToFirestore(targetStatus),
     archiefReden: reason,
     gearchiveerdOp: new Date().toISOString(),
   });
 }
 
-export async function restoreVacancy(id: string): Promise<void> {
+export async function restoreVacancy(id: string, wasNotHired?: boolean): Promise<void> {
   await updateDoc(doc(db, "vacatures", id), {
     isArchived: false,
-    status: statusToFirestore("viewed"),
+    status: statusToFirestore(wasNotHired ? "applied" : "viewed"),
     archiefReden: deleteField(),
     gearchiveerdOp: deleteField(),
   });

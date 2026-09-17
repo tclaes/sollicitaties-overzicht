@@ -22,6 +22,7 @@ const STATUS_FROM_FIRESTORE: Record<string, Status> = {
   gesolliciteerd: "applied",
   afgewezen: "rejected",
   "niet-interessant": "not-interesting",
+  "niet-aangeworven": "not-hired",
 };
 const STATUS_TO_FIRESTORE: Record<Status, string> = {
   new: "nieuw",
@@ -29,6 +30,7 @@ const STATUS_TO_FIRESTORE: Record<Status, string> = {
   applied: "gesolliciteerd",
   rejected: "afgewezen",
   "not-interesting": "niet-interessant",
+  "not-hired": "niet-aangeworven",
 };
 
 const SOURCE_FROM_FIRESTORE: Record<string, Source> = {
