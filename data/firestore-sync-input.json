@@ -1765,5 +1765,341 @@
         "url": "https://www.linkedin.com/jobs/view/4464867494/"
       }
     ]
+  },
+  {
+    "titel": "Full Stack (Java/Angular) Developer – interne positie",
+    "bedrijf": "onbekend (via Clovr, familiale softwareonderneming, Antwerpen)",
+    "locatie": "Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://clovr.be/vacatures/full-stack-java-angular-developer-intern",
+    "beschrijving": "Vast contract, interne positie bij familiaal softwarebedrijf. Angular, React en/of React Native aan front-end, Java/Spring Boot/NodeJS aan back-end.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "Java",
+      "Angular",
+      "React",
+      "Spring Boot",
+      "NodeJS"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "clovr",
+        "url": "https://clovr.be/vacatures/full-stack-java-developer"
+      }
+    ]
+  },
+  {
+    "titel": "Ervaren Full Stack .NET Developer",
+    "bedrijf": "onbekend (via Clovr, klant Kontich)",
+    "locatie": "Kontich",
+    "regio": "antwerpen",
+    "url": "https://clovr.be/vacatures/ervaren-full-stack-net-developer",
+    "beschrijving": "Badge toont 'Freelance' maar tekst vermeldt expliciet 'Vast contract van onbepaalde duur' (vermoedelijk foutief label op site). C#/.NET 8+/ASP.NET Core met Angular, TypeScript en RxJS.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "Angular",
+      "TypeScript",
+      "RxJS"
+    ]
+  },
+  {
+    "titel": "Full Stack .NET Development Lead",
+    "bedrijf": "onbekend (via Clovr, adviesorganisatie Antwerpen)",
+    "locatie": "Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://clovr.be/vacatures/full-stack-net-development-lead",
+    "beschrijving": "Vast contract. Lead-rol, ruime ervaring front-end en back-end — Vue.js en .NET Core/SQLServer/Azure.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "Vue.js",
+      "Azure"
+    ]
+  },
+  {
+    "titel": "Senior Full Stack .NET Developer",
+    "bedrijf": "onbekend (via Clovr, softwarebedrijf voor apothekers/patiënten)",
+    "locatie": "Mechelen",
+    "regio": "antwerpen",
+    "url": "https://clovr.be/vacatures/senior-full-stack-net-developer-copy",
+    "beschrijving": "Vast contract. .NET, Angular en AWS. Duplicaat voor locatie Beveren op andere URL.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "Angular",
+      "AWS"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "clovr",
+        "url": "https://clovr.be/vacatures/senior-full-stack-net-developer"
+      }
+    ]
+  },
+  {
+    "titel": "Full Stack .NET Developer – 50% thuiswerk",
+    "bedrijf": "onbekend (via Clovr, internationale HR-speler, Antwerpen)",
+    "locatie": "Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://clovr.be/vacatures/full-stack-developer",
+    "beschrijving": "Borderline: vast contract, ASP.NET Core + Umbraco CMS, focus op front-end maar geen expliciete React/Angular/Vue genoemd.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "Umbraco",
+      "JavaScript"
+    ]
+  },
+  {
+    "titel": ".NET Tech Lead",
+    "bedrijf": "onbekend (via Kingfisher Recruitment, logistieke multinational)",
+    "locatie": "Antwerpen (Centrum)",
+    "regio": "antwerpen",
+    "url": "https://kingfisher-recruitment.be/vacatures/it/development/lead-developer/net-tech-lead",
+    "beschrijving": "Borderline: 'Sterke kennis van C# en Front-end technologieën' plus affiniteit met Blazor (geen React/Angular/Vue genoemd).",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "C#",
+      ".NET",
+      "Blazor",
+      "Tech Lead"
+    ]
+  },
+  {
+    "titel": "Full-Stack .Net Developer",
+    "bedrijf": "Kwery (klant, familiale KMO)",
+    "locatie": "Wilrijk",
+    "regio": "antwerpen",
+    "url": "https://www.kwery.be/jobs/38983-full-stack-net-developer",
+    "beschrijving": ".NET/ASP.NET Core/C# full-stack, Angular is een plus, Azure. Min. 4 jaar ervaring, vast contract, 1 dag thuiswerk.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "ASP.NET Core",
+      "C#",
+      "Angular",
+      "Azure"
+    ]
+  },
+  {
+    "titel": "Full-Stack .Net Developer",
+    "bedrijf": "Kwery (klant, vooruitstrevend softwarebedrijf)",
+    "locatie": "Mechelen",
+    "regio": "antwerpen",
+    "url": "https://www.kwery.be/jobs/37776-full-stack-net-developer",
+    "beschrijving": "Intern full-stack .NET team, .NET Core/C#/Microservices/Web API/Angular. Min. 4 jaar ervaring, vast contract.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      ".NET Core",
+      "C#",
+      "Angular",
+      "Microservices"
+    ]
+  },
+  {
+    "titel": "Full-Stack .Net Developer",
+    "bedrijf": "Kwery (klant, familiale KMO)",
+    "locatie": "Kontich",
+    "regio": "antwerpen",
+    "url": "https://www.kwery.be/jobs/37388-full-stack-net-developer",
+    "beschrijving": ".NET/ASP.NET Core/C#, Angular en TypeScript vereist, Azure. Min. 5 jaar ervaring, vast contract.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "Angular",
+      "TypeScript",
+      "Azure"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74328876/full-stack-net-developer"
+      }
+    ]
+  },
+  {
+    "titel": "Web Developer .NET",
+    "bedrijf": "POSGARD",
+    "locatie": "Kontich",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/73327363/web-developer-net",
+    "beschrijving": "Voornamelijk frontend .NET, Azure, online & desktop food/horeca-applicaties. Min. 5 jaar ervaring, vast contract.",
+    "bron": "vdab",
+    "functie": "frontend",
+    "tags": [
+      ".NET",
+      "Azure",
+      "frontend"
+    ]
+  },
+  {
+    "titel": "Fullstack .NET Developer",
+    "bedrijf": "Madison Recruitment (klant, Europese marktleider)",
+    "locatie": "Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74313453/fullstack-net-developer",
+    "beschrijving": ".NET 8+/ASP.NET Core/C#, Angular/TypeScript/RxJS, MySQL, Kubernetes/Docker/Azure DevOps. Min. 4 jaar ervaring, vast contract.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "Angular",
+      "TypeScript",
+      "Azure"
+    ]
+  },
+  {
+    "titel": "Fullstack .NET developer",
+    "bedrijf": "LGA IT",
+    "locatie": "Kontich",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74278728/fullstack-net-developer",
+    "beschrijving": "Nieuwe functionaliteiten doorheen hele softwareomgeving, integraties, Kubernetes cloud. Vast contract.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "Kubernetes"
+    ]
+  },
+  {
+    "titel": "IT-Planet - Fullstack Developer (Java/Angular)",
+    "bedrijf": "IT-Planet",
+    "locatie": "Vlaanderen (exacte locatie niet vermeld)",
+    "regio": "vlaanderen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74412790/it-planet-fullstack-developer",
+    "beschrijving": "Java/Spring + Angular/TypeScript, MicroService-architectuur, GitHub Actions, agile. Min. 2 jaar ervaring, vast contract.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      "Java",
+      "Spring",
+      "Angular",
+      "TypeScript"
+    ]
+  },
+  {
+    "titel": "Software engineer for high-performance time series data systems",
+    "bedrijf": "Marple",
+    "locatie": "Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://techjobs.be/nl/ict-jobs/11457-software-engineer-for-high-performance-time-series-data-systems",
+    "beschrijving": "Full-stack rol (Python, React, PostgreSQL, Docker); backend-zwaartepunt (Python) maar React expliciet vermeld als stack.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "Python",
+      "React",
+      "PostgreSQL",
+      "Docker"
+    ]
+  },
+  {
+    "titel": "Software Engineer (TypeScript)",
+    "bedrijf": "Craftzing",
+    "locatie": "Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://www.craftzing.com/our-people/careers/software-engineer-1146549",
+    "beschrijving": "Full-stack TypeScript-rol, consultancybureau met vaste klanten (Vlaamse overheid, itsme, BNP, Proximus), React/Vue/Angular gevraagd.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "TypeScript",
+      "React",
+      "Vue",
+      "Angular",
+      "API"
+    ]
+  },
+  {
+    "titel": "Lead Full-Stack Developer / Tech Lead (React Native & Node.js)",
+    "bedrijf": "TripSalama",
+    "locatie": "Brussel (onsite of remote)",
+    "regio": "remote",
+    "url": "https://wellfound.com/jobs/4281938-lead-full-stack-developer-tech-lead-react-native-node-js",
+    "beschrijving": "Vergoeding ongewoon laag voor lead-rol ($12k-13k) met 3-5% equity — vroege-startup-comp, te verifiëren vóór sollicitatie.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "React Native",
+      "Node.js"
+    ]
+  },
+  {
+    "titel": "Full-Stack Web Developer & UI/UX Designer",
+    "bedrijf": "VECTRA International",
+    "locatie": "Remote (Everywhere)",
+    "regio": "remote",
+    "url": "https://wellfound.com/jobs/4717818-full-stack-web-developer-ui-ux-designer",
+    "beschrijving": "Volledig remote full-stack + UI/UX rol, 4 jaar ervaring, weinig details over techstack.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "UI/UX"
+    ]
+  },
+  {
+    "titel": "Technical Lead and Architect, Blockchain Full Stack Engineer",
+    "bedrijf": "Maroon",
+    "locatie": "Remote (Everywhere)",
+    "regio": "remote",
+    "url": "https://wellfound.com/jobs/2812374-technical-lead-and-architect-blockchain-full-stack-engineer-remote",
+    "beschrijving": "Volledig remote, blockchain-zwaartepunt (afwijkend van kernprofiel), $60k-75k + kleine equity.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "Blockchain"
+    ]
+  },
+  {
+    "titel": "AI ontwikkelaar (React/Next.js)",
+    "bedrijf": "Ittes",
+    "locatie": "Turnhout",
+    "regio": "antwerpen",
+    "url": "https://ittes.be/vacatures/ai-ontwikkelaar-react-next-js/",
+    "beschrijving": "Ontwikkelen en onderhouden van het AI-portaal met React en/of Next.js + TypeScript, integratie met MySQL via Prisma, testen via Jest/Cypress, Agile/Scrum-team. 2-3 jaar ervaring met React/Next.js vereist.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "MySQL",
+      "Prisma"
+    ]
+  },
+  {
+    "titel": "Full Stack Engineer",
+    "bedrijf": "AvioBook",
+    "locatie": "Hasselt",
+    "regio": "limburg",
+    "url": "https://www.linkedin.com/jobs/view/4467984140/",
+    "beschrijving": "Hybride fulltime full stack rol bij AvioBook (luchtvaartsoftware) in Hasselt.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": []
+  },
+  {
+    "titel": "Fullstack PHP Developer",
+    "bedrijf": "iO",
+    "locatie": "Herentals",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4441203672/",
+    "beschrijving": "Hybride fullstack PHP-rol bij digital agency iO in Herentals (Kempen).",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "PHP"
+    ]
   }
 ]
