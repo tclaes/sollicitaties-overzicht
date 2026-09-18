@@ -376,7 +376,8 @@
       "Node.js",
       "Vue.js",
       "TypeScript"
-    ]
+    ],
+    "id": "indeed-e640a447742daf78"
   },
   {
     "titel": "Senior Fullstack Developer (React/Node.js)",
@@ -1556,7 +1557,8 @@
       "HTML5",
       "CSS3"
     ],
-    "functie": "fullstack"
+    "functie": "fullstack",
+    "id": "indeed-0aea4aeaa39e771c"
   },
   {
     "titel": "Full Stack Developer – Automation & Robotics",
@@ -1575,7 +1577,8 @@
       "PostgreSQL",
       "Azure"
     ],
-    "functie": "fullstack"
+    "functie": "fullstack",
+    "id": "indeed-e0d0e29cb0edd511"
   },
   {
     "titel": "Frontend Engineer - Angular, JavaScript (Remote)",
@@ -2175,7 +2178,8 @@
       "CSS",
       "Vue.js",
       "React"
-    ]
+    ],
+    "id": "indeed-e7da1b2854c197a9"
   },
   {
     "titel": "Senior Front-end Developer",
@@ -2191,23 +2195,8 @@
       "CSS",
       "JavaScript",
       "Shopify"
-    ]
-  },
-  {
-    "titel": "Front-end Vue Developer",
-    "bedrijf": "Craftzing",
-    "locatie": "Antwerpen",
-    "regio": "antwerpen",
-    "url": "https://be.indeed.com/viewjob?jk=89165cc117f77214",
-    "beschrijving": "Front-end rol bij Craftzing: TypeScript + Vue/Nuxt (React-kennis een plus), Node/Express/Nest backend-kennis gewenst, consultancy voor enterprise B2B/B2C webapps. Hybride, fulltime.",
-    "bron": "indeed",
-    "functie": "frontend",
-    "tags": [
-      "Vue.js",
-      "Nuxt",
-      "TypeScript",
-      "React"
-    ]
+    ],
+    "id": "indeed-0acb267605dffaeb"
   },
   {
     "titel": "Frontend Developer React & UX",
@@ -2223,6 +2212,7 @@
       "TypeScript",
       "Design System",
       "Accessibility"
-    ]
+    ],
+    "id": "indeed-0e69ec2cbecc05fe"
   }
 ]
