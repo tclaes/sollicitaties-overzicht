@@ -2101,5 +2101,128 @@
     "tags": [
       "PHP"
     ]
+  },
+  {
+    "titel": "Full Stack developer (CraftCode)",
+    "bedrijf": "Cronos (klant: CraftCode)",
+    "locatie": "Edegem",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/68327484/full-stack-developer",
+    "beschrijving": "Java-backend + front-end frameworks (React, Vue of Angular), consultancy CraftCode/Cronos in Edegem. Vast contract.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      "Java",
+      "React",
+      "Vue",
+      "Angular"
+    ]
+  },
+  {
+    "titel": "Full Stack .NET Developer @itenium",
+    "bedrijf": "Itenium",
+    "locatie": "Mechelen",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/72474484/full-stack-net-developer-itenium",
+    "beschrijving": "Consultancy Itenium: front-end met Angular, React of Vue (TypeScript, SASS) + .NET Core backend. Vast contract.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      "Angular",
+      "React",
+      "Vue.js",
+      ".NET"
+    ]
+  },
+  {
+    "titel": "Full stack developer senior",
+    "bedrijf": "KasparSolutions",
+    "locatie": "Heist-op-den-Berg",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4444408127/",
+    "beschrijving": "Senior full-stack rol in Heist-op-den-Berg, hybride. Volledige functiebeschrijving en techstack niet leesbaar op LinkedIn (alleen samenvatting zichtbaar) — borderline, opgenomen op basis van titel/locatie/populariteit (59 sollicitanten). Mogelijk dezelfde vacature als 'Full stack developer' bij MOoN R&C op Jobat (zelfde locatie Heist-op-den-Berg) — bij twijfel navragen.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "borderline"
+    ]
+  },
+  {
+    "titel": "Full Stack Developer",
+    "bedrijf": "Enwyse",
+    "locatie": "Herentals",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4466302511/",
+    "beschrijving": "Full-stack rol in Herentals (Kempen), hybride. Volledige functiebeschrijving niet leesbaar op LinkedIn — borderline, opgenomen op basis van titel/locatie.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "borderline"
+    ]
+  },
+  {
+    "titel": "Medior Frontend Developer",
+    "bedrijf": "Dignify (via Customer Collective)",
+    "locatie": "Genk",
+    "regio": "limburg",
+    "url": "https://be.indeed.com/viewjob?jk=e7da1b2854c197a9",
+    "beschrijving": "Front-end rol bij marketing-automation bureau Dignify in Genk. JavaScript/HTML/CSS/SQL, kennis van Vue.js of React is een plus. Permanent contract, hybride.",
+    "bron": "indeed",
+    "functie": "frontend",
+    "tags": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Vue.js",
+      "React"
+    ]
+  },
+  {
+    "titel": "Senior Front-end Developer",
+    "bedrijf": "DigiFist",
+    "locatie": "Remote",
+    "regio": "remote",
+    "url": "https://be.indeed.com/viewjob?jk=0acb267605dffaeb",
+    "beschrijving": "Volledig remote front-end rol (Shopify/Liquid, HTML/CSS/JavaScript ES6). Full-time.",
+    "bron": "indeed",
+    "functie": "frontend",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Shopify"
+    ]
+  },
+  {
+    "titel": "Front-end Vue Developer",
+    "bedrijf": "Craftzing",
+    "locatie": "Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://be.indeed.com/viewjob?jk=89165cc117f77214",
+    "beschrijving": "Front-end rol bij Craftzing: TypeScript + Vue/Nuxt (React-kennis een plus), Node/Express/Nest backend-kennis gewenst, consultancy voor enterprise B2B/B2C webapps. Hybride, fulltime.",
+    "bron": "indeed",
+    "functie": "frontend",
+    "tags": [
+      "Vue.js",
+      "Nuxt",
+      "TypeScript",
+      "React"
+    ]
+  },
+  {
+    "titel": "Frontend Developer React & UX",
+    "bedrijf": "Entico (klant: IoT/monitoringplatform)",
+    "locatie": "Wilrijk",
+    "regio": "antwerpen",
+    "url": "https://be.indeed.com/viewjob?jk=0e69ec2cbecc05fe",
+    "beschrijving": "Senior Frontend Developer (React/TypeScript) voor de modernisering van een grootschalig IoT-monitoringplatform: nieuw design system, gedeelde UI-component library, accessibility en performance. Sluit sterk aan bij Toms ervaring met design systems.",
+    "bron": "indeed",
+    "functie": "frontend",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Design System",
+      "Accessibility"
+    ]
   }
 ]
