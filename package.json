@@ -12,6 +12,7 @@
     "pdf:vacatures": "node scripts/generate-vacancy-pdf.mjs",
     "dedupe:firestore": "node scripts/dedupe-vacancies.mjs",
     "migrate:application-status": "node scripts/migrate-application-status.mjs",
+    "sync:vacancy-not-hired-status": "node scripts/sync-vacancy-not-hired-status.mjs",
     "trigger:sync": "node scripts/trigger-firestore-sync.mjs",
     "lint": "vp lint .",
     "lint:sheriff": "sheriff verify",
