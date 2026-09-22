@@ -65,11 +65,26 @@ export async function getVacancy(id: string): Promise<Vacancy | null> {
   return allVacancies?.find((v) => v.id === id) ?? null;
 }
 
+// Enige aanroeper is de sollicitatie-statusdropdown (ApplicationsPanel /
+// ApplicationStatus) zodra een sollicitatie op "niet aangeworven" wordt gezet.
+// Zonder de vacature-status hier mee te synchroniseren bleef die voor altijd
+// op "gesolliciteerd" staan - isArchived werd wel true, maar de "Niet
+// aangeworven"-teller op het overzicht bleef 0 (gevonden en gefixt 23-09-2026,
+// zie scripts/sync-vacancy-not-hired-status.mjs voor de eenmalige data-fix).
 export async function archiveVacancy(
   id: string,
   isArchived: boolean,
 ): Promise<void> {
-  await updateDoc(doc(db, "vacatures", id), {isArchived});
+  await updateDoc(doc(db, "vacatures", id), {
+    isArchived,
+    ...(isArchived
+      ? {
+        status: statusToFirestore("not-hired"),
+        archiefReden: "Niet aangenomen na sollicitatie",
+        gearchiveerdOp: new Date().toISOString(),
+      }
+      : {}),
+  });
 }
 
 export async function markNotInteresting(

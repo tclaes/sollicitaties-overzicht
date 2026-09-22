@@ -186,10 +186,24 @@ describe("updateApplication", () => {
 });
 
 describe("archiveVacancy", () => {
-  it("updates isArchived as given", async () => {
+  it("also sets the vacancy status to not-hired when archiving", async () => {
     await archiveVacancy("v1", true);
 
-    expect(updateDoc).toHaveBeenCalledWith({ __doc: "vacatures/v1" }, { isArchived: true });
+    expect(updateDoc).toHaveBeenCalledTimes(1);
+    const [target, fields] = updateDoc.mock.calls[0];
+    expect(target).toEqual({ __doc: "vacatures/v1" });
+    expect(fields).toMatchObject({
+      isArchived: true,
+      status: "niet-aangeworven",
+      archiefReden: "Niet aangenomen na sollicitatie",
+    });
+    expect(fields.gearchiveerdOp).toMatch(/^\d{4}-\d{2}-\d{2}T/);
+  });
+
+  it("only updates isArchived when un-archiving", async () => {
+    await archiveVacancy("v1", false);
+
+    expect(updateDoc).toHaveBeenCalledWith({ __doc: "vacatures/v1" }, { isArchived: false });
   });
 });
 
