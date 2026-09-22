@@ -2149,5 +2149,85 @@
     ],
     "id": "indeed-0acb267605dffaeb",
     "verlopen": true
+  },
+  {
+    "titel": "Full Stack Developer",
+    "bedrijf": "EventSquare",
+    "locatie": "Geel",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74631588/full-stack-developer",
+    "beschrijving": "Ticketing-platform voor events; kleine, hechte ploeg. Full-stack met React + TypeScript voor de UI's, REST API en PHP (Laravel/Symfony)/Node.js-micro-applicaties. Minstens 2 jaar React-ervaring, geen specifiek diploma vereist. Vaste job, dagwerk.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      "TypeScript",
+      "PHP",
+      "Node.js",
+      "Laravel"
+    ]
+  },
+  {
+    "titel": "Full stack developer",
+    "bedrijf": "MOoN R&C",
+    "locatie": "Heist-op-den-Berg",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74551085/full-stack-developer",
+    "beschrijving": "Groeiend softwarebedrijf, hybride werken. Full-stack met .NET 6+/C# backend en Angular 2+ (Material, TypeScript) of Blazor frontend. Borderline: .NET-backend is de kern, Angular is een volwaardig deel van de stack. Vaste job, beperkte ervaring (< 2 jaar) volstaat.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      "Angular",
+      "TypeScript",
+      ".NET",
+      "C#"
+    ]
+  },
+  {
+    "titel": "Full Stack Developer",
+    "bedrijf": "DPG Media (Privacy-team)",
+    "locatie": "Antwerpen / Vilvoorde",
+    "regio": "antwerpen",
+    "url": "https://techjobs.be/nl/ict-jobs/70878-full-stack-developer",
+    "beschrijving": "Hybride, medior. Full-stack in het DPG Network Area Privacy-team: Java 25/Spring Boot, TypeScript/JavaScript en Svelte, AWS, DevOps/XP-cultuur. Borderline: Java-backend zwaar, frontend is één deel van de rol.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "TypeScript",
+      "JavaScript",
+      "Svelte",
+      "Java",
+      "AWS"
+    ]
+  },
+  {
+    "titel": "Full-Stack Developer (Node.js, JavaScript, TypeScript)",
+    "bedrijf": "Action1",
+    "locatie": "Remote (EU)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4390964940/",
+    "beschrijving": "Volledig remote (Europese Unie), fulltime. Borderline: enkel de kop van de vacature gezien (Node.js/JavaScript/TypeScript full-stack), volledige beschrijving niet geladen; frontend-aandeel niet geverifieerd.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "Node.js",
+      "JavaScript",
+      "TypeScript",
+      "Remote"
+    ]
+  },
+  {
+    "titel": "Frontend Developer - TypeScript (Remote)",
+    "bedrijf": "Quik Hire Staffing",
+    "locatie": "Remote (EU)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4467444877/",
+    "beschrijving": "Volledig remote (Europese Unie), via staffingbureau. Borderline: enkel de kop van de vacature gezien; details niet geverifieerd.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "TypeScript",
+      "Remote"
+    ]
   }
 ]
