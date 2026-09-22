@@ -1,25 +1,32 @@
 import {createFileRoute} from "@tanstack/react-router";
-import {getAllVacancies} from "~/lib/vacancies";
+import {getAllVacancies, getApplications} from "~/lib/vacancies";
 import {VacancyTable} from "~/components/vacancies/VacancyTable";
 import {StatsCounter} from "~/components/elements/StatsCounter";
 import {FilterPills} from "~/components/elements/FilterPills";
 import {Pagination} from "~/components/elements/Pagination";
-import {DefaultSearchSchema, PAGE_SIZE} from "~/lib/schemas";
+import {Application, DefaultSearchSchema, PAGE_SIZE} from "~/lib/schemas";
 import styles from "./index.module.css";
 
 
 export const Route = createFileRoute("/vacatures/")({
   validateSearch: DefaultSearchSchema,
   loader: async () => {
-    const vacancies = await getAllVacancies();
-    return {vacancies};
+    const [vacancies, applications] = await Promise.all([
+      getAllVacancies(),
+      getApplications(),
+    ]);
+    return {vacancies, applications};
   },
   component: VacanciesPage,
 });
 
 function VacanciesPage() {
-  const {vacancies} = Route.useLoaderData();
+  const {vacancies, applications} = Route.useLoaderData();
   const search = Route.useSearch();
+
+  const applicationById = new Map<string, Application>(
+    applications.flatMap((s) => s.vacancyId ? [[s.vacancyId, s]] : [])
+  );
 
   const matchOrder: Record<string, number> = {strong: 0, good: 1, moderate: 2, low: 3};
 
@@ -74,7 +81,7 @@ function VacanciesPage() {
 
       <StatsCounter vacancies={vacancies}/>
       <FilterPills currentSearch={search}/>
-      <VacancyTable vacancies={pageItems}/>
+      <VacancyTable vacancies={pageItems} applicationById={applicationById}/>
       <Pagination
         totalItems={totalItems}
         currentPage={currentPage}

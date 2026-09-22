@@ -5,9 +5,11 @@ import { VacancyTable } from "./VacancyTable";
 import type { Vacancy } from "~/lib/schemas";
 
 const navigate = vi.fn();
+const invalidate = vi.fn().mockResolvedValue(undefined);
 
 vi.mock("@tanstack/react-router", () => ({
   useNavigate: () => navigate,
+  useRouter: () => ({ invalidate }),
 }));
 
 vi.mock("~/lib/date", () => ({
@@ -16,6 +18,8 @@ vi.mock("~/lib/date", () => ({
 
 vi.mock("~/lib/vacancies", () => ({
   toggleFavorite: vi.fn().mockResolvedValue(undefined),
+  updateApplication: vi.fn().mockResolvedValue(undefined),
+  archiveVacancy: vi.fn().mockResolvedValue(undefined),
 }));
 
 function makeVacancy(overrides: Partial<Vacancy> = {}): Vacancy {
@@ -38,6 +42,7 @@ function makeVacancy(overrides: Partial<Vacancy> = {}): Vacancy {
 describe("VacancyTable", () => {
   beforeEach(() => {
     navigate.mockClear();
+    invalidate.mockClear();
   });
 
   it("shows an empty state when there are no vacancies", () => {
@@ -96,8 +101,53 @@ describe("VacancyTable", () => {
     );
 
     expect(screen.queryByRole("button", { name: "Solliciteer" })).not.toBeInTheDocument();
-    expect(screen.getByText("gesolliciteerd")).toBeInTheDocument();
+    expect(screen.getByDisplayValue("gesolliciteerd")).toBeInTheDocument();
     expect(screen.getByText("2026-01-01")).toBeInTheDocument();
+  });
+
+  it("shows the application's actual status, not just 'gesolliciteerd', once it has progressed", () => {
+    const applicationById = new Map([
+      [
+        "v1",
+        {
+          id: "a1",
+          company: "Acme BV",
+          role: "Frontend Developer",
+          appliedOn: "2026-01-01",
+          status: "interviewing" as const,
+        },
+      ],
+    ]);
+
+    render(<VacancyTable vacancies={[makeVacancy()]} applicationById={applicationById} />);
+
+    expect(screen.getByDisplayValue("in gesprek")).toBeInTheDocument();
+  });
+
+  it("lets the application's status be changed from the overview, not only from the sollicitaties tab", async () => {
+    const { updateApplication, archiveVacancy } = await import("~/lib/vacancies");
+    const user = userEvent.setup();
+    const applicationById = new Map([
+      [
+        "v1",
+        {
+          id: "a1",
+          company: "Acme BV",
+          role: "Frontend Developer",
+          appliedOn: "2026-01-01",
+          status: "applied" as const,
+        },
+      ],
+    ]);
+
+    render(<VacancyTable vacancies={[makeVacancy()]} applicationById={applicationById} />);
+
+    await user.selectOptions(screen.getByRole("combobox"), "niet aangeworven");
+
+    expect(updateApplication).toHaveBeenCalledWith("a1", "not_hired");
+    expect(archiveVacancy).toHaveBeenCalledWith("v1", true);
+    expect(invalidate).toHaveBeenCalled();
+    expect(navigate).not.toHaveBeenCalled();
   });
 
   it("calls onApply with the vacancy's data and today's date when confirmed", async () => {

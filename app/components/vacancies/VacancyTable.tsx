@@ -1,12 +1,13 @@
 import {useState} from "react";
-import type {Application, Vacancy} from "~/lib/schemas";
-import {APPLICATION_STATUS_LABELS, MATCH_SCORE_LABELS, ROLE_LABELS} from "~/lib/schemas";
+import type {Application, ApplicationStatus as ApplicationStatusValue, Vacancy} from "~/lib/schemas";
+import {MATCH_SCORE_LABELS, ROLE_LABELS} from "~/lib/schemas";
 import {SourceBadge} from "../elements/SourceBadge";
 import {Badge} from "../elements/Badge/Badge"
 import {FavoriteButton} from "../elements/FavoriteButton/FavoriteButton";
 import {ApplyForJob} from "./ApplyForJob/ApplyForJob";
+import {ApplicationStatus} from "./ApplicationStatus/ApplicationStatus";
 import styles from "./VacancyTable.module.css";
-import {useNavigate} from '@tanstack/react-router'
+import {useNavigate, useRouter} from '@tanstack/react-router'
 
 const MATCH_SCORE_CSS_CLASS: Record<string, string> = {
   strong: "match_sterk",
@@ -29,7 +30,9 @@ interface Props {
 export function VacancyTable({vacancies, applicationById = new Map(), onApply}: Props) {
   const [locallyApplied, setLocallyApplied] = useState<Record<string, string>>({});
   const [favoriteOverrides, setFavoriteOverrides] = useState<Record<string, boolean>>({});
+  const [statusOverrides, setStatusOverrides] = useState<Record<string, ApplicationStatusValue>>({});
   const navigate = useNavigate();
+  const router = useRouter();
 
 
   if (vacancies.length === 0) {
@@ -56,11 +59,7 @@ export function VacancyTable({vacancies, applicationById = new Map(), onApply}: 
           const application = applicationById.get(v.id);
           const localDate = locallyApplied[v.id];
           const hasApplied = !!application || !!localDate;
-          const applicationLabel = application
-            ? APPLICATION_STATUS_LABELS[application.status]
-            : localDate
-              ? "wacht"
-              : null;
+          const effectiveStatus = application ? statusOverrides[application.id] ?? application.status : null;
           const date = application?.appliedOn ?? localDate;
           const isFavorite = favoriteOverrides[v.id] ?? v.favorite ?? false;
 
@@ -81,10 +80,19 @@ export function VacancyTable({vacancies, applicationById = new Map(), onApply}: 
                   }
                 />
               </td>
-              <td>
-                <Badge status={hasApplied ? "applied" : v.status}/>
-                {hasApplied && applicationLabel && (
-                  <span className={styles.applicationLabel}>{applicationLabel}</span>
+              <td onClick={(e) => application && e.stopPropagation()}>
+                {application && effectiveStatus ? (
+                  <ApplicationStatus
+                    applicationId={application.id}
+                    vacancyId={v.id}
+                    status={effectiveStatus}
+                    onChanged={(next) => {
+                      setStatusOverrides((prev) => ({...prev, [application.id]: next}));
+                      if (next === "not_hired") void router.invalidate();
+                    }}
+                  />
+                ) : (
+                  <Badge status={hasApplied ? "applied" : v.status}/>
                 )}
                 {hasApplied && date && (
                   <span className={styles.applicationDate}>{date}</span>

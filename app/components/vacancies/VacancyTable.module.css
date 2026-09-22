@@ -137,13 +137,6 @@
   font-size: var(--text-sm);
 }
 
-.applicationLabel {
-  color: var(--color-text-muted);
-  display: block;
-  font-size: var(--text-xs);
-  margin-top: var(--space-px);
-}
-
 .applicationDate {
   color: var(--color-text-subtle);
   display: block;
