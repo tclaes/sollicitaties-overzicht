@@ -6,7 +6,7 @@ test("rejecting an application archives the vacancy and it stays visible under N
 
   await page.goto("/sollicitaties");
   const row = page.locator("tr", { hasText: "Reeds Gesolliciteerd Rol" });
-  await row.locator("select").selectOption("afgewezen");
+  await row.locator("select").selectOption("not_hired");
 
   await expect(page).toHaveURL(/\/(\?|$)/);
 

@@ -69,16 +69,20 @@ const MATCH_SCORE_FROM_FIRESTORE: Record<string, MatchScore> = {
 const APPLICATION_STATUS_FROM_FIRESTORE: Record<string, ApplicationStatus> = {
   gesolliciteerd: "applied",
   in_gesprek: "interviewing",
-  afgewezen: "rejected",
-  niet_wervend: "not_hiring",
+  // "afgewezen" en "niet_wervend" waren twee losse statussen voor hetzelfde
+  // resultaat en zijn samengevoegd tot "niet_aangeworven" (22-09-2026, zie
+  // scripts/migrate-application-status.mjs). Beide oude waarden blijven hier
+  // gemapt zodat een nog niet gemigreerd document niet crasht.
+  afgewezen: "not_hired",
+  niet_wervend: "not_hired",
+  niet_aangeworven: "not_hired",
   geen_reactie: "no_response",
   aangenomen: "hired",
 };
 const APPLICATION_STATUS_TO_FIRESTORE: Record<ApplicationStatus, string> = {
   applied: "gesolliciteerd",
   interviewing: "in_gesprek",
-  rejected: "afgewezen",
-  not_hiring: "niet_wervend",
+  not_hired: "niet_aangeworven",
   no_response: "geen_reactie",
   hired: "aangenomen",
 };

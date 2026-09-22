@@ -112,18 +112,11 @@
   color: var(--color-badge-purple-text);
 }
 
-.badge.status_afgewezen,
-.statusSelect.status_afgewezen {
+.badge.status_niet_aangeworven,
+.statusSelect.status_niet_aangeworven {
   background: var(--color-badge-danger-bg);
   border-color: var(--color-badge-danger-border);
   color: var(--color-badge-danger-text);
-}
-
-.badge.status_niet_wervend,
-.statusSelect.status_niet_wervend {
-  background: var(--color-bg);
-  border-color: var(--color-border);
-  color: var(--color-text-subtle);
 }
 
 .badge.status_geen_reactie,
