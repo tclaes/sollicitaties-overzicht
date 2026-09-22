@@ -53,7 +53,15 @@ import { getFirestore } from "firebase-admin/firestore";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DEFAULT_SERVICE_ACCOUNT_PATH = join(__dirname, "..", "secrets", "firebase-service-account.json");
 
-const STATUS_PRIORITY = ["gesolliciteerd", "interview", "aanbod", "afgewezen", "niet_wervend", "nieuw"];
+// Moet exact overeenkomen met StatusSchema in app/lib/schemas.ts (new/viewed/applied/
+// rejected/not-interesting/not-hired, hier de Nederlandse Firestore-waarden - zie
+// firestoreMappers.ts). "interview" en "aanbod" bestaan niet als status en stonden hier
+// ten onrechte; "bekeken" en "niet-interessant" ontbraken, waardoor bv. een vacature die
+// Tom expliciet als "niet-interessant" had gearchiveerd bij een merge zijn status verloor
+// aan een duplicaat-document met status "nieuw" (rank viel terug op de laagste prioriteit)
+// - de vacature dook zo terug op als "nieuw" i.p.v. gearchiveerd te blijven (bug gevonden
+// en gefixt op 22-09-2026).
+const STATUS_PRIORITY = ["gesolliciteerd", "afgewezen", "niet_wervend", "niet-interessant", "bekeken", "nieuw"];
 
 // vp run <script> -- <args> forwards the literal "--" as an argv entry (unlike npm,
 // which strips it), so filter it out before reading flags/positional args.
@@ -90,7 +98,19 @@ function normalizeUrl(url) {
   try {
     const u = new URL(url);
     const path = u.pathname.replace(/\/+$/, "");
-    return `${u.hostname}${path}`.toLowerCase();
+    const host = u.hostname.toLowerCase();
+    // be.indeed.com/viewjob?jk=... - het pad is voor ELKE indeed-vacature identiek
+    // ("/viewjob"), de echte identiteit zit in de jk-queryparameter. Zonder deze
+    // uitzondering vallen alle indeed-viewjob-vacatures terug op hetzelfde
+    // "be-indeed-com-viewjob"-canonical-id, en zou pass 1 hieronder ze allemaal als
+    // één duplicaatgroep behandelen en op 1 na verwijderen — ook al zijn het
+    // volledig verschillende vacatures (zie fix #60 in sync-vacancies-to-firestore.mjs,
+    // en de bug die dit op 22-09-2026 in deze dedupe-pass veroorzaakte).
+    const jk = u.searchParams.get("jk");
+    if (host.endsWith("indeed.com") && /\/viewjob$/.test(path) && jk) {
+      return `${host}/viewjob-${jk.toLowerCase()}`;
+    }
+    return `${host}${path}`.toLowerCase();
   } catch {
     return url.toLowerCase().replace(/[?#].*$/, "").replace(/\/+$/, "");
   }
