@@ -131,6 +131,12 @@
       "CSS",
       "JavaScript ES6",
       "Shopify/Liquid"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "indeed",
+        "url": "https://be.indeed.com/viewjob?jk=0acb267605dffaeb"
+      }
     ]
   },
   {
@@ -1038,6 +1044,12 @@
       "NodeJS",
       "Java",
       "C#"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "indeed",
+        "url": "https://be.indeed.com/viewjob?jk=0aea4aeaa39e771c"
+      }
     ]
   },
   {
@@ -1176,6 +1188,12 @@
       "TypeScript",
       "design system",
       "accessibility"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "indeed",
+        "url": "https://be.indeed.com/viewjob?jk=0e69ec2cbecc05fe"
+      }
     ]
   },
   {
@@ -1542,25 +1560,6 @@
     ]
   },
   {
-    "titel": "Full Stack Developer",
-    "bedrijf": "Collide (Bewire / Cronos Groep)",
-    "locatie": "Hasselt",
-    "regio": "limburg",
-    "url": "https://be.indeed.com/viewjob?jk=0aea4aeaa39e771c",
-    "beschrijving": "Full stack developer-rol bij consultancy Collide (onderdeel van Bewire/Cronos Groep) in Hasselt. HTML5/CSS3/JavaScript, Angular en/of React.js, met NodeJS, Java of C# als achterliggende kennis.",
-    "bron": "indeed",
-    "tags": [
-      "Angular",
-      "React",
-      "JavaScript",
-      "Node.js",
-      "HTML5",
-      "CSS3"
-    ],
-    "functie": "fullstack",
-    "id": "indeed-0aea4aeaa39e771c"
-  },
-  {
     "titel": "Full Stack Developer – Automation & Robotics",
     "bedrijf": "Galactus (klant: manufacturingbedrijf in Vlaams-Brabant)",
     "locatie": "Vlaams-Brabant",
@@ -1625,26 +1624,6 @@
     "functie": "fullstack"
   },
   {
-    "titel": "Fullstack Node.js Developer",
-    "bedrijf": "LGA IT (klant, event-driven microservices)",
-    "locatie": "Leuven",
-    "regio": "vlaanderen",
-    "url": "https://www.vdab.be/vindeenjob/vacatures/73597458/fullstack-node-js-developer",
-    "beschrijving": "Fullstack rol via recruiter LGA IT in Leuven, vast contract onbepaalde duur. Backend Node.js/TypeScript/ExpressJS, frontend React, cloud-native op AWS (Lambda, EKS) met Docker/Kubernetes/Terraform, Kafka/MongoDB.",
-    "bron": "vdab",
-    "tags": [
-      "Node.js",
-      "TypeScript",
-      "Express",
-      "React",
-      "AWS",
-      "Docker",
-      "Kubernetes",
-      "Kafka"
-    ],
-    "functie": "fullstack"
-  },
-  {
     "titel": "Full Stack Developer (CraftCode)",
     "bedrijf": "Cronos (klant: CraftCode)",
     "locatie": "Edegem",
@@ -1655,6 +1634,12 @@
     "functie": "fullstack",
     "tags": [
       "JavaScript"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/68327484/full-stack-developer"
+      }
     ]
   },
   {
@@ -2106,22 +2091,6 @@
     ]
   },
   {
-    "titel": "Full Stack developer (CraftCode)",
-    "bedrijf": "Cronos (klant: CraftCode)",
-    "locatie": "Edegem",
-    "regio": "antwerpen",
-    "url": "https://www.vdab.be/vindeenjob/vacatures/68327484/full-stack-developer",
-    "beschrijving": "Java-backend + front-end frameworks (React, Vue of Angular), consultancy CraftCode/Cronos in Edegem. Vast contract.",
-    "bron": "vdab",
-    "functie": "fullstack",
-    "tags": [
-      "Java",
-      "React",
-      "Vue",
-      "Angular"
-    ]
-  },
-  {
     "titel": "Full Stack .NET Developer @itenium",
     "bedrijf": "Itenium",
     "locatie": "Mechelen",
@@ -2164,30 +2133,12 @@
     ]
   },
   {
-    "titel": "Medior Frontend Developer",
-    "bedrijf": "Dignify (via Customer Collective)",
-    "locatie": "Genk",
-    "regio": "limburg",
-    "url": "https://be.indeed.com/viewjob?jk=e7da1b2854c197a9",
-    "beschrijving": "Front-end rol bij marketing-automation bureau Dignify in Genk. JavaScript/HTML/CSS/SQL, kennis van Vue.js of React is een plus. Permanent contract, hybride.",
-    "bron": "indeed",
-    "functie": "frontend",
-    "tags": [
-      "JavaScript",
-      "HTML",
-      "CSS",
-      "Vue.js",
-      "React"
-    ],
-    "id": "indeed-e7da1b2854c197a9"
-  },
-  {
     "titel": "Senior Front-end Developer",
     "bedrijf": "DigiFist",
     "locatie": "Remote",
     "regio": "remote",
     "url": "https://be.indeed.com/viewjob?jk=0acb267605dffaeb",
-    "beschrijving": "Volledig remote front-end rol (Shopify/Liquid, HTML/CSS/JavaScript ES6). Full-time.",
+    "beschrijving": "Duplicaat van www.digifist.com/careers (zelfde vacature via Indeed) - samengevoegd op 22-09-2026, url staat nu in extraBronnen van dat item.",
     "bron": "indeed",
     "functie": "frontend",
     "tags": [
@@ -2196,24 +2147,8 @@
       "JavaScript",
       "Shopify"
     ],
-    "id": "indeed-0acb267605dffaeb"
-  },
-  {
-    "titel": "Frontend Developer React & UX",
-    "bedrijf": "Entico (klant: IoT/monitoringplatform)",
-    "locatie": "Wilrijk",
-    "regio": "antwerpen",
-    "url": "https://be.indeed.com/viewjob?jk=0e69ec2cbecc05fe",
-    "beschrijving": "Senior Frontend Developer (React/TypeScript) voor de modernisering van een grootschalig IoT-monitoringplatform: nieuw design system, gedeelde UI-component library, accessibility en performance. Sluit sterk aan bij Toms ervaring met design systems.",
-    "bron": "indeed",
-    "functie": "frontend",
-    "tags": [
-      "React",
-      "TypeScript",
-      "Design System",
-      "Accessibility"
-    ],
-    "id": "indeed-0e69ec2cbecc05fe"
+    "id": "indeed-0acb267605dffaeb",
+    "verlopen": true
   },
   {
     "titel": "Full Stack Developer",

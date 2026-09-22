@@ -83,7 +83,18 @@ function normalizeUrl(url) {
   try {
     const u = new URL(url);
     const path = u.pathname.replace(/\/+$/, "");
-    return `${u.hostname}${path}`.toLowerCase();
+    const host = u.hostname.toLowerCase();
+    // be.indeed.com/viewjob?jk=... - het pad is voor ELKE indeed-vacature identiek
+    // ("/viewjob"), de echte identiteit zit in de jk-queryparameter. Zonder deze
+    // uitzondering vallen alle indeed-viewjob-vacatures terug op hetzelfde
+    // "be-indeed-com-viewjob"-id en overschrijven ze elkaar (zie fix #60). Tot nu toe
+    // ving een handmatig `id: "indeed-<jk>"`-veld in de sync-input dit op; deze
+    // uitzondering maakt dat automatisch, zodat het niet meer vergeten kan worden.
+    const jk = u.searchParams.get("jk");
+    if (host.endsWith("indeed.com") && /\/viewjob$/.test(path) && jk) {
+      return `${host}/viewjob-${jk.toLowerCase()}`;
+    }
+    return `${host}${path}`.toLowerCase();
   } catch {
     return url.toLowerCase().replace(/[?#].*$/, "").replace(/\/+$/, "");
   }
