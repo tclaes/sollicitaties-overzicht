@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vite-plus/test";
-import { applicationFromFirestore, vacancyFromFirestore } from "./firestoreMappers";
+import { applicationFromFirestore, applicationStatusToFirestore, vacancyFromFirestore } from "./firestoreMappers";
 
 describe("vacancyFromFirestore", () => {
   const rawVacancy = {
@@ -85,5 +85,28 @@ describe("applicationFromFirestore", () => {
       status: "interviewing",
       note: "Tweede gesprek gepland",
     });
+  });
+
+  // "afgewezen" en "niet_wervend" waren twee losse statussen voor hetzelfde
+  // resultaat en zijn samengevoegd tot "niet_aangeworven" (22-09-2026). Beide
+  // oude Firestore-waarden moeten op nog niet gemigreerde documenten blijven
+  // werken, en moeten allebei uitkomen op dezelfde "not_hired"-status.
+  it.each(["afgewezen", "niet_wervend", "niet_aangeworven"])(
+    "maps the legacy Firestore status '%s' to the merged not_hired status",
+    (firestoreStatus) => {
+      const raw = {
+        id: "a1",
+        bedrijf: "Acme BV",
+        rol: "Frontend Developer",
+        gesolliceerdOp: "2026-03-05",
+        status: firestoreStatus,
+      };
+
+      expect(applicationFromFirestore(raw).status).toBe("not_hired");
+    },
+  );
+
+  it("writes the merged not_hired status back as the new canonical Firestore value", () => {
+    expect(applicationStatusToFirestore("not_hired")).toBe("niet_aangeworven");
   });
 });

@@ -9,8 +9,7 @@ const STATUSES = Object.keys(APPLICATION_STATUS_LABELS) as ApplicationStatus[];
 const STATUS_CSS_CLASS: Record<ApplicationStatus, string> = {
   applied: "status_gesolliciteerd",
   interviewing: "status_in_gesprek",
-  rejected: "status_afgewezen",
-  not_hiring: "status_niet_wervend",
+  not_hired: "status_niet_aangeworven",
   no_response: "status_geen_reactie",
   hired: "status_aangenomen",
 };
@@ -32,7 +31,7 @@ export function ApplicationsPanel({applications, showHeader = false}: Props) {
     setLocalStatuses((prev) => ({...prev, [id]: status}));
     try {
       await updateApplication(id, status);
-      if (status === ApplicationStatusSchema.enum.rejected && vacancyId) {
+      if (status === ApplicationStatusSchema.enum.not_hired && vacancyId) {
         await archiveVacancy(vacancyId, true);
         await navigate({to: "/"});
       }

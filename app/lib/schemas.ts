@@ -63,11 +63,14 @@ export const MATCH_SCORE_LABELS: Record<MatchScore, string> = {
   borderline: "borderline",
 };
 
+// "rejected" (afgewezen) en "not_hiring" (niet wervend) waren voor de gebruiker
+// niet te onderscheiden statussen die hetzelfde betekenden ("geen aanbod
+// gekregen"). Samengevoegd tot "not_hired" op 22-09-2026 - zie
+// firestoreMappers.ts voor de migratie van bestaande sollicitatie-documenten.
 export const ApplicationStatusSchema = z.enum([
   "applied",
   "interviewing",
-  "rejected",
-  "not_hiring",
+  "not_hired",
   "no_response",
   "hired",
 ]);
@@ -75,8 +78,7 @@ export const ApplicationStatusSchema = z.enum([
 export const APPLICATION_STATUS_LABELS: Record<ApplicationStatus, string> = {
   applied: "gesolliciteerd",
   interviewing: "in gesprek",
-  rejected: "afgewezen",
-  not_hiring: "niet wervend",
+  not_hired: "niet aangeworven",
   no_response: "geen reactie",
   hired: "aangenomen",
 };
