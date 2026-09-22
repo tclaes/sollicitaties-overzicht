@@ -2,7 +2,6 @@ import {useState} from "react";
 import {Application, APPLICATION_STATUS_LABELS, ApplicationStatus, ApplicationStatusSchema} from "~/lib/schemas";
 import {archiveVacancy, updateApplication} from "~/lib/vacancies";
 import styles from "./ApplicationsPanel.module.css";
-import {useNavigate} from "@tanstack/react-router";
 
 const STATUSES = Object.keys(APPLICATION_STATUS_LABELS) as ApplicationStatus[];
 
@@ -21,7 +20,6 @@ interface Props {
 
 export function ApplicationsPanel({applications, showHeader = false}: Props) {
   const [localStatuses, setLocalStatuses] = useState<Record<string, ApplicationStatus>>({});
-  const navigate = useNavigate();
 
   const sorted = [...applications].sort(
     (a, b) => b.appliedOn.localeCompare(a.appliedOn)
@@ -33,7 +31,6 @@ export function ApplicationsPanel({applications, showHeader = false}: Props) {
       await updateApplication(id, status);
       if (status === ApplicationStatusSchema.enum.not_hired && vacancyId) {
         await archiveVacancy(vacancyId, true);
-        await navigate({to: "/"});
       }
     } catch {
       // Revert on failure
