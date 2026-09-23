@@ -2231,25 +2231,6 @@
     ]
   },
   {
-    "titel": "Fullstack Node.js Developer",
-    "bedrijf": "LGA IT",
-    "locatie": "Leuven",
-    "regio": "vlaanderen",
-    "url": "https://www.vdab.be/vindeenjob/vacatures/73597458/fullstack-node-js-developer",
-    "beschrijving": "Event-driven microservices-architectuur: backend Node.js/TypeScript/Express, frontend React, AWS (Lambda, EKS), Docker/Kubernetes/Terraform/Helm, Kafka/MongoDB/Redis/PostgreSQL. Vast contract, min. 2 jaar ervaring.",
-    "bron": "vdab",
-    "functie": "fullstack",
-    "tags": [
-      "Node.js",
-      "React",
-      "TypeScript",
-      "AWS",
-      "Docker",
-      "Kubernetes",
-      "Kafka"
-    ]
-  },
-  {
     "titel": "Full Stack Developer (.NET / Angular)",
     "bedrijf": "onbekend (via Kingfisher Recruitment, boekhoudsoftware voor accountants)",
     "locatie": "Berchem (Antwerpen)",
