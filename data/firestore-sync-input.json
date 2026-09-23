@@ -2229,5 +2229,129 @@
       "TypeScript",
       "Remote"
     ]
+  },
+  {
+    "titel": "Fullstack Node.js Developer",
+    "bedrijf": "LGA IT",
+    "locatie": "Leuven",
+    "regio": "vlaanderen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/73597458/fullstack-node-js-developer",
+    "beschrijving": "Event-driven microservices-architectuur: backend Node.js/TypeScript/Express, frontend React, AWS (Lambda, EKS), Docker/Kubernetes/Terraform/Helm, Kafka/MongoDB/Redis/PostgreSQL. Vast contract, min. 2 jaar ervaring.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      "Node.js",
+      "React",
+      "TypeScript",
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "Kafka"
+    ]
+  },
+  {
+    "titel": "Full Stack Developer (.NET / Angular)",
+    "bedrijf": "onbekend (via Kingfisher Recruitment, boekhoudsoftware voor accountants)",
+    "locatie": "Berchem (Antwerpen)",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74362771/full-stack-developer-net-angular",
+    "beschrijving": "Full-Stack rol bij een softwareoplossing waarmee Belgische accountants en boekhouders fiscale aangiften en jaarrekeningen verwerken. C#/.NET (legacy + modern), migratie naar cloud, Angular. Min. 3 jaar ervaring, vast contract. Kingfisher plaatst dezelfde vacature op meerdere locatie-varianten (Berchem/Antwerpen).",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "C#",
+      "Angular",
+      "cloud"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74362767/full-stack-developer-net-angular"
+      },
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74362768/net-developer"
+      }
+    ]
+  },
+  {
+    "titel": "Full-Stack .NET Developer",
+    "bedrijf": "LGA IT",
+    "locatie": "Kontich",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74311018/full-stack-net-developer",
+    "beschrijving": "Ontwikkelt zelfstandig features van backend tot frontend. Tech stack: .NET 8-10, ASP.NET Core, RabbitMQ, MySQL (EF Core), Angular (DevExtreme), Kubernetes (Azure AKS). Min. 5 jaar ervaring, vast contract.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "Angular",
+      "RabbitMQ",
+      "MySQL",
+      "Kubernetes",
+      "Azure"
+    ]
+  },
+  {
+    "titel": "ITS DotNet Developer",
+    "bedrijf": "Gosselin Group",
+    "locatie": "Deurne (Antwerpen)",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74493094/its-dotnet-developer",
+    "beschrijving": "Ontwikkelt en onderhoudt software over de volledige stack: Angular frontend, .NET Core backend, Azure cloud, voor het bedrijfskritische GoShaRe-platform. Min. 2 jaar ervaring, vast contract.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      "Angular",
+      ".NET Core",
+      "Azure"
+    ]
+  },
+  {
+    "titel": ".NET Angular Developer (in-house)",
+    "bedrijf": "onbekend (via Kingfisher Recruitment, in-house softwareteam)",
+    "locatie": "Herenthout (Kempen)",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/73333570/net-angular-developer-in-house",
+    "beschrijving": "In-house .NET/Angular ontwikkeling, software nauw geïntegreerd met klantomgevingen. Min. 2 jaar ervaring, vast contract. Kempen-regio.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "Angular",
+      "in-house"
+    ]
+  },
+  {
+    "titel": ".NET Full Stack Developer",
+    "bedrijf": "Experis Belgium (klant)",
+    "locatie": "Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74646904/net-full-stack-developer",
+    "beschrijving": "Brede technische rol op een bedrijfskritische applicatie: Angular aan de frontend, .NET Core aan de backend. Min. 2 jaar ervaring, vast contract.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      ".NET Core",
+      "Angular"
+    ]
+  },
+  {
+    "titel": ".NET Developer",
+    "bedrijf": "onbekend (via Kingfisher Recruitment)",
+    "locatie": "Hemiksem (Antwerpen)",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74346630/net-developer",
+    "beschrijving": "Ontwikkelt applicaties over de volledige stack, van backend tot frontend, met C#, .NET en Angular. Min. 5 jaar ervaring als Full-Stack .NET Developer, vast contract.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      "C#",
+      ".NET",
+      "Angular",
+      "SQL",
+      "Azure"
+    ]
   }
 ]
