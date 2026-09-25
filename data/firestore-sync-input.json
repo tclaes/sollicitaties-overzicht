@@ -2437,6 +2437,10 @@
       {
         "bron": "jobat",
         "url": "https://www.jobat.be/nl/jobs/net-full-stack-developer/job_6285723"
+      },
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74647560/net-full-stack-developer"
       }
     ]
   },
@@ -2501,6 +2505,120 @@
       "React",
       "full-stack",
       "AI-tools"
+    ]
+  },
+  {
+    "titel": "Frontend Developer",
+    "bedrijf": "DPG Media",
+    "locatie": "Antwerpen (hybride)",
+    "regio": "antwerpen",
+    "url": "https://vacatures.dpgmedia.nl/o/frontend-developer",
+    "beschrijving": "Experienced Frontend Developer (TypeScript/JavaScript) in het Tracking Team van DPG Media IT: bouwt een nieuwe, uniforme web-tracking-SDK van nul op, samen met mobile-SDK-developers en data engineers. Stakeholders zijn vooral andere developers binnen DPG (developer experience, type-safe API's, documentatie, demo-apps). Vraagt diepe kennis van modern TypeScript/ESNext, browsercontext, HTTP, web storage en performance, plus geautomatiseerd testen (Vitest/Jest/Playwright) en CI/CD. Standplaats Antwerpen, af en toe (gem. 1x/kwartaal) naar Rotterdam/Amsterdam. Contracttype niet expliciet vermeld (in-house rol).",
+    "bron": "andere",
+    "functie": "frontend",
+    "tags": [
+      "TypeScript",
+      "JavaScript",
+      "SDK",
+      "Vitest",
+      "Playwright",
+      "CI/CD"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "linkedin",
+        "url": "https://www.linkedin.com/jobs/view/4468471258/"
+      },
+      {
+        "bron": "indeed",
+        "url": "https://be.indeed.com/viewjob?jk=467642f8aaa82eba"
+      }
+    ]
+  },
+  {
+    "titel": "Fullstack Web Developer",
+    "bedrijf": "Goed zorgwinkel",
+    "locatie": "Mechelen (hybride)",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4467624069/",
+    "beschrijving": "Nieuwe plaatsing van de eerder verlopen vacature bij zorgretailer Goed. Vast contract (onbepaalde duur), 40u/week. Min. 3 jaar fullstack-ervaring met TypeScript/Node.js en React; React en Next.js in productie, bij voorkeur NestJS; oog voor snelle, toegankelijke UI; integraties met externe systemen; Docker en bij voorkeur Azure DevOps Pipelines.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "NestJS"
+    ]
+  },
+  {
+    "titel": "Fullstack Engineer",
+    "bedrijf": "Sitemark",
+    "locatie": "Leuven (hybride)",
+    "regio": "vlaanderen",
+    "url": "https://jobs.ashbyhq.com/sitemark/7bb64d2e-5528-4e81-8ade-50d4dacb6509",
+    "beschrijving": "Senior full-stack productrol bij Sitemark (AI- en roboticaplatform voor hernieuwbare energie), full time, hybride in België (Leuven volgens StepStone). Vereist sterke JavaScript/TypeScript met React en Node.js, cloud (PostgreSQL, Azure/AWS, Docker) en hands-on ervaring met AI-codeertools; direct klantcontact. Borderline: mogelijk dezelfde klant als de Madison-vacature 'Full stack developer (React/Python)' die als niet interessant gearchiveerd is — deze rol is wel React/Node-gericht.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "AI-tools"
+    ]
+  },
+  {
+    "titel": "Software Engineering Team Leader (IoT)",
+    "bedrijf": "KS Consulting Belgium (klant: engineeringbedrijf IoT/machine-elektrificatie)",
+    "locatie": "Regio Bornem - Puurs - Willebroek",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74659575/software-engineering-team-leader",
+    "beschrijving": "Vast contract. Teamleader van een team IoT-developers die zelf hands-on blijft in front-end en back-end. Vraagt full-stack kennis (C++, Python, JavaScript) met front-end frameworks React, Angular en/of Blazor, back-end .NET en/of Spring Boot, SQL/time-series. Borderline: leidinggevende rol met IoT/hardware-focus en brede stack; waarschijnlijk dezelfde klant als de bekende KS Consulting 'Full Stack Web Developer'.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      "Angular",
+      "JavaScript",
+      ".NET",
+      "IoT",
+      "Team Lead"
+    ]
+  },
+  {
+    "titel": "Lead Software Engineer - Frontend",
+    "bedrijf": "FINN",
+    "locatie": "Remote (oostelijk halfrond, tijdzone-overlap vereist)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4469112783/",
+    "beschrijving": "Hands-on lead van het frontendteam (3, groeiend naar 5+) bij fintech FINN (early wage access, Zuidoost-Azië). Stack: Angular + Ionic (web en mobile); diepe TypeScript-fundamenten, componentarchitectuur, state management, performance; mentoring. Fulltime, remote. Borderline: bedrijf focust op Zuidoost-Azië en vraagt tijdzone-overlap met het oostelijk halfrond.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "Angular",
+      "Ionic",
+      "TypeScript",
+      "Lead",
+      "Remote"
+    ]
+  },
+  {
+    "titel": "Senior Full Stack Product Engineer (TypeScript)",
+    "bedrijf": "Maze",
+    "locatie": "Remote (EU)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4406417695/",
+    "beschrijving": "Product engineering bij user-research-platform Maze (Series B). Fulltime, remote. Vereist moderne full-stack JavaScript (Node.js en React) en PostgreSQL. Borderline: remote met voorkeur voor Nederland, VK, Ierland, Spanje of Portugal (België niet expliciet vermeld); veel sollicitanten.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      "Node.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Remote"
     ]
   }
 ]
