@@ -2620,5 +2620,21 @@
       "PostgreSQL",
       "Remote"
     ]
+  },
+  {
+    "titel": "Lead Next.js Engineer | Enterprise Platforms",
+    "bedrijf": "De Cronos Groep (via headcount)",
+    "locatie": "Kontich",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74694240/lead-next-js-engineer-enterprise-platforms-freelance-vast",
+    "beschrijving": "Hands-on technische lead rond Next.js binnen De Cronos Groep: complexe webapplicaties met Next.js, React en TypeScript, keuzes rond rendering/data fetching/caching/performance, codekwaliteit en best practices. Geen people management. Min. 5 jaar ervaring, vast contract (onbepaalde duur) of freelance mogelijk. Borderline: Next.js-productie-ervaring expliciet vereist; mogelijk consultancy-context bij klanten.",
+    "bron": "vdab",
+    "functie": "frontend",
+    "tags": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tech Lead"
+    ]
   }
 ]
