@@ -2636,5 +2636,101 @@
       "TypeScript",
       "Tech Lead"
     ]
+  },
+  {
+    "titel": "Senior Fullstack Developer (Qmusic, JOE, Willy)",
+    "bedrijf": "DPG Media",
+    "locatie": "Antwerpen / Vilvoorde (hybride, remote friendly)",
+    "regio": "antwerpen",
+    "url": "https://techjobs.be/nl/ict-jobs/69388-senior-fullstack-developer-qmusic-joe-willy",
+    "beschrijving": "Voltijdse senior fullstack-rol in het in-house Radio Technology team van DPG Media: interne tools voor radiomakers (redactiesysteem, CMS, studio-aansturing) en de websites/apps van Qmusic, JOE en Willy, plus AI-projecten. Vue en TypeScript vermeld. Staat al online sinds april maar is nog actief op techjobs.be.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "Vue",
+      "TypeScript",
+      "fullstack",
+      "media"
+    ]
+  },
+  {
+    "titel": "Software Engineer (React/Node.js/TypeScript)",
+    "bedrijf": "Vivid Resourcing (klant: snelgroeiend hernieuwbare-energiebedrijf)",
+    "locatie": "Leuven (hybride)",
+    "regio": "vlaanderen",
+    "url": "https://www.linkedin.com/jobs/view/4436346332/",
+    "beschrijving": "Full-stack webapplicaties bouwen met React, Node.js en TypeScript voor een hernieuwbare-energiebedrijf in Leuven, via recruiter Vivid Resourcing. Fulltime, tot ca. €7k, bedrijfswagen, 12 ADV-dagen, doorgroei naar tech lead. Klant niet genoemd; mogelijk (maar niet zeker) dezelfde als een al bekende Leuvense energie-/drone-vacature.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      "Node.js",
+      "TypeScript"
+    ]
+  },
+  {
+    "titel": "Full Stack Engineer (.NET/Angular)",
+    "bedrijf": "Vivid Resourcing (klant: productiebedrijf)",
+    "locatie": "Mechelen",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4461774462/",
+    "beschrijving": "Vaste in-house rol bij een productiebedrijf in Mechelen: interne MES/ERP-achtige tools, .NET (C#) backend en Angular frontend (sterke Angular-ervaring gevraagd). €3.000-€5.500/maand. Andere vacature dan de eerder gearchiveerde Vivid-rol in Mechelen (Vue/SEO).",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "C#",
+      "Angular",
+      "SQL Server"
+    ]
+  },
+  {
+    "titel": "AI-Native Full Stack Engineer",
+    "bedrijf": "Oper Credits",
+    "locatie": "Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4467348151/",
+    "beschrijving": "Fintech (digitale hypotheeksoftware, kantoren Zürich en Antwerpen). Full-stack features met Python-backend en Angular-frontend, sterk AI-gedreven werkwijze. Borderline: backend in Python, maar Angular-frontend is een volwaardig deel van de rol.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "Angular",
+      "Python",
+      "AI",
+      "fintech"
+    ]
+  },
+  {
+    "titel": "Fullstack Java Software Engineer",
+    "bedrijf": "Lemon Companies",
+    "locatie": "Kontich",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4469059048/",
+    "beschrijving": "Borderline: Java-backend plus moderne UI's met React of Angular; de frontend is expliciet een deel van de rol, maar het zwaartepunt lijkt Java. Contractvorm niet expliciet vermeld.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "Java",
+      "React",
+      "Angular"
+    ]
+  },
+  {
+    "titel": "Senior Web Developer (AI-Augmented)",
+    "bedrijf": "Jobgether (voor een niet-genoemde partner)",
+    "locatie": "Volledig remote (België)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4469411945/",
+    "beschrijving": "Volledig remote senior full-stack-rol in België: React + TanStack, Next.js, NestJS en AWS, plus LLM/RAG/agent-features. Geplaatst door Jobgether namens een partnerbedrijf dat niet genoemd wordt.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      "TanStack",
+      "Next.js",
+      "NestJS",
+      "AWS",
+      "remote"
+    ]
   }
 ]
