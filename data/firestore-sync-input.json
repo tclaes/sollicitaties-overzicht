@@ -2495,17 +2495,9 @@
   {
     "titel": "AI Full-Stack Software Engineer",
     "bedrijf": "BubblyDoo",
-    "locatie": "Antwerpen (The Beacon, hybride 2-3 dagen/week)",
-    "regio": "antwerpen",
     "url": "https://www.linkedin.com/jobs/view/4469469189/",
-    "beschrijving": "Scale-up in gepersonaliseerde kinderproducten (grootste markt VS). Autonome full-stack rol: website, nieuwe features, A/B-tests, personalisatieconfigurator op de frontend herschrijven, integraties met productiepartners; werkt met AI-tools (Cursor-agents). Gevraagd: zeer vaardig in React, ervaring met full-stack apps, min. 3 jaar ervaring. Voltijds, kantoor in Antwerpen 2-3 dagen/week (remote mogelijk voor uitzonderlijke kandidaten). Contracttype niet expliciet vermeld.",
-    "bron": "linkedin",
-    "functie": "fullstack",
-    "tags": [
-      "React",
-      "full-stack",
-      "AI-tools"
-    ]
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Frontend Developer",
@@ -2590,19 +2582,9 @@
   {
     "titel": "Lead Software Engineer - Frontend",
     "bedrijf": "FINN",
-    "locatie": "Remote (oostelijk halfrond, tijdzone-overlap vereist)",
-    "regio": "remote",
     "url": "https://www.linkedin.com/jobs/view/4469112783/",
-    "beschrijving": "Hands-on lead van het frontendteam (3, groeiend naar 5+) bij fintech FINN (early wage access, Zuidoost-Azië). Stack: Angular + Ionic (web en mobile); diepe TypeScript-fundamenten, componentarchitectuur, state management, performance; mentoring. Fulltime, remote. Borderline: bedrijf focust op Zuidoost-Azië en vraagt tijdzone-overlap met het oostelijk halfrond.",
-    "bron": "linkedin",
-    "functie": "frontend",
-    "tags": [
-      "Angular",
-      "Ionic",
-      "TypeScript",
-      "Lead",
-      "Remote"
-    ]
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Senior Full Stack Product Engineer (TypeScript)",
@@ -2718,19 +2700,31 @@
   {
     "titel": "Senior Web Developer (AI-Augmented)",
     "bedrijf": "Jobgether (voor een niet-genoemde partner)",
-    "locatie": "Volledig remote (België)",
-    "regio": "remote",
     "url": "https://www.linkedin.com/jobs/view/4469411945/",
-    "beschrijving": "Volledig remote senior full-stack-rol in België: React + TanStack, Next.js, NestJS en AWS, plus LLM/RAG/agent-features. Geplaatst door Jobgether namens een partnerbedrijf dat niet genoemd wordt.",
-    "bron": "linkedin",
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
+  },
+  {
+    "titel": "Full Stack Software Engineer",
+    "bedrijf": "Sonetas",
+    "locatie": "Mechelen (hybride, flexibel telewerk)",
+    "regio": "antwerpen",
+    "url": "https://www.fuga.eu/nl/careers/fullstacksoftwareengineer",
+    "beschrijving": "Belgische SaaS-KMO, marktleider in software voor dierenartsen (Fuga, 1300 praktijken; myPets). Medior/senior engineer met interesse in zowel front-end als back-end: modernisering van Fuga van legacy Java naar Java/Spring Boot + React, plus een greenfield hospitalisatie-applicatie. AI-assisted development (Codex, Claude). Payroll of freelance mogelijk; payroll met 32 verlofdagen, maaltijdcheques, groeps- en hospitalisatieverzekering. BORDERLINE: backend is Java/Spring Boot; React is de frontend en de rol vraagt expliciet front- én back-end, maar het frontend-aandeel is niet gekwantificeerd.",
+    "bron": "andere",
     "functie": "fullstack",
     "tags": [
       "React",
-      "TanStack",
-      "Next.js",
-      "NestJS",
-      "AWS",
-      "remote"
+      "Java",
+      "Spring Boot",
+      "SaaS",
+      "AI-assisted development"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "linkedin",
+        "url": "https://www.linkedin.com/jobs/view/4471871078/"
+      }
     ]
   }
 ]
