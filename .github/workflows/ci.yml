@@ -8,6 +8,11 @@ on:
   pull_request:
     branches:
       - main
+    # Vacature-updates (enkel data/firestore-sync-input.json) worden automatisch
+    # gemerged door auto-merge-vacature-sync.yml en raken geen code: geen build,
+    # tests of e2e nodig. Raakt de PR ook maar één ander bestand, dan draait CI wel.
+    paths-ignore:
+      - "data/firestore-sync-input.json"
   workflow_dispatch:
 
 # Bij snel opeenvolgende pushes naar dezelfde PR telt alleen de laatste.
