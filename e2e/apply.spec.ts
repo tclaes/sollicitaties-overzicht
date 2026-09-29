@@ -8,7 +8,9 @@ test("applying to a vacancy moves it to gesolliciteerd and shows up in Sollicita
   await row.getByRole("button", { name: "Solliciteer" }).click();
   await row.getByTitle("Bevestigen").click();
 
-  await expect(row.getByText("Gesolliciteerd", { exact: true })).toBeVisible();
+  // Na solliciteren toont de rij de bewerkbare status (een <select>); "Gesolliciteerd"
+  // is daarin een <option> en dus nooit als zichtbare tekst te vinden.
+  await expect(row.getByLabel("Status van de sollicitatie")).toHaveValue("applied");
 
   await page.getByRole("link", { name: "Sollicitaties" }).and(page.locator('[href="/sollicitaties"]')).click();
   await expect(page.getByRole("heading", { name: "Sollicitaties" })).toBeVisible();
