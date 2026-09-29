@@ -2726,5 +2726,61 @@
         "url": "https://www.linkedin.com/jobs/view/4471871078/"
       }
     ]
+  },
+  {
+    "titel": "Angular Developer",
+    "bedrijf": "Nexuzhealth (via Cegeka)",
+    "locatie": "Antwerpen, Hasselt of Leuven (hybride)",
+    "regio": "limburg",
+    "url": "https://www.cegeka.com/nl-be/jobs/vacatures/angular-developer-nexuzhealth-8356",
+    "beschrijving": "Webdeveloper met sterke Angular-ervaring voor een nieuw webplatform dat de datastructuren achter het Klinisch Werkstation (elektronisch patiëntendossier voor ziekenhuizen) inzichtelijk maakt. Angular + TypeScript, REST API's, component-based frontend-architectuur, nauwe samenwerking met het data team; Java/OpenShift is een pluspunt. Fulltime. De Cegeka-pagina vermeldt als werkplek Antwerpen, Hasselt of Leuven en als type 'Professional, Freelancer' (vaste aanwerving met loonpakket of freelance).",
+    "bron": "andere",
+    "functie": "frontend",
+    "tags": [
+      "Angular",
+      "TypeScript",
+      "REST API",
+      "healthcare"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "linkedin",
+        "url": "https://www.linkedin.com/jobs/view/4470878232/"
+      }
+    ]
+  },
+  {
+    "titel": "Software Engineer - Medical Imaging (Fullstack)",
+    "bedrijf": "Medpace",
+    "locatie": "Leuven",
+    "regio": "vlaanderen",
+    "url": "https://www.linkedin.com/jobs/view/4351849823/",
+    "beschrijving": "Fulltime full-stack rol in het imaging-team van CRO Medpace: webapplicatie voor beheer en analyse van medische beelden (CT, MRI, PET, ...) in klinische studies, plus beeldkwantificatie-applicaties. Stack: C#, TypeScript/JavaScript, Angular, Git; image processing/ML en Azure/AWS zijn pluspunten. Borderline: .NET-backend en beeldverwerking wegen mee, en de posting vraagt '2 jaar ervaring' (open op alle niveaus); al 200+ sollicitanten op LinkedIn.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "Angular",
+      "TypeScript",
+      "C#",
+      "medical imaging"
+    ]
+  },
+  {
+    "titel": "SR .NET Developer (In-house)",
+    "bedrijf": "LGA IT (klant)",
+    "locatie": "Leuven",
+    "regio": "vlaanderen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74711451/sr-net-developer-in-house",
+    "beschrijving": "Vaste, voltijdse in-house senior rol met ownership over de volledige software-lifecycle: full-stack webapplicaties en API's, functionele en technische analyse, kennisdeling. Vereist: 5+ jaar ervaring, C#/.NET/Entity Framework én 'sterk in de front-end met een modern framework zoals Angular, React of Vue', MS SQL Server, CI/CD. Borderline: .NET-zwaartepunt, maar frontend is een expliciete kernvereiste.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "C#",
+      "Angular",
+      "React",
+      "Vue",
+      "SQL Server"
+    ]
   }
 ]
