@@ -26,7 +26,6 @@ const {
   createApplication,
   getAllVacancies,
   getApplications,
-  getVacanciesDashboard,
   getVacancy,
   markNotInteresting,
   restoreVacancy,
@@ -72,21 +71,6 @@ describe("getAllVacancies", () => {
     getDocs.mockRejectedValueOnce(new Error("boom"));
 
     await expect(getAllVacancies()).resolves.toEqual([]);
-  });
-});
-
-describe("getVacanciesDashboard", () => {
-  it("filters out archived vacancies", async () => {
-    getDocs.mockResolvedValueOnce(
-      snapshotOf([
-        { id: "v1", data: rawVacancy },
-        { id: "v2", data: { ...rawVacancy, id: "v2", isArchived: true } },
-      ]),
-    );
-
-    const result = await getVacanciesDashboard();
-
-    expect(result?.map((v) => v.id)).toEqual(["v1"]);
   });
 });
 

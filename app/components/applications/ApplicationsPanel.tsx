@@ -33,7 +33,7 @@ export function ApplicationsPanel({applications, showHeader = false}: Props) {
       await updateApplication(id, status);
       if (status === ApplicationStatusSchema.enum.not_hired && vacancyId) {
         await archiveVacancy(vacancyId, true);
-        await navigate({to: "/"});
+        await navigate({to: "/vacatures"});
       }
     } catch {
       // Revert on failure

@@ -8,7 +8,7 @@ test("rejecting an application archives the vacancy and it stays visible under N
   const row = page.locator("tr", { hasText: "Reeds Gesolliciteerd Rol" });
   await row.locator("select").selectOption("not_hired");
 
-  await expect(page).toHaveURL(/\/(\?|$)/);
+  await expect(page).toHaveURL(/\/vacatures(\?|$)/);
 
   await page.goto("/vacatures");
   await expect(page.getByText("Reeds Gesolliciteerd Rol")).not.toBeVisible();

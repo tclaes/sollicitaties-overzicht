@@ -34,8 +34,6 @@ function VacancyDetailPage() {
   return (
     <main className={styles.page}>
       <nav className={styles.breadcrumb}>
-        <a href="/">Dashboard</a>
-        <span aria-hidden>›</span>
         <a href="/vacatures">Vacatures</a>
         <span aria-hidden>›</span>
         <span>{vacancy.company}</span>
