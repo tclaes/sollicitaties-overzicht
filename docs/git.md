@@ -1,25 +1,21 @@
 ## Git workflow
 
-- Maak voor elke feature een nieuwe branch aan (bv. `feature/sorteer-op-match`, `fix/login-bug`)
-- Commit en push de wijzigingen naar die branch
-- Open een PR naar `main` via `gh pr create`
-- Merge nooit rechtstreeks naar `main`
+- Create a new branch for every feature (e.g. `feature/sort-by-match`, `fix/login-bug`)
+- Commit and push the changes to that branch
+- Open a PR to `main` via `gh pr create`
+- Never merge directly to `main`
 
 ## Auto merge
 
-- Uitzondering: een PR die **uitsluitend** `data/firestore-sync-input.json` wijzigt
-  wordt automatisch gemerged en gesynct (zie `docs/firestore-sync.md`). Voor die
-  vacature-updates volstaat het dus om een branch + PR te maken; niet zelf mergen.
+A PR that changes **only** `data/firestore-sync-input.json` is **auto-merged** by
+`.github/workflows/auto-merge-vacature-sync.yml`, provided the file contains valid JSON (every non-expired vacancy must
+have `titel`, `bedrijf` and `url`). Do not manually merge/edit such PRs; just make the change and open the PR.
 
-`.github/workflows/auto-merge-vacature-sync.yml` mergt automatisch elke PR naar
-`main` die **enkel** `data/firestore-sync-input.json` wijzigt en geldige JSON bevat (elke niet-verlopen vacature moet
-`titel`, `bedrijf` en `url` hebben). Daarna start
-die workflow `sync-firestore.yml` expliciet op `main` — een merge via `GITHUB_TOKEN`
-triggert de push-trigger namelijk niet.
+After the merge, that workflow explicitly starts `sync-firestore.yml` on `main` — a merge via `GITHUB_TOKEN`
+does not fire the push trigger.
 
-Raakt de PR ook maar één ander bestand, dan gebeurt er niets en wacht de PR op een
-handmatige review.
+If the PR touches even one other file, nothing happens and the PR waits for a manual review.
 
-De dagelijkse routine is dus: JSON genereren → branch + PR naar `main` → auto-merge
-→ de Action synct. (Direct `npm run trigger:sync` draaien kan ook nog, maar dan sync
-je de versie die al op `main` staat.)
+The daily routine is therefore: generate JSON → branch + PR to `main` → auto-merge
+→ the Action syncs. (Running `npm run trigger:sync` directly is still possible, but then you sync
+the version that is already on `main`.)
