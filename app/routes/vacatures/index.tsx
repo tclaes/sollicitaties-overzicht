@@ -1,5 +1,5 @@
-import {createFileRoute} from "@tanstack/react-router";
-import {getAllVacancies, getApplications} from "~/lib/vacancies";
+import {createFileRoute, useRouter} from "@tanstack/react-router";
+import {createApplication, getAllVacancies, getApplications} from "~/lib/vacancies";
 import {VacancyTable} from "~/components/vacancies/VacancyTable";
 import {StatsCounter} from "~/components/elements/StatsCounter";
 import {FilterPills} from "~/components/elements/FilterPills";
@@ -23,6 +23,7 @@ export const Route = createFileRoute("/vacatures/")({
 function VacanciesPage() {
   const {vacancies, applications} = Route.useLoaderData();
   const search = Route.useSearch();
+  const router = useRouter();
 
   const applicationById = new Map<string, Application>(
     applications.flatMap((s) => s.vacancyId ? [[s.vacancyId, s]] : [])
@@ -70,24 +71,47 @@ function VacanciesPage() {
   const pageStart = totalItems === 0 ? 0 : (currentPage - 1) * PAGE_SIZE + 1;
   const pageEnd = Math.min(currentPage * PAGE_SIZE, totalItems);
 
+  async function handleApply(data: {
+    vacancyId: string;
+    company: string;
+    role: string;
+    appliedOn: string
+  }) {
+    await createApplication(data);
+    await router.invalidate();
+  }
+
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <h1 className={styles.title}>Alle vacatures</h1>
+        <h1 className={styles.title}>Vacatures</h1>
         <span className={styles.counter}>
           {totalItems > 0 ? `${pageStart}–${pageEnd} van ${totalItems} vacatures` : "0 vacatures"}
         </span>
       </header>
 
-      <StatsCounter vacancies={vacancies}/>
-      <FilterPills currentSearch={search}/>
-      <VacancyTable vacancies={pageItems} applicationById={applicationById}/>
-      <Pagination
-        totalItems={totalItems}
-        currentPage={currentPage}
-        basePath="/vacatures"
-        currentSearch={search}
-      />
+      {vacancies.length > 0 ? (
+        <>
+          <StatsCounter vacancies={vacancies}/>
+          <FilterPills currentSearch={search}/>
+          <VacancyTable
+            vacancies={pageItems ?? []}
+            applicationById={applicationById}
+            onApply={handleApply}
+          />
+          <Pagination
+            totalItems={totalItems}
+            currentPage={currentPage}
+            basePath="/vacatures"
+            currentSearch={search}
+          />
+        </>
+      ) : (
+        <div className={styles.empty}>
+          <p>Nog geen vacatures gevonden.</p>
+          <p className={styles.emptySub}>De dagelijkse taak loopt elke werkdag om 12:00.</p>
+        </div>
+      )}
     </div>
   );
 }

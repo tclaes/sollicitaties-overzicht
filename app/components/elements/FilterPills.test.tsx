@@ -14,10 +14,10 @@ describe("FilterPills", () => {
   });
 
   it("builds hrefs against basePath, merging in the current search", () => {
-    render(<FilterPills currentSearch={{ status: "viewed" }} basePath="/" />);
+    render(<FilterPills currentSearch={{ status: "viewed" }} basePath="/other" />);
 
     const nieuwLink = screen.getByRole("link", { name: "Nieuw" });
-    expect(nieuwLink).toHaveAttribute("href", "/?status=new");
+    expect(nieuwLink).toHaveAttribute("href", "/other?status=new");
   });
 
   it("defaults basePath to /vacatures", () => {
@@ -28,9 +28,9 @@ describe("FilterPills", () => {
   });
 
   it("preserves other search params when changing one filter", () => {
-    render(<FilterPills currentSearch={{ status: "viewed", sort: "date" }} basePath="/" />);
+    render(<FilterPills currentSearch={{ status: "viewed", sort: "date" }} basePath="/other" />);
 
     const frontendLink = screen.getByRole("link", { name: "frontend" });
-    expect(frontendLink).toHaveAttribute("href", "/?status=viewed&sort=date&function=frontend");
+    expect(frontendLink).toHaveAttribute("href", "/other?status=viewed&sort=date&function=frontend");
   });
 });

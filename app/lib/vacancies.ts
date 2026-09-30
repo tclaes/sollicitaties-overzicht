@@ -18,11 +18,6 @@ export async function getAllVacancies(): Promise<Vacancy[]> {
   }
 }
 
-export async function getVacanciesDashboard() {
-  const allVacancies = await getAllVacancies();
-  return allVacancies?.filter(v => !v.isArchived)
-}
-
 export async function getApplications(): Promise<Application[]> {
   try {
     const snapshot = await getDocs(collection(db, "sollicitaties"));
