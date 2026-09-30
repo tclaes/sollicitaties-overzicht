@@ -38,6 +38,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
+import { sameJobKey } from "./vacancy-keys.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DEFAULT_SERVICE_ACCOUNT_PATH = join(__dirname, "..", "secrets", "firebase-service-account.json");
@@ -132,6 +133,16 @@ const now = new Date().toISOString();
 
 let created = 0, updated = 0, deleted = 0, skipped = 0, archived = 0;
 
+// Bestaande documenten geïndexeerd op "zelfde vacature"-sleutel (titel+bedrijf+locatie).
+// Een nieuwe url voor een vacature die al onder een andere url/bron bestaat (bv. it-jobs.be
+// vs codejobs.be) mag geen tweede document worden: die url gaat naar extraBronnen van het
+// bestaande document.
+const existingByJobKey = new Map();
+for (const d of (await db.collection("vacatures").get()).docs) {
+  const key = sameJobKey(d.data());
+  if (key && !existingByJobKey.has(key)) existingByJobKey.set(key, { id: d.id, data: d.data() });
+}
+
 for (const [i, v] of input.entries()) {
   if (v.nietInteressant) {
     const id = generateId(v);
@@ -192,7 +203,24 @@ for (const [i, v] of input.entries()) {
     updated++;
     console.log(`Bijgewerkt: ${id}`);
   } else {
+    const key = sameJobKey(v);
+    const twin = key ? existingByJobKey.get(key) : undefined;
+    if (twin) {
+      const extra = twin.data.extraBronnen ?? [];
+      const known = new Set([twin.data.url, ...extra.map((b) => b.url)]);
+      const additions = [{ bron: v.bron, url: v.url }, ...(v.extraBronnen ?? [])].filter(
+        (b) => b.url && !known.has(b.url)
+      );
+      if (additions.length) {
+        twin.data.extraBronnen = [...extra, ...additions];
+        await db.collection("vacatures").doc(twin.id).set({ extraBronnen: twin.data.extraBronnen }, { merge: true });
+      }
+      skipped++;
+      console.log(`Overgeslagen (zelfde vacature als ${twin.id}, url naar extraBronnen): ${id}`);
+      continue;
+    }
     await ref.set({ ...baseFields, status: "nieuw", gevondenOp: now });
+    if (key) existingByJobKey.set(key, { id, data: baseFields });
     created++;
     console.log(`Nieuw: ${id}`);
   }
