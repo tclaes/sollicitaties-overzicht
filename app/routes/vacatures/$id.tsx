@@ -95,6 +95,7 @@ function VacancyDetailPage() {
                   await router.invalidate();
                 }}
                 onApplied={() => undefined}
+                alwaysVisible
               />
             )}
           </section>
