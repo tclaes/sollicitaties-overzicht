@@ -16,3 +16,24 @@ test("applying to a vacancy moves it to gesolliciteerd and shows up in Sollicita
   await expect(page.getByRole("heading", { name: "Sollicitaties" })).toBeVisible();
   await expect(page.getByText("Fixture Full Stack NV")).toBeVisible();
 });
+
+test("applying from the detail page keeps the user on that page", async ({ page }) => {
+  await login(page);
+
+  await page.locator("tr", { hasText: "Detail Solliciteer Rol" }).click();
+  await expect(page).toHaveURL(/\/vacatures\/[^/]+$/);
+  const detailUrl = page.url();
+  // Wacht tot de detailpagina echt gerenderd is; tijdens de navigatie staat de lijst nog even in beeld.
+  await expect(page.getByRole("heading", { level: 1, name: "Detail Solliciteer Rol" })).toBeVisible();
+
+  await page.getByRole("button", { name: "Solliciteer" }).click();
+  await page.getByTitle("Bevestigen").click();
+
+  await expect(page.getByLabel("Status van de sollicitatie")).toHaveValue("applied");
+  await expect(page.getByRole("button", { name: "Solliciteer" })).toHaveCount(0);
+  expect(page.url()).toBe(detailUrl);
+
+  await page.getByLabel("Status van de sollicitatie").selectOption("interviewing");
+  await expect(page.getByLabel("Status van de sollicitatie")).toHaveValue("interviewing");
+  expect(page.url()).toBe(detailUrl);
+});

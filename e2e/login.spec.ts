@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { TEST_USER } from "./seed";
 
-test("logs in and lands on the dashboard", async ({ page }) => {
+test("logs in and lands on the vacancies page", async ({ page }) => {
   await page.goto("/");
 
   await expect(page.getByRole("heading", { name: "Sollicitaties" })).toBeVisible();
@@ -11,6 +11,7 @@ test("logs in and lands on the dashboard", async ({ page }) => {
   await page.getByRole("button", { name: "Inloggen" }).click();
 
   await expect(page.getByRole("heading", { name: "Vacatures" })).toBeVisible();
+  await expect(page).toHaveURL(/\/vacatures(\?|$)/);
   await expect(page.getByText("Nieuwe Frontend Rol")).toBeVisible();
 });
 

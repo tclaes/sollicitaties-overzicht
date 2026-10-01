@@ -49,6 +49,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
+import { sameJobKey } from "./vacancy-keys.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DEFAULT_SERVICE_ACCOUNT_PATH = join(__dirname, "..", "secrets", "firebase-service-account.json");
@@ -120,34 +121,6 @@ function canonicalId(data) {
   if (!data.url) return null;
   const normalized = normalizeUrl(data.url);
   return normalized ? slugify(normalized) : null;
-}
-
-function normalizeTitel(titel) {
-  return (titel ?? "").toLowerCase().trim().replace(/\s+/g, " ");
-}
-
-function normalizeBedrijf(bedrijf) {
-  return (bedrijf ?? "")
-    .toLowerCase()
-    .replace(/\([^)]*\)/g, "") // parenthetische toevoegingen strippen, bv. "(Customer Collective)"
-    .trim()
-    .replace(/\s+/g, " ");
-}
-
-function locatieKern(locatie) {
-  return (locatie ?? "")
-    .split("(")[0]
-    .toLowerCase()
-    .trim()
-    .replace(/\s+/g, " ");
-}
-
-function sameJobKey(data) {
-  const titel = normalizeTitel(data.titel);
-  const bedrijf = normalizeBedrijf(data.bedrijf);
-  const locatie = locatieKern(data.locatie);
-  if (!titel || !bedrijf || !locatie) return null;
-  return `${titel}|${bedrijf}|${locatie}`;
 }
 
 function statusRank(status) {

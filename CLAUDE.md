@@ -1,5 +1,9 @@
 # Sollicitaties App — Werkinstructies
 
+## Architecture
+
+References `docs/architecture.md`
+
 ## Git Workflow
 
 References: `docs/git.md` for git workflow
