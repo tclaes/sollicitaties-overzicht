@@ -2782,5 +2782,83 @@
       "Vue",
       "SQL Server"
     ]
+  },
+  {
+    "titel": "Full-Stack Developer",
+    "bedrijf": "one2three",
+    "locatie": "Mechelen",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4468602622/",
+    "beschrijving": "Scale-up met horeca-softwareplatform. Web- en hybride apps met herbruikbare componenten in Angular en Ruby on Rails (incl. automatische tests). Borderline: Rails-backend naast Angular-frontend; ter plaatse in Mechelen.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "Angular",
+      "Ruby on Rails",
+      "Full-stack"
+    ]
+  },
+  {
+    "titel": "Senior Angular Ontwikkelaar - React",
+    "bedrijf": "Talencia Consulting (via Editx)",
+    "locatie": "Mechelen",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/73928751/senior-angular-ontwikkelaar-react",
+    "beschrijving": "Vaste job voor een klant in de regio Antwerpen/Mechelen. Grondige Angular-ervaring, enige kennis Java, minstens 5 jaar UI-ontwikkeling.",
+    "bron": "vdab",
+    "functie": "frontend",
+    "tags": [
+      "Angular",
+      "React",
+      "UI",
+      "Vast contract"
+    ]
+  },
+  {
+    "titel": "Software Developer (focus frontend, Vue.js)",
+    "bedrijf": "PROMAN (klant)",
+    "locatie": "Mechelen",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74106696/software-developer",
+    "beschrijving": "Vaste job, focus op frontend: Vue.js (progressive webapps), Umbraco CMS, API-integraties op Azure-backend, UX/UI, SEO en analytics. 5+ jaar frontend. Via interimkantoor PROMAN.",
+    "bron": "vdab",
+    "functie": "frontend",
+    "tags": [
+      "Vue.js",
+      "Umbraco",
+      "UX/UI",
+      "SEO"
+    ]
+  },
+  {
+    "titel": "Full-stack developer (.NET / Angular)",
+    "bedrijf": "onbekend (via Editx)",
+    "locatie": "Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/73914622/full-stack-developer",
+    "beschrijving": "HR/payroll-softwarebedrijf, greenfield projecten. Voornamelijk .NET, op de frontend vooral JavaScript/Angular; 5+ jaar .NET (C#) en Angular. Borderline: .NET-zwaartepunt, Angular volwaardig deel; flexibel thuiswerk.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "Angular",
+      "JavaScript"
+    ]
+  },
+  {
+    "titel": "Full Stack Developer",
+    "bedrijf": "HR organizer",
+    "locatie": "Tervuren",
+    "regio": "vlaanderen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74442964/full-stack-developer",
+    "beschrijving": "E-recruitment webapplicatie en werkenbij-websites; teams met back-end, front-end en JavaScript. Vast contract, thuiswerk mogelijk, werkplek Tervuren/Beauvechain of thuis. Borderline: regio aan de rand van Leuven; frontend-accent (HTML/CSS/Sass).",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      "JavaScript",
+      "HTML/CSS",
+      "Sass",
+      "Thuiswerk"
+    ]
   }
 ]
