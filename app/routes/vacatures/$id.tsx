@@ -1,13 +1,13 @@
 import {useState} from "react";
 import {createFileRoute, notFound, useRouter} from "@tanstack/react-router";
-import {createApplication, getApplications, getVacancy} from "~/lib/vacancies";
+import {createApplication, getApplications, getVacancy,} from "~/lib/vacancies";
 import {setStatus} from "~/lib/statusStore";
 import {Badge} from "~/components/elements/Badge/Badge";
 import {SourceBadge} from "~/components/elements/SourceBadge";
 import {formatDate} from "~/lib/date";
 import styles from "./$id.module.css";
-import {ROLE_LABELS, StatusSchema} from "~/lib/schemas";
 import type {ApplicationStatus as ApplicationStatusValue} from "~/lib/schemas";
+import {ROLE_LABELS, StatusSchema} from "~/lib/schemas";
 import {CLink} from "~/components/elements/Link/CLink";
 import {NotFoundComponent} from "~/elements/NotFound/NotFoundComponent";
 import {NotInteresting} from "~/components/vacancies/NotInteresting/NotInteresting";
@@ -22,24 +22,31 @@ export const Route = createFileRoute("/vacatures/$id")({
       getApplications(),
     ]);
     if (!vacancy) throw notFound();
-    const application = applications.find((a) => a.vacancyId === params.id) ?? null;
+    const application =
+      applications.find((a) => a.vacancyId === params.id) ?? null;
 
     if (vacancy.status === StatusSchema.enum.new) {
       await setStatus(params.id, StatusSchema.enum.viewed);
-      return {vacancy: {...vacancy, status: StatusSchema.enum.viewed}, application};
+      return {
+        vacancy: {...vacancy, status: StatusSchema.enum.viewed},
+        application,
+      };
     }
     return {vacancy, application};
   },
   component: VacancyDetailPage,
-  notFoundComponent: NotFoundComponent
+  notFoundComponent: NotFoundComponent,
 });
 
 function VacancyDetailPage() {
   const {vacancy, application} = Route.useLoaderData();
   const router = useRouter();
   const [favorite, setFavorite] = useState(vacancy.favorite ?? false);
-  const [statusOverride, setStatusOverride] = useState<ApplicationStatusValue | null>(null);
-  const applicationStatus = application ? statusOverride ?? application.status : null;
+  const [statusOverride, setStatusOverride] =
+    useState<ApplicationStatusValue | null>(null);
+  const applicationStatus = application
+    ? (statusOverride ?? application.status)
+    : null;
 
   return (
     <main className={styles.page}>
@@ -55,9 +62,15 @@ function VacancyDetailPage() {
             <Badge status={application ? "applied" : vacancy.status}/>
             <SourceBadge source={vacancy.source}/>
             {vacancy.function && (
-              <span className={styles.roleBadge}>{ROLE_LABELS[vacancy.function]}</span>
+              <span className={styles.roleBadge}>
+                {ROLE_LABELS[vacancy.function]}
+              </span>
             )}
-            <FavoriteButton id={vacancy.id} favorite={favorite} onToggled={setFavorite}/>
+            <FavoriteButton
+              id={vacancy.id}
+              favorite={favorite}
+              onToggled={setFavorite}
+            />
           </div>
           <h1 className={styles.title}>{vacancy.title}</h1>
           <p className={styles.company}>{vacancy.company}</p>
@@ -85,50 +98,50 @@ function VacancyDetailPage() {
           <p>{vacancy.description}</p>
         </section>
 
-        {(application || !vacancy.isArchived) && (
-          <section className={styles.application} aria-label="Sollicitatie">
-            {application && applicationStatus ? (
-              <>
-                <ApplicationStatus
-                  applicationId={application.id}
-                  vacancyId={vacancy.id}
-                  status={applicationStatus}
-                  onChanged={(next) => {
-                    setStatusOverride(next);
-                    if (next === "not_hired") void router.invalidate();
+        <section className={styles.actions} aria-label="Actions">
+          {(application || !vacancy.isArchived) && (
+            <div className={styles.application}>
+              {application && applicationStatus ? (
+                <>
+                  <ApplicationStatus
+                    applicationId={application.id}
+                    vacancyId={vacancy.id}
+                    status={applicationStatus}
+                    onChanged={(next) => {
+                      setStatusOverride(next);
+                      if (next === "not_hired") void router.invalidate();
+                    }}
+                  />
+                  <span className={styles.applicationDate}>
+                    Gesolliciteerd op {formatDate(application.appliedOn)}
+                  </span>
+                </>
+              ) : (
+                <ApplyForJob
+                  vacancy={vacancy}
+                  onApply={async (data) => {
+                    await createApplication(data);
+                    await router.invalidate();
                   }}
+                  onApplied={() => undefined}
+                  alwaysVisible
                 />
-                <span className={styles.applicationDate}>
-                  Gesolliciteerd op {formatDate(application.appliedOn)}
-                </span>
-              </>
-            ) : (
-              <ApplyForJob
-                vacancy={vacancy}
-                onApply={async (data) => {
-                  await createApplication(data);
-                  await router.invalidate();
-                }}
-                onApplied={() => undefined}
-                alwaysVisible
-              />
+              )}
+            </div>
+          )}
+          <NotInteresting
+            id={vacancy.id}
+            isArchived={vacancy.isArchived ?? false}
+            reason={vacancy.archiveReason}
+            status={vacancy.status}
+          />
+        </section>
 
-            )}
-
-            <NotInteresting
-              id={vacancy.id}
-              isArchived={vacancy.isArchived ?? false}
-              reason={vacancy.archiveReason}
-              status={vacancy.status}
-            />
-          </section>
-        )}
-
-
-
-        {(vacancy.url && !vacancy.isArchived) && (
+        {vacancy.url && !vacancy.isArchived && (
           <footer className={styles.footer}>
-            <CLink url={vacancy.url} variant={"cta"} target={"_blank"}>Bekijk vacature →</CLink>
+            <CLink url={vacancy.url} variant={"cta"} target={"_blank"}>
+              Bekijk vacature →
+            </CLink>
           </footer>
         )}
       </article>
