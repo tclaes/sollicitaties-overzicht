@@ -20,6 +20,7 @@ export const VACANCY_IDS = {
   new: "vacancy-nieuw",
   viewed: "vacancy-bekeken",
   applied: "vacancy-gesolliciteerd",
+  detail: "vacancy-detail-solliciteren",
 };
 
 export async function seed() {
@@ -75,6 +76,21 @@ export async function seed() {
       bron: "linkedin",
       gevondenOp: new Date().toISOString(),
       status: "gesolliciteerd",
+      tags: [],
+    }),
+    // Eigen vacature voor de detailpagina-test, zodat die niet botst met de
+    // parallel draaiende solliciteer-test op de overzichtspagina.
+    vacancies.doc(VACANCY_IDS.detail).set({
+      id: VACANCY_IDS.detail,
+      titel: "Detail Solliciteer Rol",
+      bedrijf: "Fixture Detail BV",
+      locatie: "Gent",
+      regio: "vlaanderen",
+      url: "https://example.com/detail-solliciteer-rol",
+      beschrijving: "Fixture vacature om vanaf de detailpagina op te solliciteren.",
+      bron: "indeed",
+      gevondenOp: new Date().toISOString(),
+      status: "bekeken",
       tags: [],
     }),
   ]);

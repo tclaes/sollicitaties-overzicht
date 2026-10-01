@@ -20,9 +20,11 @@ test("applying to a vacancy moves it to gesolliciteerd and shows up in Sollicita
 test("applying from the detail page keeps the user on that page", async ({ page }) => {
   await login(page);
 
-  await page.locator("tr", { hasText: "Bekeken Full Stack Rol" }).click();
+  await page.locator("tr", { hasText: "Detail Solliciteer Rol" }).click();
   await expect(page).toHaveURL(/\/vacatures\/[^/]+$/);
   const detailUrl = page.url();
+  // Wacht tot de detailpagina echt gerenderd is; tijdens de navigatie staat de lijst nog even in beeld.
+  await expect(page.getByRole("heading", { level: 1, name: "Detail Solliciteer Rol" })).toBeVisible();
 
   await page.getByRole("button", { name: "Solliciteer" }).click();
   await page.getByTitle("Bevestigen").click();
