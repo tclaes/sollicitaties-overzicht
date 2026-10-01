@@ -70,6 +70,21 @@ function VacancyDetailPage() {
           </p>
         </header>
 
+        {vacancy.tags.length > 0 && (
+          <ul className={styles.tags} aria-label="Tags">
+            {vacancy.tags.map((tag) => (
+              <li key={tag} className={styles.tag}>
+                {tag}
+              </li>
+            ))}
+          </ul>
+        )}
+
+        <section className={styles.description}>
+          <h2 className={styles.sectionTitle}>Beschrijving</h2>
+          <p>{vacancy.description}</p>
+        </section>
+
         {(application || !vacancy.isArchived) && (
           <section className={styles.application} aria-label="Sollicitatie">
             {application && applicationStatus ? (
@@ -97,31 +112,19 @@ function VacancyDetailPage() {
                 onApplied={() => undefined}
                 alwaysVisible
               />
+
             )}
+
+            <NotInteresting
+              id={vacancy.id}
+              isArchived={vacancy.isArchived ?? false}
+              reason={vacancy.archiveReason}
+              status={vacancy.status}
+            />
           </section>
         )}
 
-        {vacancy.tags.length > 0 && (
-          <ul className={styles.tags} aria-label="Tags">
-            {vacancy.tags.map((tag) => (
-              <li key={tag} className={styles.tag}>
-                {tag}
-              </li>
-            ))}
-          </ul>
-        )}
 
-        <section className={styles.description}>
-          <h2 className={styles.sectionTitle}>Beschrijving</h2>
-          <p>{vacancy.description}</p>
-        </section>
-
-        <NotInteresting
-          id={vacancy.id}
-          isArchived={vacancy.isArchived ?? false}
-          reason={vacancy.archiveReason}
-          status={vacancy.status}
-        />
 
         {(vacancy.url && !vacancy.isArchived) && (
           <footer className={styles.footer}>
