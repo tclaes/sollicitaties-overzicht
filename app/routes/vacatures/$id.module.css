@@ -113,8 +113,16 @@
   }
 }
 
+.actions {
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  padding-block-start: var(--space-6);
+}
+
 .application {
   align-items: center;
+
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3);
