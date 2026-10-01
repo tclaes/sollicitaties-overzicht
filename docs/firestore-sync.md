@@ -1,25 +1,30 @@
-## Firestore-sync
+## Firestore sync
 
-De vacature-sync draait in GitHub Actions, niet meer lokaal.
+The vacancy sync runs in GitHub Actions, no longer locally.
 
+- Single source of truth: `data/firestore-sync-input.json`. Anything touching vacancy content or counts means updating
+  this file.
 - Workflow: `.github/workflows/sync-firestore.yml`
-- Trigger: elke push naar `main` die `data/firestore-sync-input.json` wijzigt, plus handmatig
-  via *Run workflow* (met optie om duplicaten echt op te ruimen) of via de CLI:
+- Trigger: every push to `main` that changes `data/firestore-sync-input.json`, plus manually
+  via *Run workflow* (with an option to actually clean up duplicates) or via the CLI:
 
   ```
-  npm run trigger:sync              # start de workflow en volgt de run
-  npm run trigger:sync -- --dedupe  # idem, maar ruimt duplicaten ook echt op
-  npm run trigger:sync -- --force   # sync ook als de input niet is gewijzigd
+  npm run trigger:sync              # start the workflow and follow the run
+  npm run trigger:sync -- --dedupe  # same, but also actually cleans up duplicates
+  npm run trigger:sync -- --force   # sync even if the input has not changed
   ```
 
-  `trigger:sync` gebruikt `gh workflow run sync-firestore.yml --ref main`, dus de
-  cowork-app kan de sync volledig op GitHub starten zonder eerst naar `main` te pushen.
-  Vereist een ingelogde GitHub CLI (`gh auth status`) met `repo`-scope.
+  `trigger:sync` uses `gh workflow run sync-firestore.yml --ref main`, so the
+  cowork app can start the sync entirely on GitHub without pushing to `main` first.
+  Requires a logged-in GitHub CLI (`gh auth status`) with `repo` scope.
 
-  De workflow synct altijd de versie van `data/firestore-sync-input.json` die op
-  `main` staat. Daarom stopt `trigger:sync` met exitcode 0 zonder de workflow te
-  starten als dat bestand niet afwijkt van `origin/main` (committed of niet) — dan
-  valt er niks te syncen. Met `--force` sla je die controle over.
-- Auth: repo-secret `FIREBASE_SERVICE_ACCOUNT` — de volledige inhoud van de
-  service-account JSON. De workflow schrijft die naar een tijdelijk bestand en ruimt
-  het daarna op.
+  The workflow always syncs the version of `data/firestore-sync-input.json` that is on
+  `main`. Therefore `trigger:sync` exits with code 0 without starting the workflow if
+  that file does not differ from `origin/main` (committed or not) — there is nothing
+  to sync then. With `--force` you skip that check.
+- Auth: repo secret `FIREBASE_SERVICE_ACCOUNT` — the full contents of the
+  service-account JSON. The workflow writes it to a temporary file and removes
+  it afterwards.
+- Required shape: a JSON array; every entry that is not `verlopen: true` / `nietInteressant: true` must have string
+  `titel`, `bedrijf`, `url`. This is the workflow's merge gate — validate with `node -e ... JSON.parse` before pushing.
+  See `docs/git.md` for how PRs that only touch this file are auto-merged.
