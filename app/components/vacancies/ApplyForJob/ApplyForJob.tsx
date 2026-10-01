@@ -12,9 +12,11 @@ interface Props {
     appliedOn: string
   }) => Promise<void>;
   onApplied: (date: string) => void;
+  /** Toon de knop altijd; standaard verschijnt hij pas bij hover op een tabelrij. */
+  alwaysVisible?: boolean;
 }
 
-export function ApplyForJob({vacancy, onApply, onApplied}: Props) {
+export function ApplyForJob({vacancy, onApply, onApplied, alwaysVisible = false}: Props) {
   const [open, setOpen] = useState(false);
   const [dateInput, setDateInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -69,7 +71,7 @@ export function ApplyForJob({vacancy, onApply, onApplied}: Props) {
   }
 
   return (
-    <button className={styles.applyBtn} onClick={openApply} type="button">
+    <button className={`${styles.applyBtn} ${alwaysVisible ? styles.visible : ""}`} onClick={openApply} type="button">
       Solliciteer
     </button>
   );

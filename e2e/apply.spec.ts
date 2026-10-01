@@ -26,11 +26,14 @@ test("applying from the detail page keeps the user on that page", async ({ page 
   // Wacht tot de detailpagina echt gerenderd is; tijdens de navigatie staat de lijst nog even in beeld.
   await expect(page.getByRole("heading", { level: 1, name: "Detail Solliciteer Rol" })).toBeVisible();
 
-  await page.getByRole("button", { name: "Solliciteer" }).click();
+  // Playwright klikt ook op onzichtbare knoppen; controleer dus expliciet dat de knop zichtbaar is.
+  const applyButton = page.getByRole("button", { name: "Solliciteer" });
+  await expect(applyButton).toHaveCSS("opacity", "1");
+  await applyButton.click();
   await page.getByTitle("Bevestigen").click();
 
   await expect(page.getByLabel("Status van de sollicitatie")).toHaveValue("applied");
-  await expect(page.getByRole("button", { name: "Solliciteer" })).toHaveCount(0);
+  await expect(applyButton).toHaveCount(0);
   expect(page.url()).toBe(detailUrl);
 
   await page.getByLabel("Status van de sollicitatie").selectOption("interviewing");

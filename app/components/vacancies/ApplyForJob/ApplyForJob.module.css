@@ -10,7 +10,8 @@
   transition: opacity var(--transition-fast), background var(--transition-fast);
 }
 
-:global(.vacancy-row):hover .applyBtn { opacity: 1; }
+:global(.vacancy-row):hover .applyBtn,
+.visible { opacity: 1; }
 
 .applyBtn:hover {
   background: var(--color-bg);
