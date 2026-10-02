@@ -1,0 +1,57 @@
+import { expect, test } from "@playwright/test";
+import { login } from "./helpers";
+
+test("searching on tags stays within the selected filters and can include archived vacancies", async ({ page }) => {
+  await login(page);
+
+  // Filter op bron "indeed": zoeken op "React" toont dan enkel de indeed-vacature.
+  // Zoekt automatisch zodra de gebruiker stopt met typen.
+  await page.goto("/vacatures?source=indeed");
+  const searchbox = page.getByRole("searchbox", { name: "Zoek vacatures" });
+  await searchbox.fill("react");
+
+  await expect(page).toHaveURL(/q=react/);
+  await expect(page).toHaveURL(/source=indeed/);
+  await expect(page.getByText("Bekeken Full Stack Rol")).toBeVisible();
+  await expect(page.getByText("Nieuwe Frontend Rol")).not.toBeVisible();
+
+  // Gearchiveerde vacatures zijn standaard verborgen in de zoekresultaten.
+  await page.goto("/vacatures");
+  await searchbox.fill("svelte");
+  await searchbox.press("Enter");
+  await expect(page).toHaveURL(/q=svelte/);
+  await expect(page.getByText("Gearchiveerde Svelte Rol")).not.toBeVisible();
+
+  await page.getByRole("checkbox", { name: "Inclusief gearchiveerd" }).check();
+  await expect(page).toHaveURL(/archived=true/);
+  await expect(page.getByText("Gearchiveerde Svelte Rol")).toBeVisible();
+});
+
+test("a search without results explains where the matches are", async ({ page }) => {
+  await login(page);
+
+  // Gearchiveerde match: de hint biedt aan om het archief mee te nemen.
+  await page.goto("/vacatures?q=svelte");
+  await expect(page.getByRole("status")).toContainText("1 vacature matcht “svelte” in het archief.");
+  await page.getByRole("button", { name: "Inclusief gearchiveerd tonen" }).click();
+  await expect(page).toHaveURL(/archived=true/);
+  await expect(page.getByText("Gearchiveerde Svelte Rol")).toBeVisible();
+
+  // Match buiten de filters: de hint biedt aan om de filters te wissen.
+  await page.goto("/vacatures?source=linkedin&q=full%20stack%20nv");
+  await expect(page.getByRole("status")).toContainText("1 vacature matcht “full stack nv” buiten de huidige filters.");
+  await page.getByRole("button", { name: "Filters wissen" }).click();
+  await expect(page).not.toHaveURL(/source=/);
+  await expect(page.getByText("Bekeken Full Stack Rol")).toBeVisible();
+});
+
+test("searching on company name", async ({ page }) => {
+  await login(page);
+
+  await page.goto("/vacatures");
+  await page.getByRole("searchbox", { name: "Zoek vacatures" }).fill("full stack nv");
+
+  await expect(page).toHaveURL(/q=full/);
+  await expect(page.getByText("Bekeken Full Stack Rol")).toBeVisible();
+  await expect(page.getByText("Nieuwe Frontend Rol")).not.toBeVisible();
+});

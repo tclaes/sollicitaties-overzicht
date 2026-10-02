@@ -1,9 +1,13 @@
+import {useCallback} from "react";
 import {createFileRoute, useRouter} from "@tanstack/react-router";
 import {createApplication, getAllVacancies, getApplications} from "~/lib/vacancies";
 import {VacancyTable} from "~/components/vacancies/VacancyTable";
 import {StatsCounter} from "~/components/elements/StatsCounter";
 import {FilterPills} from "~/components/elements/FilterPills";
 import {Pagination} from "~/components/elements/Pagination";
+import {SearchBar, SearchParams} from "~/components/elements/SearchBar/SearchBar";
+import {SearchHint} from "~/components/elements/SearchHint/SearchHint";
+import {countHiddenMatches, filterVacancies} from "~/lib/vacancyFilter";
 import {Application, DefaultSearchSchema, PAGE_SIZE} from "~/lib/schemas";
 import styles from "./index.module.css";
 
@@ -24,6 +28,12 @@ function VacanciesPage() {
   const {vacancies, applications} = Route.useLoaderData();
   const search = Route.useSearch();
   const router = useRouter();
+  const navigate = Route.useNavigate();
+
+  const handleSearch = useCallback(
+    (params: SearchParams) => navigate({search: (prev) => ({...prev, ...params, page: 1})}),
+    [navigate],
+  );
 
   const applicationById = new Map<string, Application>(
     applications.flatMap((s) => s.vacancyId ? [[s.vacancyId, s]] : [])
@@ -31,20 +41,7 @@ function VacanciesPage() {
 
   const matchOrder: Record<string, number> = {strong: 0, good: 1, moderate: 2, low: 3};
 
-  const showArchive = search.status === "not-interesting" || search.status === "not-hired";
-
-  const filtered = vacancies?.filter((v) => {
-    if (showArchive) {
-      if (!v.isArchived) return false;
-      if (search.status === "not-hired" && v.status !== "not-hired") return false;
-    } else {
-      if (v.isArchived) return false;
-      if (search.status && v.status !== search.status) return false;
-    }
-    if (search.function && v.function !== search.function) return false;
-    return !(search.source && v.source !== search.source);
-
-  })
+  const filtered = filterVacancies(vacancies ?? [], search)
     .sort((a, b) => {
       const favoriteDiff = Number(b.favorite ?? false) - Number(a.favorite ?? false);
       if (favoriteDiff !== 0) return favoriteDiff;
@@ -62,6 +59,7 @@ function VacanciesPage() {
     });
 
   const totalItems = filtered?.length ?? 0;
+  const hiddenMatches = search.q && totalItems === 0 ? countHiddenMatches(vacancies ?? [], search) : null;
   const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
   const currentPage = Math.min(search.page ?? 1, totalPages);
   const pageItems = filtered?.slice(
@@ -93,7 +91,19 @@ function VacanciesPage() {
       {vacancies.length > 0 ? (
         <>
           <StatsCounter vacancies={vacancies}/>
+          <SearchBar currentSearch={search} onSearch={handleSearch}/>
           <FilterPills currentSearch={search}/>
+          {search.q && hiddenMatches && (
+            <SearchHint
+              query={search.q}
+              archivedCount={hiddenMatches.archived}
+              outsideFiltersCount={hiddenMatches.outsideFilters}
+              onIncludeArchived={() => handleSearch({archived: true})}
+              onClearFilters={() => navigate({
+                search: (prev) => ({...prev, status: undefined, source: undefined, function: undefined, page: 1}),
+              })}
+            />
+          )}
           <VacancyTable
             vacancies={pageItems ?? []}
             applicationById={applicationById}
