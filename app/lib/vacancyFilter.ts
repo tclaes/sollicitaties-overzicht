@@ -21,8 +21,12 @@ export function matchesQuery(vacancy: Vacancy, query?: string): boolean {
   return terms.every((term) => text.includes(term));
 }
 
+function isArchiveView(status?: string): boolean {
+  return status === "not-interesting" || status === "not-hired";
+}
+
 export function filterVacancies(vacancies: Vacancy[], filter: VacancyFilter): Vacancy[] {
-  const showArchive = filter.status === "not-interesting" || filter.status === "not-hired";
+  const showArchive = isArchiveView(filter.status);
 
   return vacancies.filter((v) => {
     if (showArchive) {
@@ -36,4 +40,20 @@ export function filterVacancies(vacancies: Vacancy[], filter: VacancyFilter): Va
     if (filter.source && v.source !== filter.source) return false;
     return matchesQuery(v, filter.q);
   });
+}
+
+export interface HiddenMatches {
+  archived: number;
+  outsideFilters: number;
+}
+
+// Hoeveel vacatures matchen de zoekterm maar vallen weg door het archief of
+// door de actieve filters? Gebruikt om een hint te tonen bij 0 resultaten.
+export function countHiddenMatches(vacancies: Vacancy[], filter: VacancyFilter): HiddenMatches {
+  const archivedHidden = !filter.archived && !isArchiveView(filter.status);
+  const visible = filterVacancies(vacancies, filter).length;
+  return {
+    archived: archivedHidden ? filterVacancies(vacancies, {...filter, archived: true}).length - visible : 0,
+    outsideFilters: filterVacancies(vacancies, {q: filter.q, archived: filter.archived}).length,
+  };
 }

@@ -1,5 +1,5 @@
 import {describe, expect, it} from "vite-plus/test";
-import {filterVacancies, matchesQuery} from "./vacancyFilter";
+import {countHiddenMatches, filterVacancies, matchesQuery} from "./vacancyFilter";
 import {Vacancy} from "./schemas";
 
 function vacancy(overrides: Partial<Vacancy>): Vacancy {
@@ -82,5 +82,26 @@ describe("filterVacancies", () => {
   it("shows only archived vacancies in the archive views", () => {
     expect(ids(filterVacancies(all, {status: "not-interesting"}))).toEqual(["archived-react"]);
     expect(ids(filterVacancies(all, {status: "not-hired"}))).toEqual([]);
+  });
+});
+
+describe("countHiddenMatches", () => {
+  it("counts archived matches that are hidden", () => {
+    const jstack = vacancy({id: "jstack", company: "jstack", isArchived: true, status: "not-interesting"});
+    expect(countHiddenMatches([jstack, java], {q: "jstack"})).toEqual({archived: 1, outsideFilters: 0});
+  });
+
+  it("does not count archived matches when they are already included", () => {
+    expect(countHiddenMatches(all, {q: "react", archived: true, source: "indeed"}).archived).toBe(0);
+    expect(countHiddenMatches(all, {q: "react", status: "not-hired"}).archived).toBe(0);
+  });
+
+  it("counts matches outside the selected filters", () => {
+    expect(countHiddenMatches(all, {q: "react", source: "indeed"})).toEqual({archived: 0, outsideFilters: 1});
+    expect(countHiddenMatches(all, {q: "react", source: "indeed", archived: true})).toEqual({archived: 0, outsideFilters: 2});
+  });
+
+  it("counts nothing when nothing matches", () => {
+    expect(countHiddenMatches(all, {q: "cobol"})).toEqual({archived: 0, outsideFilters: 0});
   });
 });

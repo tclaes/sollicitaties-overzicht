@@ -6,7 +6,8 @@ import {StatsCounter} from "~/components/elements/StatsCounter";
 import {FilterPills} from "~/components/elements/FilterPills";
 import {Pagination} from "~/components/elements/Pagination";
 import {SearchBar, SearchParams} from "~/components/elements/SearchBar/SearchBar";
-import {filterVacancies} from "~/lib/vacancyFilter";
+import {SearchHint} from "~/components/elements/SearchHint/SearchHint";
+import {countHiddenMatches, filterVacancies} from "~/lib/vacancyFilter";
 import {Application, DefaultSearchSchema, PAGE_SIZE} from "~/lib/schemas";
 import styles from "./index.module.css";
 
@@ -58,6 +59,7 @@ function VacanciesPage() {
     });
 
   const totalItems = filtered?.length ?? 0;
+  const hiddenMatches = search.q && totalItems === 0 ? countHiddenMatches(vacancies ?? [], search) : null;
   const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
   const currentPage = Math.min(search.page ?? 1, totalPages);
   const pageItems = filtered?.slice(
@@ -91,6 +93,17 @@ function VacanciesPage() {
           <StatsCounter vacancies={vacancies}/>
           <SearchBar currentSearch={search} onSearch={handleSearch}/>
           <FilterPills currentSearch={search}/>
+          {search.q && hiddenMatches && (
+            <SearchHint
+              query={search.q}
+              archivedCount={hiddenMatches.archived}
+              outsideFiltersCount={hiddenMatches.outsideFilters}
+              onIncludeArchived={() => handleSearch({archived: true})}
+              onClearFilters={() => navigate({
+                search: (prev) => ({...prev, status: undefined, source: undefined, function: undefined, page: 1}),
+              })}
+            />
+          )}
           <VacancyTable
             vacancies={pageItems ?? []}
             applicationById={applicationById}

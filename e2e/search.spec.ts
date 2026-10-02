@@ -27,6 +27,24 @@ test("searching on tags stays within the selected filters and can include archiv
   await expect(page.getByText("Gearchiveerde Svelte Rol")).toBeVisible();
 });
 
+test("a search without results explains where the matches are", async ({ page }) => {
+  await login(page);
+
+  // Gearchiveerde match: de hint biedt aan om het archief mee te nemen.
+  await page.goto("/vacatures?q=svelte");
+  await expect(page.getByRole("status")).toContainText("1 vacature matcht “svelte” in het archief.");
+  await page.getByRole("button", { name: "Inclusief gearchiveerd tonen" }).click();
+  await expect(page).toHaveURL(/archived=true/);
+  await expect(page.getByText("Gearchiveerde Svelte Rol")).toBeVisible();
+
+  // Match buiten de filters: de hint biedt aan om de filters te wissen.
+  await page.goto("/vacatures?source=linkedin&q=full%20stack%20nv");
+  await expect(page.getByRole("status")).toContainText("1 vacature matcht “full stack nv” buiten de huidige filters.");
+  await page.getByRole("button", { name: "Filters wissen" }).click();
+  await expect(page).not.toHaveURL(/source=/);
+  await expect(page.getByText("Bekeken Full Stack Rol")).toBeVisible();
+});
+
 test("searching on company name", async ({ page }) => {
   await login(page);
 
