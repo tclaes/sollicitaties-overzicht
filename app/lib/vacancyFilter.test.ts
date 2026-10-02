@@ -1,5 +1,5 @@
 import {describe, expect, it} from "vite-plus/test";
-import {countHiddenMatches, filterVacancies, matchesQuery} from "./vacancyFilter";
+import {countOutsideFilters, filterVacancies, matchesQuery, needsArchive} from "./vacancyFilter";
 import {Vacancy} from "./schemas";
 
 function vacancy(overrides: Partial<Vacancy>): Vacancy {
@@ -85,23 +85,26 @@ describe("filterVacancies", () => {
   });
 });
 
-describe("countHiddenMatches", () => {
-  it("counts archived matches that are hidden", () => {
-    const jstack = vacancy({id: "jstack", company: "jstack", isArchived: true, status: "not-interesting"});
-    expect(countHiddenMatches([jstack, java], {q: "jstack"})).toEqual({archived: 1, outsideFilters: 0});
+describe("needsArchive", () => {
+  it("is true for the archive statuses and the archived toggle", () => {
+    expect(needsArchive({status: "not-interesting"})).toBe(true);
+    expect(needsArchive({status: "not-hired"})).toBe(true);
+    expect(needsArchive({archived: true})).toBe(true);
   });
 
-  it("does not count archived matches when they are already included", () => {
-    expect(countHiddenMatches(all, {q: "react", archived: true, source: "indeed"}).archived).toBe(0);
-    expect(countHiddenMatches(all, {q: "react", status: "not-hired"}).archived).toBe(0);
+  it("is false otherwise", () => {
+    expect(needsArchive({})).toBe(false);
+    expect(needsArchive({status: "new"})).toBe(false);
   });
+});
 
+describe("countOutsideFilters", () => {
   it("counts matches outside the selected filters", () => {
-    expect(countHiddenMatches(all, {q: "react", source: "indeed"})).toEqual({archived: 0, outsideFilters: 1});
-    expect(countHiddenMatches(all, {q: "react", source: "indeed", archived: true})).toEqual({archived: 0, outsideFilters: 2});
+    expect(countOutsideFilters(all, {q: "react", source: "indeed"})).toBe(1);
+    expect(countOutsideFilters(all, {q: "react", source: "indeed", archived: true})).toBe(2);
   });
 
   it("counts nothing when nothing matches", () => {
-    expect(countHiddenMatches(all, {q: "cobol"})).toEqual({archived: 0, outsideFilters: 0});
+    expect(countOutsideFilters(all, {q: "cobol"})).toBe(0);
   });
 });

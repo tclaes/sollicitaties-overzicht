@@ -34,6 +34,7 @@ export const SOURCE_LABELS: Record<Source, string> = {
   other: "andere",
 };
 
+// Aantal vacatures dat per keer bijgeladen wordt bij het scrollen.
 export const PAGE_SIZE = 25;
 
 export const DefaultSearchSchema = z.object({
@@ -44,7 +45,6 @@ export const DefaultSearchSchema = z.object({
   // TanStack Router parset "?q=123" als number en "?archived=true" als boolean.
   q: z.coerce.string().trim().transform((v) => v || undefined).optional().catch(undefined),
   archived: z.preprocess((v) => v === true || v === "true", z.boolean()).optional().catch(undefined),
-  page: z.coerce.number().int().min(1).default(1).catch(1),
 });
 
 export const RegionSchema = z.enum([

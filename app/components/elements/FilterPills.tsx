@@ -18,7 +18,7 @@ const statusLabels: Record<string, string> = {
 
 export function FilterPills({currentSearch, basePath = "/vacatures"}: Props) {
   function buildUrl(params: Record<string, string | undefined>) {
-    return buildSearchUrl(basePath, currentSearch, {...params, page: undefined});
+    return buildSearchUrl(basePath, currentSearch, params);
   }
 
   return (

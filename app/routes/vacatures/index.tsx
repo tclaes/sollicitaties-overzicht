@@ -1,37 +1,54 @@
 import {useCallback} from "react";
 import {createFileRoute, useRouter} from "@tanstack/react-router";
-import {createApplication, getAllVacancies, getApplications} from "~/lib/vacancies";
+import {
+  createApplication,
+  getActiveVacancies,
+  getApplications,
+  getArchivedVacancies,
+  getVacancyCounts,
+} from "~/lib/vacancies";
 import {VacancyTable} from "~/components/vacancies/VacancyTable";
 import {StatsCounter} from "~/components/elements/StatsCounter";
 import {FilterPills} from "~/components/elements/FilterPills";
-import {Pagination} from "~/components/elements/Pagination";
+import {InfiniteScrollFooter} from "~/components/elements/InfiniteScrollFooter/InfiniteScrollFooter";
 import {SearchBar, SearchParams} from "~/components/elements/SearchBar/SearchBar";
 import {SearchHint} from "~/components/elements/SearchHint/SearchHint";
-import {countHiddenMatches, filterVacancies} from "~/lib/vacancyFilter";
-import {Application, DefaultSearchSchema, PAGE_SIZE} from "~/lib/schemas";
+import {countOutsideFilters, filterVacancies, needsArchive} from "~/lib/vacancyFilter";
+import {useInfiniteList} from "~/lib/useInfiniteList";
+import {Application, DefaultSearchSchema} from "~/lib/schemas";
 import styles from "./index.module.css";
 
 
 export const Route = createFileRoute("/vacatures/")({
   validateSearch: DefaultSearchSchema,
-  loader: async () => {
-    const [vacancies, applications] = await Promise.all([
-      getAllVacancies(),
+  // Gearchiveerde vacatures worden pas opgehaald als de gebruiker er om vraagt.
+  loaderDeps: ({search}) => ({withArchive: needsArchive(search)}),
+  // Blijft in het geheugen bij terug-navigeren (bv. vanaf de detailpagina);
+  // router.invalidate() na een wijziging haalt alles opnieuw op.
+  staleTime: 5 * 60_000,
+  loader: async ({deps}) => {
+    const [active, archived, applications, counts] = await Promise.all([
+      getActiveVacancies(),
+      deps.withArchive ? getArchivedVacancies() : Promise.resolve([]),
       getApplications(),
+      getVacancyCounts(),
     ]);
-    return {vacancies, applications};
+    // Een gearchiveerd document met een actieve status zit in beide lijsten.
+    const seen = new Set(active.map((v) => v.id));
+    const vacancies = [...active, ...archived.filter((v) => !seen.has(v.id))];
+    return {vacancies, applications, counts, archiveLoaded: deps.withArchive};
   },
   component: VacanciesPage,
 });
 
 function VacanciesPage() {
-  const {vacancies, applications} = Route.useLoaderData();
+  const {vacancies, applications, counts, archiveLoaded} = Route.useLoaderData();
   const search = Route.useSearch();
   const router = useRouter();
   const navigate = Route.useNavigate();
 
   const handleSearch = useCallback(
-    (params: SearchParams) => navigate({search: (prev) => ({...prev, ...params, page: 1})}),
+    (params: SearchParams) => navigate({search: (prev) => ({...prev, ...params})}),
     [navigate],
   );
 
@@ -41,7 +58,7 @@ function VacanciesPage() {
 
   const matchOrder: Record<string, number> = {strong: 0, good: 1, moderate: 2, low: 3};
 
-  const filtered = filterVacancies(vacancies ?? [], search)
+  const filtered = filterVacancies(vacancies, search)
     .sort((a, b) => {
       const favoriteDiff = Number(b.favorite ?? false) - Number(a.favorite ?? false);
       if (favoriteDiff !== 0) return favoriteDiff;
@@ -58,16 +75,12 @@ function VacanciesPage() {
       return ma - mb;
     });
 
-  const totalItems = filtered?.length ?? 0;
-  const hiddenMatches = search.q && totalItems === 0 ? countHiddenMatches(vacancies ?? [], search) : null;
-  const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
-  const currentPage = Math.min(search.page ?? 1, totalPages);
-  const pageItems = filtered?.slice(
-    (currentPage - 1) * PAGE_SIZE,
-    currentPage * PAGE_SIZE
+  const totalItems = filtered.length;
+  const outsideFilters = search.q && totalItems === 0 ? countOutsideFilters(vacancies, search) : null;
+  const {items: visibleItems, hasMore, loadMore, sentinelRef, supportsObserver} = useInfiniteList(
+    filtered,
+    JSON.stringify(search),
   );
-  const pageStart = totalItems === 0 ? 0 : (currentPage - 1) * PAGE_SIZE + 1;
-  const pageEnd = Math.min(currentPage * PAGE_SIZE, totalItems);
 
   async function handleApply(data: {
     vacancyId: string;
@@ -84,36 +97,38 @@ function VacanciesPage() {
       <header className={styles.header}>
         <h1 className={styles.title}>Vacatures</h1>
         <span className={styles.counter}>
-          {totalItems > 0 ? `${pageStart}–${pageEnd} van ${totalItems} vacatures` : "0 vacatures"}
+          {totalItems === 1 ? "1 vacature" : `${totalItems} vacatures`}
         </span>
       </header>
 
-      {vacancies.length > 0 ? (
+      {counts.total > 0 || vacancies.length > 0 ? (
         <>
-          <StatsCounter vacancies={vacancies}/>
+          <StatsCounter counts={counts}/>
           <SearchBar currentSearch={search} onSearch={handleSearch}/>
           <FilterPills currentSearch={search}/>
-          {search.q && hiddenMatches && (
+          {search.q && outsideFilters !== null && (
             <SearchHint
               query={search.q}
-              archivedCount={hiddenMatches.archived}
-              outsideFiltersCount={hiddenMatches.outsideFilters}
+              canIncludeArchived={!archiveLoaded}
+              outsideFiltersCount={outsideFilters}
               onIncludeArchived={() => handleSearch({archived: true})}
               onClearFilters={() => navigate({
-                search: (prev) => ({...prev, status: undefined, source: undefined, function: undefined, page: 1}),
+                search: (prev) => ({...prev, status: undefined, source: undefined, function: undefined}),
               })}
             />
           )}
           <VacancyTable
-            vacancies={pageItems ?? []}
+            vacancies={visibleItems}
             applicationById={applicationById}
             onApply={handleApply}
           />
-          <Pagination
-            totalItems={totalItems}
-            currentPage={currentPage}
-            basePath="/vacatures"
-            currentSearch={search}
+          <InfiniteScrollFooter
+            hasMore={hasMore}
+            loadedCount={visibleItems.length}
+            totalCount={totalItems}
+            supportsObserver={supportsObserver}
+            sentinelRef={sentinelRef}
+            onLoadMore={loadMore}
           />
         </>
       ) : (

@@ -32,7 +32,7 @@ test("a search without results explains where the matches are", async ({ page })
 
   // Gearchiveerde match: de hint biedt aan om het archief mee te nemen.
   await page.goto("/vacatures?q=svelte");
-  await expect(page.getByRole("status")).toContainText("1 vacature matcht “svelte” in het archief.");
+  await expect(page.getByRole("status")).toContainText("Mogelijk zijn er matches voor “svelte” in het archief.");
   await page.getByRole("button", { name: "Inclusief gearchiveerd tonen" }).click();
   await expect(page).toHaveURL(/archived=true/);
   await expect(page.getByText("Gearchiveerde Svelte Rol")).toBeVisible();

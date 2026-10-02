@@ -8,6 +8,10 @@ vi.mock("~/lib/firebase", () => ({ db: {}, auth: {} }));
 const collection = vi.fn((_db, name: string) => ({ __collection: name }));
 const doc = vi.fn((_db, name: string, id: string) => ({ __doc: `${name}/${id}` }));
 const getDocs = vi.fn();
+const getDoc = vi.fn();
+const getCountFromServer = vi.fn();
+const query = vi.fn((ref: unknown, ...constraints: unknown[]) => ({ __query: ref, constraints }));
+const where = vi.fn((field: string, op: string, value: unknown) => ({ field, op, value }));
 const setDoc = vi.fn();
 const updateDoc = vi.fn();
 const deleteField = vi.fn(() => "__DELETE_FIELD__");
@@ -16,6 +20,10 @@ vi.mock("firebase/firestore", () => ({
   collection: (...args: unknown[]) => collection(...(args as [unknown, string])),
   doc: (...args: unknown[]) => doc(...(args as [unknown, string, string])),
   getDocs: (...args: unknown[]) => getDocs(...args),
+  getDoc: (...args: unknown[]) => getDoc(...args),
+  getCountFromServer: (...args: unknown[]) => getCountFromServer(...args),
+  query: (...args: unknown[]) => query(...(args as [unknown, ...unknown[]])),
+  where: (...args: unknown[]) => where(...(args as [string, string, unknown])),
   setDoc: (...args: unknown[]) => setDoc(...args),
   updateDoc: (...args: unknown[]) => updateDoc(...args),
   deleteField: () => deleteField(),
@@ -24,7 +32,9 @@ vi.mock("firebase/firestore", () => ({
 const {
   archiveVacancy,
   createApplication,
-  getAllVacancies,
+  getActiveVacancies,
+  getArchivedVacancies,
+  getVacancyCounts,
   getApplications,
   getVacancy,
   markNotInteresting,
@@ -55,13 +65,14 @@ afterEach(() => {
   vi.clearAllMocks();
 });
 
-describe("getAllVacancies", () => {
-  it("maps every Firestore doc through vacancyFromFirestore", async () => {
+describe("getActiveVacancies", () => {
+  it("queries everything that is not archived and maps it through vacancyFromFirestore", async () => {
     getDocs.mockResolvedValueOnce(snapshotOf([{ id: "v1", data: rawVacancy }]));
 
-    const result = await getAllVacancies();
+    const result = await getActiveVacancies();
 
     expect(collection).toHaveBeenCalledWith({}, "vacatures");
+    expect(where).toHaveBeenCalledWith("status", "not-in", ["niet-interessant", "niet-aangeworven"]);
     expect(result).toEqual([
       expect.objectContaining({ id: "v1", title: "Frontend Developer", status: "new" }),
     ]);
@@ -70,26 +81,71 @@ describe("getAllVacancies", () => {
   it("returns an empty array when the read fails", async () => {
     getDocs.mockRejectedValueOnce(new Error("boom"));
 
-    await expect(getAllVacancies()).resolves.toEqual([]);
+    await expect(getActiveVacancies()).resolves.toEqual([]);
+  });
+});
+
+describe("getArchivedVacancies", () => {
+  it("only queries archived documents", async () => {
+    getDocs.mockResolvedValueOnce(
+      snapshotOf([{ id: "v1", data: { ...rawVacancy, isArchived: true, status: "niet-interessant" } }]),
+    );
+
+    const result = await getArchivedVacancies();
+
+    expect(where).toHaveBeenCalledWith("isArchived", "==", true);
+    expect(result).toEqual([expect.objectContaining({ id: "v1", isArchived: true })]);
+  });
+
+  it("returns an empty array when the read fails", async () => {
+    getDocs.mockRejectedValueOnce(new Error("boom"));
+
+    await expect(getArchivedVacancies()).resolves.toEqual([]);
+  });
+});
+
+describe("getVacancyCounts", () => {
+  it("counts the total and every status on the server", async () => {
+    getCountFromServer.mockImplementation(async (ref: { constraints?: { value: string }[] }) => {
+      const status = ref.constraints?.[0]?.value;
+      const counts: Record<string, number> = { nieuw: 4, bekeken: 3, gesolliciteerd: 2, "niet-interessant": 5 };
+      return { data: () => ({ count: status ? (counts[status] ?? 0) : 20 }) };
+    });
+
+    await expect(getVacancyCounts()).resolves.toEqual({
+      total: 20,
+      new: 4,
+      viewed: 3,
+      applied: 2,
+      rejected: 0,
+      "not-interesting": 5,
+      "not-hired": 0,
+    });
+  });
+
+  it("returns zero counts when the read fails", async () => {
+    getCountFromServer.mockRejectedValue(new Error("boom"));
+
+    await expect(getVacancyCounts()).resolves.toMatchObject({ total: 0, new: 0 });
   });
 });
 
 describe("getVacancy", () => {
-  it("finds the vacancy with the matching id", async () => {
-    getDocs.mockResolvedValueOnce(
-      snapshotOf([
-        { id: "v1", data: rawVacancy },
-        { id: "v2", data: { ...rawVacancy, id: "v2", titel: "Backend Developer" } },
-      ]),
-    );
+  it("reads the single document by id", async () => {
+    getDoc.mockResolvedValueOnce({
+      exists: () => true,
+      id: "v2",
+      data: () => ({ ...rawVacancy, id: "v2", titel: "Backend Developer" }),
+    });
 
     const result = await getVacancy("v2");
 
+    expect(doc).toHaveBeenCalledWith({}, "vacatures", "v2");
     expect(result?.title).toBe("Backend Developer");
   });
 
-  it("returns null when no vacancy matches", async () => {
-    getDocs.mockResolvedValueOnce(snapshotOf([{ id: "v1", data: rawVacancy }]));
+  it("returns null when the document does not exist", async () => {
+    getDoc.mockResolvedValueOnce({ exists: () => false });
 
     await expect(getVacancy("unknown")).resolves.toBeNull();
   });
