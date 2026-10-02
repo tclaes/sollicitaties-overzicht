@@ -10,10 +10,10 @@ export interface VacancyFilter {
 
 function searchableText(vacancy: Vacancy): string {
   const role = vacancy.function ? [vacancy.function, ROLE_LABELS[vacancy.function]] : [];
-  return [vacancy.title, ...role, ...vacancy.tags].join(" ").toLowerCase();
+  return [vacancy.title, vacancy.company, ...role, ...vacancy.tags].join(" ").toLowerCase();
 }
 
-// Elke zoekterm moet voorkomen in de titel, de functie of één van de tags.
+// Elke zoekterm moet voorkomen in de titel, het bedrijf, de functie of één van de tags.
 export function matchesQuery(vacancy: Vacancy, query?: string): boolean {
   const terms = query?.toLowerCase().split(/\s+/).filter(Boolean) ?? [];
   if (terms.length === 0) return true;

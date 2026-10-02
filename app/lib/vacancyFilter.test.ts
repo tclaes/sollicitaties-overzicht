@@ -48,6 +48,11 @@ describe("matchesQuery", () => {
     expect(matchesQuery(java, "full stack")).toBe(true);
   });
 
+  it("matches on company", () => {
+    expect(matchesQuery(vacancy({company: "Fixture BV"}), "fixture")).toBe(true);
+    expect(matchesQuery(vacancy({company: "Fixture BV"}), "acme")).toBe(false);
+  });
+
   it("matches on title", () => {
     expect(matchesQuery(java, "backend")).toBe(true);
   });

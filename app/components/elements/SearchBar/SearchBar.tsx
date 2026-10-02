@@ -1,47 +1,55 @@
+import {useEffect, useState} from "react";
 import styles from "./SearchBar.module.css";
 
-interface Props {
-  currentSearch: {
-    status?: string;
-    source?: string;
-    function?: string;
-    sort?: string;
-    q?: string;
-    archived?: boolean;
-  };
-  basePath?: string;
+export const SEARCH_DEBOUNCE_MS = 400;
+
+export interface SearchParams {
+  q?: string;
+  archived?: boolean;
 }
 
-// Gewoon GET-formulier: de actieve filters gaan mee als hidden inputs, zodat
-// zoeken altijd binnen de geselecteerde filtering blijft. Pagina valt weg.
-export function SearchBar({currentSearch, basePath = "/vacatures"}: Props) {
-  const {status, source, function: role, sort} = currentSearch;
-  const keptFilters = {status, source, function: role, sort};
+interface Props {
+  currentSearch: SearchParams;
+  onSearch: (params: SearchParams) => void;
+}
+
+// Zoekt automatisch zodra de gebruiker stopt met typen, of meteen bij Enter.
+// De route bewaart de actieve filters, zodat zoeken binnen die filtering blijft.
+export function SearchBar({currentSearch, onSearch}: Props) {
+  const [query, setQuery] = useState(currentSearch.q ?? "");
+  const appliedQuery = currentSearch.q ?? "";
+
+  useEffect(() => {
+    if (query.trim() === appliedQuery) return;
+    const timeout = setTimeout(() => onSearch({q: query.trim() || undefined}), SEARCH_DEBOUNCE_MS);
+    return () => clearTimeout(timeout);
+  }, [query, appliedQuery, onSearch]);
 
   return (
-    <form className={styles.bar} role="search" action={basePath} method="get">
-      {Object.entries(keptFilters).map(([name, value]) =>
-        value ? <input key={name} type="hidden" name={name} value={value}/> : null
-      )}
+    <form
+      className={styles.bar}
+      role="search"
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSearch({q: query.trim() || undefined});
+      }}
+    >
       <input
         className={styles.input}
         type="search"
-        name="q"
-        defaultValue={currentSearch.q ?? ""}
-        placeholder="Zoek op functie of tag…"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Zoek op functie, tag of bedrijf…"
         aria-label="Zoek vacatures"
       />
       <label className={styles.checkbox}>
         <input
           type="checkbox"
-          name="archived"
-          value="true"
-          defaultChecked={currentSearch.archived ?? false}
-          onChange={(e) => e.currentTarget.form?.requestSubmit()}
+          checked={currentSearch.archived ?? false}
+          onChange={(e) => onSearch({archived: e.target.checked || undefined})}
         />
         Inclusief gearchiveerd
       </label>
-      <button className={styles.button} type="submit">Zoeken</button>
     </form>
   );
 }

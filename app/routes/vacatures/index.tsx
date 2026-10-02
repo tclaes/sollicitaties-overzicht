@@ -1,10 +1,11 @@
+import {useCallback} from "react";
 import {createFileRoute, useRouter} from "@tanstack/react-router";
 import {createApplication, getAllVacancies, getApplications} from "~/lib/vacancies";
 import {VacancyTable} from "~/components/vacancies/VacancyTable";
 import {StatsCounter} from "~/components/elements/StatsCounter";
 import {FilterPills} from "~/components/elements/FilterPills";
 import {Pagination} from "~/components/elements/Pagination";
-import {SearchBar} from "~/components/elements/SearchBar/SearchBar";
+import {SearchBar, SearchParams} from "~/components/elements/SearchBar/SearchBar";
 import {filterVacancies} from "~/lib/vacancyFilter";
 import {Application, DefaultSearchSchema, PAGE_SIZE} from "~/lib/schemas";
 import styles from "./index.module.css";
@@ -26,6 +27,12 @@ function VacanciesPage() {
   const {vacancies, applications} = Route.useLoaderData();
   const search = Route.useSearch();
   const router = useRouter();
+  const navigate = Route.useNavigate();
+
+  const handleSearch = useCallback(
+    (params: SearchParams) => navigate({search: (prev) => ({...prev, ...params, page: 1})}),
+    [navigate],
+  );
 
   const applicationById = new Map<string, Application>(
     applications.flatMap((s) => s.vacancyId ? [[s.vacancyId, s]] : [])
@@ -82,7 +89,7 @@ function VacanciesPage() {
       {vacancies.length > 0 ? (
         <>
           <StatsCounter vacancies={vacancies}/>
-          <SearchBar currentSearch={search}/>
+          <SearchBar currentSearch={search} onSearch={handleSearch}/>
           <FilterPills currentSearch={search}/>
           <VacancyTable
             vacancies={pageItems ?? []}

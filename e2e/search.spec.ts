@@ -5,13 +5,13 @@ test("searching on tags stays within the selected filters and can include archiv
   await login(page);
 
   // Filter op bron "indeed": zoeken op "React" toont dan enkel de indeed-vacature.
+  // Zoekt automatisch zodra de gebruiker stopt met typen.
   await page.goto("/vacatures?source=indeed");
   const searchbox = page.getByRole("searchbox", { name: "Zoek vacatures" });
   await searchbox.fill("react");
-  await searchbox.press("Enter");
 
-  await expect(page).toHaveURL(/source=indeed/);
   await expect(page).toHaveURL(/q=react/);
+  await expect(page).toHaveURL(/source=indeed/);
   await expect(page.getByText("Bekeken Full Stack Rol")).toBeVisible();
   await expect(page.getByText("Nieuwe Frontend Rol")).not.toBeVisible();
 
@@ -25,4 +25,15 @@ test("searching on tags stays within the selected filters and can include archiv
   await page.getByRole("checkbox", { name: "Inclusief gearchiveerd" }).check();
   await expect(page).toHaveURL(/archived=true/);
   await expect(page.getByText("Gearchiveerde Svelte Rol")).toBeVisible();
+});
+
+test("searching on company name", async ({ page }) => {
+  await login(page);
+
+  await page.goto("/vacatures");
+  await page.getByRole("searchbox", { name: "Zoek vacatures" }).fill("full stack nv");
+
+  await expect(page).toHaveURL(/q=full/);
+  await expect(page.getByText("Bekeken Full Stack Rol")).toBeVisible();
+  await expect(page.getByText("Nieuwe Frontend Rol")).not.toBeVisible();
 });
