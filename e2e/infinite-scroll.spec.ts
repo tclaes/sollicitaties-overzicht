@@ -28,7 +28,7 @@ test("archived vacancies stay out of the list until asked for", async ({ page })
   await page.goto("/vacatures");
   await expect(page.getByText("Nieuwe Frontend Rol")).toBeVisible();
   // De teller kent het archief, de lijst toont het niet.
-  await expect(page.getByText("Niet interessant", { exact: true }).locator("..")).toContainText("1");
+  await expect(page.getByText("1Niet interessant", { exact: true })).toBeVisible();
   await expect(page.getByText("Gearchiveerde Svelte Rol")).not.toBeVisible();
 
   await page.getByRole("checkbox", { name: "Inclusief gearchiveerd" }).check();

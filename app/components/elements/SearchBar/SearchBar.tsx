@@ -18,6 +18,12 @@ interface Props {
 export function SearchBar({currentSearch, onSearch}: Props) {
   const [query, setQuery] = useState(currentSearch.q ?? "");
   const appliedQuery = currentSearch.q ?? "";
+  // Optimistisch: de route houdt de oude search vast tot de loader klaar is
+  // (bv. het archief ophalen), de checkbox moet intussen meteen omklappen.
+  const appliedArchived = currentSearch.archived ?? false;
+  const [archived, setArchived] = useState(appliedArchived);
+
+  useEffect(() => setArchived(appliedArchived), [appliedArchived]);
 
   useEffect(() => {
     if (query.trim() === appliedQuery) return;
@@ -45,8 +51,11 @@ export function SearchBar({currentSearch, onSearch}: Props) {
       <label className={styles.checkbox}>
         <input
           type="checkbox"
-          checked={currentSearch.archived ?? false}
-          onChange={(e) => onSearch({archived: e.target.checked || undefined})}
+          checked={archived}
+          onChange={(e) => {
+            setArchived(e.target.checked);
+            onSearch({archived: e.target.checked || undefined});
+          }}
         />
         Inclusief gearchiveerd
       </label>
