@@ -25,9 +25,9 @@ test("scrolling loads more vacancies until all are shown", async ({ page }) => {
 test("archived vacancies stay out of the list until asked for", async ({ page }) => {
   await login(page);
 
-  await page.goto("/vacatures");
-  await expect(page.getByText("Nieuwe Frontend Rol")).toBeVisible();
-  // De teller kent het archief, de lijst toont het niet.
+  // Zoek op de gearchiveerde fixture: zonder bulk-vacatures in de weg valt ze binnen de eerste chunk.
+  await page.goto("/vacatures?q=svelte");
+    // De teller kent het archief, de lijst toont het niet.
   await expect(page.getByText("1Niet interessant", { exact: true })).toBeVisible();
   await expect(page.getByText("Gearchiveerde Svelte Rol")).not.toBeVisible();
 
