@@ -89,4 +89,17 @@ describe("DefaultSearchSchema", () => {
   it("falls back to 1 for an invalid page", () => {
     expect(DefaultSearchSchema.parse({ page: "abc" }).page).toBe(1);
   });
+
+  it("parses the search query, also when the URL makes it a number", () => {
+    expect(DefaultSearchSchema.parse({ q: " react " }).q).toBe("react");
+    expect(DefaultSearchSchema.parse({ q: 123 }).q).toBe("123");
+    expect(DefaultSearchSchema.parse({ q: "" }).q).toBeUndefined();
+  });
+
+  it("parses archived from a boolean or string", () => {
+    expect(DefaultSearchSchema.parse({ archived: true }).archived).toBe(true);
+    expect(DefaultSearchSchema.parse({ archived: "true" }).archived).toBe(true);
+    expect(DefaultSearchSchema.parse({}).archived).toBeUndefined();
+    expect(DefaultSearchSchema.parse({ archived: "nee" }).archived).toBe(false);
+  });
 });

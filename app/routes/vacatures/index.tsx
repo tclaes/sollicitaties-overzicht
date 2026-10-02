@@ -4,6 +4,8 @@ import {VacancyTable} from "~/components/vacancies/VacancyTable";
 import {StatsCounter} from "~/components/elements/StatsCounter";
 import {FilterPills} from "~/components/elements/FilterPills";
 import {Pagination} from "~/components/elements/Pagination";
+import {SearchBar} from "~/components/elements/SearchBar/SearchBar";
+import {filterVacancies} from "~/lib/vacancyFilter";
 import {Application, DefaultSearchSchema, PAGE_SIZE} from "~/lib/schemas";
 import styles from "./index.module.css";
 
@@ -31,20 +33,7 @@ function VacanciesPage() {
 
   const matchOrder: Record<string, number> = {strong: 0, good: 1, moderate: 2, low: 3};
 
-  const showArchive = search.status === "not-interesting" || search.status === "not-hired";
-
-  const filtered = vacancies?.filter((v) => {
-    if (showArchive) {
-      if (!v.isArchived) return false;
-      if (search.status === "not-hired" && v.status !== "not-hired") return false;
-    } else {
-      if (v.isArchived) return false;
-      if (search.status && v.status !== search.status) return false;
-    }
-    if (search.function && v.function !== search.function) return false;
-    return !(search.source && v.source !== search.source);
-
-  })
+  const filtered = filterVacancies(vacancies ?? [], search)
     .sort((a, b) => {
       const favoriteDiff = Number(b.favorite ?? false) - Number(a.favorite ?? false);
       if (favoriteDiff !== 0) return favoriteDiff;
@@ -93,6 +82,7 @@ function VacanciesPage() {
       {vacancies.length > 0 ? (
         <>
           <StatsCounter vacancies={vacancies}/>
+          <SearchBar currentSearch={search}/>
           <FilterPills currentSearch={search}/>
           <VacancyTable
             vacancies={pageItems ?? []}

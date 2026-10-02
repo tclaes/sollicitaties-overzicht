@@ -21,6 +21,7 @@ export const VACANCY_IDS = {
   viewed: "vacancy-bekeken",
   applied: "vacancy-gesolliciteerd",
   detail: "vacancy-detail-solliciteren",
+  archived: "vacancy-gearchiveerd-svelte",
 };
 
 export async function seed() {
@@ -92,6 +93,23 @@ export async function seed() {
       gevondenOp: new Date().toISOString(),
       status: "bekeken",
       tags: [],
+    }),
+    // Gearchiveerde vacature met een unieke tag voor de zoek-test.
+    vacancies.doc(VACANCY_IDS.archived).set({
+      id: VACANCY_IDS.archived,
+      titel: "Gearchiveerde Svelte Rol",
+      bedrijf: "Fixture Archief BV",
+      locatie: "Genk",
+      regio: "limburg",
+      url: "https://example.com/gearchiveerde-svelte-rol",
+      beschrijving: "Fixture vacature die al gearchiveerd is.",
+      bron: "vdab",
+      functie: "frontend",
+      gevondenOp: new Date().toISOString(),
+      status: "niet-interessant",
+      isArchived: true,
+      archiefReden: "Fixture",
+      tags: ["Svelte"],
     }),
   ]);
 

@@ -41,6 +41,9 @@ export const DefaultSearchSchema = z.object({
   source: SourceSchema.optional(),
   function: RoleSchema.optional(),
   sort: SortingSchema.default("match"),
+  // TanStack Router parset "?q=123" als number en "?archived=true" als boolean.
+  q: z.coerce.string().trim().transform((v) => v || undefined).optional().catch(undefined),
+  archived: z.preprocess((v) => v === true || v === "true", z.boolean()).optional().catch(undefined),
   page: z.coerce.number().int().min(1).default(1).catch(1),
 });
 
