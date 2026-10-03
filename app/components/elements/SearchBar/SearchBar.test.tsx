@@ -73,4 +73,12 @@ describe("SearchBar", () => {
     fireEvent.click(screen.getByRole("checkbox", {name: "Inclusief gearchiveerd"}));
     expect(onSearch).toHaveBeenCalledWith({archived: true});
   });
+
+  it("flips the archived checkbox immediately, before the route applies the search", () => {
+    render(<SearchBar currentSearch={{}} onSearch={vi.fn()}/>);
+    const checkbox = screen.getByRole("checkbox", {name: "Inclusief gearchiveerd"});
+
+    fireEvent.click(checkbox);
+    expect(checkbox).toBeChecked();
+  });
 });

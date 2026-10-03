@@ -74,20 +74,8 @@ describe("ApplicationSchema", () => {
 });
 
 describe("DefaultSearchSchema", () => {
-  it("defaults page to 1 when omitted", () => {
-    expect(DefaultSearchSchema.parse({}).page).toBe(1);
-  });
-
-  it("accepts a numeric page", () => {
-    expect(DefaultSearchSchema.parse({ page: 3 }).page).toBe(3);
-  });
-
-  it("accepts a page coming from the URL as a string", () => {
-    expect(DefaultSearchSchema.parse({ page: "3" }).page).toBe(3);
-  });
-
-  it("falls back to 1 for an invalid page", () => {
-    expect(DefaultSearchSchema.parse({ page: "abc" }).page).toBe(1);
+  it("ignores the removed page param from old links", () => {
+    expect(DefaultSearchSchema.parse({ page: "3" })).not.toHaveProperty("page");
   });
 
   it("parses the search query, also when the URL makes it a number", () => {

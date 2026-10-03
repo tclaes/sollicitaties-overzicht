@@ -2,7 +2,7 @@ import styles from "./SearchHint.module.css";
 
 interface Props {
   query: string;
-  archivedCount: number;
+  canIncludeArchived: boolean;
   outsideFiltersCount: number;
   onIncludeArchived: () => void;
   onClearFilters: () => void;
@@ -10,18 +10,18 @@ interface Props {
 
 const vacancies = (count: number) => (count === 1 ? "1 vacature matcht" : `${count} vacatures matchen`);
 
-// Legt uit waarom een zoekopdracht niets oplevert: de matches zitten in het
-// archief of buiten de geselecteerde filters.
-export function SearchHint({query, archivedCount, outsideFiltersCount, onIncludeArchived, onClearFilters}: Props) {
-  if (archivedCount === 0 && outsideFiltersCount === 0) {
+// Legt uit waarom een zoekopdracht niets oplevert: de matches zitten mogelijk in
+// het (nog niet geladen) archief of buiten de geselecteerde filters.
+export function SearchHint({query, canIncludeArchived, outsideFiltersCount, onIncludeArchived, onClearFilters}: Props) {
+  if (!canIncludeArchived && outsideFiltersCount === 0) {
     return <p className={styles.hint} role="status">Niets gevonden voor &ldquo;{query}&rdquo;.</p>;
   }
 
   return (
     <div className={styles.hint} role="status">
-      {archivedCount > 0 && (
+      {canIncludeArchived && (
         <p>
-          {vacancies(archivedCount)} &ldquo;{query}&rdquo; in het archief.{" "}
+          Mogelijk zijn er matches voor &ldquo;{query}&rdquo; in het archief.{" "}
           <button type="button" className={styles.action} onClick={onIncludeArchived}>
             Inclusief gearchiveerd tonen
           </button>

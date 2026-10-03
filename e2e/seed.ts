@@ -24,6 +24,13 @@ export const VACANCY_IDS = {
   archived: "vacancy-gearchiveerd-svelte",
 };
 
+// Bulk-vacatures hebben geen match en staan dus onderaan de standaardsortering, zodat
+// de andere fixtures binnen de eerste chunk blijven.
+// Genoeg vacatures (bron "jobat", verder nergens gebruikt) om de oneindige scroll
+// over meerdere chunks te testen zonder de andere specs te beïnvloeden.
+export const BULK_SOURCE = "jobat";
+export const BULK_COUNT = 60;
+
 export async function seed() {
   const app = initializeApp({ projectId: "demo-test" });
   const auth = getAuth(app);
@@ -65,6 +72,7 @@ export async function seed() {
       gevondenOp: new Date().toISOString(),
       status: "bekeken",
       tags: ["Node.js", "React"],
+      match: { score: "matig", toelichting: "Staat boven de bulk-fixtures." },
     }),
     vacancies.doc(VACANCY_IDS.applied).set({
       id: VACANCY_IDS.applied,
@@ -78,6 +86,7 @@ export async function seed() {
       gevondenOp: new Date().toISOString(),
       status: "gesolliciteerd",
       tags: [],
+      match: { score: "matig", toelichting: "Staat boven de bulk-fixtures." },
     }),
     // Eigen vacature voor de detailpagina-test, zodat die niet botst met de
     // parallel draaiende solliciteer-test op de overzichtspagina.
@@ -93,6 +102,7 @@ export async function seed() {
       gevondenOp: new Date().toISOString(),
       status: "bekeken",
       tags: [],
+      match: { score: "matig", toelichting: "Staat boven de bulk-fixtures." },
     }),
     // Gearchiveerde vacature met een unieke tag voor de zoek-test.
     vacancies.doc(VACANCY_IDS.archived).set({
@@ -112,6 +122,25 @@ export async function seed() {
       tags: ["Svelte"],
     }),
   ]);
+
+  const bulk = db.bulkWriter();
+  for (let i = 1; i <= BULK_COUNT; i++) {
+    const id = `vacancy-bulk-${String(i).padStart(2, "0")}`;
+    void bulk.set(vacancies.doc(id), {
+      id,
+      titel: `Bulk Vacature ${String(i).padStart(2, "0")}`,
+      bedrijf: "Fixture Bulk BV",
+      locatie: "Hasselt",
+      regio: "limburg",
+      url: `https://example.com/${id}`,
+      beschrijving: "Fixture vacature voor de oneindige-scroll-test.",
+      bron: BULK_SOURCE,
+      gevondenOp: new Date().toISOString(),
+      status: "nieuw",
+      tags: [],
+    });
+  }
+  await bulk.close();
 
   await db.collection("sollicitaties").doc("sollicitatie-fixture-1").set({
     vacatureId: VACANCY_IDS.applied,

@@ -1,4 +1,15 @@
-import {collection, deleteField, doc, getDocs, setDoc, updateDoc,} from "firebase/firestore";
+import {
+  collection,
+  deleteField,
+  doc,
+  getCountFromServer,
+  getDoc,
+  getDocs,
+  query,
+  setDoc,
+  updateDoc,
+  where,
+} from "firebase/firestore";
 import {db} from "./firebase";
 import {Application, ApplicationStatus, Status, Vacancy,} from "./schemas";
 import {
@@ -8,13 +19,66 @@ import {
   vacancyFromFirestore,
 } from "./firestoreMappers";
 
-export async function getAllVacancies(): Promise<Vacancy[]> {
+// Gearchiveerde vacatures worden niet standaard geladen: ze zijn alleen nodig in
+// het archief of bij "Inclusief gearchiveerd" (zie getArchivedVacancies).
+const ARCHIVED_STATUSES = ["niet-interessant", "niet-aangeworven"];
+
+// Een document zonder `isArchived`-veld (alles wat de sync aanmaakt) valt buiten
+// `isArchived != true`, daarom filteren we op status. Een document met
+// isArchived: true én een actieve status wordt later in filterVacancies verborgen.
+export async function getActiveVacancies(): Promise<Vacancy[]> {
   try {
-    const vacanciesSnap = await getDocs(collection(db, "vacatures"));
-    return vacanciesSnap.docs.map((d) => vacancyFromFirestore(d.data()));
+    const snap = await getDocs(
+      query(collection(db, "vacatures"), where("status", "not-in", ARCHIVED_STATUSES)),
+    );
+    return snap.docs.map((d) => vacancyFromFirestore(d.data()));
   } catch (err) {
     console.error(err);
     return [];
+  }
+}
+
+export async function getArchivedVacancies(): Promise<Vacancy[]> {
+  try {
+    const snap = await getDocs(
+      query(collection(db, "vacatures"), where("isArchived", "==", true)),
+    );
+    return snap.docs.map((d) => vacancyFromFirestore(d.data()));
+  } catch (err) {
+    console.error(err);
+    return [];
+  }
+}
+
+export type VacancyCounts = { total: number } & Record<Status, number>;
+
+const EMPTY_COUNTS: VacancyCounts = {
+  total: 0,
+  new: 0,
+  viewed: 0,
+  applied: 0,
+  rejected: 0,
+  "not-interesting": 0,
+  "not-hired": 0,
+};
+
+// Aggregatietellingen: tellen op de server zonder de documenten te downloaden,
+// zodat de statusbalk ook het (niet-geladen) archief kan tonen.
+export async function getVacancyCounts(): Promise<VacancyCounts> {
+  const statuses = Object.keys(EMPTY_COUNTS).filter((k) => k !== "total") as Status[];
+  try {
+    const vacancies = collection(db, "vacatures");
+    const [total, ...perStatus] = await Promise.all([
+      getCountFromServer(vacancies),
+      ...statuses.map((s) => getCountFromServer(query(vacancies, where("status", "==", statusToFirestore(s))))),
+    ]);
+    return statuses.reduce<VacancyCounts>(
+      (acc, status, i) => ({...acc, [status]: perStatus[i].data().count}),
+      {...EMPTY_COUNTS, total: total.data().count},
+    );
+  } catch (err) {
+    console.error(err);
+    return EMPTY_COUNTS;
   }
 }
 
@@ -56,8 +120,13 @@ export async function updateApplication(
 }
 
 export async function getVacancy(id: string): Promise<Vacancy | null> {
-  const allVacancies = await getAllVacancies();
-  return allVacancies?.find((v) => v.id === id) ?? null;
+  try {
+    const snap = await getDoc(doc(db, "vacatures", id));
+    return snap.exists() ? vacancyFromFirestore({id: snap.id, ...snap.data()}) : null;
+  } catch (err) {
+    console.error(err);
+    return null;
+  }
 }
 
 // Enige aanroeper is de sollicitatie-statusdropdown (ApplicationsPanel /
