@@ -2860,5 +2860,66 @@
       "Sass",
       "Thuiswerk"
     ]
+  },
+  {
+    "titel": "Full-Stack Developer",
+    "bedrijf": "Hatch",
+    "locatie": "Leuven",
+    "regio": "vlaanderen",
+    "url": "https://www.hatch.be/jobs/full-stack-developer",
+    "beschrijving": "Full-stack developer bij Hatch, onafhankelijk Belgisch digital product studio (±20 medewerkers, greenfield-producten). Gebruikelijke stack: Vue/React/Angular + Node/NestJS + AWS; minstens 3 jaar ervaring met JavaScript/TypeScript, Node.js, HTML, CSS. Aanbod o.a. bedrijfswagen met tankkaart, maaltijdcheques, hospitalisatie. Kantoor in Leuven, niet volledig remote.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "Vue",
+      "React",
+      "Angular",
+      "TypeScript",
+      "Node.js",
+      "NestJS",
+      "AWS",
+      "fullstack"
+    ]
+  },
+  {
+    "titel": "Senior Full Stack .NET/Angular Developer",
+    "bedrijf": "Editx (klant: softwarebedrijf zorgsector)",
+    "locatie": "Mechelen / Beveren",
+    "regio": "vlaanderen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/73914581/senior-full-stack-net-angular-developer",
+    "beschrijving": "Medior/senior full-stack .NET/Angular developer in een intern development team van een softwarebedrijf voor de zorgsector. Stack: .NET C#, Angular, AWS, PostgreSQL/SQL Server, Docker, Terraform, CI/CD. Hybride: een dag op het HQ in Beveren, een tweede dag naar keuze HQ of coworkspace in Mechelen, na inwerkperiode tot drie dagen thuiswerk. Vaste job, bedrijfswagen. Borderline: .NET-architectuur op senior niveau staat voorop, Angular is volwaardig deel van de stack. Dezelfde job staat ook onder VDAB 73914580 (locatie Beveren-Kruibeke-Zwijndrecht).",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      "Angular",
+      ".NET",
+      "C#",
+      "AWS",
+      "fullstack"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/73914580/senior-full-stack-net-angular-developer"
+      }
+    ]
+  },
+  {
+    "titel": "Senior Java & Angular Full-Stack Developer",
+    "bedrijf": "EngiFlex",
+    "locatie": "Aartselaar",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74717874/senior-java-angular-full-stack-developer",
+    "beschrijving": "Senior full-stack developer (Java 17/21, Spring Boot + Angular/RxJs) voor webapplicaties op Azure Kubernetes Service, o.a. voor steden en gemeenten. Vaste voltijdse job, 2-3 dagen per week op kantoor. Borderline: backend-Java is de kern, Angular-frontend is een volwaardig deel van de rol; rol via EngiFlex (mogelijk detachering).",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      "Angular",
+      "Java",
+      "Spring Boot",
+      "RxJs",
+      "Azure",
+      "fullstack"
+    ]
   }
 ]
