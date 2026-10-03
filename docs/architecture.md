@@ -12,7 +12,8 @@
   `antwerpen`, `vlaanderen`, `brussel`, `remote`, `andere`. `functie`: `frontend`, `fullstack`.
 - Vacancy list (`/vacatures`): infinite scroll via `useInfiniteList` (`app/lib/useInfiniteList.ts`) — renders `PAGE_SIZE`
   chunks, loads the next on an `IntersectionObserver` sentinel and one chunk ahead when idle. Filtering and sorting stay
-  client-side over the in-memory loader data (route `staleTime` keeps it cached; `router.invalidate()` refreshes).
+  client-side over the in-memory loader data. The route deliberately has no `staleTime`: back-navigation shows the cached
+  data and revalidates in the background, because not every mutation calls `router.invalidate()`.
 - Archived vacancies are **not** loaded by default: `getActiveVacancies()` (`status not-in` archive statuses) feeds the
   list; `getArchivedVacancies()` (`isArchived == true`) is only fetched when `needsArchive(search)` (archive status
   filter or "Inclusief gearchiveerd"). The stats bar uses server-side counts (`getVacancyCounts()`), and
