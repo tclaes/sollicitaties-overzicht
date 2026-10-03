@@ -2441,6 +2441,10 @@
       {
         "bron": "vdab",
         "url": "https://www.vdab.be/vindeenjob/vacatures/74647560/net-full-stack-developer"
+      },
+      {
+        "bron": "andere",
+        "url": "https://www.stepstone.be/jobs--net-full-stack-developer-Antwerpen-Experis--2244483-inline.html"
       }
     ]
   },
@@ -2918,6 +2922,23 @@
       "Java",
       "Spring Boot",
       "RxJs",
+      "Azure",
+      "fullstack"
+    ]
+  },
+  {
+    "titel": "Senior Full Stack .NET Developer",
+    "bedrijf": "Adequat (klant: data- en marketingbedrijf)",
+    "locatie": "Aartselaar",
+    "regio": "antwerpen",
+    "url": "https://www.stepstone.be/jobs--SENIOR-FULL-STACK-NET-DEVELOPER-AARTSELAAR-Adequat--2233686-inline.html",
+    "beschrijving": "Senior full-stack developer (.NET/C# en React) bij een bedrijf dat organisaties helpt met data voor marketing en klantenbeheer. Bouwt schaalbare full-stack oplossingen, API's en Azure/Microsoft Fabric-integraties; doorgroeimogelijkheid naar CTO. Borderline: .NET (5+ jaar C#/SQL) staat voorop, React is volwaardig onderdeel van de full-stack. Contractvorm niet expliciet vermeld.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      ".NET",
+      "C#",
       "Azure",
       "fullstack"
     ]
