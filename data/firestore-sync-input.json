@@ -206,6 +206,20 @@
     "tags": [
       ".NET",
       "Angular"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74602586/lead-software-engineer-net-angular"
+      },
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74021132/lead-software-engineer-net-angular"
+      },
+      {
+        "bron": "jobat",
+        "url": "https://www.jobat.be/nl/jobs/lead-software-engineer-net-angular/job_6262850"
+      }
     ]
   },
   {
@@ -220,6 +234,12 @@
     "tags": [
       ".NET",
       "Angular"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74602583/net-angular-developer-in-house"
+      }
     ]
   },
   {
@@ -347,7 +367,9 @@
     "functie": "fullstack",
     "tags": [
       "Node.js"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Dubbel"
   },
   {
     "titel": "Node/React developer",
@@ -403,7 +425,9 @@
       "Vue.js",
       "TypeScript"
     ],
-    "id": "indeed-e640a447742daf78"
+    "id": "indeed-e640a447742daf78",
+    "nietInteressant": true,
+    "archiefReden": "Meer solutions architecten rol"
   },
   {
     "titel": "Senior Fullstack Developer (React/Node.js)",
@@ -444,6 +468,16 @@
     "tags": [
       "React",
       "C#"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74459327/full-stack-developer-react-c"
+      },
+      {
+        "bron": "jobat",
+        "url": "https://www.jobat.be/nl/jobs/full-stack-developer-react-c/job_6187399"
+      }
     ]
   },
   {
@@ -457,6 +491,18 @@
     "functie": "frontend",
     "tags": [
       "React"
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Kingfisher reageert slecht",
+    "extraBronnen": [
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74459326/react-developer-veel-flexibiliteit-en-groeimogelijkheden"
+      },
+      {
+        "bron": "jobat",
+        "url": "https://www.jobat.be/nl/jobs/react-developer-veel-flexibiliteit-en-groeimogelijkheden/job_6187398"
+      }
     ]
   },
   {
@@ -471,6 +517,16 @@
     "tags": [
       "Full-stack",
       "Lead"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74602585/team-lead-full-stack-developer"
+      },
+      {
+        "bron": "jobat",
+        "url": "https://www.jobat.be/nl/jobs/team-lead-full-stack-developer/job_6262849"
+      }
     ]
   },
   {
@@ -484,6 +540,16 @@
     "functie": "frontend",
     "tags": [
       "React"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74459325/software-developer-react"
+      },
+      {
+        "bron": "jobat",
+        "url": "https://www.jobat.be/nl/jobs/software-developer-react/job_6187397"
+      }
     ]
   },
   {
@@ -581,7 +647,9 @@
       "TypeScript",
       "Node.js",
       "PostgreSQL"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Angular front-end developer",
@@ -753,7 +821,9 @@
       "JavaScript",
       "frontend",
       "consultancy"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Senior Software Engineer (Payflip Flex)",
@@ -821,7 +891,9 @@
       "API",
       "mobile",
       "healthcare"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Verlopen"
   },
   {
     "titel": "Fullstack Software Engineer - Payroll & Benefits Platform for HR",
@@ -894,7 +966,9 @@
       "ASP.NET Core",
       "TypeScript",
       "Azure"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Verlopen"
   },
   {
     "titel": "Full Stack Java Developer",
@@ -947,7 +1021,9 @@
       "HTML/CSS",
       "TailwindCSS",
       "Cypress"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Is niet meer actief"
   },
   {
     "titel": "Front-end Developer",
@@ -1006,7 +1082,9 @@
         "bron": "andere",
         "url": "https://techjobs.be/nl/ict-jobs/49698-full-stack-developer-ai-products"
       }
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Verlopen"
   },
   {
     "titel": "Lead Front-End Developer",
@@ -1538,7 +1616,9 @@
     "tags": [
       "React",
       "TypeScript"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Locatie"
   },
   {
     "titel": "Full-Stack developer | React/C#",
@@ -1665,7 +1745,9 @@
       "JavaScript",
       "remote"
     ],
-    "functie": "frontend"
+    "functie": "frontend",
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "JavaScript Frontend Developer (Remote)",
@@ -1696,7 +1778,9 @@
       "remote",
       "API"
     ],
-    "functie": "fullstack"
+    "functie": "fullstack",
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Full Stack Developer (CraftCode)",
@@ -1736,7 +1820,9 @@
         "bron": "andere",
         "url": "https://it-jobs.be/vacature/front-end-developer-edegem-cronos-edegem-187993"
       }
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Dubbele entry"
   },
   {
     "titel": "Lead Front-End Developer (CraftCode)",
@@ -1756,7 +1842,9 @@
         "bron": "andere",
         "url": "https://it-jobs.be/vacature/lead-front-end-developer-edegem-cronos-edegem-188059"
       }
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Dubbele entry"
   },
   {
     "titel": "Senior Angular Front-End Engineer",
@@ -1803,7 +1891,9 @@
       "Angular",
       "TypeScript",
       "fintech"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Frans sprekend"
   },
   {
     "titel": "Medior Frontend Developer",
@@ -1928,7 +2018,9 @@
       ".NET",
       "Umbraco",
       "JavaScript"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": ".NET Tech Lead",
@@ -2038,7 +2130,9 @@
       "Angular",
       "TypeScript",
       "Azure"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Fullstack .NET developer",
@@ -2136,7 +2230,9 @@
     "functie": "fullstack",
     "tags": [
       "UI/UX"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Shopify expert gezocht"
   },
   {
     "titel": "Technical Lead and Architect, Blockchain Full Stack Engineer",
@@ -2179,7 +2275,9 @@
     "beschrijving": "Hybride fulltime full stack rol bij AvioBook (luchtvaartsoftware) in Hasselt.",
     "bron": "linkedin",
     "functie": "fullstack",
-    "tags": []
+    "tags": [],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Fullstack PHP Developer",
@@ -2236,7 +2334,9 @@
     "functie": "fullstack",
     "tags": [
       "borderline"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Senior Front-end Developer",
@@ -2254,7 +2354,9 @@
       "Shopify"
     ],
     "id": "indeed-0acb267605dffaeb",
-    "verlopen": true
+    "verlopen": true,
+    "nietInteressant": true,
+    "archiefReden": "Meer solutions architecten rol"
   },
   {
     "titel": "Full Stack Developer",
@@ -2287,7 +2389,9 @@
       "TypeScript",
       ".NET",
       "C#"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Full Stack Developer",
@@ -2403,7 +2507,9 @@
       "Angular",
       ".NET Core",
       "Azure"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": ".NET Angular Developer (in-house)",
@@ -2418,7 +2524,9 @@
       ".NET",
       "Angular",
       "in-house"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": ".NET Full Stack Developer",
@@ -2605,7 +2713,9 @@
       "TypeScript",
       "PostgreSQL",
       "Remote"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Lead Next.js Engineer | Enterprise Platforms",
@@ -2621,7 +2731,9 @@
       "React",
       "TypeScript",
       "Tech Lead"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet het gevraagde profiel"
   },
   {
     "titel": "Senior Fullstack Developer (Qmusic, JOE, Willy)",
@@ -2652,7 +2764,9 @@
       "React",
       "Node.js",
       "TypeScript"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Full Stack Engineer (.NET/Angular)",
@@ -2668,7 +2782,9 @@
       "C#",
       "Angular",
       "SQL Server"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "AI-Native Full Stack Engineer",
@@ -2699,7 +2815,9 @@
       "Java",
       "React",
       "Angular"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Senior Web Developer (AI-Augmented)",
@@ -2767,7 +2885,9 @@
       "TypeScript",
       "C#",
       "medical imaging"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "SR .NET Developer (In-house)",
@@ -2785,7 +2905,9 @@
       "React",
       "Vue",
       "SQL Server"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Full-Stack Developer",
@@ -2816,7 +2938,9 @@
       "React",
       "UI",
       "Vast contract"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "al gesolliciteerd"
   },
   {
     "titel": "Software Developer (focus frontend, Vue.js)",
@@ -2847,7 +2971,9 @@
       ".NET",
       "Angular",
       "JavaScript"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Zwaar .NET"
   },
   {
     "titel": "Full Stack Developer",
@@ -2906,7 +3032,9 @@
         "bron": "vdab",
         "url": "https://www.vdab.be/vindeenjob/vacatures/73914580/senior-full-stack-net-angular-developer"
       }
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Sterk BE georienteerd"
   },
   {
     "titel": "Senior Java & Angular Full-Stack Developer",
@@ -2941,6 +3069,61 @@
       "C#",
       "Azure",
       "fullstack"
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Te weinig kennis van de stack"
+  },
+  {
+    "titel": "Medior Full-Stack Developer",
+    "bedrijf": "Taglayer",
+    "locatie": "Antwerpen (centrum, op locatie)",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4473892602/",
+    "beschrijving": "Taglayer bouwt personalisatiesoftware voor websites (100M+ requests/maand). Full-stack rol met sterke kennis van Node.js en Vue.js (Vuex), UX/UI en CSS; MongoDB, CI/CD en API-integraties zijn een plus. 2-3 jaar ervaring, vloeiend Nederlands. Fulltime, kantoor in centrum Antwerpen.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "Vue.js",
+      "Node.js",
+      "Vuex",
+      "CSS",
+      "MongoDB",
+      "full-stack"
+    ]
+  },
+  {
+    "titel": "Junior frontend developer & implementatie specialist",
+    "bedrijf": "Buitenaards (AMAI.IMMO)",
+    "locatie": "Antwerpen (Sint-Pietersvliet 7)",
+    "regio": "antwerpen",
+    "url": "https://be.indeed.com/viewjob?jk=1461f17524263865",
+    "beschrijving": "Vast contract, voltijds, €2.200-€2.800/maand. Je zet goedgekeurde designs om in code (Next.js/React of Vue) en implementeert/koppelt de sites aan de live klantomgeving en het CMS/CRM, binnen het onboarding- en implementatieteam. Min. 2 jaar webdev-ervaring. Borderline: junior niveau en deels implementatie/klantproject-werk, loon laag voor 10+ jaar ervaring.",
+    "bron": "indeed",
+    "functie": "frontend",
+    "tags": [
+      "Next.js",
+      "React",
+      "Vue.js",
+      "frontend",
+      "junior"
+    ]
+  },
+  {
+    "titel": "Full Stack Developer – .NET & Angular",
+    "bedrijf": "Pauwels Consulting (klant: organisatie in de publieke sector)",
+    "locatie": "Antwerpen (hybride)",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4475027710/",
+    "beschrijving": "Full-stack rol bij een klant uit de publieke sector: webapplicaties in .NET (C#) en Angular, REST API's, Azure, CI/CD, Agile/Scrum, innovatieprojecten met AI/computer vision. 1+ jaar .NET-backend, ervaring met Angular-frontend, moedertaal Nederlands. Fulltime, hybride. Borderline: .NET-backend weegt zwaar en het is een consultancy-/detacheringsrol via Pauwels (contracttype niet vermeld).",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "C#",
+      "Angular",
+      "Azure",
+      "full-stack",
+      "consultancy"
     ]
   }
 ]
