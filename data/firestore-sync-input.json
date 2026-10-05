@@ -441,6 +441,12 @@
     "tags": [
       "React",
       "Node.js"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "linkedin",
+        "url": "https://www.linkedin.com/jobs/view/4464318114/"
+      }
     ]
   },
   {
@@ -1003,6 +1009,16 @@
       "TypeScript",
       ".NET",
       "full-stack"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74553858/full-stack-developer-ai"
+      },
+      {
+        "bron": "jobat",
+        "url": "https://www.jobat.be/nl/jobs/full-stack-developer-ai/job_6235015"
+      }
     ]
   },
   {
@@ -1234,6 +1250,12 @@
       "SCSS",
       "Tailwind",
       "Git"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "andere",
+        "url": "https://www.stepstone.be/jobs--Front-end-Software-Developer-Buggenhout-OPDORP-Dehora-Consultancy-Group--2224173-inline.html"
+      }
     ]
   },
   {
@@ -2491,6 +2513,10 @@
       {
         "bron": "vdab",
         "url": "https://www.vdab.be/vindeenjob/vacatures/74670153/fullstack-software-engineer-net"
+      },
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74336090/fullstack-software-engineer"
       }
     ]
   },
@@ -3052,6 +3078,20 @@
       "RxJs",
       "Azure",
       "fullstack"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "linkedin",
+        "url": "https://www.linkedin.com/jobs/view/4471947638/"
+      },
+      {
+        "bron": "linkedin",
+        "url": "https://www.linkedin.com/jobs/view/4473277573/"
+      },
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74722656/senior-full-stack-developer-java-angular"
+      }
     ]
   },
   {
@@ -3089,7 +3129,8 @@
       "CSS",
       "MongoDB",
       "full-stack"
-    ]
+    ],
+    "nietInteressant": true
   },
   {
     "titel": "Junior frontend developer & implementatie specialist",
@@ -3124,6 +3165,152 @@
       "Azure",
       "full-stack",
       "consultancy"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74761793/full-stack-developer-net-angular"
+      }
+    ]
+  },
+  {
+    "titel": "Junior Front-end Software Developer",
+    "bedrijf": "Déhora Consultancy Group",
+    "locatie": "Buggenhout (Opdorp)",
+    "regio": "vlaanderen",
+    "url": "https://www.stepstone.be/jobs--Junior-Front-end-Software-Developer-Buggenhout-OPDORP-Dehora-Consultancy-Group--2209983-inline.html",
+    "beschrijving": "Junior front-end developer in het softwareteam van Planpoint (workforce-managementplatform van Déhora): responsieve front-end componenten in React, wireframes/mock-ups, UX, integratie met API's van het back-end team, begeleiding door ervaren developers. Borderline: junior-rol (Tom is senior) en aparte posting naast de bekende 'Front-end Software Developer' bij Déhora.",
+    "bron": "andere",
+    "functie": "frontend",
+    "tags": [
+      "React",
+      "frontend",
+      "UX",
+      "junior",
+      "productbedrijf"
+    ]
+  },
+  {
+    "titel": "Developer",
+    "bedrijf": "Vintia",
+    "locatie": "Kapellen (hybride)",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4446051274/",
+    "beschrijving": "Software developer bij Vintia (software voor ticketing, boekingen, betalingen en toegangscontrole in de leisure-sector, deel van SALTO WECOSYSTEM), kantoor Kapellen. Volledige lifecycle: analyse, ontwikkeling van componenten in C# en React, testen, documentatie. Stack: .NET, C#, PostgreSQL, Entity Framework, React (React Native is een plus). Fulltime, hybride. Borderline: .NET-backend weegt mee, React is een kerndeel.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      "C#",
+      ".NET",
+      "PostgreSQL",
+      "React Native",
+      "productbedrijf"
+    ]
+  },
+  {
+    "titel": "Full Stack Engineer",
+    "bedrijf": "Hays (klant: gevestigde Belgische organisatie)",
+    "locatie": "Antwerpen (4 dagen on-site)",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4472696869/",
+    "beschrijving": "Senior full-stack rol met architectuurcomponent: integraties, applicatie-/integratiearchitectuur, code reviews. Vereist 5+ jaar full-stack, sterke expertise in .NET/C#, SQL, React en React Native; microservices, event-driven, DDD, clean architecture. 4 dagen per week on-site in Antwerpen. Borderline: LinkedIn vermeldt type 'Contract' (vast of freelance niet expliciet) en .NET weegt zwaar.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "C#",
+      "React",
+      "React Native",
+      "SQL",
+      "architectuur"
+    ]
+  },
+  {
+    "titel": "Fullstack .NET Developer",
+    "bedrijf": "Madison Recruitment (klant: sectorspecialist, ~40 jaar, 5 vestigingen BE/NL)",
+    "locatie": "Lummen",
+    "regio": "limburg",
+    "url": "https://www.linkedin.com/jobs/view/4472722636/",
+    "beschrijving": "Vaste rol in het interne IT-team op het hoofdkantoor in Lummen. Ervaring als software engineer, idealiter 8 à 10 jaar. Stack: .NET (Core), C#, T-SQL, Web API/MVC, Angular. Borderline: .NET-zwaartepunt, Angular is de frontend van de stack.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "C#",
+      "Angular",
+      "SQL",
+      "in-house"
+    ]
+  },
+  {
+    "titel": "Frontend Engineer",
+    "bedrijf": "Sporty Group",
+    "locatie": "Remote (EMEA)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4362403517/",
+    "beschrijving": "Remote-first: mobile-first, responsieve front-ends in Vue.js die miljoenen keren per dag gebruikt worden; code reviews, mentoring. Vereist 4+ jaar, ervaring met Vue, React of Angular, ES6, Webpack, Sass, Node.js, state management (Vuex/Redux/NgRx). Kernuren 10-15u lokale tijd. Let op: LinkedIn toont het type 'Stageplek', maar de inhoud is een medior/senior rol.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "Vue",
+      "React",
+      "Angular",
+      "TypeScript",
+      "remote"
+    ]
+  },
+  {
+    "titel": "Web Developer",
+    "bedrijf": "Canonical",
+    "locatie": "Remote (EMEA)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4182016523/",
+    "beschrijving": "Remote web developer in het webteam van Canonical (Ubuntu): websites en web apps met HTML, CSS (SCSS) en JavaScript (React en TypeScript), responsieve UI's, onderhoud van bestaande projecten. Vereist EMEA-tijdzone. Nice-to-have: Python of Node.js server-side, grootschalige React met TypeScript.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "React",
+      "TypeScript",
+      "SCSS",
+      "JavaScript",
+      "remote"
+    ]
+  },
+  {
+    "titel": "Senior Frontend Developer",
+    "bedrijf": "trg. (recruiter voor een YC-backed AI-startup)",
+    "locatie": "Remote (UK/Europa)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4471207315/",
+    "beschrijving": "Senior frontend engineer bij een YC-backed AI-startup: React, TypeScript en Next.js, features van productdenken over UX tot productie. Vereist 6+ jaar sterke React/TypeScript-ervaring en startup-ervaring. Volledig remote UK/Europa, ca. £100k-£130k + equity. Via recruiter; bedrijf niet genoemd.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "AI",
+      "remote",
+      "startup"
+    ]
+  },
+  {
+    "titel": "Senior/Staff Product Engineer (Full Stack)",
+    "bedrijf": "epilot",
+    "locatie": "Remote (EER) of Keulen",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4440451212/",
+    "beschrijving": "Product engineer full-stack bij epilot (SaaS-platform): TypeScript, React, Svelte en serverless AWS-microservices; sterke productfocus. Remote binnen de EER of vanuit het kantoor in Keulen.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "TypeScript",
+      "React",
+      "Svelte",
+      "AWS",
+      "serverless",
+      "remote"
     ]
   }
 ]
