@@ -2982,6 +2982,12 @@
       "Umbraco",
       "UX/UI",
       "SEO"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "andere",
+        "url": "https://www.it-jobs.be/vacature/software-developer-mechelen-proman-mechelen-409357"
+      }
     ]
   },
   {
@@ -3311,6 +3317,72 @@
       "AWS",
       "serverless",
       "remote"
+    ]
+  },
+  {
+    "titel": "Software Engineer (React/Node.js/TypeScript)",
+    "bedrijf": "Vivid Resourcing (klant: travel-SaaS-bedrijf)",
+    "locatie": "Antwerpen (hybride)",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4475551852/",
+    "beschrijving": "Voltijdse rol via recruiter Vivid Resourcing bij een SaaS-bedrijf voor de reisindustrie in Antwerpen. Full-stack: React aan de front-end, Node aan de back-end, TypeScript doorheen de stack; features bouwen met product en design, meedenken over architectuur. Agentic AI en AWS zijn een plus. Salarisindicatie €2.500–€6.000/maand.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      "Node.js",
+      "TypeScript",
+      "AWS",
+      "AI"
+    ]
+  },
+  {
+    "titel": "Full Stack Engineer",
+    "bedrijf": "PolyPerception",
+    "locatie": "Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4474210654/",
+    "beschrijving": "Startup (computer vision voor afvalsorteer- en recyclagebedrijven) zoekt een ervaren full-stack engineer met oog voor UX: React-frontend (dashboards, datavisualisaties, beeldverkenning, rapportering, alerts) plus Python-API's en backend-services. Borderline: backend is Python, en LinkedIn labelt de post als 'Stageplek / instapniveau' terwijl de tekst een ervaren engineer vraagt — contracttype nakijken.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      "Python",
+      "Data visualisatie",
+      "Startup"
+    ]
+  },
+  {
+    "titel": "Senior Product Engineer",
+    "bedrijf": "DataCamp",
+    "locatie": "België (DataCamp Belgium BV)",
+    "regio": "vlaanderen",
+    "url": "https://www.stepstone.be/jobs--Product-Engineer-Belgium-DataCamp-Belgium-BV--2245798-inline.html",
+    "beschrijving": "Senior product engineer bij DataCamp (e-learning data & AI). Stack TypeScript, Node.js en React; end-to-end eigenaarschap van productprojecten, AI-native team (Claude Code, Codex, MCP). 7+ jaar ervaring over de hele stack en startup-ervaring gevraagd. Borderline: locatie enkel 'Belgium' vermeld (geen stad/remote-beleid op de pagina) en focus ligt deels op LLM-gedreven services.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "TypeScript",
+      "Node.js",
+      "React",
+      "AI",
+      "LLM"
+    ]
+  },
+  {
+    "titel": "Web3 Frontend Developer (Trenches)",
+    "bedrijf": "onbekend (via Jobgether)",
+    "locatie": "België (remote-first)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4474685029/",
+    "beschrijving": "Voltijdse frontend-rol, remote-first en AI-native team: client-ervaring bouwen voor een on-chain tradingterminal (Solana en EVM; trading, perpetuals, prediction markets), eigenaarschap van productoppervlakken van idee tot productie. Borderline: gepost via aggregator Jobgether namens een onbekend partnerbedrijf, en vraagt diepe Web3-/tradingkennis.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "Frontend",
+      "Web3",
+      "Remote",
+      "Trading"
     ]
   }
 ]
