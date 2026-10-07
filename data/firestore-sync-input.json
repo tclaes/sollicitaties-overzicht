@@ -483,6 +483,14 @@
       {
         "bron": "jobat",
         "url": "https://www.jobat.be/nl/jobs/full-stack-developer-react-c/job_6187399"
+      },
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74772252/full-stack-developer-react-c"
+      },
+      {
+        "bron": "jobat",
+        "url": "https://www.jobat.be/nl/jobs/full-stack-developer-react-c/job_6350432"
       }
     ]
   },
@@ -555,6 +563,14 @@
       {
         "bron": "jobat",
         "url": "https://www.jobat.be/nl/jobs/software-developer-react/job_6187397"
+      },
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74772249/software-developer-react"
+      },
+      {
+        "bron": "jobat",
+        "url": "https://www.jobat.be/nl/jobs/software-developer-react/job_6350434"
       }
     ]
   },
@@ -3383,6 +3399,72 @@
       "Web3",
       "Remote",
       "Trading"
+    ]
+  },
+  {
+    "titel": "Product Engineer",
+    "bedrijf": "Talent-IT",
+    "locatie": "provincie Antwerpen (hybride: 2 dagen on-site, 3 dagen remote)",
+    "regio": "antwerpen",
+    "url": "https://talent-it.be/nl/vacatures/product-engineer",
+    "beschrijving": "Vast contract. Product engineer met ownership van idee tot livegang: user research, requirements, oplossingen ontwerpen en zelf implementeren in TypeScript/React, post-launch monitoring en AI-tools in de workflow. React-ontwikkeling is een kernverantwoordelijkheid.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "TypeScript",
+      "React",
+      "Product Engineering",
+      "Hybride"
+    ]
+  },
+  {
+    "titel": "Full-Stack Analist-Developer",
+    "bedrijf": "Delen Private Bank",
+    "locatie": "Antwerpen (2020)",
+    "regio": "antwerpen",
+    "url": "https://be.indeed.com/viewjob?jk=77bb37f2afcded13",
+    "beschrijving": "Voltijds. Full-stack solution engineer in een nieuw, compact development team voor de Supporting Services (HR, Finance, Risk, Legal, ...): functionele analyse + hands-on development met C#, .NET, Angular en TypeScript, end-to-end ownership (you build it, you run it), GitHub Copilot en intern AI-platform. Borderline: combinatie analist-developer met .NET-backend, maar Angular/TypeScript is een volwaardig deel van de rol.",
+    "bron": "indeed",
+    "functie": "fullstack",
+    "tags": [
+      "C#",
+      ".NET",
+      "Angular",
+      "TypeScript",
+      "Analyse"
+    ]
+  },
+  {
+    "titel": "Software Developer",
+    "bedrijf": "Port of Antwerp-Bruges",
+    "locatie": "Antwerpen (2030)",
+    "regio": "antwerpen",
+    "url": "https://be.indeed.com/viewjob?jk=5650c40740fad55d",
+    "beschrijving": "Software developer in de afdeling Digital & Analytics: web- en mobiele applicaties binnen het Antwerp Port Information and Control System (APICS). Gevraagd: sterke kennis van JavaScript en Java, frameworks zoals Angular, Spring en Kafka, REST/microservices. Borderline: Java-backend weegt zwaar, Angular/JavaScript-frontend is een volwaardig onderdeel.",
+    "bron": "indeed",
+    "functie": "fullstack",
+    "tags": [
+      "Java",
+      "JavaScript",
+      "Angular",
+      "Spring",
+      "Kafka"
+    ]
+  },
+  {
+    "titel": "Medior Full Stack .NET / Angular Developer",
+    "bedrijf": "tillit",
+    "locatie": "Vlaanderen (exacte locatie niet vermeld)",
+    "regio": "vlaanderen",
+    "url": "https://www.linkedin.com/jobs/view/4474960052/",
+    "beschrijving": "Fulltime, 3-5 jaar ervaring. Applicaties bouwen met C#/.NET en moderne frontends met Angular en TypeScript, REST API's, SQL/Entity Framework, code reviews, Agile/Scrum. Open voor vaste functie of freelance. Borderline: .NET-kern en exacte locatie onbekend (IT-consultancy).",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "C#",
+      "Angular",
+      "TypeScript"
     ]
   }
 ]
