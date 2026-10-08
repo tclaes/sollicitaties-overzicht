@@ -1271,6 +1271,10 @@
       {
         "bron": "andere",
         "url": "https://www.stepstone.be/jobs--Front-end-Software-Developer-Buggenhout-OPDORP-Dehora-Consultancy-Group--2224173-inline.html"
+      },
+      {
+        "bron": "andere",
+        "url": "https://www.stepstone.be/jobs--Front-end-Software-Developer-Antwerpen-BERCHEM-Dehora-Consultancy-Group--2189733-inline.html"
       }
     ]
   },
@@ -3210,6 +3214,12 @@
       "UX",
       "junior",
       "productbedrijf"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "andere",
+        "url": "https://www.stepstone.be/jobs--Junior-Front-end-Software-Developer-Antwerpen-BERCHEM-Dehora-Consultancy-Group--2209985-inline.html"
+      }
     ]
   },
   {
@@ -3432,6 +3442,12 @@
       "Angular",
       "TypeScript",
       "Analyse"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "linkedin",
+        "url": "https://www.linkedin.com/jobs/view/4476755340/"
+      }
     ]
   },
   {
@@ -3465,6 +3481,41 @@
       "C#",
       "Angular",
       "TypeScript"
+    ]
+  },
+  {
+    "titel": "Senior Full-Stack Solution Architect",
+    "bedrijf": "Delen Private Bank",
+    "locatie": "Antwerpen (kantoor Antwerpen)",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4476768287/",
+    "beschrijving": "Senior Full-Stack Developer & Solution Architect: vertaalt business requirements naar solution designs en bouwt zelf mee aan production-grade applicaties in C#, .NET, Angular en TypeScript; technical leadership zonder people management, AI-integratie via intern platform, GitHub Copilot. Borderline: .NET-zwaar en architectenrol, maar Angular/TypeScript is een volwaardig deel van de stack.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "Angular",
+      "TypeScript",
+      ".NET",
+      "C#",
+      "Architectuur",
+      "Antwerpen"
+    ]
+  },
+  {
+    "titel": "Senior Product Design Engineer",
+    "bedrijf": "onbekend (via Jobgether)",
+    "locatie": "Remote (België)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4476578828/",
+    "beschrijving": "Remote-first, async rol voor een wereldwijd scheduling-platform (via Jobgether): productoppervlakken end-to-end bouwen, productieklare frontend-componenten en primitives in een gedeelde open-source componentbibliotheek (designsysteem, tokens, dark mode, motion, toegankelijkheid). Vereist sterke HTML/CSS/TypeScript/React en headless primitives (Base UI, Radix). Borderline: profiel vraagt een productdesigner die naar design engineering is gegroeid.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Designsysteem",
+      "Toegankelijkheid",
+      "Remote"
     ]
   }
 ]
