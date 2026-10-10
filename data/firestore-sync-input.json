@@ -1598,7 +1598,9 @@
       "React",
       "JavaScript",
       "CSS"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Dubbele entry"
   },
   {
     "titel": "Full Stack developer Edegem",
@@ -1614,7 +1616,9 @@
       "React",
       "Vue",
       "Angular"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Front-end Developer Edegem",
@@ -1629,7 +1633,9 @@
       "Angular",
       "React",
       "JavaScript"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Dubbele entry"
   },
   {
     "titel": "Software Developer .NET & React",
@@ -3173,7 +3179,9 @@
       "Vue.js",
       "frontend",
       "junior"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "te junior"
   },
   {
     "titel": "Full Stack Developer – .NET & Angular",
@@ -3220,7 +3228,9 @@
         "bron": "andere",
         "url": "https://www.stepstone.be/jobs--Junior-Front-end-Software-Developer-Antwerpen-BERCHEM-Dehora-Consultancy-Group--2209985-inline.html"
       }
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Developer",
@@ -3238,7 +3248,9 @@
       "PostgreSQL",
       "React Native",
       "productbedrijf"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Full Stack Engineer",
@@ -3256,7 +3268,9 @@
       "React Native",
       "SQL",
       "architectuur"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Te veel onsite en .Net heavy"
   },
   {
     "titel": "Fullstack .NET Developer",
@@ -3273,7 +3287,9 @@
       "Angular",
       "SQL",
       "in-house"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Frontend Engineer",
@@ -3307,7 +3323,9 @@
       "SCSS",
       "JavaScript",
       "remote"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Senior Frontend Developer",
@@ -3325,7 +3343,9 @@
       "AI",
       "remote",
       "startup"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Senior/Staff Product Engineer (Full Stack)",
@@ -3360,7 +3380,9 @@
       "TypeScript",
       "AWS",
       "AI"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Full Stack Engineer",
@@ -3409,7 +3431,9 @@
       "Web3",
       "Remote",
       "Trading"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Product Engineer",
@@ -3448,7 +3472,9 @@
         "bron": "linkedin",
         "url": "https://www.linkedin.com/jobs/view/4476755340/"
       }
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Software Developer",
@@ -3465,7 +3491,9 @@
       "Angular",
       "Spring",
       "Kafka"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Niet interessant voor mij"
   },
   {
     "titel": "Medior Full Stack .NET / Angular Developer",
@@ -3481,7 +3509,9 @@
       "C#",
       "Angular",
       "TypeScript"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Verlopen"
   },
   {
     "titel": "Senior Full-Stack Solution Architect",
@@ -3499,6 +3529,12 @@
       "C#",
       "Architectuur",
       "Antwerpen"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "indeed",
+        "url": "https://be.indeed.com/viewjob?jk=7a979b7b98712744"
+      }
     ]
   },
   {
@@ -3516,6 +3552,67 @@
       "Designsysteem",
       "Toegankelijkheid",
       "Remote"
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Zelfde als talent-it"
+  },
+  {
+    "titel": "Full Stack Engineer",
+    "bedrijf": "Sigli",
+    "locatie": "Vlaanderen (in-house, flexibel remote binnen Vlaanderen)",
+    "regio": "vlaanderen",
+    "url": "https://www.linkedin.com/jobs/view/4475253029/",
+    "beschrijving": "Voltijds, in-house. Full-stack developer voor een data-intensief ESG/duurzaamheidsplatform: TypeScript en Next.js (React) als kern, complexe datasets omzetten in dashboards, rapporten en workflows; features end-to-end in eigen beheer, nauwe samenwerking met CTO en backend-developers. Min. 3 jaar ervaring, vloeiend Engels, gevestigd in Vlaanderen. Nice to have: datavisualisatie, testing/QA.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Dashboards",
+      "Startup",
+      "Remote"
+    ]
+  },
+  {
+    "titel": "Full-Stack Developer (Shared Application Services)",
+    "bedrijf": "Delen Private Bank",
+    "locatie": "Antwerpen (2020, kantoor Antwerpen)",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4477117994/",
+    "beschrijving": "Voltijds. Medior/senior full-stack developer die herbruikbare applicaties, componenten en services bouwt voor bedrijfsprocessen over afdelingen heen; volledige lifecycle (you build it, you run it), samenwerking met analisten en domain/platform architects. Stack: C#, .NET, Angular, TypeScript, GitHub; Camunda/workflow automation een plus. Borderline: .NET-zwaar, maar Angular/TypeScript is een volwaardig deel van de rol. Andere vacature dan de Full-Stack Analist-Developer (Supporting Services).",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "C#",
+      ".NET",
+      "Angular",
+      "TypeScript",
+      "Antwerpen"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "indeed",
+        "url": "https://be.indeed.com/viewjob?jk=f184f2f56002852b"
+      }
+    ]
+  },
+  {
+    "titel": "Senior Full-Stack Developer & Solution Architect (Shared Application Services)",
+    "bedrijf": "Delen Private Bank",
+    "locatie": "Antwerpen (2020)",
+    "regio": "antwerpen",
+    "url": "https://be.indeed.com/viewjob?jk=28029f308cc84c6a",
+    "beschrijving": "Senior engineer met ervaring in software engineering én solution design voor het Shared Application Services-team: sterke ervaring met C#, .NET, Angular, TypeScript en GitHub; applicatiearchitectuur, secure software engineering, API's, enterprise application integration en workflow automation (Camunda een plus). Borderline: .NET-zwaar en architectenrol, maar Angular/TypeScript is een volwaardig deel van de stack. Andere vacature dan de reeds bekende Senior Full-Stack Solution Architect (Supporting Services).",
+    "bron": "indeed",
+    "functie": "fullstack",
+    "tags": [
+      "C#",
+      ".NET",
+      "Angular",
+      "TypeScript",
+      "Architectuur",
+      "Antwerpen"
     ]
   }
 ]
