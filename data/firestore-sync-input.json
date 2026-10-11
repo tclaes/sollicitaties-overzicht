@@ -704,7 +704,8 @@
       ".NET",
       "Angular",
       "full-stack"
-    ]
+    ],
+    "verlopen": true
   },
   {
     "titel": "Full-stack Developer (.NET / Angular)",
@@ -3613,6 +3614,40 @@
       "TypeScript",
       "Architectuur",
       "Antwerpen"
+    ]
+  },
+  {
+    "titel": "React Front-End Engineer",
+    "bedrijf": "In The Pocket",
+    "locatie": "België (studio niet expliciet vermeld)",
+    "regio": "vlaanderen",
+    "url": "https://job-boards.greenhouse.io/inthepocket/jobs/8078914",
+    "beschrijving": "Medior React front-end rol bij digital product studio In The Pocket (vast contract): webapplicaties ontwerpen, bouwen, testen en deployen met React, SSR, toegankelijkheid (WCAG), designsystemen en typesafe frontends via OpenAPI/GraphQL; ook backend-basiskennis en CI/CD. Borderline: locatie enkel 'Belgium' (HQ Gent, studio niet vermeld) en klantgericht werk via de studio; eerder solliciteerde Tom al op de Angular-rol bij ITP.",
+    "bron": "andere",
+    "functie": "frontend",
+    "tags": [
+      "React",
+      "TypeScript",
+      "SSR",
+      "WCAG",
+      "Designsysteem"
+    ]
+  },
+  {
+    "titel": "Full stack developer",
+    "bedrijf": "MOoN R&C",
+    "locatie": "Heist-op-den-Berg",
+    "regio": "antwerpen",
+    "url": "https://www.jobat.be/nl/jobs/full-stack-developer/job_6233919",
+    "beschrijving": "Full Stack Developer bij een groeiend softwarebedrijf, onbepaalde duur, hybride. Backend: .NET 6/C#, REST, messaging (Service Bus/RabbitMQ), MSSQL/EF Core, CQRS; frontend: Angular2 (Material Design, TypeScript) of Blazor; OAuth2/OIDC, CI/CD en Docker. Borderline: backend-lijst is uitgebreider, maar Angular/TypeScript is een volwaardige frontendvereiste.",
+    "bron": "jobat",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "C#",
+      "Angular",
+      "TypeScript",
+      "Heist-op-den-Berg"
     ]
   }
 ]
