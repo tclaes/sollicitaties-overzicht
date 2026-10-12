@@ -1029,14 +1029,15 @@
     "locatie": "Rumst",
     "regio": "antwerpen",
     "url": "https://kingfisher-recruitment.be/vacatures/it/development/full-stack/full-stack-developer-ai",
-    "beschrijving": "Volwaardige full-stack rol: React op de front-end (component-architectuur, UX, state management, technische richting van de front-end) gecombineerd met .NET in de backend. Multidisciplinair team rond een strategisch softwareplatform, met AI-initiatieven. Vast contract, Nederlands vereist.",
+    "beschrijving": "Volwaardige full-stack rol: React op de front-end (component-architectuur, UX, state management, technische richting van de front-end) gecombineerd met .NET in de backend. Multidisciplinair team rond een strategisch softwareplatform, met AI-initiatieven. Vast contract, Nederlands vereist. Team zet sterk in op AI-assisted software development, met een interne AI-coach.",
     "bron": "andere",
     "functie": "fullstack",
     "tags": [
       "React",
       "TypeScript",
       ".NET",
-      "full-stack"
+      "full-stack",
+      "AI-assisted"
     ],
     "extraBronnen": [
       {
@@ -2742,7 +2743,7 @@
       "TypeScript",
       "Node.js",
       "PostgreSQL",
-      "AI-tools"
+      "AI-assisted"
     ]
   },
   {
@@ -2870,8 +2871,8 @@
     "tags": [
       "Angular",
       "Python",
-      "AI",
-      "fintech"
+      "fintech",
+      "AI-assisted"
     ]
   },
   {
@@ -2912,7 +2913,7 @@
       "Java",
       "Spring Boot",
       "SaaS",
-      "AI-assisted development"
+      "AI-assisted"
     ],
     "extraBronnen": [
       {
@@ -3434,7 +3435,8 @@
       "Node.js",
       "React",
       "AI",
-      "LLM"
+      "LLM",
+      "AI-assisted"
     ]
   },
   {
@@ -3468,7 +3470,8 @@
       "TypeScript",
       "React",
       "Product Engineering",
-      "Hybride"
+      "Hybride",
+      "AI-assisted"
     ]
   },
   {
@@ -3669,6 +3672,23 @@
       "AI",
       "Innovation Lab",
       "productbedrijf"
+    ]
+  },
+  {
+    "titel": "Senior Full Stack Developer, React & Node.js",
+    "bedrijf": "Summer Bash",
+    "locatie": "Antwerpen (hybride)",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4473271478/",
+    "beschrijving": "Eigen softwareplatform voor de reissector (boekingen, klantgegevens, prijzen, operationele opvolging). Senior rol met React en TypeScript als kern: frontend-architectuur, integraties met backend services/API's; Node.js en optioneel backend. Minstens 5 jaar ervaring, kantoor in Antwerpen met gedeeltelijk thuiswerk. Fulltime; gevonden via LinkedIn (repost, 3 dagen geleden).",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "full-stack",
+      "hybride"
     ]
   }
 ]
