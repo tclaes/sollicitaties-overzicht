@@ -103,7 +103,7 @@ function VacanciesPage() {
 
       {counts.total > 0 || vacancies.length > 0 ? (
         <>
-          <StatsCounter counts={counts}/>
+          <StatsCounter counts={counts} currentSearch={search}/>
           <SearchBar currentSearch={search} onSearch={handleSearch}/>
           <FilterPills currentSearch={search}/>
           {search.q && outsideFilters !== null && (

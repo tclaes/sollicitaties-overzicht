@@ -1,38 +1,40 @@
 import type { VacancyCounts } from "~/lib/vacancies";
+import { buildSearchUrl } from "~/lib/searchParams";
 import styles from "./StatsCounter.module.css";
 
-export function StatsCounter({ counts }: { counts: VacancyCounts }) {
+interface Props {
+  counts: VacancyCounts;
+  currentSearch: { status?: string };
+  basePath?: string;
+}
+
+const items: { key: keyof VacancyCounts; status?: string; label: string; className?: string; dot: boolean }[] = [
+  { key: "total", status: undefined, label: "Totaal", dot: false },
+  { key: "new", status: "new", label: "Nieuw", className: styles.new, dot: true },
+  { key: "viewed", status: "viewed", label: "Bekeken", className: styles.viewed, dot: true },
+  { key: "applied", status: "applied", label: "Gesolliciteerd", className: styles.applied, dot: true },
+  { key: "not-interesting", status: "not-interesting", label: "Niet interessant", dot: true },
+  { key: "not-hired", status: "not-hired", label: "Niet aangeworven", dot: true },
+];
+
+export function StatsCounter({ counts, currentSearch, basePath = "/vacatures" }: Props) {
   return (
-    <div className={styles.strip}>
-      <div className={styles.item}>
-        <span className={styles.count}>{counts.total}</span>
-        <span className={styles.label}>Totaal</span>
-      </div>
-      <div className={`${styles.item} ${styles.new}`}>
-        <span className={styles.dot} />
-        <span className={styles.count}>{counts["new"]}</span>
-        <span className={styles.label}>Nieuw</span>
-      </div>
-      <div className={`${styles.item} ${styles.viewed}`}>
-        <span className={styles.dot} />
-        <span className={styles.count}>{counts["viewed"]}</span>
-        <span className={styles.label}>Bekeken</span>
-      </div>
-      <div className={`${styles.item} ${styles.applied}`}>
-        <span className={styles.dot} />
-        <span className={styles.count}>{counts["applied"]}</span>
-        <span className={styles.label}>Gesolliciteerd</span>
-      </div>
-      <div className={styles.item}>
-        <span className={styles.dot} />
-        <span className={styles.count}>{counts["not-interesting"]}</span>
-        <span className={styles.label}>Niet interessant</span>
-      </div>
-      <div className={styles.item}>
-        <span className={styles.dot} />
-        <span className={styles.count}>{counts["not-hired"]}</span>
-        <span className={styles.label}>Niet aangeworven</span>
-      </div>
-    </div>
+    <nav className={styles.strip} aria-label="Status">
+      {items.map(({ key, status, label, className, dot }) => {
+        const active = currentSearch.status === status;
+        return (
+          <a
+            key={key}
+            href={buildSearchUrl(basePath, currentSearch, { status })}
+            className={`${styles.item} ${className ?? ""} ${active ? styles.active : ""}`}
+            aria-current={active ? "true" : undefined}
+          >
+            {dot && <span className={styles.dot} />}
+            <span className={styles.count}>{counts[key]}</span>
+            <span className={styles.label}>{label}</span>
+          </a>
+        );
+      })}
+    </nav>
   );
 }
