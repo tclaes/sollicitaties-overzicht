@@ -13,7 +13,8 @@
       "TypeScript",
       "React",
       "modern web-stack"
-    ]
+    ],
+    "nietInteressant": true
   },
   {
     "titel": "Senior Software Engineer",
@@ -29,7 +30,8 @@
       "TypeScript",
       "React",
       "modern web-stack"
-    ]
+    ],
+    "nietInteressant": true
   },
   {
     "titel": "Full Stack Developer",
@@ -73,7 +75,8 @@
     "tags": [
       "React Native",
       "TypeScript"
-    ]
+    ],
+    "nietInteressant": true
   },
   {
     "titel": "Senior Fullstack Developer (.NET/React)",
@@ -177,7 +180,8 @@
       "Angular",
       "C#/.NET",
       "AWS"
-    ]
+    ],
+    "nietInteressant": true
   },
   {
     "titel": "Angular developer SaaS-applicatie",
@@ -220,7 +224,8 @@
         "bron": "jobat",
         "url": "https://www.jobat.be/nl/jobs/lead-software-engineer-net-angular/job_6262850"
       }
-    ]
+    ],
+    "nietInteressant": true
   },
   {
     "titel": ".NET Angular Developer (in-house)",
@@ -240,7 +245,8 @@
         "bron": "vdab",
         "url": "https://www.vdab.be/vindeenjob/vacatures/74602583/net-angular-developer-in-house"
       }
-    ]
+    ],
+    "nietInteressant": true
   },
   {
     "titel": "Node.js Developer | Veel flexibiliteit",
@@ -325,7 +331,8 @@
     "functie": "fullstack",
     "tags": [
       "Full-stack"
-    ]
+    ],
+    "nietInteressant": true
   },
   {
     "titel": "Vue Developer",
@@ -460,7 +467,8 @@
     "functie": "fullstack",
     "tags": [
       "Full-stack"
-    ]
+    ],
+    "nietInteressant": true
   },
   {
     "titel": "Full-Stack developer | React/C#",
@@ -492,7 +500,8 @@
         "bron": "jobat",
         "url": "https://www.jobat.be/nl/jobs/full-stack-developer-react-c/job_6350432"
       }
-    ]
+    ],
+    "nietInteressant": true
   },
   {
     "titel": "React developer | Veel flexibiliteit en groeimogelijkheden",
@@ -541,7 +550,8 @@
         "bron": "jobat",
         "url": "https://www.jobat.be/nl/jobs/team-lead-full-stack-developer/job_6262849"
       }
-    ]
+    ],
+    "nietInteressant": true
   },
   {
     "titel": "Software developer | React",
@@ -572,7 +582,8 @@
         "bron": "jobat",
         "url": "https://www.jobat.be/nl/jobs/software-developer-react/job_6350434"
       }
-    ]
+    ],
+    "nietInteressant": true
   },
   {
     "titel": "Fullstack Web Developer",
@@ -1548,7 +1559,8 @@
       "Angular",
       "TypeScript",
       "RxJS"
-    ]
+    ],
+    "nietInteressant": true
   },
   {
     "titel": "Lead Front-End Developer",
@@ -2696,7 +2708,8 @@
         "bron": "indeed",
         "url": "https://be.indeed.com/viewjob?jk=467642f8aaa82eba"
       }
-    ]
+    ],
+    "verlopen": true
   },
   {
     "titel": "Fullstack Web Developer",
@@ -3637,6 +3650,25 @@
       "SSR",
       "WCAG",
       "Designsysteem"
+    ]
+  },
+  {
+    "titel": "Full Stack .NET Developer (Innovation Lab)",
+    "bedrijf": "Protime",
+    "locatie": "Mechelen",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4404092216/",
+    "beschrijving": "Innovation Developer in het Innovation Lab van Protime (workforce-management software): concepten omzetten in werkende POC's, experimenteren met .NET 8+ gecombineerd met moderne front-end (TypeScript/JavaScript, React is een plus), AI- en data-driven oplossingen, feedback-driven werken met eindgebruikers. Vereist: sterke .NET 8+-expertise, ervaring met frontend development (TS/JS), TDD/BDD/clean code, NL+EN. Brutoloon €4000-€5000/maand, bedrijfswagen. Fulltime. Borderline: .NET-backend weegt zwaar, frontend (TypeScript/React) is wel een vereist onderdeel.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "C#",
+      "TypeScript",
+      "React",
+      "AI",
+      "Innovation Lab",
+      "productbedrijf"
     ]
   }
 ]
