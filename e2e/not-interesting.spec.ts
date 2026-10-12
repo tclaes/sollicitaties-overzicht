@@ -31,3 +31,16 @@ test("marking a vacancy not interesting archives it, then restoring brings it ba
   await page.goto("/vacatures");
   await expect(page.getByText("Nieuwe Frontend Rol")).toBeVisible();
 });
+
+test("clicking a counter in the stats bar filters by that status", async ({ page }) => {
+  await login(page);
+
+  await page.goto("/vacatures");
+  await page.getByRole("link", { name: /Nieuw/ }).first().click();
+  await expect(page).toHaveURL(/status=new/);
+  await expect(page.getByText("Nieuwe Frontend Rol")).toBeVisible();
+  await expect(page.getByText("Bekeken Full Stack Rol")).not.toBeVisible();
+
+  await page.getByRole("link", { name: /Totaal/ }).click();
+  await expect(page.getByText("Bekeken Full Stack Rol")).toBeVisible();
+});

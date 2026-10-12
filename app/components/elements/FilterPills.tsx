@@ -1,4 +1,4 @@
-import {ROLE_LABELS, RoleSchema, SOURCE_LABELS, SourceSchema, StatusSchema} from "~/lib/schemas";
+import {ROLE_LABELS, RoleSchema, SOURCE_LABELS, SourceSchema} from "~/lib/schemas";
 import {buildSearchUrl} from "~/lib/searchParams";
 import styles from "./FilterPills.module.css";
 
@@ -7,15 +7,6 @@ interface Props {
   basePath?: string;
 }
 
-const statusLabels: Record<string, string> = {
-  new: "Nieuw",
-  viewed: "Bekeken",
-  applied: "Gesolliciteerd",
-  rejected: "Afgewezen",
-  "not-interesting": "Niet interessant",
-  "not-hired": "Niet aangeworven",
-};
-
 export function FilterPills({currentSearch, basePath = "/vacatures"}: Props) {
   function buildUrl(params: Record<string, string | undefined>) {
     return buildSearchUrl(basePath, currentSearch, params);
@@ -23,27 +14,6 @@ export function FilterPills({currentSearch, basePath = "/vacatures"}: Props) {
 
   return (
     <div className={styles.bar} role="group" aria-label="Filters">
-      <span className={styles.groupLabel}>Status</span>
-      <a
-        href={buildUrl({status: undefined})}
-        className={`${styles.pill} ${!currentSearch.status ? styles.active : ""}`}
-      >
-        Alle
-      </a>
-      {StatusSchema.options
-        .filter((s) => s !== "rejected")
-        .map((status) => (
-          <a
-            key={status}
-            href={buildUrl({status})}
-            className={`${styles.pill} ${currentSearch.status === status ? styles.active : ""}`}
-          >
-            {statusLabels[status]}
-          </a>
-        ))}
-
-      <span className={styles.divider}/>
-
       <span className={styles.groupLabel}>Functie</span>
       <a
         href={buildUrl({function: undefined})}

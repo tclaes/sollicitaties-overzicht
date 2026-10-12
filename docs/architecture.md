@@ -18,3 +18,5 @@
   filter or "Inclusief gearchiveerd"). The stats bar uses server-side counts (`getVacancyCounts()`), and
   `getVacancy(id)` reads a single document. Vacancies created by the sync have no `isArchived` field, so never query
   on `isArchived != true`.
+- Statusfilter: via de klikbare tellers in `StatsCounter` ("Totaal" wist de statusfilter); `FilterPills` heeft geen
+  status-groep meer.

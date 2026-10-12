@@ -7,7 +7,7 @@ describe("FilterPills", () => {
     render(<FilterPills currentSearch={{}} />);
 
     expect(screen.getByRole("group", { name: "Filters" })).toBeInTheDocument();
-    expect(screen.getByText("Status")).toBeInTheDocument();
+    expect(screen.queryByText("Status")).not.toBeInTheDocument();
     expect(screen.getByText("Functie")).toBeInTheDocument();
     expect(screen.getByText("Sortering")).toBeInTheDocument();
     expect(screen.getByText("Bron")).toBeInTheDocument();
@@ -16,8 +16,8 @@ describe("FilterPills", () => {
   it("builds hrefs against basePath, merging in the current search", () => {
     render(<FilterPills currentSearch={{ status: "viewed" }} basePath="/custom-base" />);
 
-    const nieuwLink = screen.getByRole("link", { name: "Nieuw" });
-    expect(nieuwLink).toHaveAttribute("href", "/custom-base?status=new");
+    const link = screen.getByRole("link", { name: "frontend" });
+    expect(link).toHaveAttribute("href", "/custom-base?status=viewed&function=frontend");
   });
 
   it("defaults basePath to /vacatures", () => {
