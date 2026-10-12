@@ -35,12 +35,18 @@ test("marking a vacancy not interesting archives it, then restoring brings it ba
 test("clicking a counter in the stats bar filters by that status", async ({ page }) => {
   await login(page);
 
+  // Parallelle specs wijzigen de fixtures, dus we leunen niet op een specifieke
+  // zichtbare vacature: de "nieuw"-fixture kan nooit onder status=applied staan.
   await page.goto("/vacatures");
-  await page.getByRole("link", { name: /Nieuw/ }).first().click();
-  await expect(page).toHaveURL(/status=new/);
-  await expect(page.getByText("Nieuwe Frontend Rol")).toBeVisible();
-  await expect(page.getByText("Bekeken Full Stack Rol")).not.toBeVisible();
+  await expect(page.getByRole("link", { name: /Totaal/ })).toHaveAttribute("aria-current", "true");
+
+  const applied = page.getByRole("link", { name: /Gesolliciteerd/ });
+  await applied.click();
+  await expect(page).toHaveURL(/status=applied/);
+  await expect(applied).toHaveAttribute("aria-current", "true");
+  await expect(page.getByText("Nieuwe Frontend Rol")).not.toBeVisible();
 
   await page.getByRole("link", { name: /Totaal/ }).click();
-  await expect(page.getByText("Bekeken Full Stack Rol")).toBeVisible();
+  await expect(page).not.toHaveURL(/status=/);
+  await expect(page.getByRole("link", { name: /Totaal/ })).toHaveAttribute("aria-current", "true");
 });
