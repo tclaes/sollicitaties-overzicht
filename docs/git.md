@@ -3,6 +3,7 @@
 - Create a new branch for every feature (e.g. `feature/sort-by-match`, `fix/login-bug`)
 - Commit and push the changes to that branch
 - Open a PR to `main` via `gh pr create`
+- Maak PR's als gewone PR, niet als draft, tenzij Tom er expliciet om vraagt
 - Never merge directly to `main`
 
 ## Auto merge

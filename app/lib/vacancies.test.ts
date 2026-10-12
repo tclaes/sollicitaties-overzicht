@@ -105,7 +105,7 @@ describe("getArchivedVacancies", () => {
 });
 
 describe("getVacancyCounts", () => {
-  it("counts the total and every status on the server", async () => {
+  it("counts every status on the server and excludes archived ones from the total", async () => {
     getCountFromServer.mockImplementation(async (ref: { constraints?: { value: string }[] }) => {
       const status = ref.constraints?.[0]?.value;
       const counts: Record<string, number> = { nieuw: 4, bekeken: 3, gesolliciteerd: 2, "niet-interessant": 5 };
@@ -113,7 +113,7 @@ describe("getVacancyCounts", () => {
     });
 
     await expect(getVacancyCounts()).resolves.toEqual({
-      total: 20,
+      total: 15,
       new: 4,
       viewed: 3,
       applied: 2,

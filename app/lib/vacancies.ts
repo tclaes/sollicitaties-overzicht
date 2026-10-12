@@ -72,10 +72,12 @@ export async function getVacancyCounts(): Promise<VacancyCounts> {
       getCountFromServer(vacancies),
       ...statuses.map((s) => getCountFromServer(query(vacancies, where("status", "==", statusToFirestore(s))))),
     ]);
-    return statuses.reduce<VacancyCounts>(
+    const counts = statuses.reduce<VacancyCounts>(
       (acc, status, i) => ({...acc, [status]: perStatus[i].data().count}),
-      {...EMPTY_COUNTS, total: total.data().count},
+      {...EMPTY_COUNTS},
     );
+    // Totaal telt alleen actieve vacatures: gearchiveerde statussen gaan er af.
+    return {...counts, total: total.data().count - counts["not-interesting"] - counts["not-hired"]};
   } catch (err) {
     console.error(err);
     return EMPTY_COUNTS;
