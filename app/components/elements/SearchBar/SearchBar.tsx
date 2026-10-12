@@ -23,12 +23,13 @@ export function SearchBar({currentSearch, onSearch}: Props) {
   const [submittedQuery, setSubmittedQuery] = useState(appliedQuery);
   const [prevAppliedQuery, setPrevAppliedQuery] = useState(appliedQuery);
 
-  if (appliedQuery !== prevAppliedQuery) {
-    setPrevAppliedQuery(appliedQuery);
-    if (appliedQuery !== submittedQuery) {
-      setSubmittedQuery(appliedQuery);
-      setQuery(appliedQuery);
-    }
+  const urlChanged = appliedQuery !== prevAppliedQuery;
+  const urlChangedOutsideInput = urlChanged && appliedQuery !== submittedQuery;
+
+  if (urlChanged) setPrevAppliedQuery(appliedQuery);
+  if (urlChangedOutsideInput) {
+    setSubmittedQuery(appliedQuery);
+    setQuery(appliedQuery);
   }
 
   const applyQuery = useCallback((q: string) => {
