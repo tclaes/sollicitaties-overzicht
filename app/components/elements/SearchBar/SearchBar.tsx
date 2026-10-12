@@ -23,13 +23,16 @@ export function SearchBar({currentSearch, onSearch}: Props) {
   const [submittedQuery, setSubmittedQuery] = useState(appliedQuery);
   const [prevAppliedQuery, setPrevAppliedQuery] = useState(appliedQuery);
 
+  // Alleen een URL-wijziging die niet van onszelf komt (Back/Forward) overschrijft de input.
   const urlChanged = appliedQuery !== prevAppliedQuery;
   const urlChangedOutsideInput = urlChanged && appliedQuery !== submittedQuery;
 
   if (urlChanged) setPrevAppliedQuery(appliedQuery);
-  if (urlChangedOutsideInput) {
-    setSubmittedQuery(appliedQuery);
-    setQuery(appliedQuery);
+  if (urlChangedOutsideInput) syncQuery(appliedQuery);
+
+  function syncQuery(q: string) {
+    setSubmittedQuery(q);
+    setQuery(q);
   }
 
   const applyQuery = useCallback((q: string) => {
