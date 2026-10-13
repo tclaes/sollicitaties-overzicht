@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import styles from "./SearchBar.module.css";
 
 export const SEARCH_DEBOUNCE_MS = 400;
@@ -18,18 +18,44 @@ interface Props {
 export function SearchBar({currentSearch, onSearch}: Props) {
   const [query, setQuery] = useState(currentSearch.q ?? "");
   const appliedQuery = currentSearch.q ?? "";
+  // Laatste zoekterm die we zelf naar de URL stuurden; zo kunnen we een wijziging
+  // door Back/Forward onderscheiden van onze eigen navigatie.
+  const [submittedQuery, setSubmittedQuery] = useState(appliedQuery);
+  const [prevAppliedQuery, setPrevAppliedQuery] = useState(appliedQuery);
+
+  // Alleen een URL-wijziging die niet van onszelf komt (Back/Forward) overschrijft de input.
+  const urlChanged = appliedQuery !== prevAppliedQuery;
+  const urlChangedOutsideInput = urlChanged && appliedQuery !== submittedQuery;
+
+  if (urlChanged) setPrevAppliedQuery(appliedQuery);
+  if (urlChangedOutsideInput) syncQuery(appliedQuery);
+
+  function syncQuery(q: string) {
+    setSubmittedQuery(q);
+    setQuery(q);
+  }
+
+  const applyQuery = useCallback((q: string) => {
+    setSubmittedQuery(q);
+    onSearch({q: q || undefined});
+  }, [onSearch]);
+
   // Optimistisch: de route houdt de oude search vast tot de loader klaar is
   // (bv. het archief ophalen), de checkbox moet intussen meteen omklappen.
   const appliedArchived = currentSearch.archived ?? false;
   const [archived, setArchived] = useState(appliedArchived);
 
-  useEffect(() => setArchived(appliedArchived), [appliedArchived]);
+  const [prevAppliedArchived, setPrevAppliedArchived] = useState(appliedArchived);
+  if (appliedArchived !== prevAppliedArchived) {
+    setPrevAppliedArchived(appliedArchived);
+    setArchived(appliedArchived);
+  }
 
   useEffect(() => {
     if (query.trim() === appliedQuery) return;
-    const timeout = setTimeout(() => onSearch({q: query.trim() || undefined}), SEARCH_DEBOUNCE_MS);
+    const timeout = setTimeout(() => applyQuery(query.trim()), SEARCH_DEBOUNCE_MS);
     return () => clearTimeout(timeout);
-  }, [query, appliedQuery, onSearch]);
+  }, [query, appliedQuery, applyQuery]);
 
   return (
     <form
@@ -37,7 +63,7 @@ export function SearchBar({currentSearch, onSearch}: Props) {
       role="search"
       onSubmit={(e) => {
         e.preventDefault();
-        onSearch({q: query.trim() || undefined});
+        applyQuery(query.trim());
       }}
     >
       <input

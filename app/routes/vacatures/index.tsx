@@ -23,9 +23,9 @@ export const Route = createFileRoute("/vacatures/")({
   validateSearch: DefaultSearchSchema,
   // Gearchiveerde vacatures worden pas opgehaald als de gebruiker er om vraagt.
   loaderDeps: ({search}) => ({withArchive: needsArchive(search)}),
-  // Blijft in het geheugen bij terug-navigeren (bv. vanaf de detailpagina);
-  // router.invalidate() na een wijziging haalt alles opnieuw op.
-  staleTime: 5 * 60_000,
+  // Bewust geen staleTime: terug-navigeren toont de gecachte data meteen en haalt
+  // ze op de achtergrond opnieuw op. Wijzigingen op de detailpagina (status
+  // "bekeken", favoriet, sollicitatiestatus) roepen niet overal invalidate() aan.
   loader: async ({deps}) => {
     const [active, archived, applications, counts] = await Promise.all([
       getActiveVacancies(),

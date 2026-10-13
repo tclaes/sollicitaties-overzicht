@@ -81,4 +81,36 @@ describe("SearchBar", () => {
     fireEvent.click(checkbox);
     expect(checkbox).toBeChecked();
   });
+
+  it("follows the URL when it changes outside the input (Back/Forward) without searching again", () => {
+    const onSearch = vi.fn();
+    const {rerender} = render(<SearchBar currentSearch={{q: "foo"}} onSearch={onSearch}/>);
+    const searchbox = screen.getByRole("searchbox", {name: "Zoek vacatures"});
+
+    rerender(<SearchBar currentSearch={{}} onSearch={onSearch}/>);
+    expect(searchbox).toHaveValue("");
+
+    act(() => {
+      vi.advanceTimersByTime(SEARCH_DEBOUNCE_MS * 2);
+    });
+    expect(onSearch).not.toHaveBeenCalled();
+  });
+
+  it("does not overwrite what the user is typing when its own search comes back", () => {
+    const onSearch = vi.fn();
+    const {rerender} = render(<SearchBar currentSearch={{}} onSearch={onSearch}/>);
+    const searchbox = screen.getByRole("searchbox", {name: "Zoek vacatures"});
+
+    fireEvent.change(searchbox, {target: {value: "foo"}});
+    act(() => {
+      vi.advanceTimersByTime(SEARCH_DEBOUNCE_MS);
+    });
+    expect(onSearch).toHaveBeenCalledWith({q: "foo"});
+
+    // De gebruiker typt verder terwijl de loader nog bezig is...
+    fireEvent.change(searchbox, {target: {value: "foob"}});
+    // ...en dan komt de URL van de eerste zoekopdracht binnen.
+    rerender(<SearchBar currentSearch={{q: "foo"}} onSearch={onSearch}/>);
+    expect(searchbox).toHaveValue("foob");
+  });
 });
