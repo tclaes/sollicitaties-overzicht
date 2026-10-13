@@ -3706,5 +3706,21 @@
       "Node.js",
       "Remote"
     ]
+  },
+  {
+    "titel": "Senior Software Engineer - AI First",
+    "bedrijf": "CluePoints",
+    "locatie": "België (hybride, hub-based)",
+    "regio": "andere",
+    "url": "https://www.linkedin.com/jobs/view/4470922100/",
+    "beschrijving": "Fulltime, hybride vanuit België (hub-based, hublocatie niet vermeld). Stack: Python (essentieel) en/of TypeScript, frontend Angular/TypeScript; je werkt over backend én frontend heen. Team werkt AI-first met Claude Code, GitHub Copilot en Codex-agents in dagelijkse workflow, met Spec-Driven Development (OpenSpec/SpecKit). Borderline: Python-zwaartepunt aan de backend, Angular is 'strong advantage'; opgenomen vanwege het expliciete AI-werkwijze-signaal en de full-stack aard.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "Angular",
+      "TypeScript",
+      "Python",
+      "AI-assisted"
+    ]
   }
 ]
