@@ -31,6 +31,8 @@ agent-gedreven workflows, orchestratie/review van agent-output). Extra zoekterme
 `agentic development`, `agentic engineer`, `agentic coding`, `Claude Code`,
 `AI agents developer workflow`, `vibe coding`. Onderscheid blijft: *met* agents
 ontwikkelen telt, *agents bouwen als product* (agent frameworks, LLM-apps) niet.
+_Status: deze termen staan pas actief zodra de lokale scheduled task
+`dagelijkse-vacatures-frontend` ze ook gebruikt; die moet handmatig worden bijgewerkt._
 
 Zulke vacatures krijgen de tag `AI-assisted` (zoekbaar in de app); agentic rollen
 krijgen daarnaast de tag `agentic`. Er is (nog) geen apart veld in het schema.
