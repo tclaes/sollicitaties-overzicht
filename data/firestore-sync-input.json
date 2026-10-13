@@ -3690,5 +3690,21 @@
       "full-stack",
       "hybride"
     ]
+  },
+  {
+    "titel": "Senior Software Engineer - Frontend - AI Clips Team",
+    "bedrijf": "Restream",
+    "locatie": "Remote (EMEA)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4454112477/",
+    "beschrijving": "Volledig remote frontendrol bij Restream (multistreaming). React/TypeScript-expert, UI bouwen voor het AI Clips-product, Node.js-basis, startup met kleine teams. Borderline: frontend voor een AI-product (frontendwerk is de kern); geen AI-werkwijze-signalen in de tekst, dus niet als AI-assisted gemarkeerd. Regio: EMEA-remote.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Remote"
+    ]
   }
 ]
