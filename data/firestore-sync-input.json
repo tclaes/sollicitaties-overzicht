@@ -3722,5 +3722,39 @@
       "Python",
       "AI-assisted"
     ]
+  },
+  {
+    "titel": "Fullstack NodeJS Software Engineer",
+    "bedrijf": "Lemon Companies",
+    "locatie": "Kontich (hybride)",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4477267312/",
+    "beschrijving": "Fullstack JS/TS-rol bij Lemon (Kontich, hybride, fulltime): NodeJS-backend (Express/NestJS) én moderne UI's in React of Angular, ervaring met React of Angular als essentiële vaardigheid. Borderline: backend-kern is NodeJS, frontend is een volwaardig deel van de rol. Consultancy-/projectomgeving. (Eerdere Lemon Java-vacature stond als niet interessant.)",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "Node.js",
+      "NestJS",
+      "React",
+      "Angular",
+      "TypeScript"
+    ]
+  },
+  {
+    "titel": "Experienced software engineer (full-stack)",
+    "bedrijf": "madewithlove",
+    "locatie": "Remote (Belgisch bedrijf, tijdzone UTC-1 t/m UTC+3)",
+    "regio": "remote",
+    "url": "https://madewithlove.recruitee.com/o/experienced-software-engineer-fmx",
+    "beschrijving": "100% remote fulltime full-stack rol (back-end, front-end, infrastructuur) bij Belgisch bedrijf; stack PHP/Laravel, Python (Django/FastAPI) of JavaScript (React/Next.js). Borderline: stack is niet vastgelegd, JS/React-spoor mogelijk. AI-signaal: kandidaten moeten agentic coding tools aansturen en guardrails/tooling voor agents bouwen (geen specifiek product genoemd).",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "AI-assisted",
+      "React",
+      "Next.js",
+      "Laravel",
+      "Remote"
+    ]
   }
 ]
