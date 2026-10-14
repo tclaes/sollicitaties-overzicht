@@ -19,8 +19,8 @@ Die task:
 ### AI-werkwijze
 
 Naast frontend/full-stack zoekt de scan ook naar rollen waar **ontwikkelen mét AI**
-(Copilot, Cursor, Claude Code, agentic coding) een vast onderdeel van de job is — via
-extra zoektermen (`AI-assisted developer`, `AI-native developer`, …) én door de
+(Copilot, Cursor, Claude Code, agentic development/coding) een vast onderdeel van de job is — via
+extra zoektermen (`AI-assisted developer`, `AI-native developer`, `agentic development`, `agentic engineering`, …) én door de
 detailpagina's van gewone hits op die signalen na te lezen. De frontend-eis, regio en
 vast contract blijven gelden. Rollen waarin je AI zelf bouwt (AI/LLM engineer, agents,
 RAG, ML) worden niet opgenomen.
