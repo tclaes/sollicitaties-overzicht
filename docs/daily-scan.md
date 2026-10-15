@@ -25,8 +25,17 @@ detailpagina's van gewone hits op die signalen na te lezen. De frontend-eis, reg
 vast contract blijven gelden. Rollen waarin je AI zelf bouwt (AI/LLM engineer, agents,
 RAG, ML) worden niet opgenomen.
 
-Zulke vacatures krijgen de tag `AI-assisted` (zoekbaar in de app). Er is (nog) geen
-apart veld in het schema.
+**Agentic development** hoort daar nadrukkelijk bij: rollen waarin je software
+ontwikkelt *met* AI-agents (Claude Code, Cursor agent mode, Copilot agent, Codex,
+agent-gedreven workflows, orchestratie/review van agent-output). Extra zoektermen:
+`agentic development`, `agentic engineer`, `agentic coding`, `Claude Code`,
+`AI agents developer workflow`, `vibe coding`. Onderscheid blijft: *met* agents
+ontwikkelen telt, *agents bouwen als product* (agent frameworks, LLM-apps) niet.
+_Status: deze termen staan pas actief zodra de lokale scheduled task
+`dagelijkse-vacatures-frontend` ze ook gebruikt; die moet handmatig worden bijgewerkt._
+
+Zulke vacatures krijgen de tag `AI-assisted` (zoekbaar in de app); agentic rollen
+krijgen daarnaast de tag `agentic`. Er is (nog) geen apart veld in het schema.
 
 `npm run pdf:vacatures` genereert de overzicht-PDF uit de sync-input via headless
 Chrome; opties `--out <map>` en `--date <DD_MM_YYYY>`.
