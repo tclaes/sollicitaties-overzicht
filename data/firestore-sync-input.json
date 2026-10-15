@@ -3722,5 +3722,85 @@
       "Python",
       "AI-assisted"
     ]
+  },
+  {
+    "titel": "Fullstack NodeJS Software Engineer",
+    "bedrijf": "Lemon Companies",
+    "locatie": "Kontich (hybride)",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4477267312/",
+    "beschrijving": "Fullstack JS/TS-rol bij Lemon (Kontich, hybride, fulltime): NodeJS-backend (Express/NestJS) én moderne UI's in React of Angular, ervaring met React of Angular als essentiële vaardigheid. Borderline: backend-kern is NodeJS, frontend is een volwaardig deel van de rol. Consultancy-/projectomgeving. (Eerdere Lemon Java-vacature stond als niet interessant.)",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "Node.js",
+      "NestJS",
+      "React",
+      "Angular",
+      "TypeScript"
+    ]
+  },
+  {
+    "titel": "Experienced software engineer (full-stack)",
+    "bedrijf": "madewithlove",
+    "locatie": "Remote (Belgisch bedrijf, tijdzone UTC-1 t/m UTC+3)",
+    "regio": "remote",
+    "url": "https://madewithlove.recruitee.com/o/experienced-software-engineer-fmx",
+    "beschrijving": "100% remote fulltime full-stack rol (back-end, front-end, infrastructuur) bij Belgisch bedrijf; stack PHP/Laravel, Python (Django/FastAPI) of JavaScript (React/Next.js). Borderline: stack is niet vastgelegd, JS/React-spoor mogelijk. AI-signaal: kandidaten moeten agentic coding tools aansturen en guardrails/tooling voor agents bouwen (geen specifiek product genoemd).",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "AI-assisted",
+      "React",
+      "Next.js",
+      "Laravel",
+      "Remote"
+    ]
+  },
+  {
+    "titel": "Tech Lead - B2B Digital Customer Interaction Platform",
+    "bedrijf": "Telenet",
+    "locatie": "Mechelen",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4473794476/",
+    "beschrijving": "Vast contract, Telenet Business (BEAT Tribe), team dat het B2B Digital Customer Interaction Platform beheert. Tech Lead die de technische roadmap bepaalt en teams begeleidt; minstens 8 jaar ervaring, sterke hands-on expertise in Java en Angular, full stack, micro-frontend-architectuur, DDD/hexagonale architectuur, CI/CD. Borderline: leidinggevende/architectuurrol met Java-backend, maar Angular en micro-frontends zijn een volwaardig deel van het profiel. Ook gepost onder Wyre (Telenet-groep) en via Careerjet/it-vacatures.be.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "Angular",
+      "Java",
+      "Micro-frontends",
+      "Tech Lead",
+      "DDD"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "linkedin",
+        "url": "https://www.linkedin.com/jobs/view/4476643816/"
+      },
+      {
+        "bron": "andere",
+        "url": "https://www.careerjet.be/jobad/bea876a05cc8b91f5bc168f4b899b57f68"
+      }
+    ]
+  },
+  {
+    "titel": "Senior Full-Stack Software Engineer – AI-Assisted Development",
+    "bedrijf": "twenty8",
+    "locatie": "Brussel (on-site of remote)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4478466664/",
+    "beschrijving": "Fulltime rol bij IT-consultancy twenty8 voor een project bij de Europese Commissie; staat open voor on-site én remote kandidaten. Full-stack (Java/Spring Boot, Drupal/PHP, TypeScript met Angular/React/Vue) met AI-assisted development als kern: dagelijks werken met AI-codingassistenten (GitHub Copilot, Claude Code, Cursor), agentic workflows voor codegeneratie/review/testing, MCP-servers integreren in de ontwikkelomgeving, legacy-code moderniseren met AI. Borderline: consultancy/projectrol (contracttype niet vermeld), backend-zware stack en ook RAG/embeddings-kennis gevraagd.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "AI-assisted",
+      "Angular",
+      "React",
+      "TypeScript",
+      "Java",
+      "agentic development",
+      "remote"
+    ]
   }
 ]
