@@ -3802,5 +3802,70 @@
       "agentic development",
       "remote"
     ]
+  },
+  {
+    "titel": "Frontend Engineer",
+    "bedrijf": "Intact",
+    "locatie": "Remote (EER)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4479282771/",
+    "beschrijving": "Fulltime remote (EER) frontendrol bij Intact (TIC-software) in een autonome product-squad voor een nieuw SaaS-platform: React, TypeScript, component-/designsystemen, testing, CI/CD, accessibility. AI-signaal: 'Use AI-assisted tools throughout development, testing and problem-solving' en praktische ervaring met AI-assisted software engineering gevraagd. Contracttype niet expliciet vermeld (Fulltime).",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "AI-assisted",
+      "React",
+      "TypeScript",
+      "designsystemen",
+      "remote"
+    ]
+  },
+  {
+    "titel": "Frontend Desktop Engineer (100% remote - Worldwide)",
+    "bedrijf": "Tether",
+    "locatie": "Remote (wereldwijd)",
+    "regio": "remote",
+    "url": "https://be.indeed.com/viewjob?jk=a916d604e47edc34",
+    "beschrijving": "Fulltime, volledig remote frontendrol: Keet Desktop (cross-platform P2P-communicatie-app in React/Preact + TypeScript op de Pear-runtime), state management, performance. Borderline: crypto/fintech-bedrijf (Tether), contractvorm niet vermeld, P2P/distributed-interesse gewenst. Geen AI-werkwijze-signaal gezien.",
+    "bron": "indeed",
+    "functie": "frontend",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Electron",
+      "remote"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "indeed",
+        "url": "https://be.indeed.com/viewjob?jk=a8ce8a081f217dad"
+      }
+    ]
+  },
+  {
+    "titel": "Full Stack Developer Web & AI Automation",
+    "bedrijf": "Peleman Industries",
+    "locatie": "Puurs-Sint-Amands",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74844363/full-stack-developer-web-ai-automation",
+    "beschrijving": "Vaste job (onbepaalde duur) in het marketingteam: websites, webshops en interne tools, front-end én back-end (PHP, JavaScript, HTML/CSS, WordPress/WooCommerce/Shopify/PrestaShop, API-koppelingen). AI-signaal: 'Ook tijdens development zet je AI kritisch in', tech stack noemt Claude Code, Codex, Cursor, n8n. Borderline: PHP/CMS-zwaar en deels AI-automatisering, maar frontend + UX/UI is een volwaardig deel van de rol.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      "AI-assisted",
+      "PHP",
+      "JavaScript",
+      "WordPress"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "andere",
+        "url": "https://www.codejobs.be/vacature/full-stack-developer-web-ai-automation-puurs-sint-amands-1-2-peleman-industries-puurs-sint-amands-483829"
+      },
+      {
+        "bron": "indeed",
+        "url": "https://be.indeed.com/viewjob?jk=1ab0b6b60685b870"
+      }
+    ]
   }
 ]
