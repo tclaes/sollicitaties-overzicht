@@ -3865,7 +3865,28 @@
       {
         "bron": "indeed",
         "url": "https://be.indeed.com/viewjob?jk=1ab0b6b60685b870"
+      },
+      {
+        "bron": "indeed",
+        "url": "https://be.indeed.com/viewjob?jk=1ab0b6b60685b870"
       }
+    ]
+  },
+  {
+    "titel": "Frontend Tech Lead",
+    "bedrijf": "Twipe",
+    "locatie": "Leuven (hybride)",
+    "regio": "vlaanderen",
+    "url": "https://be.indeed.com/viewjob?jk=7f0d1f1dffad2476",
+    "beschrijving": "Technisch eigenaarschap van de React/React Native-frontend van een mediatech scale-up (Leuven), hands-on + mentoring. Borderline: vraagt '5+ jaar backend engineering met sterke frontend-expertise'; frontend is wel de kern. Vorige Twipe-post 'Frontend Engineer' staat als niet-interessant.",
+    "bron": "indeed",
+    "functie": "frontend",
+    "tags": [
+      "React",
+      "React Native",
+      "TypeScript",
+      "Tech Lead",
+      "Hybride"
     ]
   }
 ]
