@@ -1386,7 +1386,9 @@
         "bron": "indeed",
         "url": "https://be.indeed.com/viewjob?jk=0e69ec2cbecc05fe"
       }
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Geen reactie gekregen op vorige sollicitatie"
   },
   {
     "titel": "Full-stack Javascript Developer",
@@ -3595,6 +3597,12 @@
       "Dashboards",
       "Startup",
       "Remote"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "andere",
+        "url": "https://wellfound.com/jobs/4855168-full-stack-software-engineer-typescript-next-js"
+      }
     ]
   },
   {
@@ -3738,7 +3746,9 @@
       "React",
       "Angular",
       "TypeScript"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Reeds afgewezen hier"
   },
   {
     "titel": "Experienced software engineer (full-stack)",
@@ -3781,6 +3791,10 @@
       {
         "bron": "andere",
         "url": "https://www.careerjet.be/jobad/bea876a05cc8b91f5bc168f4b899b57f68"
+      },
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74842443/tech-lead-b2b-digital-customer-interaction-platform"
       }
     ]
   },
@@ -3887,6 +3901,33 @@
       "TypeScript",
       "Tech Lead",
       "Hybride"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "linkedin",
+        "url": "https://www.linkedin.com/jobs/view/4477997096/"
+      }
+    ]
+  },
+  {
+    "titel": "Senior Fullstack Engineer (F/M/X)",
+    "bedrijf": "WeMaintain",
+    "locatie": "Volledig remote (Europese Unie)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4480390309/",
+    "beschrijving": "Fulltime, volledig remote (EU). TypeScript end-to-end: Node.js/NestJS-microservices, federated GraphQL, AWS; frontend met Angular micro-frontends (back office + klantplatform) en een React Native-app. Features end-to-end (probleem tot productie) in een ProdEng-team van ~20, rapporteert aan VP Engineering. Min. 5 jaar ervaring. Borderline: de meeste engineers hebben een backend-zwaartepunt en sterke backend-architectuur wordt gevraagd, maar de Angular-frontends zijn een volwaardig deel van het werk. AI-signaal: team verwacht expliciet dat je AI-codingtools gebruikt ('Use them. Obviously. We'd think it strange if you didn't').",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "TypeScript",
+      "Angular",
+      "Node.js",
+      "NestJS",
+      "GraphQL",
+      "AWS",
+      "Remote",
+      "fullstack",
+      "AI-assisted"
     ]
   }
 ]
