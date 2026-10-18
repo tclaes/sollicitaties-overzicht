@@ -820,7 +820,8 @@
         "bron": "andere",
         "url": "https://www.stepstone.be/jobs--JS-VUE-PHP-Webdeveloper-BILZEN-HOESELT-Enablers-bv--2242308-inline.html"
       }
-    ]
+    ],
+    "verlopen": true
   },
   {
     "titel": "Angular Developer",
@@ -2746,6 +2747,28 @@
       "Node.js",
       "PostgreSQL",
       "AI-assisted"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "andere",
+        "url": "https://www.stepstone.be/vacatures--Full-Stack-Engineer-React-TypeScript-Leuven-Sitemark--2137273-inline.html"
+      },
+      {
+        "bron": "andere",
+        "url": "https://www.stepstone.be/vacatures--Full-Stack-Software-Engineer-Leuven-Sitemark--2116751-inline.html"
+      },
+      {
+        "bron": "andere",
+        "url": "https://www.stepstone.be/vacatures--Senior-Full-Stack-Engineer-React-TypeScript-Leuven-Sitemark--2162097-inline.html"
+      },
+      {
+        "bron": "andere",
+        "url": "https://www.stepstone.be/vacatures--Senior-Full-Stack-Engineer-React-TypeScript-Leuven-Sitemark--2225513-inline.html"
+      },
+      {
+        "bron": "andere",
+        "url": "https://www.stepstone.be/vacatures--Senior-Full-Stack-Engineer-JS-TypeScript-Leuven-Sitemark--2157795-inline.html"
+      }
     ]
   },
   {
@@ -2808,7 +2831,13 @@
       "Tech Lead"
     ],
     "nietInteressant": true,
-    "archiefReden": "Niet het gevraagde profiel"
+    "archiefReden": "Niet het gevraagde profiel",
+    "extraBronnen": [
+      {
+        "bron": "andere",
+        "url": "https://www.stepstone.be/vacatures--Lead-Next-js-Engineer-Enterprise-Platforms-Freelance-vast-Antwerpen-HeadCount--2246250-inline.html"
+      }
+    ]
   },
   {
     "titel": "Senior Fullstack Developer (Qmusic, JOE, Willy)",
@@ -3795,6 +3824,10 @@
       {
         "bron": "vdab",
         "url": "https://www.vdab.be/vindeenjob/vacatures/74842443/tech-lead-b2b-digital-customer-interaction-platform"
+      },
+      {
+        "bron": "andere",
+        "url": "https://www.stepstone.be/vacatures--Tech-Lead-B2B-Digital-Customer-Interaction-Platform-MECHELEN-Telenet-Bvba--2252699-inline.html"
       }
     ]
   },
@@ -3928,6 +3961,52 @@
       "Remote",
       "fullstack",
       "AI-assisted"
+    ]
+  },
+  {
+    "titel": "Fullstack Developer (Client Services)",
+    "bedrijf": "Delen Private Bank",
+    "locatie": "Antwerpen (kantoor, op locatie)",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4480500060/",
+    "beschrijving": "Senior Full Stack Developer in het Client Services-domein (apps voor relatiebeheerders, bv. klantbezoeken en taakopvolging). Verdeling ca. 60% back-end (C# .NET, ASP.NET Core, SQL Server/Entity Framework, microservices, message queues) en 40% front-end (TypeScript, Angular, RxJS, Angular Signals, NodeJS). Vloeiend Nederlands, op kantoor in Antwerpen. Andere vacature/team dan de bekende Delen-rol 'Shared Application Services'. Borderline: .NET-backend weegt zwaarder, maar Angular is een volwaardig deel van de rol.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "Angular",
+      "TypeScript",
+      "RxJS",
+      ".NET",
+      "C#",
+      "ASP.NET Core"
+    ]
+  },
+  {
+    "titel": "Mobile Developer",
+    "bedrijf": "Alfapass (CEPA)",
+    "locatie": "Antwerpen (Brouwersvliet, op locatie)",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4480347339/",
+    "beschrijving": "Vaste job (onbepaalde duur, voltijds): mobiele apps voor iOS en Android bouwen en optimaliseren bij Alfapass (digitale identificatie/toegang in de havens van Antwerpen en Zeebrugge). Gevraagd: React Native, Swift en/of Kotlin, goede kennis van HTML, SASS/CSS, JavaScript (ES6), TypeScript, NPM en Git; interesse in UI/UX. Veiligheidsscreening vereist. Borderline: mobile-rol (React Native) i.p.v. web-frontend, en junior/medior niveau ('eerste relevante ervaring').",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "React Native",
+      "TypeScript",
+      "JavaScript",
+      "Mobile",
+      "Swift",
+      "Kotlin"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74855738/mobile-developer"
+      },
+      {
+        "bron": "andere",
+        "url": "https://it-jobs.be/vacature/mobile-developer-antwerpen-cepa-antwerpen-487514"
+      }
     ]
   }
 ]
