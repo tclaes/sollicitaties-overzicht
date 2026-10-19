@@ -1289,6 +1289,10 @@
       {
         "bron": "andere",
         "url": "https://www.stepstone.be/jobs--Front-end-Software-Developer-Antwerpen-BERCHEM-Dehora-Consultancy-Group--2189733-inline.html"
+      },
+      {
+        "bron": "andere",
+        "url": "https://www.stepstone.be/vacatures--Front-end-Software-Developer-Buggenhout-OPDORP-Dehora-Consultancy-Group--2224173-inline.html"
       }
     ]
   },
@@ -1306,6 +1310,12 @@
       "Vue",
       "WebGL",
       "Git"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "indeed",
+        "url": "https://be.indeed.com/viewjob?jk=3b1cc523701b4239"
+      }
     ]
   },
   {
@@ -3065,6 +3075,10 @@
       {
         "bron": "andere",
         "url": "https://www.it-jobs.be/vacature/software-developer-mechelen-proman-mechelen-409357"
+      },
+      {
+        "bron": "jobat",
+        "url": "https://www.jobat.be/nl/jobs/software-developer/job_6402038"
       }
     ]
   },
@@ -3979,6 +3993,12 @@
       ".NET",
       "C#",
       "ASP.NET Core"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "indeed",
+        "url": "https://be.indeed.com/viewjob?jk=265d1aedc7a929dd"
+      }
     ]
   },
   {
@@ -4007,6 +4027,55 @@
         "bron": "andere",
         "url": "https://it-jobs.be/vacature/mobile-developer-antwerpen-cepa-antwerpen-487514"
       }
+    ]
+  },
+  {
+    "titel": "Frontend Developer (React)",
+    "bedrijf": "onbekend (via Jobgether)",
+    "locatie": "België (volledig remote)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4478858663",
+    "beschrijving": "Voltijdse frontendrol voor een niet-genoemde partner van Jobgether, gebaseerd in België en volledig remote. React (hooks), TypeScript, Redux/Flux, CSS-architectuur, REST-integratie, CI/CD; 3+ jaar ervaring waarvan 2+ met React. Borderline: werkgever onbekend en contracttype niet expliciet vermeld; eerdere Jobgether-posts werden als niet-interessant gearchiveerd.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Redux",
+      "Remote"
+    ]
+  },
+  {
+    "titel": "Full stack developer",
+    "bedrijf": "Yellow Jersey",
+    "locatie": "Kontich (remote)",
+    "regio": "antwerpen",
+    "url": "https://be.indeed.com/viewjob?jk=cfb9039de937bfac",
+    "beschrijving": "Full-stack consultant bij Yellow Jersey (Kontich), remote. React en Node.js; eerste ervaring in full-stack development volstaat. Bedrijfswagen + tankkaart, hospitalisatieverzekering, thuiswerkbudget. Borderline: consultancyrol (projecten bij klanten), korte vacaturetekst zonder expliciet contracttype.",
+    "bron": "indeed",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      "Node.js",
+      "JavaScript",
+      "Consultancy"
+    ]
+  },
+  {
+    "titel": "Web Developer",
+    "bedrijf": "Meteor Digital",
+    "locatie": "Kontich",
+    "regio": "antwerpen",
+    "url": "https://be.indeed.com/viewjob?jk=20b4dd24366c6913",
+    "beschrijving": "Webdeveloper bij een e-commercebureau in Kontich: front-ends en back-ends voor (enterprise) webshops (klanten o.a. Bristol, Igepa, Gymna) met Symfony, Vue.js en Shopware. Vraagt frontendkennis (HTML/CSS/JS, Vue, React) en/of PHP 8 + MySQL. Bedrijfswagen. Borderline: de stack leunt op PHP/Symfony/Shopware, maar Vue-frontendwerk is een volwaardig deel van de rol.",
+    "bron": "indeed",
+    "functie": "fullstack",
+    "tags": [
+      "Vue.js",
+      "PHP",
+      "Symfony",
+      "Shopware",
+      "E-commerce"
     ]
   }
 ]
