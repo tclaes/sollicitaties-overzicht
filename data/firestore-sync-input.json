@@ -891,6 +891,16 @@
       ".NET",
       "TypeScript",
       "front-end"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74866872/software-developer-net-react"
+      },
+      {
+        "bron": "jobat",
+        "url": "https://www.jobat.be/nl/jobs/software-developer-net-react/job_6403548"
+      }
     ]
   },
   {
@@ -1048,6 +1058,14 @@
       {
         "bron": "jobat",
         "url": "https://www.jobat.be/nl/jobs/full-stack-developer-ai/job_6235015"
+      },
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74866873/full-stack-developer-ai"
+      },
+      {
+        "bron": "jobat",
+        "url": "https://www.jobat.be/nl/jobs/full-stack-developer-ai/job_6403549"
       }
     ]
   },
@@ -2339,6 +2357,12 @@
       "TypeScript",
       "MySQL",
       "Prisma"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "indeed",
+        "url": "https://be.indeed.com/viewjob?jk=ef24aa6257daa6e9"
+      }
     ]
   },
   {
@@ -2740,6 +2764,12 @@
       "TypeScript",
       "Node.js",
       "NestJS"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "indeed",
+        "url": "https://be.indeed.com/viewjob?jk=e8e802ae36150629"
+      }
     ]
   },
   {
@@ -3079,6 +3109,10 @@
       {
         "bron": "jobat",
         "url": "https://www.jobat.be/nl/jobs/software-developer/job_6402038"
+      },
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74864973/software-developer"
       }
     ]
   },
@@ -3930,6 +3964,14 @@
       {
         "bron": "indeed",
         "url": "https://be.indeed.com/viewjob?jk=1ab0b6b60685b870"
+      },
+      {
+        "bron": "andere",
+        "url": "https://www.stepstone.be/jobs--Full-Stack-Developer-Web-AI-Automation-PUURS-SINT-AMANDS-Peleman-Industries-NV--2252607-inline.html"
+      },
+      {
+        "bron": "jobat",
+        "url": "https://www.jobat.be/nl/jobs/full-stack-developer-web-ai-automation/job_6391631"
       }
     ]
   },
@@ -4076,6 +4118,25 @@
       "Symfony",
       "Shopware",
       "E-commerce"
+    ]
+  },
+  {
+    "titel": "Full-Stack Developer",
+    "bedrijf": "MARANICS",
+    "locatie": "Remote (Europese Unie)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4481558879/",
+    "beschrijving": "Mid-level full-stack rol, volledig remote binnen de EU, fulltime. Backend-services in C#/.NET en front-end componenten in TypeScript, REST API's, Docker/Docker Compose; features end-to-end opleveren en meedenken over architectuur. Borderline: .NET is de hoofdstack, maar TypeScript-frontend is een vast dagelijks onderdeel van de rol. AI-werkwijze: team noemt zich 'AI-first in practice' en gebruikt actief AI-assisted development workflows. Klein, gedistribueerd team.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "TypeScript",
+      ".NET",
+      "C#",
+      "Docker",
+      "full-stack",
+      "remote",
+      "AI-assisted"
     ]
   }
 ]
