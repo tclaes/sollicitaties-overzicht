@@ -4138,5 +4138,36 @@
       "remote",
       "AI-assisted"
     ]
+  },
+  {
+    "titel": "Full Stack .NET Developer (.NET / Angular)",
+    "bedrijf": "Madison Recruitment (klant financiële sector)",
+    "locatie": "Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74875628/full-stack-net-developer",
+    "beschrijving": "Full Stack .NET/Angular Developer (min. 5 jaar) voor een klant in de financiële sector; stack .NET, C#, Angular en TypeScript. AI-assisted development met GitHub Copilot is expliciet onderdeel van de werkwijze. Borderline: .NET-component is groot, Angular/TypeScript is wel een volwaardig deel van de rol.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      "Angular",
+      "TypeScript",
+      ".NET",
+      "AI-assisted"
+    ]
+  },
+  {
+    "titel": "Full stack .NET Developer (consultancy)",
+    "bedrijf": "Clovr",
+    "locatie": "Genk",
+    "regio": "limburg",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74884565/full-stack-net-developer",
+    "beschrijving": "Fullstack developer op consultancybasis voor een IT-consultancybureau (regio Limburg; klantprojecten ook in Antwerpen/Brussel/Vlaams-Brabant). Vaste job. Kern is .NET/C#/ASP.NET; Angular en React staan in het gevraagde profiel. Borderline: backend-zwaar, frontend niet duidelijk volwaardig.",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "Angular",
+      "React"
+    ]
   }
 ]
