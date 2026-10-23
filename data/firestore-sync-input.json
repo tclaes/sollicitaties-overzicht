@@ -4169,5 +4169,56 @@
       "Angular",
       "React"
     ]
+  },
+  {
+    "titel": "Senior Angular Developer",
+    "bedrijf": "Acerta",
+    "locatie": "Leuven",
+    "regio": "vlaanderen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74899673/senior-angular-developer",
+    "beschrijving": "Senior Angular-developer voor klantportalen zoals MyAcerta, vast contract, 2 dagen per week op kantoor in Leuven. Front-endarchitectuur, code reviews en coaching. Je werkt kritisch en zelfstandig met AI en AI-agents als ondersteuning in het ontwikkelproces (AI-werkwijze-signaal).",
+    "bron": "vdab",
+    "functie": "frontend",
+    "tags": [
+      "Angular",
+      "TypeScript",
+      "AI-assisted"
+    ],
+    "extraBronnen": [
+      {
+        "bron": "indeed",
+        "url": "https://be.indeed.com/viewjob?jk=84ce059ed8c77d8e"
+      }
+    ]
+  },
+  {
+    "titel": "Full-stack Software Engineer (TypeScript/Next.js)",
+    "bedrijf": "Palau Project",
+    "locatie": "Vlaanderen (flexibel remote)",
+    "regio": "remote",
+    "url": "https://wellfound.com/jobs/4855168-full-stack-software-engineer-typescript-next-js",
+    "beschrijving": "Full-time, in-house full-stack rol bij ESG-/klimaatplatform met TypeScript en Next.js (React) als kern; flexibel remote binnen Vlaanderen. Minstens 3 jaar ervaring. Borderline: backend/datagedeelte is ook een deel van de rol.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "TypeScript",
+      "Next.js",
+      "React"
+    ]
+  },
+  {
+    "titel": "Medior JavaScript Developer",
+    "bedrijf": "Codifly",
+    "locatie": "Affligem",
+    "regio": "vlaanderen",
+    "url": "https://www.vdab.be/vindeenjob/vacatures/74786127/medior-javascript-developer",
+    "beschrijving": "Vast contract, JavaScript-stack (React.js, React Native, Node.js, GraphQL, Angular) voor web- en native apps. Borderline: Affligem ligt aan de rand van de regio (Vlaams-Brabant, richting Aalst).",
+    "bron": "vdab",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      "Node.js",
+      "GraphQL"
+    ]
   }
 ]
