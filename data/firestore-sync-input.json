@@ -4220,5 +4220,54 @@
       "Node.js",
       "GraphQL"
     ]
+  },
+  {
+    "titel": "Senior Frontend Engineer",
+    "bedrijf": "edenity (klant: Europese bike-leasing speler)",
+    "locatie": "Remote (België toegestaan)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4480654800/",
+    "beschrijving": "Remote-first, fulltime; UI-architectuur en componenten in TypeScript met React, Angular of Vue; WCAG, testing, CI/CD. Team gebruikt dagelijks Claude Code en Copilot (AI-assisted). Via recruiter edenity.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "TypeScript",
+      "React",
+      "Angular",
+      "Vue",
+      "Remote",
+      "AI-assisted"
+    ]
+  },
+  {
+    "titel": "Front End Software Engineer | European Institutions",
+    "bedrijf": "Ayesa Digital",
+    "locatie": "Remote (EU)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4474087123/",
+    "beschrijving": "Borderline: fulltime remote Angular/TypeScript-frontendrol (NgRx, RxJS) in EU-instellingenprojecten bij consultancy Ayesa; vraagt ook kennis Java/Node.js. Controleer of remote vanuit België effectief kan.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "Angular",
+      "TypeScript",
+      "NgRx",
+      "Remote"
+    ]
+  },
+  {
+    "titel": "Frontend Developer",
+    "bedrijf": "Cyberr",
+    "locatie": "Remote (EMEA)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4480038339/",
+    "beschrijving": "Borderline: startup (cybersecurity-marktplaats), React/Vue-frontend, remote; vacaturetekst bevat nog placeholders voor werkregime en loon, contractvorm onduidelijk.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "React",
+      "Vue",
+      "Remote"
+    ]
   }
 ]
