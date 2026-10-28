@@ -4269,5 +4269,21 @@
       "Vue",
       "Remote"
     ]
+  },
+  {
+    "titel": "Frontend Architect",
+    "bedrijf": "Axxes IT Consultancy",
+    "locatie": "Gent of Antwerpen (hybride)",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4361593193/",
+    "beschrijving": "Permanent, frontend-zwaartepunt: architectuur en technische standaarden voor front-end applicaties (React/Angular/Vue), team begeleiden, zelf meebouwen. Borderline: consultancy (eerder Axxes Angular Developer als niet interessant gearchiveerd), lead/architect-niveau, kantoren Gent of Antwerpen.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "Angular",
+      "React",
+      "Vue",
+      "Architect"
+    ]
   }
 ]
