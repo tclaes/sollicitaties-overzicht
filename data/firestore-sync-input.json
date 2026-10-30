@@ -22,13 +22,14 @@
     "locatie": "Hasselt",
     "regio": "limburg",
     "url": "https://recommand.eu/en/jobs/senior-software-engineer",
-    "beschrijving": "Senior front-end/full-stack rol bij Recommand in Hasselt.",
+    "beschrijving": "Hasselt (hybride), full-stack TypeScript/Bun (Hono) + React 19/Vite, backend-zwaartepunt maar volwaardige frontend-component. Signaal: \"you use AI tools daily\" (AI-assisted development). Borderline: bedrijf zoekt sterk backend/platform-profiel; opnieuw online na eerder verlopen.",
     "bron": "andere",
     "functie": "fullstack",
     "tags": [
+      "AI-assisted",
       "JavaScript",
-      "TypeScript",
       "React",
+      "TypeScript",
       "modern web-stack"
     ],
     "nietInteressant": true
@@ -4284,6 +4285,34 @@
       "React",
       "Vue",
       "Architect"
+    ]
+  },
+  {
+    "titel": "Senior Frontend Engineer - Acquisition",
+    "bedrijf": "Alpaca",
+    "locatie": "Remote (Europe/North America)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4484026486/",
+    "beschrijving": "Volledig remote (Europa of Noord-Amerika), frontendrol voor brokerage-infrastructuur. Borderline: contractvorm (vast vs. contractor) niet vermeld op LinkedIn; >100 sollicitanten.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "Frontend",
+      "Remote"
+    ]
+  },
+  {
+    "titel": "Senior Frontend Engineer",
+    "bedrijf": "Deel",
+    "locatie": "België (remote)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4480639912/",
+    "beschrijving": "Volledig remote vanuit België, frontendrol bij payroll/HR-platform. Borderline: sollicitatie loopt buiten LinkedIn, salarisindicatie 50-95K USD; contractvorm (EOR/contractor) niet gecontroleerd.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "Frontend",
+      "Remote"
     ]
   }
 ]
