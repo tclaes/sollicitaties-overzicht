@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import type { VacancyCounts } from "~/lib/vacancies";
 import { buildSearchUrl } from "~/lib/searchParams";
 import styles from "./StatsCounter.module.css";
@@ -18,8 +19,17 @@ const items: { key: keyof VacancyCounts; status?: string; label: string; classNa
 ];
 
 export function StatsCounter({ counts, currentSearch, basePath = "/vacatures" }: Props) {
+  const stripRef = useRef<HTMLElement>(null);
+
+  // Op smalle schermen scrolt de strip horizontaal: houd de actieve status in beeld.
+  useEffect(() => {
+    stripRef.current
+      ?.querySelector<HTMLElement>('[aria-current="true"]')
+      ?.scrollIntoView?.({ inline: "center", block: "nearest" });
+  }, [currentSearch.status]);
+
   return (
-    <nav className={styles.strip} aria-label="Status">
+    <nav ref={stripRef} className={styles.strip} aria-label="Status">
       {items.map(({ key, status, label, className, dot }) => {
         const active = currentSearch.status === status;
         return (

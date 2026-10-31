@@ -21,3 +21,12 @@
   on `isArchived != true`.
 - Statusfilter: via de klikbare tellers in `StatsCounter` ("Totaal" wist de statusfilter); `FilterPills` heeft geen
   status-groep meer.
+
+## Responsive
+
+- Breakpoints: telefoon < 640px, tablet 640–1023px, desktop ≥ 1024px (`app/lib/breakpoints.ts`; in CSS letterlijk
+  herhaald, zie commentaar in `tokens.css`). CSS is mobile-first (`min-width`).
+- Touch via capabilities, niet via breedte: `@media (pointer: coarse)` (44px-targets, `--touch-target`) en
+  `@media (hover: none)` (geen hover-only acties).
+- Tabel vs. kaarten: `useMediaQuery(DESKTOP_QUERY)` kiest één weergave (nooit beide renderen).
+- Navigatie: onder 1024px is `Nav` een drawer die `AppShell` opent via de hamburgerknop in `Header`.

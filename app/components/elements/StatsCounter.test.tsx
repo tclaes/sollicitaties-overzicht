@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vite-plus/test";
+import { describe, it, expect, vi } from "vite-plus/test";
 import { render, screen } from "@testing-library/react";
 import { StatsCounter } from "./StatsCounter";
 
@@ -31,5 +31,14 @@ describe("StatsCounter", () => {
     rerender(<StatsCounter counts={counts} currentSearch={{ status: "new" }} />);
     expect(screen.getByRole("link", { name: /Nieuw/ })).toHaveAttribute("aria-current", "true");
     expect(screen.getByRole("link", { name: /Totaal/ })).not.toHaveAttribute("aria-current");
+  });
+
+  it("scrolls the active counter into view on narrow screens", () => {
+    const scrollIntoView = vi.fn();
+    Element.prototype.scrollIntoView = scrollIntoView;
+    render(<StatsCounter counts={counts} currentSearch={{ status: "applied" }} />);
+    expect(scrollIntoView).toHaveBeenCalledWith({ inline: "center", block: "nearest" });
+    // @ts-expect-error opruimen van de jsdom-stub
+    delete Element.prototype.scrollIntoView;
   });
 });

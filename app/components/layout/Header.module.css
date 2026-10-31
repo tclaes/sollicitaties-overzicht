@@ -3,13 +3,53 @@
   background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
   display: flex;
-  gap: var(--space-6);
+  gap: var(--space-3);
   height: var(--header-height);
   justify-content: space-between;
-  padding: 0 var(--space-5);
+  padding: 0 var(--space-4);
   position: sticky;
   top: 0;
   z-index: 10;
+}
+
+.menuButton {
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  display: flex;
+  height: 36px;
+  justify-content: center;
+  margin-left: calc(var(--space-2) * -1);
+  width: 36px;
+}
+
+.menuButton:hover {
+  background: var(--color-bg);
+}
+
+.menuIcon,
+.menuIcon::before,
+.menuIcon::after {
+  background: var(--color-text);
+  content: "";
+  display: block;
+  height: 2px;
+  width: 18px;
+}
+
+.menuIcon {
+  position: relative;
+}
+
+.menuIcon::before {
+  position: absolute;
+  top: -6px;
+}
+
+.menuIcon::after {
+  position: absolute;
+  top: 6px;
 }
 
 .logo {
@@ -33,4 +73,27 @@
 .logout:hover {
   background: var(--color-bg);
   color: var(--color-text);
+}
+
+@media (min-width: 1024px) {
+  .header {
+    gap: var(--space-6);
+    padding: 0 var(--space-5);
+  }
+
+  .menuButton {
+    display: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .menuButton {
+    height: var(--touch-target);
+    width: var(--touch-target);
+  }
+
+  .logout {
+    min-height: var(--touch-target);
+    padding: var(--space-1) var(--space-3);
+  }
 }

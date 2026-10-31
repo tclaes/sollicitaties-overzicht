@@ -7,7 +7,7 @@ import {
   getArchivedVacancies,
   getVacancyCounts,
 } from "~/lib/vacancies";
-import {VacancyTable} from "~/components/vacancies/VacancyTable";
+import {VacancyList} from "~/components/vacancies/VacancyList";
 import {StatsCounter} from "~/components/elements/StatsCounter";
 import {FilterPills} from "~/components/elements/FilterPills";
 import {InfiniteScrollFooter} from "~/components/elements/InfiniteScrollFooter/InfiniteScrollFooter";
@@ -117,7 +117,7 @@ function VacanciesPage() {
               })}
             />
           )}
-          <VacancyTable
+          <VacancyList
             vacancies={visibleItems}
             applicationById={applicationById}
             onApply={handleApply}
