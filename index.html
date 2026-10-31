@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Sollicitaties Overzicht</title>
     <meta name="description" content="Dagelijks overzicht van frontend vacatures" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- Zet het thema vóór de eerste paint (geen flits). Houd in sync met app/lib/theme.ts. -->
+    <script>
+      (function () {
+        var preference = "auto";
+        try {
+          var stored = localStorage.getItem("vacature-theme");
+          if (stored === "light" || stored === "dark") preference = stored;
+        } catch (e) {}
+        var dark =
+          preference === "dark" ||
+          (preference === "auto" &&
+            typeof window.matchMedia === "function" &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", dark ? "#1c1c1a" : "#ffffff");
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

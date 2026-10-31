@@ -19,7 +19,7 @@
 }
 
 .backdrop {
-  background: rgb(0 0 0 / 40%);
+  background: var(--color-backdrop);
   inset: 0;
   position: absolute;
   z-index: 19;

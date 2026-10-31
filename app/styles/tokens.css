@@ -1,4 +1,6 @@
 :root {
+  color-scheme: light;
+
   /* ── Neutraal palet ──────────────────────────────────────────── */
   --color-bg:              #f5f5f3;
   --color-surface:         #ffffff;
@@ -16,6 +18,10 @@
   --color-accent-hover:    #1d4ed8;
   --color-accent-subtle:   #eff6ff;
   --color-accent-text:     #1e40af;
+
+  /* Knopvulling met --color-text-inverse erop; in beide thema's gelijk (zie dark-blok). */
+  --color-accent-solid:       #2563eb;
+  --color-accent-solid-hover: #1d4ed8;
 
   /* ── Status ──────────────────────────────────────────────────── */
   --color-status-nieuw-dot:             #3b82f6;
@@ -86,6 +92,9 @@
 
   --color-danger-text:          #b91c1c;
 
+  /* ── Overlay ─────────────────────────────────────────────────── */
+  --color-backdrop: rgb(0 0 0 / 40%);
+
   /* ── Spacing (4px basis) ─────────────────────────────────────── */
   --space-px:   0.0625rem; /*  1px */
   --space-0-5:  0.125rem;  /*  2px */
@@ -151,4 +160,101 @@
   /* ── Transitie ───────────────────────────────────────────────── */
   --transition-fast: 100ms ease;
   --transition-base: 150ms ease;
+}
+
+/* ── Donker thema ────────────────────────────────────────────────
+   Wordt geactiveerd via data-theme="dark" op <html> (zie app/lib/theme.ts en
+   het inline script in index.html). Overschrijf hier enkel kleurtokens; elk
+   nieuw --color-* token in :root krijgt hier ook een donkere waarde.
+   Contrast (tekst op achtergrond >= 4,5:1) wordt bewaakt door tokens.test.ts. */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Neutraal */
+  --color-bg:              #121211;
+  --color-surface:         #1c1c1a;
+  --color-border:          #2e2e2b;
+  --color-border-strong:   #484842;
+
+  /* Tekst */
+  --color-text:            #ececea;
+  --color-text-muted:      #a8a8a0;
+  --color-text-subtle:     #86867e;
+
+  /* Accent (voorgrond/rand); de knopvulling blijft --color-accent-solid */
+  --color-accent:          #60a5fa;
+  --color-accent-hover:    #93c5fd;
+  --color-accent-subtle:   #172a4a;
+  --color-accent-text:     #93c5fd;
+
+  /* Status */
+  --color-status-nieuw-dot:             #3b82f6;
+  --color-status-nieuw-bg:              #172a4a;
+  --color-status-nieuw-text:            #93c5fd;
+
+  --color-status-bekeken-dot:           #9ca3af;
+  --color-status-bekeken-bg:            #26272a;
+  --color-status-bekeken-text:          #c4c8cf;
+
+  --color-status-gesolliciteerd-dot:    #10b981;
+  --color-status-gesolliciteerd-bg:     #0f2e24;
+  --color-status-gesolliciteerd-text:   #6ee7b7;
+
+  --color-status-afgewezen-dot:         #ef4444;
+  --color-status-afgewezen-bg:          #3a1618;
+  --color-status-afgewezen-text:        #fca5a5;
+
+  --color-status-ni-dot:                #4b5563;
+  --color-status-ni-bg:                 #232325;
+  --color-status-ni-text:               #9ca3af;
+
+  --color-status-na-dot:                #f59e0b;
+  --color-status-na-bg:                 #35270b;
+  --color-status-na-text:               #fcd34d;
+
+  /* Bron */
+  --color-source-indeed-bg:   #172338;
+  --color-source-indeed-text: #93b4f0;
+
+  --color-source-vdab-bg:     #3a1b15;
+  --color-source-vdab-text:   #ff9b86;
+
+  --color-source-jobat-bg:    #38210f;
+  --color-source-jobat-text:  #ffb27a;
+
+  --color-source-linkedin-bg: #14283a;
+  --color-source-linkedin-text: #7cc0f5;
+
+  --color-source-andere-bg:   #262624;
+  --color-source-andere-text: #b5b5ae;
+
+  /* Functie */
+  --color-role-frontend-bg:    #172a4a;
+  --color-role-frontend-text:  #93c5fd;
+
+  --color-role-fullstack-bg:   #2a1a45;
+  --color-role-fullstack-text: #d8b4fe;
+
+  /* Badge */
+  --color-badge-success-bg:     #0f2e1a;
+  --color-badge-success-text:   #86efac;
+  --color-badge-success-border: #14532d;
+
+  --color-badge-warning-bg:     #33290a;
+  --color-badge-warning-text:   #fde047;
+  --color-badge-warning-border: #4d3d0e;
+
+  --color-badge-danger-bg:      #3a1618;
+  --color-badge-danger-text:    #fca5a5;
+  --color-badge-danger-border:  #5c2326;
+
+  --color-badge-purple-bg:      #2a1a45;
+  --color-badge-purple-text:    #c4b5fd;
+  --color-badge-purple-border:  #43307a;
+
+  --color-badge-info-border:    #1e3a6e;
+
+  --color-danger-text:          #fca5a5;
+
+  --color-backdrop: rgb(0 0 0 / 60%);
 }

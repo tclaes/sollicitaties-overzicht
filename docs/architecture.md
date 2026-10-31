@@ -30,3 +30,18 @@
   `@media (hover: none)` (geen hover-only acties).
 - Tabel vs. kaarten: `useMediaQuery(DESKTOP_QUERY)` kiest één weergave (nooit beide renderen).
 - Navigatie: onder 1024px is `Nav` een drawer die `AppShell` opent via de hamburgerknop in `Header`.
+
+## Thema (licht/donker)
+
+- Drie standen: `auto` (standaard, volgt `prefers-color-scheme`), `light` en `dark`. De keuze staat in `localStorage`
+  (`vacature-theme`); de keuzeknop (`ThemeSelect`) zit onderaan `Nav` (zijbalk op desktop, drawer op kleinere schermen),
+  niet in de header.
+- Logica: `app/lib/theme.ts` (puur, getest) en `app/lib/useTheme.ts` (hook, aangeroepen in `AppShell`). Het *effectieve*
+  thema (`light` of `dark`) staat als `data-theme` op `<html>`; `auto` wordt dus vóór het zetten opgelost.
+- Geen flits: een inline script in `index.html` zet `data-theme` (en `theme-color`) vóór de eerste paint. Het dupliceert
+  de leeslogica van `theme.ts`; `app/lib/themeInlineScript.test.ts` voert het echte script uit en vergelijkt met `theme.ts`.
+- Kleuren: enkel via tokens. `tokens.css` heeft de lichte waarden in `:root` en de donkere onder `[data-theme="dark"]`.
+  **Een nieuw `--color-*` token krijgt altijd in beide blokken een waarde** (`app/styles/tokens.test.ts` faalt anders) en
+  tekst/achtergrond-paren moeten ≥ 4,5:1 halen (rand/focus ≥ 3:1). Voeg een nieuw paar toe aan `textPairs` in die test.
+- `--color-accent` is voorgrond/rand/outline; voor een knopvulling met `--color-text-inverse` erop gebruik je
+  `--color-accent-solid` (en `-hover`), die in beide thema's gelijk zijn.
