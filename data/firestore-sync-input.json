@@ -4313,5 +4313,39 @@
       "Frontend",
       "Remote"
     ]
+  },
+  {
+    "titel": "Frontend Lead Engineer",
+    "bedrijf": "edenity (client, Europese bedrijfsfiets-leasing)",
+    "locatie": "België (remote-first)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4483919975/",
+    "beschrijving": "Hands-on frontend/solution-architectuurrol voor het leasingportaal: TypeScript + React/Angular/Vue, design system (WCAG), API-contracten. Remote-first vanuit België. Borderline: lead/architect-niveau, contracttype niet vermeld; AI-assisted development (Claude Code, Copilot) enkel 'nice to have', dus niet getagd.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "TypeScript",
+      "React",
+      "Angular",
+      "Vue",
+      "Design system",
+      "Remote"
+    ]
+  },
+  {
+    "titel": "Software Developer (Senior Web Developer, Vue.js/Umbraco)",
+    "bedrijf": "PROMAN Belgium (client)",
+    "locatie": "Mechelen",
+    "regio": "vlaanderen",
+    "url": "https://www.linkedin.com/jobs/view/4471914141/",
+    "beschrijving": "Senior front-end webdeveloper (Vue.js PWA's, Umbraco, API-integraties op Azure, UX/UI, SEO). Op locatie in Mechelen. Borderline: via PROMAN (uitzendkantoor/recruiter), contracttype niet bevestigd.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "Vue",
+      "Umbraco",
+      "PWA",
+      "Azure"
+    ]
   }
 ]
