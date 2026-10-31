@@ -1,4 +1,6 @@
 import type {Ref} from "react";
+import type {ThemePreference} from "~/lib/theme";
+import {ThemeSelect} from "./ThemeSelect";
 import styles from "./Nav.module.css";
 
 interface Props {
@@ -6,9 +8,11 @@ interface Props {
   navRef?: Ref<HTMLElement>;
   open?: boolean;
   onNavigate?: () => void;
+  theme: ThemePreference;
+  onThemeChange: (theme: ThemePreference) => void;
 }
 
-export function Nav({id, navRef, open = false, onNavigate}: Props) {
+export function Nav({id, navRef, open = false, onNavigate, theme, onThemeChange}: Props) {
   const currentPath = typeof window !== "undefined" ? window.location.pathname : "/vacatures";
   const onVacancies = currentPath === "/" || currentPath.startsWith("/vacatures");
   const onApplications = currentPath.startsWith("/sollicitaties");
@@ -33,6 +37,10 @@ export function Nav({id, navRef, open = false, onNavigate}: Props) {
         >
           Sollicitaties
         </a>
+      </div>
+      <div className={`${styles.section} ${styles.footer}`}>
+        <span className={styles.sectionLabel}>Weergave</span>
+        <ThemeSelect value={theme} onChange={onThemeChange}/>
       </div>
     </nav>
   );

@@ -1,7 +1,8 @@
-import {describe, expect, it, vi} from "vite-plus/test";
+import {beforeEach, describe, expect, it, vi} from "vite-plus/test";
 import {render, screen, within} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import {AppShell} from "./AppShell";
+import {THEME_KEY} from "~/lib/theme";
 
 vi.mock("~/lib/auth", () => ({logout: vi.fn()}));
 
@@ -52,5 +53,35 @@ describe("AppShell navigation drawer", () => {
     link.addEventListener("click", (e) => e.preventDefault());
     await user.click(link);
     expect(button).toHaveAttribute("aria-expanded", "false");
+  });
+});
+
+describe("AppShell theme selection", () => {
+  beforeEach(() => {
+    localStorage.clear();
+    document.documentElement.removeAttribute("data-theme");
+  });
+
+  it("shows the saved theme as checked in the navigation", () => {
+    localStorage.setItem(THEME_KEY, "light");
+    setup();
+    expect(screen.getByRole("radio", {name: "Licht", hidden: true})).toHaveAttribute("aria-checked", "true");
+  });
+
+  it("applies and saves the chosen theme and keeps the drawer open", async () => {
+    const {user, button} = setup();
+    await user.click(button);
+    await user.click(screen.getByRole("radio", {name: "Donker", hidden: true}));
+    expect(document.documentElement.dataset.theme).toBe("dark");
+    expect(localStorage.getItem(THEME_KEY)).toBe("dark");
+    expect(screen.getByRole("radio", {name: "Donker", hidden: true})).toHaveAttribute("aria-checked", "true");
+    expect(button).toHaveAttribute("aria-expanded", "true");
+    expect(screen.getByTestId("nav-backdrop")).toBeInTheDocument();
+  });
+
+  it("does not add a theme control to the header", () => {
+    setup();
+    const header = screen.getByRole("banner");
+    expect(within(header).queryByRole("radiogroup", {hidden: true})).not.toBeInTheDocument();
   });
 });

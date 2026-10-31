@@ -35,6 +35,10 @@
   gap: 1px;
 }
 
+.footer {
+  margin-top: auto;
+}
+
 .sectionLabel {
   color: var(--color-text-subtle);
   font-size: 10px;

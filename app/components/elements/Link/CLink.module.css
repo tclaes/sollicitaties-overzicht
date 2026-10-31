@@ -1,12 +1,12 @@
 :global(.link) {
-  --_bg-color: var(--bg-color, var(--color-accent));
+  --_bg-color: var(--bg-color, var(--color-accent-solid));
 }
 
 .link {
   background: var(--_bg-color);
 
   &:hover {
-    background: var(--color-accent-hover);
+    background: var(--color-accent-solid-hover);
     text-decoration: none;
   }
 }

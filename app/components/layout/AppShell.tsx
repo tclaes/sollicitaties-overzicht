@@ -2,6 +2,7 @@ import {useEffect, useRef, useState} from "react";
 import type {ReactNode} from "react";
 import {Header} from "./Header";
 import {Nav} from "./Nav";
+import {useTheme} from "~/lib/useTheme";
 import styles from "./AppShell.module.css";
 
 interface Props {
@@ -12,6 +13,7 @@ export const NAV_ID = "hoofdnavigatie";
 
 export function AppShell({children}: Props) {
   const [navOpen, setNavOpen] = useState(false);
+  const [theme, setTheme] = useTheme();
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const navRef = useRef<HTMLElement>(null);
   const wasOpen = useRef(false);
@@ -44,7 +46,14 @@ export function AppShell({children}: Props) {
         onToggleNav={() => setNavOpen((open) => !open)}
       />
       <div className={styles.body}>
-        <Nav id={NAV_ID} navRef={navRef} open={navOpen} onNavigate={() => setNavOpen(false)}/>
+        <Nav
+          id={NAV_ID}
+          navRef={navRef}
+          open={navOpen}
+          onNavigate={() => setNavOpen(false)}
+          theme={theme}
+          onThemeChange={setTheme}
+        />
         {navOpen && <div className={styles.backdrop} data-testid="nav-backdrop" onClick={() => setNavOpen(false)}/>}
         <div className={styles.content}>{children}</div>
       </div>
