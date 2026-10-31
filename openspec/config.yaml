@@ -1,0 +1,57 @@
+schema: spec-driven
+githubCopilot:
+  cloudAgent: true
+
+context: |
+  Sollicitaties App: persoonlijke app van Tom om vacatures te volgen en sollicitaties bij te houden.
+  Stack: TanStack Router (file-based, app/routes/), Firestore, Zod, Vitest, Playwright, Vite+ (`vp`).
+  Schrijf artifacts in het Nederlands (code-identifiers en domeintermen blijven zoals ze zijn).
+  Uitgebreide details: docs/architecture.md, docs/git.md, docs/firestore-sync.md, docs/tests.md,
+  docs/not-interesting.md, docs/daily-scan.md.
+
+  Domeinmodel (Firestore-collectie `vacatures`):
+  - Velden: titel, bedrijf, locatie, regio, url, bron, functie, tags, status, match.
+  - status: nieuw | bekeken | gesolliciteerd | niet-interessant.
+  - regio: limburg | antwerpen | vlaanderen | brussel | remote | andere. functie: frontend | fullstack.
+  - Archief = `isArchived: true` + `status: "niet-interessant"` (+ archiveReason, dateArchived).
+    Gesyncte vacatures hebben geen `isArchived`-veld: query nooit op `isArchived != true`.
+  - Archief wordt niet standaard geladen (getActiveVacancies / getArchivedVacancies / getVacancyCounts).
+
+  Architectuur:
+  - Smart/dumb componenten, KISS en YAGNI. Aliassen: `~/*` -> app/*, `~/elements/*` -> app/components/elements/*.
+  - Domeinlogica in app/lib/ (schemas.ts, firestoreMappers.ts, vacancies.ts); tests staan naast de code.
+  - app/routeTree.gen.ts is gegenereerd: nooit met de hand bewerken.
+  - Filteren/sorteren in de vacaturelijst blijft client-side; geen staleTime op die route (bewust).
+
+  Vacature-sync:
+  - Enige bron van waarheid: data/firestore-sync-input.json (JSON-array). Elk item dat niet `verlopen: true` of
+    `nietInteressant: true` is, heeft string-velden titel, bedrijf en url.
+  - Sync draait in GitHub Actions (sync-firestore.yml), niet lokaal. Een PR die enkel dit bestand wijzigt wordt
+    automatisch gemerged (auto-merge-vacature-sync.yml); raak er dan geen andere bestanden in aan.
+  - Dagelijkse scan: zie docs/daily-scan.md; gearchiveerde vacatures nooit opnieuw voorstellen.
+
+rules:
+  proposal:
+    - Vermeld expliciet wat buiten scope valt.
+    - Geef aan of de wijziging het Firestore-model of data/firestore-sync-input.json raakt.
+  specs:
+    - Gebruik de bestaande statuswaarden, regio-waarden en veldnamen letterlijk.
+    - Elke feature of bugfix heeft minstens één scenario dat als test uit te drukken is.
+  design:
+    - Hou de smart/dumb-splitsing aan; hergebruik app/lib/ voor domeinlogica.
+    - Benoem Firestore-query's en gevolgen voor het archief (niet standaard geladen) expliciet.
+  tasks:
+    - Neem per feature/bug een testtaak op (Vitest naast de code; Playwright voor golden paths).
+    - Houd taken klein en afzonderlijk verifieerbaar.
+
+operations:
+  apply:
+    guidance:
+      - Werk op een eigen branch (feature/..., fix/...); nooit rechtstreeks op main.
+      - Open een gewone PR (geen draft) via `gh pr create`, tenzij Tom om een draft vraagt.
+      - Draai `npm test`; draai `npm run test:e2e` bij wijzigingen aan golden paths (vereist Java, draait tegen emulators).
+      - Bewerk app/routeTree.gen.ts niet; valideer data/firestore-sync-input.json met JSON.parse vóór je pusht.
+  archive:
+    guidance:
+      - Controleer dat tests groen zijn en de PR is gemerged voordat je archiveert.
+      - Werk bij gewijzigd gedrag de relevante docs/*.md bij.
