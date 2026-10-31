@@ -1,7 +1,12 @@
 .wrapper {
   flex: 1;
-  min-height: 80vh;
   overflow: auto;
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    min-height: 80vh;
+  }
 }
 
 .table {

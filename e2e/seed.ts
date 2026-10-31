@@ -22,6 +22,10 @@ export const VACANCY_IDS = {
   applied: "vacancy-gesolliciteerd",
   detail: "vacancy-detail-solliciteren",
   archived: "vacancy-gearchiveerd-svelte",
+  // Eigen solliciteer-vacature per responsive project (mobile/tablet draaien parallel).
+  responsiveDetail: "vacancy-responsive-detail",
+  applyMobile: "vacancy-solliciteren-mobile",
+  applyTablet: "vacancy-solliciteren-tablet",
 };
 
 // Bulk-vacatures hebben geen match en staan dus onderaan de standaardsortering, zodat
@@ -104,6 +108,37 @@ export async function seed() {
       tags: [],
       match: { score: "matig", toelichting: "Staat boven de bulk-fixtures." },
     }),
+    // Alleen-lezen vacature voor de responsive detailpagina-test.
+    vacancies.doc(VACANCY_IDS.responsiveDetail).set({
+      id: VACANCY_IDS.responsiveDetail,
+      titel: "Responsive Detail Rol",
+      bedrijf: "Fixture Responsive BV",
+      locatie: "Gent",
+      regio: "vlaanderen",
+      url: "https://example.com/responsive-detail-rol",
+      beschrijving: "Fixture vacature om de detailpagina op kleine schermen te controleren.",
+      bron: "indeed",
+      gevondenOp: new Date().toISOString(),
+      status: "bekeken",
+      tags: ["react"],
+      match: { score: "matig", toelichting: "Staat boven de bulk-fixtures." },
+    }),
+    ...(["Mobile", "Tablet"] as const).map((device) =>
+      vacancies.doc(VACANCY_IDS[`apply${device}`]).set({
+        id: VACANCY_IDS[`apply${device}`],
+        titel: `Solliciteer Kaart ${device}`,
+        bedrijf: `Fixture Kaart ${device} BV`,
+        locatie: "Gent",
+        regio: "vlaanderen",
+        url: `https://example.com/solliciteer-kaart-${device.toLowerCase()}`,
+        beschrijving: "Fixture vacature om vanaf een kaart op te solliciteren.",
+        bron: "indeed",
+        gevondenOp: new Date().toISOString(),
+        status: "bekeken",
+        tags: [],
+        match: { score: "matig", toelichting: "Staat boven de bulk-fixtures." },
+      }),
+    ),
     // Gearchiveerde vacature met een unieke tag voor de zoek-test.
     vacancies.doc(VACANCY_IDS.archived).set({
       id: VACANCY_IDS.archived,

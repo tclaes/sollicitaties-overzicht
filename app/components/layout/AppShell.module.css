@@ -2,16 +2,35 @@
   display: grid;
   grid-template-rows: var(--header-height) 1fr;
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
 }
 
 .body {
   display: grid;
-  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-columns: minmax(0, 1fr);
   overflow: hidden;
+  position: relative;
 }
 
 .content {
   min-width: 0;
   overflow-y: auto;
+}
+
+.backdrop {
+  background: rgb(0 0 0 / 40%);
+  inset: 0;
+  position: absolute;
+  z-index: 19;
+}
+
+@media (min-width: 1024px) {
+  .body {
+    grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  }
+
+  .backdrop {
+    display: none;
+  }
 }

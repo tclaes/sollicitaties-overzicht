@@ -132,3 +132,41 @@
   border-color: var(--color-badge-success-border);
   color: var(--color-badge-success-text);
 }
+
+/* Telefoon: elke sollicitatie wordt een blok i.p.v. een tabelrij met vaste kolommen. */
+@media (max-width: 639px) {
+  .table,
+  .table tbody,
+  .table td {
+    display: block;
+    width: auto;
+  }
+
+  .row {
+    align-items: center;
+    column-gap: var(--space-3);
+    display: grid;
+    grid-template-areas:
+      "company status"
+      "role status"
+      "date status";
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: var(--space-2) var(--space-4);
+  }
+
+  .table td {
+    padding: 0;
+  }
+
+  .row .company { grid-area: company; width: auto; }
+  .row .role { grid-area: role; }
+  .row .date { grid-area: date; width: auto; }
+  .row .statusCol { grid-area: status; width: auto; }
+}
+
+@media (pointer: coarse) {
+  .statusSelect {
+    min-height: var(--touch-target);
+    padding: var(--space-1) var(--space-3);
+  }
+}

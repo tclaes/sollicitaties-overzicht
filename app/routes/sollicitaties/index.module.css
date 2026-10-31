@@ -10,7 +10,7 @@
   display: flex;
   flex-shrink: 0;
   gap: var(--space-3);
-  padding: var(--space-5) var(--space-6);
+  padding: var(--space-4);
 }
 
 .title {
@@ -22,4 +22,10 @@
 .counter {
   color: var(--color-text-subtle);
   font-size: var(--text-sm);
+}
+
+@media (min-width: 1024px) {
+  .header {
+    padding: var(--space-5) var(--space-6);
+  }
 }

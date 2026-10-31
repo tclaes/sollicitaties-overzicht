@@ -21,3 +21,13 @@
 .active {
   color: var(--color-badge-warning-text);
 }
+
+@media (pointer: coarse) {
+  .favoriteBtn {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    min-height: var(--touch-target);
+    min-width: var(--touch-target);
+  }
+}

@@ -138,6 +138,16 @@
   --sidebar-width: 200px;
   --content-max:  1200px;
 
+  /* ── Responsive conventie ────────────────────────────────────────
+     CSS custom properties werken niet in @media; herhaal de waarden letterlijk
+     (en houd ze gelijk aan app/lib/breakpoints.ts):
+       tablet  >= 640px   @media (min-width: 640px)
+       desktop >= 1024px  @media (min-width: 1024px)
+     Mobile-first: basisstijl = telefoon, daarna min-width opschalen.
+     Touch: @media (pointer: coarse) voor 44px-targets,
+            @media (hover: none) voor acties die niet van hover mogen afhangen. */
+  --touch-target: 44px;
+
   /* ── Transitie ───────────────────────────────────────────────── */
   --transition-fast: 100ms ease;
   --transition-base: 150ms ease;

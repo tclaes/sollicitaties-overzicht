@@ -1,0 +1,125 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-3);
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3);
+}
+
+.top {
+  align-items: flex-start;
+  display: flex;
+  gap: var(--space-2);
+}
+
+.favorite {
+  flex-shrink: 0;
+  margin: calc(var(--space-1) * -1) 0 0 calc(var(--space-1) * -1);
+}
+
+.heading {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-px);
+  min-width: 0;
+}
+
+.title {
+  color: var(--color-text);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  overflow-wrap: anywhere;
+}
+
+.roleBadge {
+  composes: roleBadge from "./VacancyTable.module.css";
+}
+
+.role_frontend {
+  composes: role_frontend from "./VacancyTable.module.css";
+}
+
+.role_fullstack {
+  composes: role_fullstack from "./VacancyTable.module.css";
+}
+
+.company {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.meta {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+}
+
+.status {
+  align-items: center;
+  display: flex;
+  gap: var(--space-2);
+}
+
+.applicationDate {
+  color: var(--color-text-subtle);
+  font-size: var(--text-xs);
+}
+
+.location {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.matchBadge {
+  composes: matchBadge from "./VacancyTable.module.css";
+}
+
+.match_sterk {
+  composes: match_sterk from "./VacancyTable.module.css";
+}
+
+.match_goed {
+  composes: match_goed from "./VacancyTable.module.css";
+}
+
+.match_matig {
+  composes: match_matig from "./VacancyTable.module.css";
+}
+
+.match_laag {
+  composes: match_laag from "./VacancyTable.module.css";
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.tag {
+  composes: tag from "./VacancyTable.module.css";
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.empty {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  padding: var(--space-12) var(--space-8);
+  text-align: center;
+}

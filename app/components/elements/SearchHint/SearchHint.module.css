@@ -6,6 +6,7 @@
   flex-direction: column;
   font-size: var(--text-sm);
   gap: var(--space-1);
+  overflow-wrap: anywhere;
   padding: var(--space-2) var(--space-4);
 }
 

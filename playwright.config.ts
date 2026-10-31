@@ -1,5 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
+const RESPONSIVE_SPECS = "**/responsive*.spec.ts";
+
 export default defineConfig({
   testDir: "./e2e",
   testMatch: "*.spec.ts",
@@ -16,6 +18,21 @@ export default defineConfig({
     {
       name: "chromium",
       use: { ...devices["Desktop Chrome"] },
+      testIgnore: RESPONSIVE_SPECS,
+    },
+    // Responsive-specs draaien op kleine viewports; de overige specs blijven op desktop.
+    {
+      name: "mobile",
+      use: { ...devices["Pixel 7"] },
+      testMatch: RESPONSIVE_SPECS,
+    },
+    {
+      name: "tablet",
+      use: {
+        ...devices["Pixel 7"],
+        viewport: { width: 768, height: 1024 },
+      },
+      testMatch: RESPONSIVE_SPECS,
     },
   ],
   webServer: {

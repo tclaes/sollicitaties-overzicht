@@ -16,3 +16,13 @@
 
 Testbestanden staan naast de code die ze testen (`*.test.ts(x)`); e2e-specs staan in
 `e2e/*.spec.ts`.
+
+### Responsive (viewports)
+
+- Playwright heeft drie projecten: `chromium` (desktop, alle gewone specs), `mobile` (Pixel 7, 412px) en `tablet`
+  (768px). Specs met een bestandsnaam `e2e/responsive*.spec.ts` draaien enkel op `mobile` en `tablet`; alle andere
+  specs enkel op `chromium` (ze gaan uit van de tabel).
+- Mobile en tablet draaien parallel op dezelfde emulator-data: een spec die data wijzigt heeft een eigen fixture per
+  project nodig (zie `applyMobile`/`applyTablet` in `e2e/seed.ts`).
+- Vitest: `window.matchMedia` is in `vitest.setup.ts` gestubd (desktop); stub het zelf in een test voor een kleine
+  weergave.

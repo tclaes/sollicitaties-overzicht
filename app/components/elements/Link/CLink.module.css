@@ -42,3 +42,10 @@
   text-decoration: none;
   transition: background var(--transition-fast);
 }
+@media (pointer: coarse) {
+  .link {
+    align-items: center;
+    display: inline-flex;
+    min-height: var(--touch-target);
+  }
+}

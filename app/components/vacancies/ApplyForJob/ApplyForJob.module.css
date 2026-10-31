@@ -13,6 +13,10 @@
 :global(.vacancy-row):hover .applyBtn,
 .visible { opacity: 1; }
 
+@media (hover: none) {
+  .applyBtn { opacity: 1; }
+}
+
 .applyBtn:hover {
   background: var(--color-bg);
   color: var(--color-text);
@@ -60,3 +64,21 @@
 
 .cancelBtn { color: var(--color-text-muted); }
 .cancelBtn:hover { background: var(--color-bg); }
+
+@media (pointer: coarse) {
+  .applyBtn {
+    min-height: var(--touch-target);
+    padding: var(--space-2) var(--space-4);
+  }
+
+  .dateInput {
+    font-size: 1rem;
+    min-height: var(--touch-target);
+  }
+
+  .confirmBtn,
+  .cancelBtn {
+    height: var(--touch-target);
+    width: var(--touch-target);
+  }
+}

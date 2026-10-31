@@ -52,3 +52,12 @@
   margin: 0 var(--space-1);
   width: 1px;
 }
+
+@media (pointer: coarse) {
+  .pill {
+    align-items: center;
+    display: inline-flex;
+    min-height: var(--touch-target);
+    padding: var(--space-2) var(--space-3);
+  }
+}
