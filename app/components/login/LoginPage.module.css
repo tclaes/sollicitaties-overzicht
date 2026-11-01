@@ -60,10 +60,10 @@
 }
 
 .btn {
-  background: var(--color-text);
+  background: var(--color-accent-solid);
   border: none;
   border-radius: var(--radius-md);
-  color: var(--color-surface);
+  color: var(--color-text-inverse);
   cursor: pointer;
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
@@ -72,7 +72,7 @@
   transition: opacity var(--transition-fast);
 }
 
-.btn:hover:not(:disabled) { opacity: 0.85; }
+.btn:hover:not(:disabled) { background: var(--color-accent-solid-hover); }
 .btn:disabled { cursor: not-allowed; opacity: 0.5; }
 
 @media (min-width: 640px) {
