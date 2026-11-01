@@ -12,9 +12,9 @@
 }
 
 .status_gesolliciteerd {
-  background: var(--color-accent-subtle);
-  border-color: var(--color-badge-info-border);
-  color: var(--color-accent-text);
+  background: var(--color-status-gesolliciteerd-bg);
+  border-color: var(--color-status-gesolliciteerd-dot);
+  color: var(--color-status-gesolliciteerd-text);
 }
 
 .status_in_gesprek {
