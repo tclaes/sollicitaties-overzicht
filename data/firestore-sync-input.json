@@ -4347,5 +4347,21 @@
       "PWA",
       "Azure"
     ]
+  },
+  {
+    "titel": "Senior Front-end / Product Engineer (Design-led)",
+    "bedrijf": "EHAB (weer-verzekeringsplatform WeatherWise)",
+    "locatie": "Remote (EER)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4484144089/",
+    "beschrijving": "Frontend-rol: bouwt de volledige productinterface (WeatherWise Studio/Construction), eigenaar van het designsysteem, dashboards en UI voor samenwerking met een AI-agent (Kite). Volledig remote (EER), fulltime. AI-werkwijze: AI-tooling is een 'first-class' onderdeel van de workflow. Borderline: UI voor een AI-product, contractvorm niet expliciet vermeld.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "Frontend",
+      "Design system",
+      "Remote",
+      "AI-assisted"
+    ]
   }
 ]
