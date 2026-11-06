@@ -14,6 +14,9 @@
  *     andere bronnen. Maak GEEN apart item voor dezelfde vacature per bron: neem 1 item op
  *     (primaire url/bron) en zet de overige bron+url-paren hier. Zo blijft er 1 Firestore-
  *     document per echte vacature i.p.v. duplicaten (zie dedupe van 15-09-2026).
+ *   gecontroleerdOp?: "YYYY-MM-DD"  -> dag waarop de detailpagina nog live gezien werd. Wordt
+ *     meegesynct naar het document; de app toont het niet. Merge-gate: scripts/check-sync-input.mjs
+ *     (actieve items max. 14 dagen oud).
  *   verlopen?: boolean  -> true = verwijder dit document i.p.v. het bij te werken
  *   nietInteressant?: boolean  -> true = archiveer dit document (isArchived + status
  *     "niet-interessant"), optioneel met archiefReden. Overige velden mogen minimaal zijn.
@@ -38,7 +41,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
-import { sameJobKey } from "./vacancy-keys.mjs";
+import { documentId, sameJobKey } from "./vacancy-keys.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DEFAULT_SERVICE_ACCOUNT_PATH = join(__dirname, "..", "secrets", "firebase-service-account.json");
@@ -70,44 +73,6 @@ if (!serviceAccountPath) {
 const serviceAccount = JSON.parse(readFileSync(serviceAccountPath, "utf8"));
 initializeApp({ credential: cert(serviceAccount) });
 const db = getFirestore();
-
-function slugify(s) {
-  return s
-    .toLowerCase()
-    .normalize("NFD").replace(/[̀-ͯ]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
-function normalizeUrl(url) {
-  if (!url) return null;
-  try {
-    const u = new URL(url);
-    const path = u.pathname.replace(/\/+$/, "");
-    const host = u.hostname.toLowerCase();
-    // be.indeed.com/viewjob?jk=... - het pad is voor ELKE indeed-vacature identiek
-    // ("/viewjob"), de echte identiteit zit in de jk-queryparameter. Zonder deze
-    // uitzondering vallen alle indeed-viewjob-vacatures terug op hetzelfde
-    // "be-indeed-com-viewjob"-id en overschrijven ze elkaar (zie fix #60). Tot nu toe
-    // ving een handmatig `id: "indeed-<jk>"`-veld in de sync-input dit op; deze
-    // uitzondering maakt dat automatisch, zodat het niet meer vergeten kan worden.
-    const jk = u.searchParams.get("jk");
-    if (host.endsWith("indeed.com") && /\/viewjob$/.test(path) && jk) {
-      return `${host}/viewjob-${jk.toLowerCase()}`;
-    }
-    return `${host}${path}`.toLowerCase();
-  } catch {
-    return url.toLowerCase().replace(/[?#].*$/, "").replace(/\/+$/, "");
-  }
-}
-
-// Document-id consistent houden over dagen heen: liefst uit de url (stabiel),
-// enkel terugvallen op bedrijf+titel als er geen url is. Zie opmerking hierboven.
-function generateId(v) {
-  if (v.id) return v.id;
-  if (v.url) return slugify(normalizeUrl(v.url));
-  return slugify(`${v.bedrijf}-${v.titel}`);
-}
 
 function validate(v, i) {
   const errors = [];
@@ -145,7 +110,7 @@ for (const d of (await db.collection("vacatures").get()).docs) {
 
 for (const [i, v] of input.entries()) {
   if (v.nietInteressant) {
-    const id = generateId(v);
+    const id = documentId(v);
     const ref = db.collection("vacatures").doc(id);
     const snap = await ref.get();
     const archiveFields = {
@@ -165,7 +130,7 @@ for (const [i, v] of input.entries()) {
   }
 
   if (v.verlopen) {
-    const id = generateId(v);
+    const id = documentId(v);
     const ref = db.collection("vacatures").doc(id);
     const snap = await ref.get();
     if (snap.exists) {
@@ -179,7 +144,7 @@ for (const [i, v] of input.entries()) {
   }
 
   validate(v, i);
-  const id = generateId(v);
+  const id = documentId(v);
   const ref = db.collection("vacatures").doc(id);
   const snap = await ref.get();
 
@@ -196,6 +161,7 @@ for (const [i, v] of input.entries()) {
     tags: v.tags ?? [],
     ...(v.match ? { match: v.match } : {}),
     ...(v.extraBronnen ? { extraBronnen: v.extraBronnen } : {}),
+    ...(v.gecontroleerdOp ? { gecontroleerdOp: v.gecontroleerdOp } : {}),
   };
 
   if (snap.exists) {
