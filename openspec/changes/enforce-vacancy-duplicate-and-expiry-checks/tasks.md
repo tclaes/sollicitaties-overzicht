@@ -6,7 +6,7 @@
 - [x] 1.2 Los de drie CraftCode-items op (it-jobs.be actief ↔ codejobs.be `nietInteressant`): zet de it-jobs.be-items op `nietInteressant: true` en neem de url van de codejobs.be-items op in `extraBronnen`; verifieer dat er geen actief item meer is met de `sameJobKey` van een niet-interessant item
 - [x] 1.3 Zet het actieve Kingfisher-item "Full Stack Developer (.NET / Angular)" (Antwerpen) op `nietInteressant: true`, want dezelfde vacature is via VDAB al door Tom gearchiveerd; neem de Kingfisher-url op in `extraBronnen` van het archief-item; verifieer met het meetscript (V1-sleutel) dat er geen actief item meer is met de sleutel van een niet-interessant item
 - [x] 1.4 Zet het actieve LGA IT-item "Full-Stack .NET Developer" (Kontich) op `nietInteressant: true`, want "Fullstack .NET developer" (Kontich) staat al als niet-interessant; verifieer zoals bij 1.3
-- [ ] 1.5 Valideer met `JSON.parse` en open de PR; verifieer dat auto-merge en daarna `sync-firestore.yml` slagen
+- [x] 1.5 Valideer met `JSON.parse` en open de PR; verifieer dat auto-merge en daarna `sync-firestore.yml` slagen
 
 ## 2. Gedeelde identiteit in `scripts/vacancy-keys.mjs`
 
@@ -40,7 +40,7 @@
 - [ ] 6.1 Vervang in `auto-merge-vacature-sync.yml` de inline `node -e`-validatie door `node scripts/check-sync-input.mjs`; verifieer in een testbranch dat een PR met een bewust duplicaat niet wordt gemerged en dat de fout in het jobresultaat staat
 - [x] 6.2 Voeg `--check` toe aan `dedupe-vacancies.mjs` (exit 1 bij gevonden groepen, schrijft niets) en gebruik het in de stap "Dedupe-check" van `sync-firestore.yml` zonder `continue-on-error`; `--apply` blijft ongewijzigd; verifieer tegen de Firestore-emulator of een dry-run dat een duplicaat exit 1 geeft en een schone collectie exit 0
 - [x] 6.3 Controleer dat `vp test` in `ci.yml` de nieuwe scripttests (`scripts/*.test.ts`) meeneemt; `ci.yml` zelf blijft ongewijzigd omdat de sync-input daar in `paths-ignore` staat en de auto-merge-workflow de gate draait
-- [ ] 6.4 Draai na taak 2.2 `npm run dedupe:firestore` als dry-run tegen Firestore (strengere sleutel kan nieuwe pass 2-groepen vinden), zet het rapport in de PR-beschrijving en voer `--apply` alleen uit na akkoord van Tom; verifieer dat het dry-run-rapport geen writes uitvoert
+- [x] 6.4 Draai na taak 2.2 `npm run dedupe:firestore` als dry-run tegen Firestore (strengere sleutel kan nieuwe pass 2-groepen vinden), zet het rapport in de PR-beschrijving en voer `--apply` alleen uit na akkoord van Tom; verifieer dat het dry-run-rapport geen writes uitvoert
 
 ## 7. Docs en rollout
 
