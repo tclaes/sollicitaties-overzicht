@@ -53,9 +53,8 @@
 }
 
 .logo {
-  color: var(--color-text);
-  font-size: var(--text-xl);
-  font-weight: var(--font-bold);
+  align-items: center;
+  display: flex;
 }
 
 .logout {
@@ -90,6 +89,10 @@
   .menuButton {
     height: var(--touch-target);
     width: var(--touch-target);
+  }
+
+  .logo {
+    min-height: var(--touch-target);
   }
 
   .logout {

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Logo } from "~/components/elements/Logo/Logo";
 import { login } from "~/lib/auth";
 import styles from "./LoginPage.module.css";
 
@@ -24,7 +25,9 @@ export function LoginPage() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.card}>
-        <h1 className={styles.title}>Sollicitaties</h1>
+        <h1 className={styles.title}>
+          <Logo variant="stacked"/>
+        </h1>
         <form onSubmit={handleSubmit} className={styles.form}>
           <label className={styles.label}>
             E-mail

@@ -14,14 +14,17 @@
   --color-text-inverse:    #ffffff;
 
   /* ── Accent ──────────────────────────────────────────────────── */
-  --color-accent:          #2563eb;
-  --color-accent-hover:    #1d4ed8;
-  --color-accent-subtle:   #eff6ff;
-  --color-accent-text:     #1e40af;
+  --color-accent:          #0a7c87;
+  --color-accent-hover:    #095f69;
+  --color-accent-subtle:   #e6f7f8;
+  --color-accent-text:     #095f69;
+
+  /* Accentstip in het Sollie-logo (grafisch element, niet voor tekst) */
+  --color-logo-accent:     #0e9aa7;
 
   /* Knopvulling met --color-text-inverse erop; in beide thema's gelijk (zie dark-blok). */
-  --color-accent-solid:       #2563eb;
-  --color-accent-solid-hover: #1d4ed8;
+  --color-accent-solid:       #0a7c87;
+  --color-accent-solid-hover: #095f69;
 
   /* ── Status ──────────────────────────────────────────────────── */
   --color-status-nieuw-dot:             #3b82f6;
@@ -182,10 +185,12 @@
   --color-text-subtle:     #86867e;
 
   /* Accent (voorgrond/rand); de knopvulling blijft --color-accent-solid */
-  --color-accent:          #60a5fa;
-  --color-accent-hover:    #93c5fd;
-  --color-accent-subtle:   #172a4a;
-  --color-accent-text:     #93c5fd;
+  --color-accent:          #3cc4d0;
+  --color-accent-hover:    #7ddde5;
+  --color-accent-subtle:   #0f2f33;
+  --color-accent-text:     #7ddde5;
+
+  --color-logo-accent:     #3cc4d0;
 
   /* Status */
   --color-status-nieuw-dot:             #3b82f6;
