@@ -53,6 +53,7 @@
 }
 
 .logo {
+  align-items: center;
   display: flex;
 }
 
@@ -88,6 +89,10 @@
   .menuButton {
     height: var(--touch-target);
     width: var(--touch-target);
+  }
+
+  .logo {
+    min-height: var(--touch-target);
   }
 
   .logout {

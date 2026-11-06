@@ -12,8 +12,8 @@ raster keert terug als i-punt in het woordmerk.
 | `sollie-symbol.svg` | Alleen symbool, vanaf 32 px |
 | `sollie-symbol-small.svg` | Vereenvoudigd 2×2-symbool voor 16–32 px (favicon) |
 | `sollie-wordmark.svg` | Alleen woordmerk |
-| `*-dark.svg` | Variant voor donkere achtergronden (lichte inkt, lichter violet) |
-| `varianten/` | Zwart, wit, violet en vierkant (SVG + PNG) |
+| `*-dark.svg` | Variant voor donkere achtergronden (lichte inkt, lichter teal) |
+| `varianten/` | Zwart, wit, teal en vierkant (SVG + PNG) |
 | `web/` | `favicon.svg` (past zich aan donker/licht aan), `favicon.ico`, apple-touch-icon, PWA-iconen, `head-snippet.html` |
 | `presentatie.html` | Presentatiebord met toepassingen. De tekst en naam in de mockups zijn plaatshouders |
 

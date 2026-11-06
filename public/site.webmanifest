@@ -22,5 +22,7 @@
   "background_color": "#14141f",
   "display": "standalone",
   "short_name": "Sollie",
-  "lang": "nl"
+  "lang": "nl",
+  "start_url": "/",
+  "scope": "/"
 }
