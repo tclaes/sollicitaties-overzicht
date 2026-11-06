@@ -1203,7 +1203,9 @@
     "match": {
       "score": "goed",
       "toelichting": "Lead front-end met Angular/React, technisch leiderschap en kennisdeling, via CraftCode (Cronos) in Edegem; consultant-rol in Antwerpen."
-    }
+    },
+    "nietInteressant": true,
+    "archiefReden": "Zelfde vacature al gearchiveerd (codejobs.be)"
   },
   {
     "titel": "Front-end Developer",
@@ -1225,7 +1227,9 @@
     "match": {
       "score": "goed",
       "toelichting": "Front-end developer (Angular en/of React, HTML/CSS, UI/UX) via CraftCode (Cronos) in Edegem; consultant-rol in Antwerpen."
-    }
+    },
+    "nietInteressant": true,
+    "archiefReden": "Zelfde vacature al gearchiveerd (codejobs.be)"
   },
   {
     "titel": "Full Stack developer",
@@ -1242,7 +1246,9 @@
       "React",
       "Vue",
       "Angular"
-    ]
+    ],
+    "nietInteressant": true,
+    "archiefReden": "Zelfde vacature al gearchiveerd (codejobs.be)"
   },
   {
     "titel": "Drupal Developer",
@@ -1630,7 +1636,21 @@
     "match": {
       "score": "laag",
       "toelichting": "Zeer summiere beschrijving: full-stack .NET/Angular in Antwerpen, vast contract; frontend-aandeel onbekend."
-    }
+    },
+    "extraBronnen": [
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74362771/full-stack-developer-net-angular"
+      },
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74362767/full-stack-developer-net-angular"
+      },
+      {
+        "bron": "vdab",
+        "url": "https://www.vdab.be/vindeenjob/vacatures/74362768/net-developer"
+      }
+    ]
   },
   {
     "titel": "Full Stack Developer (.NET / Angular)",
@@ -1648,7 +1668,9 @@
     "match": {
       "score": "laag",
       "toelichting": "Zeer summiere beschrijving: full-stack .NET/Angular in Antwerpen (centrum), vast contract; frontend-aandeel onbekend."
-    }
+    },
+    "nietInteressant": true,
+    "archiefReden": "Zwaar .NET (zelfde soort vacature als gearchiveerde vdab 73914622)"
   },
   {
     "titel": "Lead Front-End Developer",
@@ -2642,36 +2664,6 @@
     "archiefReden": "Niet interessant voor mij"
   },
   {
-    "titel": "Full Stack Developer (.NET / Angular)",
-    "bedrijf": "onbekend (via Kingfisher Recruitment, boekhoudsoftware voor accountants)",
-    "locatie": "Berchem (Antwerpen)",
-    "regio": "antwerpen",
-    "url": "https://www.vdab.be/vindeenjob/vacatures/74362771/full-stack-developer-net-angular",
-    "beschrijving": "Full-Stack rol bij een softwareoplossing waarmee Belgische accountants en boekhouders fiscale aangiften en jaarrekeningen verwerken. C#/.NET (legacy + modern), migratie naar cloud, Angular. Min. 3 jaar ervaring, vast contract. Kingfisher plaatst dezelfde vacature op meerdere locatie-varianten (Berchem/Antwerpen).",
-    "bron": "vdab",
-    "functie": "fullstack",
-    "tags": [
-      ".NET",
-      "C#",
-      "Angular",
-      "cloud"
-    ],
-    "extraBronnen": [
-      {
-        "bron": "vdab",
-        "url": "https://www.vdab.be/vindeenjob/vacatures/74362767/full-stack-developer-net-angular"
-      },
-      {
-        "bron": "vdab",
-        "url": "https://www.vdab.be/vindeenjob/vacatures/74362768/net-developer"
-      }
-    ],
-    "match": {
-      "score": "laag",
-      "toelichting": "Full-stack C#/.NET (legacy en modern, cloudmigratie) met Angular als bijkomende stack, vast contract, 3+ jaar; .NET-zwaar, regio Antwerpen."
-    }
-  },
-  {
     "titel": "Full-Stack .NET Developer",
     "bedrijf": "LGA IT",
     "locatie": "Kontich",
@@ -2701,7 +2693,9 @@
     "match": {
       "score": "laag",
       "toelichting": "Backend tot frontend met .NET 8-10, ASP.NET Core, RabbitMQ en Kubernetes; Angular (DevExtreme) is slechts een deel. Min. 5 jaar, vast contract, Kontich."
-    }
+    },
+    "nietInteressant": true,
+    "archiefReden": "Zelfde vacature al gearchiveerd (vdab 74278728)"
   },
   {
     "titel": "ITS DotNet Developer",
