@@ -4615,5 +4615,43 @@
       "score": "sterk",
       "toelichting": "Remote (EER) frontend die het design system en de productinterface beheert, met AI-tooling als vast deel van de workflow; UI voor een AI-product, contractvorm niet vermeld."
     }
+  },
+  {
+    "titel": "Frontend Software Engineer (React, React Native)",
+    "bedrijf": "AvioBook",
+    "locatie": "Hasselt (hybride)",
+    "regio": "limburg",
+    "url": "https://www.linkedin.com/jobs/view/4487756826",
+    "beschrijving": "Frontend voor AVIOBOOK Connect (chat-app voor luchtvaartteams): React + React Native + TypeScript, offline-first en real-time. Stack vermeldt Claude Code en 'leverage AI tooling'. Contracttype niet vermeld op de pagina; vereist bewezen React Native-ervaring.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "React",
+      "React Native",
+      "TypeScript",
+      "AI-assisted"
+    ],
+    "match": {
+      "score": "goed",
+      "toelichting": "React + TypeScript frontend in Hasselt; Claude Code staat in de stack. Minpunt: bewezen React Native-ervaring gevraagd en contracttype niet vermeld."
+    }
+  },
+  {
+    "titel": "Frontend Developer (AI-inference product, consultancy-opdracht)",
+    "bedrijf": "Metheion",
+    "locatie": "Leuven (hybride, 3 dagen on-site)",
+    "regio": "vlaanderen",
+    "url": "https://www.linkedin.com/jobs/view/4485817951",
+    "beschrijving": "Borderline: frontend (TypeScript, React, TanStack) van een nieuw product voor AI-inference vanaf nul tot MVP. Via een engineering-consultancy: opdracht van 6 maanden met mogelijke verlenging, contract payroll (vast) of freelance naar keuze, €60-75k bruto. Vraagt ook 3+ jaar UX/UI-design.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "React",
+      "TypeScript"
+    ],
+    "match": {
+      "score": "borderline",
+      "toelichting": "React/TypeScript-frontend in Leuven, maar het is een opdracht van 6 maanden via consultancy (payroll of freelance) en er wordt ook UX/UI-designervaring gevraagd."
+    }
   }
 ]
