@@ -12,6 +12,10 @@ A PR that changes **only** `data/firestore-sync-input.json` is **auto-merged** b
 `.github/workflows/auto-merge-vacature-sync.yml`, provided the file contains valid JSON (every non-expired vacancy must
 have `titel`, `bedrijf` and `url`). Do not manually merge/edit such PRs; just make the change and open the PR.
 
+Before merging it runs `node scripts/check-sync-input.mjs` (`npm run check:sync-input`): shape, no duplicate
+vacancies, no archived vacancy coming back, and a recent `gecontroleerdOp` per active item (see `docs/firestore-sync.md`).
+If that check fails the PR is not merged and waits for a fix; the reason is in the workflow log.
+
 After the merge, that workflow explicitly starts `sync-firestore.yml` on `main` — a merge via `GITHUB_TOKEN`
 does not fire the push trigger.
 

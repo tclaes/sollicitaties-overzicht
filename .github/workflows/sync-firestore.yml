@@ -66,17 +66,18 @@ jobs:
           FIREBASE_SERVICE_ACCOUNT_PATH: ${{ runner.temp }}/firebase-service-account.json
         run: vp run sync:firestore -- data/firestore-sync-input.json
 
-      # Rapporteert duplicaten. Standaard dry-run: mag de sync zelf nooit doen falen.
+      # Zonder dedupe_fix: --check schrijft niets, maar laat de job falen (rood) als er na de
+      # sync nog duplicaten in 'vacatures' staan. De sync zelf is dan al geslaagd. Met
+      # dedupe_fix worden de duplicaten echt opgeruimd.
       - name: Dedupe-check
         if: success()
-        continue-on-error: true
         env:
           FIREBASE_SERVICE_ACCOUNT_PATH: ${{ runner.temp }}/firebase-service-account.json
         run: |
           if [ "${{ inputs.dedupe_fix }}" = "true" ]; then
             vp run dedupe:firestore -- --apply
           else
-            vp run dedupe:firestore
+            vp run dedupe:firestore -- --check
           fi
 
       - name: Service-account opruimen

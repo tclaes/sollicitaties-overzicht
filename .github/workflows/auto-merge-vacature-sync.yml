@@ -54,24 +54,11 @@ jobs:
             echo "::notice::PR raakt meer dan data/firestore-sync-input.json — geen auto-merge, wacht op handmatige review."
           fi
 
+      # Zelfde controle als lokaal (`npm run check:sync-input`): vorm, duplicaten, archief wint en
+      # recente liveness-controle. Bij een fout wordt de PR niet gemerged en staat de reden in de log.
       - name: Sync-input valideren
         if: steps.scope.outputs.ok == 'true'
-        run: |
-          node -e '
-            const fs = require("node:fs");
-            const data = JSON.parse(fs.readFileSync("data/firestore-sync-input.json", "utf8"));
-            if (!Array.isArray(data)) throw new Error("Verwacht een JSON-array.");
-            for (const [i, v] of data.entries()) {
-              if (!v || typeof v !== "object") throw new Error(`Item ${i} is geen object.`);
-              if (v.verlopen === true || v.nietInteressant === true) continue;
-              for (const veld of ["titel", "bedrijf", "url"]) {
-                if (!v[veld] || typeof v[veld] !== "string") {
-                  throw new Error(`Item ${i} (${v.bedrijf ?? "?"} / ${v.titel ?? "?"}) mist verplicht veld "${veld}".`);
-                }
-              }
-            }
-            console.log(`OK — ${data.length} vacatures.`);
-          '
+        run: node scripts/check-sync-input.mjs data/firestore-sync-input.json
 
       - name: PR mergen
         if: steps.scope.outputs.ok == 'true'

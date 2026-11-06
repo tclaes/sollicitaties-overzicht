@@ -36,6 +36,11 @@ describe("vacancyFromFirestore", () => {
     });
   });
 
+  it("ignores the optional gecontroleerdOp field the sync writes to the document", () => {
+    const mapped = vacancyFromFirestore({ ...rawVacancy, gecontroleerdOp: "2026-11-05" });
+    expect(mapped).toEqual(vacancyFromFirestore(rawVacancy));
+  });
+
   it("maps an archived vacancy's status, reason and archive date", () => {
     const archived = {
       ...rawVacancy,

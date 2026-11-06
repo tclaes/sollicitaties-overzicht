@@ -41,15 +41,19 @@
  * Veiligheid: standaard DRY-RUN (toont enkel het plan, schrijft niets). Pas met de vlag
  * --apply worden de writes/deletes echt uitgevoerd.
  *
+ * Met --check draait hetzelfde dry-run-plan, maar eindigt het script met exitcode 1 als er
+ * duplicaatgroepen zijn (schrijft nooit). De post-sync stap in sync-firestore.yml gebruikt dit
+ * zodat overgebleven duplicaten de workflow zichtbaar laten falen.
+ *
  * Gebruik:
- *   node scripts/dedupe-vacancies.mjs [service-account.json] [--apply]
+ *   node scripts/dedupe-vacancies.mjs [service-account.json] [--apply | --check]
  */
 import { readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
-import { sameJobKey } from "./vacancy-keys.mjs";
+import { canonicalId, sameJobKey } from "./vacancy-keys.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DEFAULT_SERVICE_ACCOUNT_PATH = join(__dirname, "..", "secrets", "firebase-service-account.json");
@@ -68,7 +72,12 @@ const STATUS_PRIORITY = ["gesolliciteerd", "afgewezen", "niet_wervend", "niet-in
 // which strips it), so filter it out before reading flags/positional args.
 const args = process.argv.slice(2).filter((a) => a !== "--");
 const apply = args.includes("--apply");
-const serviceAccountArg = args.find((a) => a !== "--apply");
+const check = args.includes("--check");
+if (apply && check) {
+  console.error("--apply en --check sluiten elkaar uit: --check schrijft nooit.");
+  process.exit(1);
+}
+const serviceAccountArg = args.find((a) => !a.startsWith("--"));
 
 const serviceAccountPath =
   serviceAccountArg ||
@@ -85,43 +94,6 @@ if (!serviceAccountPath) {
 const serviceAccount = JSON.parse(readFileSync(serviceAccountPath, "utf8"));
 initializeApp({ credential: cert(serviceAccount) });
 const db = getFirestore();
-
-function slugify(s) {
-  return s
-    .toLowerCase()
-    .normalize("NFD").replace(/[̀-ͯ]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
-function normalizeUrl(url) {
-  if (!url) return null;
-  try {
-    const u = new URL(url);
-    const path = u.pathname.replace(/\/+$/, "");
-    const host = u.hostname.toLowerCase();
-    // be.indeed.com/viewjob?jk=... - het pad is voor ELKE indeed-vacature identiek
-    // ("/viewjob"), de echte identiteit zit in de jk-queryparameter. Zonder deze
-    // uitzondering vallen alle indeed-viewjob-vacatures terug op hetzelfde
-    // "be-indeed-com-viewjob"-canonical-id, en zou pass 1 hieronder ze allemaal als
-    // één duplicaatgroep behandelen en op 1 na verwijderen — ook al zijn het
-    // volledig verschillende vacatures (zie fix #60 in sync-vacancies-to-firestore.mjs,
-    // en de bug die dit op 22-09-2026 in deze dedupe-pass veroorzaakte).
-    const jk = u.searchParams.get("jk");
-    if (host.endsWith("indeed.com") && /\/viewjob$/.test(path) && jk) {
-      return `${host}/viewjob-${jk.toLowerCase()}`;
-    }
-    return `${host}${path}`.toLowerCase();
-  } catch {
-    return url.toLowerCase().replace(/[?#].*$/, "").replace(/\/+$/, "");
-  }
-}
-
-function canonicalId(data) {
-  if (!data.url) return null;
-  const normalized = normalizeUrl(data.url);
-  return normalized ? slugify(normalized) : null;
-}
 
 function statusRank(status) {
   const i = STATUS_PRIORITY.indexOf(status);
@@ -282,6 +254,12 @@ for (const [key, docs] of jobDuplicateGroups) {
 
 if (apply) {
   console.log(`Klaar - ${merged} groep(en) samengevoegd, ${deleted} document(en) verwijderd.`);
+} else if (check) {
+  if (merged > 0) {
+    console.error(`FOUT: ${merged} duplicaatgroep(en) in 'vacatures'. Niets geschreven. Ruim op met: npm run trigger:sync -- --dedupe`);
+    process.exit(1);
+  }
+  console.log("Geen duplicaten in 'vacatures'.");
 } else {
   console.log(`Dry-run klaar. Niets geschreven. Voer opnieuw uit met --apply om dit plan echt uit te voeren:`);
   console.log(`  npm run dedupe:firestore -- --apply`);
