@@ -1,0 +1,20 @@
+.logo {
+  display: block;
+  width: auto;
+}
+
+.horizontal {
+  height: 28px;
+}
+
+.stacked {
+  height: 112px;
+}
+
+.ink {
+  fill: var(--color-text);
+}
+
+.accent {
+  fill: var(--color-logo-accent);
+}

@@ -4,7 +4,7 @@ import { TEST_USER } from "./seed";
 test("logs in and lands on the vacancies page", async ({ page }) => {
   await page.goto("/");
 
-  await expect(page.getByRole("heading", { name: "Sollicitaties" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Sollie" })).toBeVisible();
 
   await page.getByLabel("E-mail").fill(TEST_USER.email);
   await page.getByLabel("Wachtwoord").fill(TEST_USER.password);

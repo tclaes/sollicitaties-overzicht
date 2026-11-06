@@ -1,4 +1,5 @@
 import type {Ref} from "react";
+import {Logo} from "~/components/elements/Logo/Logo";
 import {logout} from "~/lib/auth";
 import styles from "./Header.module.css";
 
@@ -24,7 +25,7 @@ export function Header({navId, navOpen, menuButtonRef, onToggleNav}: Props) {
         <span className={styles.menuIcon} aria-hidden="true"/>
       </button>
       <a href="/vacatures" className={styles.logo}>
-        Sollicitaties
+        <Logo/>
       </a>
       <button className={styles.logout} onClick={() => logout()}>Uitloggen</button>
     </header>

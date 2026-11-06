@@ -53,9 +53,7 @@
 }
 
 .logo {
-  color: var(--color-text);
-  font-size: var(--text-xl);
-  font-weight: var(--font-bold);
+  display: flex;
 }
 
 .logout {

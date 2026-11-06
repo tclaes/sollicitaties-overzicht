@@ -1,4 +1,6 @@
-# Sollicitaties-overzicht
+<p align="center"><img src="docs/logo/sollie/sollie-horizontal.svg" alt="Sollie" height="48"></p>
+
+# Sollie (sollicitaties-overzicht)
 
 A personal job-search and application tracker. Every day a Claude agent searches for
 new frontend roles, which flow into Firestore through a fully automated GitHub Actions
