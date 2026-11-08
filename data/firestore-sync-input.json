@@ -148,7 +148,7 @@
         "url": "https://be.indeed.com/viewjob?jk=0acb267605dffaeb"
       }
     ],
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "Fullstack PHP developer met AI ambitie",
@@ -266,7 +266,7 @@
       "score": "laag",
       "toelichting": "Summiere beschrijving: enkel een Node.js-developerrol via Kingfisher, geen frontend-aandeel vermeld; Node.js is bij jou slechts basis."
     },
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "React Developer | 3 dagen thuiswerk",
@@ -284,7 +284,7 @@
       "score": "goed",
       "toelichting": "React-developer in Lummen (Limburg) met 3 dagen thuiswerk; beschrijving is summier, contract en frontend-aandeel niet vermeld."
     },
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "Full-Stack Developer | React/Node.js",
@@ -303,7 +303,7 @@
       "score": "goed",
       "toelichting": "Full-stack React/Node.js via Kingfisher, regio Antwerpen/Limburg; stack past, maar de beschrijving zegt niets over het frontend-aandeel."
     },
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "React developer (Tesla bedrijfswagen)",
@@ -363,7 +363,7 @@
     "tags": [
       "Vue"
     ],
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "Front-End Developer (Angular of React)",
@@ -473,7 +473,7 @@
         "url": "https://www.linkedin.com/jobs/view/4464318114/"
       }
     ],
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "Software Developer – Sustainable Supply Chain & LCA Tools",
@@ -761,7 +761,7 @@
       "score": "laag",
       "toelichting": "Full-stack met .NET-zwaartepunt: minimaal 5 jaar ervaring als Full-Stack .NET Developer gevraagd, Angular 'goede ervaring'; contracttype staat niet op de pagina."
     },
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "Software Engineer",
@@ -913,7 +913,7 @@
       "score": "goed",
       "toelichting": "Full-stack React + Node.js (NestJS, GraphQL), volledig remote, 4+ jaar ervaring; backend weegt mee, maar de stack ligt dicht bij jouw profiel."
     },
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "Software Developer .NET & React",
@@ -944,7 +944,7 @@
       "score": "goed",
       "toelichting": "React op de front-end met focus op componenten, UX, state management en technische richting van de frontend; .NET in de backend, regio Mechelen."
     },
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": ".NET/React AI Software Engineer",
@@ -1329,7 +1329,8 @@
       "Node.js",
       "GraphQL"
     ],
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-06",
+    "verlopen": true
   },
   {
     "titel": "Front end developer",
@@ -1381,7 +1382,7 @@
         "url": "https://www.stepstone.be/vacatures--Front-end-Software-Developer-Buggenhout-OPDORP-Dehora-Consultancy-Group--2224173-inline.html"
       }
     ],
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "Front-end Developer",
@@ -1408,7 +1409,7 @@
       "score": "goed",
       "toelichting": "Front-end bij digital agency Engaged.be (Vue, WebGL als plus), hybride in Antwerpen; agencywerk met immersieve webervaringen."
     },
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "Front-end Developer",
@@ -1514,7 +1515,7 @@
       "score": "matig",
       "toelichting": "Full-stack JavaScript (TypeScript, Express/Fastify, React/React Native, Docker, AWS/Azure) in Antwerpen; zwaartepunt lijkt op de Node-backend te liggen."
     },
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "Full-Stack Developer",
@@ -1537,7 +1538,7 @@
       "score": "matig",
       "toelichting": "Senior full-stack met backend in Java/Spring Boot/NodeJS en frontend in Angular, React of React Native; Java-backend is geen expertise van jou, regio Antwerpen."
     },
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "React Developer - In-House Softwareproduct",
@@ -1680,7 +1681,7 @@
         "url": "https://www.vdab.be/vindeenjob/vacatures/74362768/net-developer"
       }
     ],
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "Full Stack Developer (.NET / Angular)",
@@ -2163,7 +2164,7 @@
         "url": "https://www.linkedin.com/jobs/view/4464867494/"
       }
     ],
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "Full Stack (Java/Angular) Developer – interne positie",
@@ -2448,7 +2449,8 @@
       "Angular",
       "API"
     ],
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-06",
+    "verlopen": true
   },
   {
     "titel": "Lead Full-Stack Developer / Tech Lead (React Native & Node.js)",
@@ -2522,7 +2524,7 @@
       "score": "goed",
       "toelichting": "React/Next.js + TypeScript voor een AI-portaal (MySQL via Prisma, Jest/Cypress, Scrum) in Turnhout; 2-3 jaar ervaring gevraagd. De titel zegt AI, maar het werk is portaalontwikkeling."
     },
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "Full Stack Engineer",
@@ -2976,7 +2978,7 @@
       "score": "goed",
       "toelichting": "Senior full-stack met React, TypeScript en Node.js, hybride rond Leuven; hands-on ervaring met AI-codeertools gevraagd, direct klantcontact."
     },
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "Software Engineering Team Leader (IoT)",
@@ -3070,7 +3072,7 @@
       "score": "goed",
       "toelichting": "Senior full-stack met Vue en TypeScript in het Radio Technology-team van DPG Media (tools, CMS, sites van Qmusic/JOE/Willy), hybride; ook AI-projecten, backend onduidelijk."
     },
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "Software Engineer (React/Node.js/TypeScript)",
@@ -3175,7 +3177,7 @@
       "score": "matig",
       "toelichting": "React-frontend naast Java/Spring Boot-backend bij een SaaS-bedrijf in Mechelen; frontend-aandeel niet gekwantificeerd. AI-assisted development (Codex, Claude) is een plus."
     },
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "Angular Developer",
@@ -3198,7 +3200,7 @@
         "url": "https://www.linkedin.com/jobs/view/4470878232/"
       }
     ],
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "Software Engineer - Medical Imaging (Fullstack)",
@@ -3372,7 +3374,7 @@
       "score": "goed",
       "toelichting": "Full-stack bij digital product studio Hatch met Vue/React/Angular + Node/NestJS en AWS, 3+ jaar JS/TS; kantoor in Leuven, niet volledig remote."
     },
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "Senior Full Stack .NET/Angular Developer",
@@ -3742,11 +3744,15 @@
       "score": "matig",
       "toelichting": "TypeScript/Node.js/React in een AI-native team (Claude Code, Codex), 7+ jaar; maar locatie enkel 'Belgium' en deels LLM-gedreven services."
     },
-    "gecontroleerdOp": "2026-11-06",
+    "gecontroleerdOp": "2026-11-08",
     "extraBronnen": [
       {
         "bron": "linkedin",
         "url": "https://www.linkedin.com/jobs/view/4485868267/"
+      },
+      {
+        "bron": "linkedin",
+        "url": "https://www.linkedin.com/jobs/view/4476007095/"
       }
     ]
   },
@@ -3788,7 +3794,7 @@
       "score": "goed",
       "toelichting": "Vast contract; product engineer met TypeScript/React als kernverantwoordelijkheid en AI-tools in de workflow; hybride (2 dagen on-site) in de provincie Antwerpen."
     },
-    "gecontroleerdOp": "2026-11-06",
+    "gecontroleerdOp": "2026-11-08",
     "extraBronnen": [
       {
         "bron": "linkedin",
@@ -4129,7 +4135,7 @@
       "score": "borderline",
       "toelichting": "Remote full-stack, maar stack niet vastgelegd (PHP/Laravel, Python of React/Next.js); wel agentic coding tools als werkwijze."
     },
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "Tech Lead - B2B Digital Customer Interaction Platform",
@@ -4560,7 +4566,7 @@
       "score": "goed",
       "toelichting": "Full-stack TypeScript/Next.js (React) voor een ESG-/klimaatplatform, voltijds in-house, flexibel remote binnen Vlaanderen; ook een deel backend/data."
     },
-    "gecontroleerdOp": "2026-11-06"
+    "gecontroleerdOp": "2026-11-08"
   },
   {
     "titel": "Medior JavaScript Developer",
@@ -4973,5 +4979,277 @@
       "score": "borderline",
       "toelichting": "Angular/Vue-frontend staat centraal en het werk is far-site, maar het is dienstverlening binnen een klantcontract (contractvorm onduidelijk) en Python hoort er ook bij."
     }
+  },
+  {
+    "titel": "Software Engineer - Full-Stack",
+    "bedrijf": "FlowTribe",
+    "locatie": "Antwerpen (hybride, ~2 dagen op kantoor)",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4487770624/",
+    "beschrijving": "Scale-up (Accounton, AMLCare; deel van Visma) bouwt apps met Angular-frontend en NestJS/Node.js-backend, alles in TypeScript, op Google Cloud met MongoDB. Vraagt 1-3 jaar ervaring. Contracttype niet expliciet vermeld.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "Angular",
+      "TypeScript",
+      "Node.js",
+      "NestJS"
+    ],
+    "match": {
+      "score": "goed",
+      "toelichting": "Angular + TypeScript over de hele stack, Antwerpen hybride. Minpunten: regio Antwerpen, en het profiel vraagt 1-3 jaar ervaring (mogelijk te junior)."
+    },
+    "gecontroleerdOp": "2026-11-08"
+  },
+  {
+    "titel": "Senior Software Engineer / Tech Lead",
+    "bedrijf": "FlowTribe",
+    "locatie": "Antwerpen (hybride)",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4487725454/",
+    "beschrijving": "Leidende engineeringrol bij FlowTribe: mee coderen, kwaliteit en technische strategie. Stack: Angular-frontend, NestJS/Node.js-backend, alles in TypeScript, op Google Cloud met MongoDB. Vraagt 5+ jaar ervaring. Contracttype niet expliciet vermeld.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "Angular",
+      "TypeScript",
+      "Node.js",
+      "NestJS"
+    ],
+    "match": {
+      "score": "goed",
+      "toelichting": "Angular + TypeScript, senior/lead-niveau past bij 10+ jaar ervaring, Antwerpen hybride. Minpunt: regio Antwerpen en de rol omvat ook backend en architectuur."
+    },
+    "gecontroleerdOp": "2026-11-08"
+  },
+  {
+    "titel": "React Developer",
+    "bedrijf": "Axxes IT Consultancy",
+    "locatie": "Vlaanderen (consultancy, thuiswerk mogelijk)",
+    "regio": "vlaanderen",
+    "url": "https://www.linkedin.com/jobs/view/4487747690/",
+    "beschrijving": "Consultant front-end bij Axxes: dynamische React-applicaties en UI-componenten bij klanten. Vraagt goede kennis van JavaScript en React; TypeScript of Next.js is een plus. Klantlocatie niet vermeld.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "React",
+      "TypeScript",
+      "JavaScript"
+    ],
+    "match": {
+      "score": "goed",
+      "toelichting": "React is de kern, frontendrol. Minpunten: consultancy met onbekende klantlocatie, en het profiel vraagt slechts een eerste ervaring."
+    },
+    "gecontroleerdOp": "2026-11-08"
+  },
+  {
+    "titel": "Javascript Developer",
+    "bedrijf": "Axxes IT Consultancy",
+    "locatie": "Vlaanderen (consultancy, thuiswerk mogelijk)",
+    "regio": "vlaanderen",
+    "url": "https://www.linkedin.com/jobs/view/4487761223/",
+    "beschrijving": "Consultant bij Axxes: webtoepassingen met JavaScript en een framework zoals React, Angular of Vue, met herbruikbare componenten. Vraagt een eerste ervaring als JavaScript Developer. Klantlocatie niet vermeld.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "JavaScript",
+      "React",
+      "Angular",
+      "Vue"
+    ],
+    "match": {
+      "score": "goed",
+      "toelichting": "Frontendwerk in React, Angular of Vue. Minpunten: consultancy met onbekende klantlocatie, en het profiel mikt op minder ervaring."
+    },
+    "gecontroleerdOp": "2026-11-08"
+  },
+  {
+    "titel": "Senior Full Stack Engineer - EMEA",
+    "bedrijf": "Deel",
+    "locatie": "België (remote, EMEA)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4485516506/",
+    "beschrijving": "Full stack bij HR- en payrollplatform Deel: webapplicaties met TypeScript, JavaScript, React en Express; NestJS, Vite en Next.js zijn een plus. Ook server-side API's, datamodellen en databases. LinkedIn toont 60-100K USD per jaar.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Remote"
+    ],
+    "match": {
+      "score": "goed",
+      "toelichting": "React + TypeScript, volledig remote vanuit België. Minpunt: ook veel backendwerk in Express en databases."
+    },
+    "gecontroleerdOp": "2026-11-08"
+  },
+  {
+    "titel": "Senior Full Stack Developer – React & Node.js",
+    "bedrijf": "Pauwels Consulting (klant: publieke veiligheid)",
+    "locatie": "Antwerpen (hybride)",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4488191891/",
+    "beschrijving": "Modulair microservicesplatform voor een klant in de publieke veiligheid (via EngiFlex: Antwerpse politiedienst). 8+ jaar full stack, 5+ jaar React en 5+ jaar Node.js/PostgreSQL, plus technische leiding. Nederlands C2. Borderline: opdracht van 13 maanden vanaf 01/12/2026, open voor vast of freelance. Kennis van AI-codingtools is enkel een pluspunt.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "React",
+      "Node.js",
+      "JavaScript",
+      "PostgreSQL"
+    ],
+    "match": {
+      "score": "borderline",
+      "toelichting": "React + Node.js in Antwerpen, maar dit is een opdracht van 13 maanden: onduidelijk of een vast contract echt mogelijk is. Ook de backend (RabbitMQ, Redis, microservices) weegt zwaar."
+    },
+    "gecontroleerdOp": "2026-11-08",
+    "extraBronnen": [
+      {
+        "bron": "linkedin",
+        "url": "https://www.linkedin.com/jobs/view/4487311409/"
+      }
+    ]
+  },
+  {
+    "titel": "Full Stack Developer (Angular / .Net Core)",
+    "bedrijf": "KION Group",
+    "locatie": "Antwerpen",
+    "regio": "antwerpen",
+    "url": "https://englishjobs.be/clickout/ac419b9cf8729d00",
+    "beschrijving": "Software voor AGV's en AMR's. Volgens de samenvatting op englishjobs.be: Angular 45%, .NET Core/SQL 35%, Azure/CI/CD 10%; sterke kennis van .NET Core en Angular vereist. Borderline: de volledige vacaturetekst was niet leesbaar (doorverwijzing naar Talent.com), dus contract en werkregime zijn onbekend.",
+    "bron": "andere",
+    "functie": "fullstack",
+    "tags": [
+      "Angular",
+      ".NET",
+      "Azure"
+    ],
+    "match": {
+      "score": "borderline",
+      "toelichting": "Angular is het grootste aandeel (45%), Antwerpen. Enkel de samenvatting gelezen: contract en werkregime zijn onbekend, en .NET Core is ook vereist."
+    },
+    "gecontroleerdOp": "2026-11-08"
+  },
+  {
+    "titel": "AI-Empowered .NET Developer",
+    "bedrijf": "Euricom",
+    "locatie": "Antwerpen en omgeving (hybride, consultancy)",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4408984880/",
+    "beschrijving": "Consultant bij Euricom, Anthropic Select Services Partner dat inzet op AI-Empowered Development met tools zoals Claude (AI-werkwijze-signaal). .NET-rol; frontend vooral Angular, soms React, Blazor of Vue, afhankelijk van het project.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "Angular",
+      "AI-assisted"
+    ],
+    "match": {
+      "score": "laag",
+      "toelichting": "Sterk AI-signaal (ontwikkelen met Claude) en veel Angular, maar de rol is .NET-gedreven en loopt via consultancy in de regio Antwerpen."
+    },
+    "gecontroleerdOp": "2026-11-08"
+  },
+  {
+    "titel": "Full Stack Engineer .NET | 4 dagen thuiswerk",
+    "bedrijf": "Kingfisher Recruitment (client, Belgische softwareorganisatie)",
+    "locatie": "Berlaar (hybride, 4 dagen thuiswerk)",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4486222558/",
+    "beschrijving": "Eigen bedrijfsapplicaties bij een snelgroeiende softwareorganisatie. Vraagt sterke ervaring met .NET en kennis van Angular. 4 dagen per week thuiswerk.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "Angular"
+    ],
+    "match": {
+      "score": "laag",
+      "toelichting": "Angular maakt deel uit van de rol en er zijn 4 thuiswerkdagen, maar sterke .NET-ervaring is de hoofdvereiste."
+    },
+    "gecontroleerdOp": "2026-11-08"
+  },
+  {
+    "titel": "Senior Fullstack .NET Developer",
+    "bedrijf": "Medpace",
+    "locatie": "Leuven (op locatie)",
+    "regio": "vlaanderen",
+    "url": "https://www.linkedin.com/jobs/view/4431499455/",
+    "beschrijving": "Nieuw ontwikkelcentrum in Leuven voor klinische systemen. Vraagt 5+ jaar met onder meer C#, Angular, webservices, GraphQL en relationele databases. Op locatie.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "C#",
+      "Angular",
+      "GraphQL"
+    ],
+    "match": {
+      "score": "laag",
+      "toelichting": "Angular staat in het profiel, maar C#/ASP.NET is de kern en de job is op locatie in Leuven."
+    },
+    "gecontroleerdOp": "2026-11-08"
+  },
+  {
+    "titel": "Full Stack .NET Developer | Passie voor AI & Moderne Tech",
+    "bedrijf": "Numble",
+    "locatie": "Kontich, Gent of bij de klant",
+    "regio": "antwerpen",
+    "url": "https://www.linkedin.com/jobs/view/4487285072/",
+    "beschrijving": "Consultant maatwerkapplicaties. Vraagt 3-4 jaar ervaring met .NET/C#, JavaScript (Angular, React of Vue) en/of Blazor. Kennisdeling rond AI en projecten met vibe-coding worden vermeld, maar niet als vaste werkwijze (geen AI-assisted-tag).",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      ".NET",
+      "Angular",
+      "React",
+      "Vue"
+    ],
+    "match": {
+      "score": "laag",
+      "toelichting": ".NET/C# is de kern en het is consultancy; frontend in Angular, React of Vue is mogelijk maar niet gegarandeerd."
+    },
+    "gecontroleerdOp": "2026-11-08"
+  },
+  {
+    "titel": "Senior Software Engineer",
+    "bedrijf": "Easi",
+    "locatie": "Leuven (op locatie)",
+    "regio": "vlaanderen",
+    "url": "https://www.linkedin.com/jobs/view/4488136146/",
+    "beschrijving": "Webapplicaties voor diverse klanten, hoofdzakelijk met Laravel/PHP en Vue.js als frontend. Aantoonbare Laravel/PHP-ervaring is een must, naast sterke front-endkennis (Vue.js, React). 5-10 jaar ervaring, Nederlands C2.",
+    "bron": "linkedin",
+    "functie": "fullstack",
+    "tags": [
+      "PHP",
+      "Laravel",
+      "Vue"
+    ],
+    "match": {
+      "score": "laag",
+      "toelichting": "Sterke frontendkennis gevraagd (Vue/React), maar Laravel/PHP is een harde vereiste en het hoofdbestanddeel."
+    },
+    "gecontroleerdOp": "2026-11-08"
+  },
+  {
+    "titel": "Frontend Developer",
+    "bedrijf": "HiJob.work (partnerbedrijf onbekend)",
+    "locatie": "België (remote)",
+    "regio": "remote",
+    "url": "https://www.linkedin.com/jobs/view/4486655200/",
+    "beschrijving": "Next.js, React-componenten vanuit Figma, HTML5/CSS3 en API-integraties voor een onbekend partnerbedrijf. Borderline: werkformaat is \"Full-time, Remote or Freelance\"; vast contract en werkgever zijn onduidelijk.",
+    "bron": "linkedin",
+    "functie": "frontend",
+    "tags": [
+      "React",
+      "Next.js",
+      "Remote"
+    ],
+    "match": {
+      "score": "borderline",
+      "toelichting": "Pure React/Next.js-frontend en remote, maar werkgever en contract zijn onduidelijk (aangeboden als remote of freelance)."
+    },
+    "gecontroleerdOp": "2026-11-08"
   }
 ]
