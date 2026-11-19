@@ -44,6 +44,7 @@ Zoek op elke bron zowel op **frontend** als op **full-stack** (React/Vue/Angular
 
 **Extra publieke bronnen (nieuw):**
 - techjobs.be — techjobs.be/nl/ict-jobs/frontend én techjobs.be/nl/ict-jobs/fullstack.
+- Creativeskills (creativeskills.be/jobs) — Belgische jobsite voor creatieve en digitale profielen; neem web-/frontend-/full-stack-developerrollen mee (geen pure design-, copy- of marketingrollen).
 - it-jobs.be — zoek "frontend developer" en "fullstack developer", filter regio Limburg/Antwerpen/Leuven.
 - it-vacatures.be — idem.
 - Wellfound (wellfound.com/location/belgium) — startup/scale-up rollen, veel remote; filter op frontend/full-stack.
