@@ -1825,7 +1825,7 @@
       "score": "goed",
       "toelichting": "Vaste job met React-frontend en .NET-backend in Mechelen; beschrijving is summier (zelfde rol als de Kingfisher-vacature .NET & React)."
     },
-    "gecontroleerdOp": "2026-11-14"
+    "gecontroleerdOp": "2026-11-22"
   },
   {
     "titel": "Software developer | React",
@@ -3201,7 +3201,8 @@
         "url": "https://www.linkedin.com/jobs/view/4470878232/"
       }
     ],
-    "gecontroleerdOp": "2026-11-10"
+    "gecontroleerdOp": "2026-11-10",
+    "verlopen": true
   },
   {
     "titel": "Software Engineer - Medical Imaging (Fullstack)",
@@ -3745,7 +3746,7 @@
       "score": "matig",
       "toelichting": "TypeScript/Node.js/React in een AI-native team (Claude Code, Codex), 7+ jaar; maar locatie enkel 'Belgium' en deels LLM-gedreven services."
     },
-    "gecontroleerdOp": "2026-11-14",
+    "gecontroleerdOp": "2026-11-22",
     "extraBronnen": [
       {
         "bron": "linkedin",
