@@ -5514,5 +5514,27 @@
       "score": "borderline",
       "toelichting": "React front-end is de kern en Claude/Codex horen bij de werkwijze, maar enkel 'Belgium' als locatie (studio onbekend); vergelijkbare ITP-rol werd eerder gearchiveerd."
     }
+  },
+  {
+    "titel": "Senior Front-End Developer",
+    "bedrijf": "Cronos Europa",
+    "locatie": "Brussel",
+    "regio": "brussel",
+    "url": "https://www.linkedin.com/jobs/view/4492804803/",
+    "beschrijving": "Senior frontend (min. 8 jaar) met focus op TypeScript, Web Components, design systems, WCAG en UX engineering voor publieksgerichte webapplicaties van Europese instellingen. Architectuur, herbruikbare componenten via npm, Storybook. AI-assisted development tools zijn enkel een 'asset', geen kern. Contracttype niet vermeld op de pagina; op locatie, fulltime. Door Tom zelf gevonden.",
+    "bron": "linkedin",
+    "gecontroleerdOp": "2026-11-23",
+    "functie": "frontend",
+    "tags": [
+      "TypeScript",
+      "Web Components",
+      "Design systems",
+      "WCAG",
+      "Storybook"
+    ],
+    "match": {
+      "score": "goed",
+      "toelichting": "TypeScript, Web Components en design systems zijn de kern (Toms expertise), fulltime op locatie in Brussel; contracttype niet vermeld. Brussel (geen Limburg/remote) en 8+ jaar senior-eis drukken de score van sterk naar goed."
+    }
   }
 ]
