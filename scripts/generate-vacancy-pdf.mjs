@@ -138,7 +138,7 @@ const html = `<!doctype html><html lang="nl"><head><meta charset="utf-8">
   footer { margin-top: 20px; color: #999; font-size: 8.5px; }
 </style></head><body>
   <h1>Actief vacature-overzicht — Frontend &amp; Full-stack Developer</h1>
-  <div class="peil">Peildatum ${asOfDate} · ${active.length} actieve vacatures · regio Limburg + Leuven/Mechelen/Antwerpen/Kempen</div>
+  <div class="peil">Peildatum ${asOfDate} · ${active.length} actieve vacatures · regio Limburg + Leuven/Mechelen/Antwerpen/Kempen/Brussel (incl. rand)</div>
   ${sections || "<p>Geen actieve vacatures.</p>"}
   <footer>Automatisch gegenereerd uit data/firestore-sync-input.json door de dagelijkse vacaturescan.</footer>
 </body></html>`;

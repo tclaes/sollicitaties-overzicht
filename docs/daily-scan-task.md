@@ -54,7 +54,7 @@ Zoek op elke bron zowel op **frontend** als op **full-stack** (React/Vue/Angular
 
 **Ingelogde bronnen (het profiel is ingelogd):**
 - LinkedIn: linkedin.com/jobs/search/?keywords=frontend%20developer&location=Limburg — ook "fullstack developer", "react developer" en "angular developer", regio Limburg / Vlaams-Brabant / Antwerpen / Brussel.
-- Indeed: be.indeed.com/jobs?q=frontend+developer&l=Limburg — ook "fullstack developer", "react developer", "angular developer".
+- Indeed: be.indeed.com/jobs?q=frontend+developer&l=Limburg (en l=Brussel / l=Antwerpen / l=Leuven) — ook "fullstack developer", "react developer", "angular developer".
 - Jobat (jobat.be), StepStone (stepstone.be) — frontend + full-stack developer in de regio.
 - Skillerjobs (app.skillerjobs.be/jobseeker) — AI-matchingplatform; als Tom ingelogd is, lees de aanbevolen jobs voor zijn profiel. Toont het een login-/verificatiescherm: overslaan met notitie "Skillerjobs — Tom moet opnieuw inloggen", niks invullen.
 
