@@ -40,35 +40,35 @@ Open elke bron en lees de vacatures. Wacht bij JS-pagina's tot de lijst geladen 
 
 Zoek op elke bron zowel op **frontend** als op **full-stack** (React/Vue/Angular/Node/TypeScript) developer.
 
-**Publieke bronnen:** Kingfisher Recruitment (kingfisher-recruitment.be/vacatures/it/development), Clovr (clovr.be/vacatures), Codejobs.be (/vacatures/limburg), Kwery (kwery.be/jobs), AE (jobs.lever.co/ae-2), Recommand (recommand.eu/en/jobs), Talent-IT (talent-it.be/nl/vacatures — alle pagina's), Lowi (careers.lowi.ai), PHPro (phpro.be/nl/jobs), VDAB (vdab.be/vindeenjob — zoek "frontend developer", "fullstack developer", "react developer", "angular developer" in Limburg/Vlaams-Brabant/Antwerpen), ictjob.be (front-end-developer + full-stack-developer + detailpagina's van leads), englishjobs.be (frontend_developer + fullstack_developer per provincie: limburg, antwerpen, leuven), applisquare.be/vacatures, Cegeka, Born Digital, DevLab.Career, Motmans & Partners.
+**Publieke bronnen:** Kingfisher Recruitment (kingfisher-recruitment.be/vacatures/it/development), Clovr (clovr.be/vacatures), Codejobs.be (/vacatures/limburg), Kwery (kwery.be/jobs), AE (jobs.lever.co/ae-2), Recommand (recommand.eu/en/jobs), Talent-IT (talent-it.be/nl/vacatures — alle pagina's), Lowi (careers.lowi.ai), PHPro (phpro.be/nl/jobs), VDAB (vdab.be/vindeenjob — zoek "frontend developer", "fullstack developer", "react developer", "angular developer" in Limburg/Vlaams-Brabant/Antwerpen/Brussel), ictjob.be (front-end-developer + full-stack-developer + detailpagina's van leads), englishjobs.be (frontend_developer + fullstack_developer per provincie: limburg, antwerpen, leuven, brussel), applisquare.be/vacatures, Cegeka, Born Digital, DevLab.Career, Motmans & Partners.
 
 **Extra publieke bronnen (nieuw):**
 - techjobs.be — techjobs.be/nl/ict-jobs/frontend én techjobs.be/nl/ict-jobs/fullstack.
 - Creativeskills (creativeskills.be/jobs) — Belgische jobsite voor creatieve en digitale profielen; neem web-/frontend-/full-stack-developerrollen mee (geen pure design-, copy- of marketingrollen).
-- it-jobs.be — zoek "frontend developer" en "fullstack developer", filter regio Limburg/Antwerpen/Leuven.
+- it-jobs.be — zoek "frontend developer" en "fullstack developer", filter regio Limburg/Antwerpen/Leuven/Brussel.
 - it-vacatures.be — idem.
 - Wellfound (wellfound.com/location/belgium) — startup/scale-up rollen, veel remote; filter op frontend/full-stack.
 - Cronos Groep (cronos-groep.be/nl/vacatures) — koepel met veel Limburgse dochterbedrijven.
 - iO (iodigital.com/nl/careers), In The Pocket (inthepocket.com/jobs), Dropsolid (dropsolid.com/nl/jobs), Craftzing, Bagaar — productbedrijven met frontend/full-stack rollen.
-- Greenhouse — job-boards op `boards.greenhouse.io` (en `job-boards.greenhouse.io`). Zoek breed via WebSearch met queries als `site:boards.greenhouse.io (frontend OR fullstack OR react OR angular OR vue) developer (Belgium OR Antwerp OR Leuven OR Limburg OR remote)`, en check de Greenhouse-boards van bedrijven die via een career-site naar Greenhouse doorlinken. Lees telkens de detailpagina voor locatie/remote-beleid; veel Greenhouse-rollen zijn US-only of "remote (EU)" — filter volgens STAP 3 (regio Limburg/Antwerpen/Leuven/Mechelen/Kempen of volledig remote).
+- Greenhouse — job-boards op `boards.greenhouse.io` (en `job-boards.greenhouse.io`). Zoek breed via WebSearch met queries als `site:boards.greenhouse.io (frontend OR fullstack OR react OR angular OR vue) developer (Belgium OR Antwerp OR Leuven OR Brussels OR Limburg OR remote)`, en check de Greenhouse-boards van bedrijven die via een career-site naar Greenhouse doorlinken. Lees telkens de detailpagina voor locatie/remote-beleid; veel Greenhouse-rollen zijn US-only of "remote (EU)" — filter volgens STAP 3 (regio Limburg/Antwerpen/Leuven/Brussel/Mechelen/Kempen of volledig remote).
 
 **Ingelogde bronnen (het profiel is ingelogd):**
-- LinkedIn: linkedin.com/jobs/search/?keywords=frontend%20developer&location=Limburg — ook "fullstack developer", "react developer" en "angular developer", regio Limburg / Vlaams-Brabant / Antwerpen.
-- Indeed: be.indeed.com/jobs?q=frontend+developer&l=Limburg — ook "fullstack developer", "react developer", "angular developer".
+- LinkedIn: linkedin.com/jobs/search/?keywords=frontend%20developer&location=Limburg — ook "fullstack developer", "react developer" en "angular developer", regio Limburg / Vlaams-Brabant / Antwerpen / Brussel.
+- Indeed: be.indeed.com/jobs?q=frontend+developer&l=Limburg (en l=Brussel / l=Antwerpen / l=Leuven) — ook "fullstack developer", "react developer", "angular developer".
 - Jobat (jobat.be), StepStone (stepstone.be) — frontend + full-stack developer in de regio.
 - Skillerjobs (app.skillerjobs.be/jobseeker) — AI-matchingplatform; als Tom ingelogd is, lees de aanbevolen jobs voor zijn profiel. Toont het een login-/verificatiescherm: overslaan met notitie "Skillerjobs — Tom moet opnieuw inloggen", niks invullen.
 
 Toont een van deze een **login- of verificatiescherm** i.p.v. resultaten? Probeer NIET in te loggen en vul niks in. Noteer "sessie verlopen — Tom moet opnieuw inloggen" en ga door.
 
-Doe daarnaast 3-5 WebSearch-zoekopdrachten op frontend/full-stack/React/Vue/Angular/TypeScript developer × Hasselt/Genk/Limburg/Leuven/Mechelen/Antwerpen/Turnhout; veelbelovende bedrijfssites nakijken.
+Doe daarnaast 3-5 WebSearch-zoekopdrachten op frontend/full-stack/React/Vue/Angular/TypeScript developer × Hasselt/Genk/Limburg/Leuven/Mechelen/Antwerpen/Turnhout/Brussel; veelbelovende bedrijfssites nakijken.
 
 **AI-werkwijze (ontwikkelen mét AI) — twee sporen:**
 1. *Extra zoekopdrachten* (getest op 12-10-2026):
    - **LinkedIn** (regio Belgium): één OR-query werkt: `developer ("AI-native" OR "AI-first" OR "AI-assisted" OR Copilot OR Cursor OR "Claude Code")`, plus `AI-assisted frontend developer`. Voeg daarnaast een tweede OR-query toe voor agentic development: `developer ("agentic development" OR "agentic engineering" OR "agentic coding" OR "agentic workflow" OR "AI agents" OR "vibe coding")` en `agentic frontend developer`. Lees per kaart de beschrijving in het rechterpaneel (wacht tot de titel in het paneel overeenkomt met de kaart — het paneel loopt achter op klikken) en zoek naar de signalen uit STAP 3.
-   - **Indeed**: `developer ("AI-native" OR "AI-first" OR "AI-assisted" OR Copilot OR Cursor OR "Claude Code")` met l=Antwerpen&radius=50, daarna idem voor Limburg en Leuven; herhaal met `developer ("agentic development" OR "agentic engineering" OR "agentic coding")`.
+   - **Indeed**: `developer ("AI-native" OR "AI-first" OR "AI-assisted" OR Copilot OR Cursor OR "Claude Code")` met l=Antwerpen&radius=50, daarna idem voor Limburg, Leuven en Brussel; herhaal met `developer ("agentic development" OR "agentic engineering" OR "agentic coding")`.
    - **VDAB**: trefwoord `AI-assisted developer` (levert de meeste relevante hits; ook `AI-native`, `agentic development`, `agentic coding`). Open detailpagina's één voor één via navigeren — `window.open` wordt geblokkeerd.
    - Overige bronnen (Jobat, StepStone, ictjob, techjobs): `AI-assisted developer`, `AI-native developer`, `agentic development`, `agentic coding`, `developer Copilot`, `developer Cursor`.
-   - 2-3 WebSearch-queries zoals `("AI-native" OR "AI-first" OR "AI-assisted" OR "agentic development" OR "agentic engineering" OR "agentic coding" OR Copilot OR Cursor OR "Claude Code") (frontend OR fullstack OR react OR angular) developer (Limburg OR Antwerpen OR Leuven OR remote)`.
+   - 2-3 WebSearch-queries zoals `("AI-native" OR "AI-first" OR "AI-assisted" OR "agentic development" OR "agentic engineering" OR "agentic coding" OR Copilot OR Cursor OR "Claude Code") (frontend OR fullstack OR react OR angular) developer (Limburg OR Antwerpen OR Leuven OR Brussel OR remote)`.
    - **Ruis die je meteen negeert:** contractor-opdrachten voor het trainen van AI-codeeragents ("Claude Code User"), trainer-/coachrollen, titels met "AI Engineer / AI Software Engineer" (AI bouwen), en alles buiten de regio.
 2. *Verrijken van gewone hits* — de meeste vacatures noemen AI enkel in de beschrijving. Kijk op elke frontend/full-stack-detailpagina die je toch leest of er AI-werkwijze-signalen in staan (zie STAP 3).
 
@@ -83,7 +83,7 @@ Faalt een bron: noteren en door, niet blijven proberen.
 **Wel opnemen:**
 - **Frontend** — vast contract, frontend-zwaartepunt (React, Vue, Angular, TypeScript). → `functie: "frontend"`
 - **Full-stack** — vast contract, echte frontend-component in een JS/TS-stack (React/Vue/Angular + Node.js, of full-stack met .NET/Java/PHP waar de frontend een volwaardig deel van de rol is, niet enkel "een plus"). → `functie: "fullstack"`
-- Regio: Limburg, Leuven, Mechelen, Antwerpen (incl. Kontich), Kempen (Turnhout/Geel/Herentals/Mol), Aarschot/Diest, Sint-Truiden/Tongeren/Hasselt-Genk, noordwest-Antwerpen. Volledig remote mag ook.
+- Regio: Limburg, Leuven, Mechelen, Antwerpen (incl. Kontich), Brussel (Brussels Hoofdstedelijk Gewest en de rand, bv. Zaventem/Vilvoorde/Machelen), Kempen (Turnhout/Geel/Herentals/Mol), Aarschot/Diest, Sint-Truiden/Tongeren/Hasselt-Genk, noordwest-Antwerpen. Volledig remote mag ook.
 
 **Niet opnemen:** freelance-/projectopdrachten; rollen met een backend-kern (.NET/Java/PHP/Python) waar frontend enkel een pluspunt is; pure backend-, data- of ML/AI-engineeringrollen; alles buiten de regio; en deze bedrijven: With Eleven, Xplore Group, VanRoey, Climapulse, Alpine Digital, Fenego, Buzzworks, Pelckmans.
 
@@ -104,7 +104,7 @@ Beoordeel elke **nieuwe** vacature die je opneemt tegen Toms profiel (bovenaan) 
 
 `score` — exact één van deze Nederlandse waarden (de sync en app kennen geen andere):
 - `sterk` — frontend-zwaartepunt in Angular, TypeScript, Web Components of designsystemen (zijn expertise), regio Limburg of volledig remote, vast contract. Een AI-werkwijze-signaal (`AI-assisted`) is een plus, geen vereiste.
-- `goed` — frontend of full-stack in React of Vue/Nuxt (sterk, geen expertise), of Angular/TypeScript-rol met een kleiner minpunt (regio Antwerpen/Leuven/Mechelen/Kempen, of frontend iets minder dominant).
+- `goed` — frontend of full-stack in React of Vue/Nuxt (sterk, geen expertise), of Angular/TypeScript-rol met een kleiner minpunt (regio Antwerpen/Leuven/Mechelen/Kempen/Brussel, of frontend iets minder dominant).
 - `matig` — echte frontend-component maar met duidelijke afstand: JS/TS-fullstack met backend-zwaartepunt in Node, Drupal-frontend, een stack waar hij enkel basis in heeft, of meerdere minpunten tegelijk.
 - `laag` — voldoet net aan het filter, maar frontend is bijzaak, stack is vreemd (.NET/Java/PHP/Python-dominant) of meerdere vereisten ontbreken. Wees hier eerlijk; liever `laag` dan een vacature opblazen.
 - `borderline` — je nam ze enkel op "bij twijfel" (zie hierboven): onduidelijk contract, onduidelijk frontend-aandeel, AI-productfrontend e.d. Leg in de toelichting uit wat onduidelijk is.
